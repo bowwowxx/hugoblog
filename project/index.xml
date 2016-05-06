@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on 安迪兒隨手貼</title>
+    <link>https://bowwowxx.github.io/hugoblog/project/</link>
+    <description>Recent content in Projects on 安迪兒隨手貼</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;#169; by 安迪兒</copyright>
+    <atom:link href="https://bowwowxx.github.io/hugoblog/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Video</title>
+      <link>https://bowwowxx.github.io/hugoblog/project/video/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bowwowxx.github.io/hugoblog/project/video/</guid>
+      <description>&lt;p&gt;Videos can be provided via:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;video_mp4 = &amp;quot;/vid/vid_480x320.mp4&amp;quot;
+video_webm = &amp;quot;/vid/vid_480x320.webm&amp;quot;
+video_ogv = &amp;quot;/vid/vid_480x320.ogv&amp;quot;
+video_3gp = &amp;quot;/vid/vid_352x288.3gp&amp;quot;
+video_fallback = &amp;quot;/img/car.jpg&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Each value is optional. If the fallback image is provided, it will be used
+as both the poster of the video and the fallback if the browser does not
+support HTML5 video.&lt;/p&gt;
+
+&lt;p&gt;You can use the partial for a video via:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.Scratch.Set &amp;quot;class&amp;quot; &amp;quot;some extra CSS classes on video tag&amp;quot;
+{{ partial &amp;quot;extra/video.html&amp;quot; . }}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Another Car</title>
+      <link>https://bowwowxx.github.io/hugoblog/project/anothercar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bowwowxx.github.io/hugoblog/project/anothercar/</guid>
+      <description>&lt;p&gt;Project content would go here. You can also redirect using the front matter
+&lt;code&gt;redirect = &amp;quot;url&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Another Cup</title>
+      <link>https://bowwowxx.github.io/hugoblog/project/anothercup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bowwowxx.github.io/hugoblog/project/anothercup/</guid>
+      <description>&lt;p&gt;Project content would go here. You can also redirect using the front matter
+&lt;code&gt;redirect = &amp;quot;url&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Phone</title>
+      <link>https://bowwowxx.github.io/hugoblog/project/phone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bowwowxx.github.io/hugoblog/project/phone/</guid>
+      <description>&lt;p&gt;Project content would go here. You can also redirect using the front matter
+&lt;code&gt;redirect = &amp;quot;url&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Category1 on 安迪兒隨手貼</title>
+    <link>https://bowwowxx.github.io/hugoblog/categories/category1/</link>
+    <description>Recent content in Category1 on 安迪兒隨手貼</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;#169; by 安迪兒</copyright>
+    <lastBuildDate>Wed, 29 Jul 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://bowwowxx.github.io/hugoblog/categories/category1/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Redirect</title>
+      <link>https://bowwowxx.github.io/hugoblog/post/redirect/</link>
+      <pubDate>Wed, 29 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://bowwowxx.github.io/hugoblog/post/redirect/</guid>
+      <description>&lt;p&gt;You can optionally set the front matter &lt;code&gt;redirect = &amp;quot;url&amp;quot;&lt;/code&gt; to automatically
+redirect the content to another page.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
