@@ -11,10 +11,10 @@
     
     <item>
       <title>Video</title>
-      <link>https://bowwowxx.github.io/hugoblog/news/video/</link>
+      <link>https://bowwowxx.github.io/hugoblog/othergallery/video/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://bowwowxx.github.io/hugoblog/news/video/</guid>
+      <guid>https://bowwowxx.github.io/hugoblog/othergallery/video/</guid>
       <description>&lt;p&gt;Videos can be provided via:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;video_mp4 = &amp;quot;/vid/vid_480x320.mp4&amp;quot;

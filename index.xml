@@ -11,10 +11,10 @@
     
     <item>
       <title>Video</title>
-      <link>https://bowwowxx.github.io/hugoblog/news/video/</link>
+      <link>https://bowwowxx.github.io/hugoblog/othergallery/video/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://bowwowxx.github.io/hugoblog/news/video/</guid>
+      <guid>https://bowwowxx.github.io/hugoblog/othergallery/video/</guid>
       <description>&lt;p&gt;Videos can be provided via:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;video_mp4 = &amp;quot;/vid/vid_480x320.mp4&amp;quot;
@@ -64,16 +64,42 @@ support HTML5 video.&lt;/p&gt;
     </item>
     
     <item>
+      <title>大汐止商圈-印度炒飯和咖哩</title>
+      <link>https://bowwowxx.github.io/hugoblog/food/201605030/</link>
+      <pubDate>Fri, 06 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://bowwowxx.github.io/hugoblog/food/201605030/</guid>
+      <description>&lt;p&gt;大汐止商圈的小巷子&lt;/p&gt;
+
+&lt;p&gt;下班後同事來這晃晃&lt;br /&gt;
+這邊很妙&lt;br /&gt;
+二棟大廈中間，上方搭鐵皮&lt;br /&gt;
+我們在熱鬧的紅磚路上吃飯&lt;br /&gt;
+有像新加坡加上吃飯的fu&lt;br /&gt;
+拉麵超多人排隊
+印度炒飯是2位印度女生開的&lt;br /&gt;
+好吃!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/Eamdsh&#34; width=&#34;400&#34;&gt;
+&lt;img src=&#34;https://goo.gl/vvB2oY&#34; width=&#34;400&#34;&gt;
+&lt;img src=&#34;https://goo.gl/1Lsl0A&#34; width=&#34;400&#34;&gt;
+&lt;img src=&#34;https://goo.gl/GuKdAz&#34; width=&#34;400&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>菜廚房-串串香麻辣燙鍋</title>
       <link>https://bowwowxx.github.io/hugoblog/food/20160503/</link>
       <pubDate>Tue, 03 May 2016 00:00:00 +0000</pubDate>
       
       <guid>https://bowwowxx.github.io/hugoblog/food/20160503/</guid>
-      <description>&lt;p&gt;大家對這間新的麻辣燙鍋非常的好奇&lt;br /&gt;
+      <description>&lt;p&gt;汐止區大同路上&lt;/p&gt;
+
+&lt;p&gt;大家對這間新開的麻辣燙鍋非常的好奇&lt;br /&gt;
 某日下班…&lt;br /&gt;
 剛好就一起去了&lt;br /&gt;
-開心的狂吃中&lt;br /&gt;
-(這鍋會辣也會麻)&lt;/p&gt;
+三五同事，開心的狂吃中&lt;br /&gt;
+(這鍋會麻也會辣)&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/XUYwGH&#34; width=&#34;400&#34;&gt;&lt;/p&gt;
 </description>
@@ -104,54 +130,6 @@ support HTML5 video.&lt;/p&gt;
       <guid>https://bowwowxx.github.io/hugoblog/post/redirect/</guid>
       <description>&lt;p&gt;You can optionally set the front matter &lt;code&gt;redirect = &amp;quot;url&amp;quot;&lt;/code&gt; to automatically
 redirect the content to another page.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>One</title>
-      <link>https://bowwowxx.github.io/hugoblog/otherpost/eight/</link>
-      <pubDate>Sat, 25 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://bowwowxx.github.io/hugoblog/otherpost/eight/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vulputate
-vehicula mi id fringilla. Interdum et malesuada fames ac ante ipsum primis in
-faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-posuere cubilia Curae; Proin rutrum vestibulum quam vitae ultrices. Suspendisse
-dui tortor, suscipit id augue et, placerat placerat ipsum. Nam vulputate ex
-eget varius convallis. Nullam mollis egestas ex eget faucibus. Maecenas ut est
-a diam ullamcorper aliquet at vel ante. Fusce ac lacinia tortor.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>One</title>
-      <link>https://bowwowxx.github.io/hugoblog/otherpost/twelve/</link>
-      <pubDate>Sat, 25 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://bowwowxx.github.io/hugoblog/otherpost/twelve/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vulputate
-vehicula mi id fringilla. Interdum et malesuada fames ac ante ipsum primis in
-faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-posuere cubilia Curae; Proin rutrum vestibulum quam vitae ultrices. Suspendisse
-dui tortor, suscipit id augue et, placerat placerat ipsum. Nam vulputate ex
-eget varius convallis. Nullam mollis egestas ex eget faucibus. Maecenas ut est
-a diam ullamcorper aliquet at vel ante. Fusce ac lacinia tortor.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>One</title>
-      <link>https://bowwowxx.github.io/hugoblog/otherpost/two/</link>
-      <pubDate>Sat, 25 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://bowwowxx.github.io/hugoblog/otherpost/two/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vulputate
-vehicula mi id fringilla. Interdum et malesuada fames ac ante ipsum primis in
-faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-posuere cubilia Curae; Proin rutrum vestibulum quam vitae ultrices. Suspendisse
-dui tortor, suscipit id augue et, placerat placerat ipsum. Nam vulputate ex
-eget varius convallis. Nullam mollis egestas ex eget faucibus. Maecenas ut est
-a diam ullamcorper aliquet at vel ante. Fusce ac lacinia tortor.&lt;/p&gt;
 </description>
     </item>
     
@@ -212,6 +190,54 @@ a diam ullamcorper aliquet at vel ante. Fusce ac lacinia tortor.&lt;/p&gt;
     </item>
     
     <item>
+      <title>One</title>
+      <link>https://bowwowxx.github.io/hugoblog/unboxing/eight/</link>
+      <pubDate>Sat, 25 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://bowwowxx.github.io/hugoblog/unboxing/eight/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vulputate
+vehicula mi id fringilla. Interdum et malesuada fames ac ante ipsum primis in
+faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+posuere cubilia Curae; Proin rutrum vestibulum quam vitae ultrices. Suspendisse
+dui tortor, suscipit id augue et, placerat placerat ipsum. Nam vulputate ex
+eget varius convallis. Nullam mollis egestas ex eget faucibus. Maecenas ut est
+a diam ullamcorper aliquet at vel ante. Fusce ac lacinia tortor.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>One</title>
+      <link>https://bowwowxx.github.io/hugoblog/unboxing/twelve/</link>
+      <pubDate>Sat, 25 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://bowwowxx.github.io/hugoblog/unboxing/twelve/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vulputate
+vehicula mi id fringilla. Interdum et malesuada fames ac ante ipsum primis in
+faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+posuere cubilia Curae; Proin rutrum vestibulum quam vitae ultrices. Suspendisse
+dui tortor, suscipit id augue et, placerat placerat ipsum. Nam vulputate ex
+eget varius convallis. Nullam mollis egestas ex eget faucibus. Maecenas ut est
+a diam ullamcorper aliquet at vel ante. Fusce ac lacinia tortor.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>One</title>
+      <link>https://bowwowxx.github.io/hugoblog/unboxing/two/</link>
+      <pubDate>Sat, 25 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://bowwowxx.github.io/hugoblog/unboxing/two/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vulputate
+vehicula mi id fringilla. Interdum et malesuada fames ac ante ipsum primis in
+faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+posuere cubilia Curae; Proin rutrum vestibulum quam vitae ultrices. Suspendisse
+dui tortor, suscipit id augue et, placerat placerat ipsum. Nam vulputate ex
+eget varius convallis. Nullam mollis egestas ex eget faucibus. Maecenas ut est
+a diam ullamcorper aliquet at vel ante. Fusce ac lacinia tortor.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>棄業中</title>
       <link>https://bowwowxx.github.io/hugoblog/gallery/20150630/</link>
       <pubDate>Tue, 30 Jun 2015 00:00:00 +0000</pubDate>
@@ -248,15 +274,6 @@ a diam ullamcorper aliquet at vel ante. Fusce ac lacinia tortor.&lt;/p&gt;
       <pubDate>Sat, 04 Sep 2010 00:00:00 +0000</pubDate>
       
       <guid>https://bowwowxx.github.io/hugoblog/gallery/2010090401/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>放學回家吃晚餐</title>
-      <link>https://bowwowxx.github.io/hugoblog/gallery/2010090402/</link>
-      <pubDate>Sat, 04 Sep 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://bowwowxx.github.io/hugoblog/gallery/2010090402/</guid>
       <description></description>
     </item>
     
