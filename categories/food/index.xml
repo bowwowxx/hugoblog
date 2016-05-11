@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Food on 安迪兒隨手貼</title>
-    <link>https://bowwowxx.github.io/hugoblog/categories/food/</link>
+    <link>http://bowwowxx.github.io/hugoblog/categories/food/</link>
     <description>Recent content in Food on 安迪兒隨手貼</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;#169; by 安迪兒</copyright>
-    <atom:link href="https://bowwowxx.github.io/hugoblog/categories/food/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://bowwowxx.github.io/hugoblog/categories/food/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Food</title>
-      <link>https://bowwowxx.github.io/hugoblog/othergallery/food/</link>
+      <link>http://bowwowxx.github.io/hugoblog/othergallery/food/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://bowwowxx.github.io/hugoblog/othergallery/food/</guid>
+      <guid>http://bowwowxx.github.io/hugoblog/othergallery/food/</guid>
       <description>&lt;p&gt;Project content would go here. You can also redirect using the front matter
 &lt;code&gt;redirect = &amp;quot;url&amp;quot;&lt;/code&gt;.&lt;/p&gt;
 </description>
