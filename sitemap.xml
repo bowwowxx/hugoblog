@@ -15,6 +15,16 @@
   </url>
   
   <url>
+    <loc>https://bowwowxx.github.io/hugoblog/post/20160512/</loc>
+    <lastmod>2016-05-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bowwowxx.github.io/hugoblog/post/20160511/</loc>
+    <lastmod>2016-05-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bowwowxx.github.io/hugoblog/food/201605030/</loc>
     <lastmod>2016-05-06T00:00:00+00:00</lastmod>
   </url>
@@ -27,21 +37,6 @@
   <url>
     <loc>https://bowwowxx.github.io/hugoblog/food/20160502/</loc>
     <lastmod>2016-05-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bowwowxx.github.io/hugoblog/post/redirect/</loc>
-    <lastmod>2015-07-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bowwowxx.github.io/hugoblog/post/nine/</loc>
-    <lastmod>2015-07-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bowwowxx.github.io/hugoblog/post/one/</loc>
-    <lastmod>2015-07-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -116,6 +111,10 @@
   
   <url>
     <loc>https://bowwowxx.github.io/hugoblog/project/phone/</loc>
+  </url>
+  
+  <url>
+    <loc>https://bowwowxx.github.io/hugoblog/post/000001/</loc>
   </url>
   
 </urlset>
