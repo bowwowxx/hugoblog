@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>第一篇 on 安迪兒隨手貼</title>
-    <link>http://bowwowxx.github.io/hugoblog/tags/%E7%AC%AC%E4%B8%80%E7%AF%87/</link>
+    <link>http://bowwow.tips/tags/%E7%AC%AC%E4%B8%80%E7%AF%87/</link>
     <description>Recent content in 第一篇 on 安迪兒隨手貼</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;#169; by 安迪兒</copyright>
     <lastBuildDate>Thu, 01 Jan 2099 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://bowwowxx.github.io/hugoblog/tags/%E7%AC%AC%E4%B8%80%E7%AF%87/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://bowwow.tips/tags/%E7%AC%AC%E4%B8%80%E7%AF%87/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>安迪兒隨手貼</title>
-      <link>http://bowwowxx.github.io/hugoblog/post/000001/</link>
+      <link>http://bowwow.tips/post/000001/</link>
       <pubDate>Thu, 01 Jan 2099 00:00:00 +0000</pubDate>
       
-      <guid>http://bowwowxx.github.io/hugoblog/post/000001/</guid>
+      <guid>http://bowwow.tips/post/000001/</guid>
       <description>&lt;p&gt;redirect the content to main page.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>關於這個Blog</title>
-      <link>http://bowwowxx.github.io/hugoblog/post/20160511/</link>
+      <link>http://bowwow.tips/post/20160511/</link>
       <pubDate>Wed, 11 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://bowwowxx.github.io/hugoblog/post/20160511/</guid>
+      <guid>http://bowwow.tips/post/20160511/</guid>
       <description>&lt;p&gt;去年底，安迪兒看到由Go語言編寫的Blog &amp;ldquo;hugo&amp;rdquo; (雨果)&lt;br /&gt;
 稍為在本機試了一下，覺的很符合安迪兒的需求&lt;br /&gt;
 就打定主意，之後要把安迪兒原來Blog換成Hugo.&lt;/p&gt;
