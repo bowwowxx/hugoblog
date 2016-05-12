@@ -64,12 +64,134 @@ support HTML5 video.&lt;/p&gt;
     </item>
     
     <item>
-      <title>安迪兒隨手貼</title>
-      <link>http://bowwow.tips/post/000001/</link>
-      <pubDate>Thu, 01 Jan 2099 00:00:00 +0000</pubDate>
+      <title>關於這個Blog</title>
+      <link>http://bowwow.tips/post/20160511/</link>
+      <pubDate>Fri, 02 Jan 2099 00:00:00 +0000</pubDate>
       
-      <guid>http://bowwow.tips/post/000001/</guid>
-      <description>&lt;p&gt;redirect the content to main page.&lt;/p&gt;
+      <guid>http://bowwow.tips/post/20160511/</guid>
+      <description>&lt;p&gt;去年底，安迪兒看到由Go語言編寫的Blog &amp;ldquo;hugo&amp;rdquo; (雨果)&lt;br /&gt;
+稍為在本機試了一下，覺的很符合安迪兒的需求&lt;br /&gt;
+就打定主意，之後要把安迪兒原來Blog換成Hugo.&lt;/p&gt;
+
+&lt;p&gt;早期安迪兒是在點佈落上記錄東西&lt;br /&gt;
+安迪兒隨手貼:&lt;br /&gt;
+&lt;a href=&#34;https://dotblogs.com.tw/bowwowxx&#34;&gt;https://dotblogs.com.tw/bowwowxx&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;直到去年一直想移出來自已架blog&lt;br /&gt;
+那時試了wordpress、和nodejs的ghost
+覺的ghost還蠻不賴的&lt;br /&gt;
+也自架了ghost的blog&lt;br /&gt;
+bowwow:&lt;br /&gt;
+&lt;a href=&#34;http://bowwowxx.github.io/ghblog/&#34;&gt;http://bowwowxx.github.io/ghblog/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;架完ghost後，版面也改的差不多了&lt;br /&gt;
+那時己經決定要用ghost了&lt;br /&gt;
+但…不小心遇上了go的hugo:&lt;br /&gt;
+&lt;a href=&#34;https://github.com/spf13/hugo&#34;&gt;https://github.com/spf13/hugo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;一看有9千多顆星星(超可怕的XD)&lt;br /&gt;
+最打動安迪兒的點除了速度之外&lt;br /&gt;
+hugo文章存放的方式是以檔案為概念&lt;br /&gt;
+很符合安迪兒想要的，容易備份、修改和搬移&lt;/p&gt;
+
+&lt;p&gt;很巧的，今年碰上了點佈落大改版&lt;br /&gt;
+安迪兒掛的版本和東西都沒了&lt;br /&gt;
+速度也變慢很多&lt;br /&gt;
+整個就是不想上去寫文&lt;/p&gt;
+
+&lt;p&gt;以上原因就促成了安迪兒建立這個blog的動力&lt;br /&gt;
+之後安迪兒會再補上自架blog的步驟&lt;/p&gt;
+
+&lt;p&gt;日後也請大家多多指教嘍~&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>拯救synology nas上raid1內接硬碟資料</title>
+      <link>http://bowwow.tips/post/20160513/</link>
+      <pubDate>Fri, 13 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://bowwow.tips/post/20160513/</guid>
+      <description>&lt;p&gt;有用nas的，早晚會碰到nas壞了或是啥不可預測的神之力&lt;br /&gt;
+總之nas裡的硬碟多多少少會有機會碰到要外接讀取資料的機會&lt;/p&gt;
+
+&lt;p&gt;安迪兒也不例外&lt;br /&gt;
+某天安迪兒nas容量不夠，要買新的硬碟&lt;br /&gt;
+因為安迪兒nas(ds213j)很慢&lt;br /&gt;
+只有usb2傳輸，1g的網路，傳輸上限也只能到每秒30多MB&lt;br /&gt;
+總之…備資料要超久的&lt;/p&gt;
+
+&lt;p&gt;於是安迪兒把裡面的raid1拆一顆硬碟下來&lt;br /&gt;
+拿到公司，想說外接公司nas把資料快速的備份出來&lt;br /&gt;
+但…安迪兒天真的以為，raid1不就是2顆硬碟一模模一樣樣&lt;br /&gt;
+隨便拿一顆接上硬碟外接盒，把裡面的檔案讀出來就好了。&lt;/p&gt;
+
+&lt;p&gt;果然是事情沒想的那麼容易&lt;br /&gt;
+硬碟外接後，不管接到電腦或nas都讀不到東西&lt;br /&gt;
+最多只讀到加密的raid磁區&lt;/p&gt;
+
+&lt;p&gt;安迪兒整個傻眼，深吸了一口氣&lt;br /&gt;
+想著，那天…安迪兒的機器壞了，找不到同型號的
+…就gg了嗎!!!&lt;br /&gt;
+(這太蝦了吧!!)&lt;/p&gt;
+
+&lt;p&gt;於是安迪兒在茫茫google海裡，研究了一下&lt;br /&gt;
+找到了可能的方案，利用linux software raid的方式&lt;br /&gt;
+弄個raid來試試讀資料&lt;br /&gt;
+參考資料如下:&lt;br /&gt;
+&lt;a href=&#34;http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-ig-s390-multi-zh_tw-4/s1-s390info-raid.html&#34;&gt;http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-ig-s390-multi-zh_tw-4/s1-s390info-raid.html&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Mdadm&#34;&gt;https://en.wikipedia.org/wiki/Mdadm&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://linux.die.net/man/8/mdadm&#34;&gt;http://linux.die.net/man/8/mdadm&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;以下就是安迪兒整個修復的過程&lt;/p&gt;
+
+&lt;p&gt;用usb外接盒裝上硬碟，接上公司的nas&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/KRwMJv&#34; width=&#34;400&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;執行以下步驟&lt;/p&gt;
+
+&lt;p&gt;1.修復原raid1 HDD&lt;br /&gt;
+mdadm -A -R /dev/xxx /dev/xxx&lt;/p&gt;
+
+&lt;p&gt;2.fdisk -l xx 找一下相關磁碟資訊&lt;br /&gt;
+可以看一下Blocks的大小，猜一下大的是存資的磁區&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/HgYp7X&#34; width=&#34;400&#34;&gt;&lt;img src=&#34;https://goo.gl/x5HRGm &#34; width=&#34;400&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;3.建新目錄&lt;br /&gt;
+mkdir /mnt/old_hdd&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/9b3IwR&#34; width=&#34;400&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;4.把找到的md2掛到剛建的目錄裡&lt;br /&gt;
+mount -t ext4 /dev/md2 /mnt/old_hdd/&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/9b3IwR&#34; width=&#34;400&#34;&gt;&lt;img src=&#34;https://goo.gl/AnRUcF&#34; width=&#34;400&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;5.開始copy資料吧，此時nas裡面應該讀的到資料了&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/YzvS4H&#34; width=&#34;400&#34;&gt;&lt;img src=&#34;https://goo.gl/s9wRxr&#34; width=&#34;400&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;6.完成後&lt;br /&gt;
+unmount資料匣&lt;br /&gt;
+removed md virtual device&lt;/p&gt;
+
+&lt;p&gt;全部用到的指令如下:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;fdisk -l
+mdadm -A -R /dev/md2 /dev/sde3
+mkdir /mnt/old_hdd
+mount -t ext4 /dev/md2 /mnt/old_hdd/
+mount | grep ^/dev/md2
+umount /mnt/old_hdd
+mdadm -S /dev/md2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;到這邊…有沒發現一件事&lt;br /&gt;
+其實所謂的raid，就是用software raid的方式弄的&lt;br /&gt;
+如果是硬體晶片的話可能就解不出來了&lt;br /&gt;
+有好有壞啦~XD&lt;/p&gt;
+
+&lt;p&gt;另外，新的nas超快，用usb3，或是直接網路傳檔&lt;br /&gt;
+每秒都有100mb以上的速度，真是差太多了。&lt;/p&gt;
+
+&lt;p&gt;以上~~收工嘍!&lt;/p&gt;
 </description>
     </item>
     
@@ -109,49 +231,6 @@ dd這個指令&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;試試嘍~~&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>關於這個Blog</title>
-      <link>http://bowwow.tips/post/20160511/</link>
-      <pubDate>Wed, 11 May 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://bowwow.tips/post/20160511/</guid>
-      <description>&lt;p&gt;去年底，安迪兒看到由Go語言編寫的Blog &amp;ldquo;hugo&amp;rdquo; (雨果)&lt;br /&gt;
-稍為在本機試了一下，覺的很符合安迪兒的需求&lt;br /&gt;
-就打定主意，之後要把安迪兒原來Blog換成Hugo.&lt;/p&gt;
-
-&lt;p&gt;早期安迪兒是在點佈落上記錄東西&lt;br /&gt;
-安迪兒隨手貼:&lt;br /&gt;
-&lt;a href=&#34;https://dotblogs.com.tw/bowwowxx&#34;&gt;https://dotblogs.com.tw/bowwowxx&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;直到去年一直想移出來自已架blog&lt;br /&gt;
-那時試了wordpress、和nodejs的ghost
-覺的ghost還蠻不賴的&lt;br /&gt;
-也自架了ghost的blog&lt;br /&gt;
-bowwow:&lt;br /&gt;
-&lt;a href=&#34;http://bowwowxx.github.io/ghblog/&#34;&gt;http://bowwowxx.github.io/ghblog/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;架完ghost後，版面也改的差不多了&lt;br /&gt;
-那時己經決定要用ghost了&lt;br /&gt;
-但…不小心遇上了go的hugo:&lt;br /&gt;
-&lt;a href=&#34;https://github.com/spf13/hugo&#34;&gt;https://github.com/spf13/hugo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;一看有9千多顆星星(超可怕的XD)&lt;br /&gt;
-最打動安迪兒的點除了速度之外&lt;br /&gt;
-hugo文章存放的方式是以檔案為概念&lt;br /&gt;
-很符合安迪兒想要的，容易備份、修改和搬移&lt;/p&gt;
-
-&lt;p&gt;很巧的，今年碰上了點佈落大改版&lt;br /&gt;
-安迪兒掛的版本和東西都沒了&lt;br /&gt;
-速度也變慢很多&lt;br /&gt;
-整個就是不想上去寫文&lt;/p&gt;
-
-&lt;p&gt;以上原因就促成了安迪兒建立這個blog的動力&lt;br /&gt;
-之後安迪兒會再補上自架blog的步驟&lt;/p&gt;
-
-&lt;p&gt;日後也請大家多多指教嘍~&lt;/p&gt;
 </description>
     </item>
     
@@ -294,12 +373,13 @@ a diam ullamcorper aliquet at vel ante. Fusce ac lacinia tortor.&lt;/p&gt;
     </item>
     
     <item>
-      <title>偽光陰故事場景</title>
-      <link>http://bowwow.tips/gallery/2010090401/</link>
-      <pubDate>Sat, 04 Sep 2010 00:00:00 +0000</pubDate>
+      <title>友站-阿舍隨手寫寫</title>
+      <link>http://bowwow.tips/post/20160002/</link>
+      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://bowwow.tips/gallery/2010090401/</guid>
-      <description></description>
+      <guid>http://bowwow.tips/post/20160002/</guid>
+      <description>&lt;p&gt;redirect the content to 友站-阿舍隨手寫寫.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

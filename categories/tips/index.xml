@@ -7,8 +7,97 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;#169; by 安迪兒</copyright>
-    <lastBuildDate>Thu, 12 May 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 May 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://bowwow.tips/categories/tips/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>拯救synology nas上raid1內接硬碟資料</title>
+      <link>http://bowwow.tips/post/20160513/</link>
+      <pubDate>Fri, 13 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://bowwow.tips/post/20160513/</guid>
+      <description>&lt;p&gt;有用nas的，早晚會碰到nas壞了或是啥不可預測的神之力&lt;br /&gt;
+總之nas裡的硬碟多多少少會有機會碰到要外接讀取資料的機會&lt;/p&gt;
+
+&lt;p&gt;安迪兒也不例外&lt;br /&gt;
+某天安迪兒nas容量不夠，要買新的硬碟&lt;br /&gt;
+因為安迪兒nas(ds213j)很慢&lt;br /&gt;
+只有usb2傳輸，1g的網路，傳輸上限也只能到每秒30多MB&lt;br /&gt;
+總之…備資料要超久的&lt;/p&gt;
+
+&lt;p&gt;於是安迪兒把裡面的raid1拆一顆硬碟下來&lt;br /&gt;
+拿到公司，想說外接公司nas把資料快速的備份出來&lt;br /&gt;
+但…安迪兒天真的以為，raid1不就是2顆硬碟一模模一樣樣&lt;br /&gt;
+隨便拿一顆接上硬碟外接盒，把裡面的檔案讀出來就好了。&lt;/p&gt;
+
+&lt;p&gt;果然是事情沒想的那麼容易&lt;br /&gt;
+硬碟外接後，不管接到電腦或nas都讀不到東西&lt;br /&gt;
+最多只讀到加密的raid磁區&lt;/p&gt;
+
+&lt;p&gt;安迪兒整個傻眼，深吸了一口氣&lt;br /&gt;
+想著，那天…安迪兒的機器壞了，找不到同型號的
+…就gg了嗎!!!&lt;br /&gt;
+(這太蝦了吧!!)&lt;/p&gt;
+
+&lt;p&gt;於是安迪兒在茫茫google海裡，研究了一下&lt;br /&gt;
+找到了可能的方案，利用linux software raid的方式&lt;br /&gt;
+弄個raid來試試讀資料&lt;br /&gt;
+參考資料如下:&lt;br /&gt;
+&lt;a href=&#34;http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-ig-s390-multi-zh_tw-4/s1-s390info-raid.html&#34;&gt;http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-ig-s390-multi-zh_tw-4/s1-s390info-raid.html&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Mdadm&#34;&gt;https://en.wikipedia.org/wiki/Mdadm&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://linux.die.net/man/8/mdadm&#34;&gt;http://linux.die.net/man/8/mdadm&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;以下就是安迪兒整個修復的過程&lt;/p&gt;
+
+&lt;p&gt;用usb外接盒裝上硬碟，接上公司的nas&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/KRwMJv&#34; width=&#34;400&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;執行以下步驟&lt;/p&gt;
+
+&lt;p&gt;1.修復原raid1 HDD&lt;br /&gt;
+mdadm -A -R /dev/xxx /dev/xxx&lt;/p&gt;
+
+&lt;p&gt;2.fdisk -l xx 找一下相關磁碟資訊&lt;br /&gt;
+可以看一下Blocks的大小，猜一下大的是存資的磁區&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/HgYp7X&#34; width=&#34;400&#34;&gt;&lt;img src=&#34;https://goo.gl/x5HRGm &#34; width=&#34;400&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;3.建新目錄&lt;br /&gt;
+mkdir /mnt/old_hdd&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/9b3IwR&#34; width=&#34;400&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;4.把找到的md2掛到剛建的目錄裡&lt;br /&gt;
+mount -t ext4 /dev/md2 /mnt/old_hdd/&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/9b3IwR&#34; width=&#34;400&#34;&gt;&lt;img src=&#34;https://goo.gl/AnRUcF&#34; width=&#34;400&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;5.開始copy資料吧，此時nas裡面應該讀的到資料了&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/YzvS4H&#34; width=&#34;400&#34;&gt;&lt;img src=&#34;https://goo.gl/s9wRxr&#34; width=&#34;400&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;6.完成後&lt;br /&gt;
+unmount資料匣&lt;br /&gt;
+removed md virtual device&lt;/p&gt;
+
+&lt;p&gt;全部用到的指令如下:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;fdisk -l
+mdadm -A -R /dev/md2 /dev/sde3
+mkdir /mnt/old_hdd
+mount -t ext4 /dev/md2 /mnt/old_hdd/
+mount | grep ^/dev/md2
+umount /mnt/old_hdd
+mdadm -S /dev/md2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;到這邊…有沒發現一件事&lt;br /&gt;
+其實所謂的raid，就是用software raid的方式弄的&lt;br /&gt;
+如果是硬體晶片的話可能就解不出來了&lt;br /&gt;
+有好有壞啦~XD&lt;/p&gt;
+
+&lt;p&gt;另外，新的nas超快，用usb3，或是直接網路傳檔&lt;br /&gt;
+每秒都有100mb以上的速度，真是差太多了。&lt;/p&gt;
+
+&lt;p&gt;以上~~收工嘍!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>MAC /dev/disk 與 /dev/rdisk 的差別 (解決 dd 過慢的問題)</title>

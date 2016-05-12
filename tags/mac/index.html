@@ -16,7 +16,7 @@
       <link href="http://bowwow.tips/tags/mac/index.xml" rel="feed" type="application/rss+xml" title="安迪兒隨手貼" />
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-05-12 02:49:29.963626544 &#43;0800 CST">
+    <meta name="generation-date" content="2016-05-13 03:23:42.724784796 &#43;0800 CST">
     <title>Mac &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="http://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="http://bowwow.tips/img/favicon.ico">
@@ -68,7 +68,7 @@
                 
                     <li >
                     
-                        <a href="http://bowwow.tips//food/">
+                        <a href="/food/">
                             
                             <span>Food</span>
                         </a>
@@ -77,7 +77,7 @@
                 
                     <li >
                     
-                        <a href="http://bowwow.tips//gallery/">
+                        <a href="/gallery/">
                             
                             <span>Gallery</span>
                         </a>
@@ -86,7 +86,7 @@
                 
                     <li >
                     
-                        <a href="http://bowwow.tips//othergallery/">
+                        <a href="/othergallery/">
                             
                             <span>Othergallery</span>
                         </a>
@@ -95,7 +95,7 @@
                 
                     <li >
                     
-                        <a href="http://bowwow.tips//post/">
+                        <a href="/post/">
                             
                             <span>Post</span>
                         </a>
@@ -104,7 +104,7 @@
                 
                     <li >
                     
-                        <a href="http://bowwow.tips//project/">
+                        <a href="/project/">
                             
                             <span>Project</span>
                         </a>
@@ -113,7 +113,7 @@
                 
                     <li >
                     
-                        <a href="http://bowwow.tips//unboxing/">
+                        <a href="/unboxing/">
                             
                             <span>Unboxing</span>
                         </a>
@@ -183,7 +183,6 @@
 
 
 
-
     
     
         
@@ -210,7 +209,7 @@
             
                 <time class="page-item-date">Thu May 12, 2016</time>
             
-            <h2 class="page-item-title">MAC /dev/disk 與 /dev/rdisk 的差別 (解決 dd 過慢的問題)</h2>
+            <h4 class="page-item-title">MAC /dev/disk 與 /dev/rdisk 的差別 (解決 dd 過慢的問題)</h4>
         </header>
         <p class="page-item-summary">如果各位有在玩Raspberry pi或banana pi之類的東西 應該常常會用到讀寫img吧 一般要把映象檔整塊燒到sd卡裡面都用到 dd這個指令 備份: dd if=/dev/disk2 of=/xxx/path/disk2.img dd if=/dev/disk2 | gzip &gt; /xxx/path/disk2.img.gz 還原: sudo dd bs=4M if=2014-01-07-wheezy-raspbian.img of=/dev/disk2 大多數都是dd if=xxx of=/dev/disk 不過安迪兒有看到老外有用of=/dev/rdisk 安迪兒好奇查了一下 原來rdisk是raw模式存取，接近kernel原生檔案系統效能 所以用這個寫sd卡會比通用的/dev/disk快很多 安迪兒試了之後覺的速度優很多 指令如下 dd if=xx.img of=/dev/rdisk 試試嘍~~</p>
         <a href="http://bowwow.tips/post/20160512/" class="page-item-btn ">

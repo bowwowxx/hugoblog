@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html 
+    lang="en-us"
+    class="no-js"
+>
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    
+    <meta name="generator" content="Hugo 0.15" />
+    <meta name="generation-date" content="2016-05-13 03:23:42.80218478 &#43;0800 CST">
+    <title>拯救synology nas上raid1內接硬碟資料 &middot; 安迪兒隨手貼</title>
+    <link rel="shortcut icon" href="http://bowwow.tips/img/favicon.ico">
+    <link rel="icon" href="http://bowwow.tips/img/favicon.ico">
+    
+<link rel="stylesheet" href="http://bowwow.tips/css/materialize.min.css">
+
+
+<link rel="stylesheet" href="http://bowwow.tips/css/font-awesome.min.css">
+
+
+    
+    <link rel="stylesheet" href="http://bowwow.tips/css/styles/railscasts.css">
+
+
+
+<link rel="stylesheet" href="http://bowwow.tips/css/lightbox.css">
+
+
+<link rel="stylesheet" href="http://bowwow.tips/css/main.css">
+
+
+    <script src="http://bowwow.tips/js/modernizr-latest.js"></script>
+    <script src="http://bowwow.tips/js/lazysizes.min.js"></script>
+    <script src="http://bowwow.tips/js/ls.noscript.min.js"></script>
+
+    <script>
+        window.lazySizesConfig = window.lazySizesConfig || {};
+        lazySizesConfig.addClasses = true;
+        lazySizesConfig.loadMode = 2;
+    </script>
+
+    
+</head>
+
+
+
+<body class="page-colors minimum-viewport-height">
+    
+
+<nav class="main-menu menu-colors">
+    <ul class="menu menu-colors no-list-float">
+        <li><a href="http://bowwow.tips/"><i class="fa fa-home fa-2x"></i></a></li>
+        <li>
+            <a href="#!"><i class="fa fa-bars fa-2x"></i></a>
+
+            
+            <ul class="menu flexible-width menu-colors no-list-float">
+                
+                
+                    <li >
+                    
+                        <a href="/food/">
+                            
+                            <span>Food</span>
+                        </a>
+                    
+                    </li>
+                
+                    <li >
+                    
+                        <a href="/gallery/">
+                            
+                            <span>Gallery</span>
+                        </a>
+                    
+                    </li>
+                
+                    <li >
+                    
+                        <a href="/othergallery/">
+                            
+                            <span>Othergallery</span>
+                        </a>
+                    
+                    </li>
+                
+                    <li class="active">
+                    
+                        <a href="/post/">
+                            
+                            <span>Post</span>
+                        </a>
+                    
+                    </li>
+                
+                    <li >
+                    
+                        <a href="/project/">
+                            
+                            <span>Project</span>
+                        </a>
+                    
+                    </li>
+                
+                    <li >
+                    
+                        <a href="/unboxing/">
+                            
+                            <span>Unboxing</span>
+                        </a>
+                    
+                    </li>
+                
+            </ul>
+        </li>
+        <li><a href="#!" data-lightbox-id="searchbox"><i class="fa fa-search fa-2x"></i></a></li>
+        
+            <li class="blue-grey-text" style="border-top: 1px solid;"></li>
+            
+                <li>
+                    <a href="#!">
+                        <i class="fa fa-twitter fa-2x"></i>
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="#!">
+                        <i class="fa fa-linkedin fa-2x"></i>
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="#!">
+                        <i class="fa fa-google-plus fa-2x"></i>
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="#!">
+                        <i class="fa fa-github fa-2x"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="blue-grey-text" style="border-top: 1px solid;"></li>
+        <li>
+            <a href="" type="application/rss+xml" target="_blank">
+                <i class="fa fa-rss fa-2x"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<div id="searchbox" class="no-display">
+    <div class="valign-wrapper fill-container">
+        <div class="valign large-form horizontal-center-hack">
+            <form method="get" id="search" action="http://duckduckgo.com/">
+    <input type="hidden" name="sites"value="http://bowwow.tips/"/>
+    <input type="hidden" name="ka" value="h"/>
+    <input type="hidden" name="k7" value="#fafafa"/>
+    <input type="hidden" name="kj" value="#3f3f3f"/>
+    <input type="hidden" name="ky" value="#fafafa"/>
+    <input type="hidden" name="kx" value="b"/>
+    <input type="hidden" name="kt" value="Helvetica"/>
+    <input type="text" name="q" maxlength="255" placeholder="Search"/>
+    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
+</form>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+    <div class="main-content">
+        <div class="center-space">
+            <div class="article-colors">
+                
+                <article>
+                    <header>
+                        <h1 class="article-title">拯救synology nas上raid1內接硬碟資料</h1>
+                        <time class="date-color">Fri May 13, 2016</time>
+                        <span class="separator">|</span>
+                        
+<ul class="categories">
+    <li>
+        <i class="fa fa-book"></i>
+    </li>
+    
+        <li><a href="http://bowwow.tips/categories/tips">tips</a></li>
+    
+</ul>
+
+
+                        <span class="separator">|</span>
+                        
+<ul class="tags">
+    <li>
+        <i class="fa fa-tags"></i>
+    </li>
+    
+        <li><a href="http://bowwow.tips/tags/nas">nas</a></li>
+    
+</ul>
+
+
+                    </header>
+
+                    <hr>
+
+                    <section>
+                        
+                            <p>有用nas的，早晚會碰到nas壞了或是啥不可預測的神之力<br />
+總之nas裡的硬碟多多少少會有機會碰到要外接讀取資料的機會</p>
+
+<p>安迪兒也不例外<br />
+某天安迪兒nas容量不夠，要買新的硬碟<br />
+因為安迪兒nas(ds213j)很慢<br />
+只有usb2傳輸，1g的網路，傳輸上限也只能到每秒30多MB<br />
+總之…備資料要超久的</p>
+
+<p>於是安迪兒把裡面的raid1拆一顆硬碟下來<br />
+拿到公司，想說外接公司nas把資料快速的備份出來<br />
+但…安迪兒天真的以為，raid1不就是2顆硬碟一模模一樣樣<br />
+隨便拿一顆接上硬碟外接盒，把裡面的檔案讀出來就好了。</p>
+
+<p>果然是事情沒想的那麼容易<br />
+硬碟外接後，不管接到電腦或nas都讀不到東西<br />
+最多只讀到加密的raid磁區</p>
+
+<p>安迪兒整個傻眼，深吸了一口氣<br />
+想著，那天…安迪兒的機器壞了，找不到同型號的
+…就gg了嗎!!!<br />
+(這太蝦了吧!!)</p>
+
+<p>於是安迪兒在茫茫google海裡，研究了一下<br />
+找到了可能的方案，利用linux software raid的方式<br />
+弄個raid來試試讀資料<br />
+參考資料如下:<br />
+<a href="http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-ig-s390-multi-zh_tw-4/s1-s390info-raid.html">http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-ig-s390-multi-zh_tw-4/s1-s390info-raid.html</a><br />
+<a href="https://en.wikipedia.org/wiki/Mdadm">https://en.wikipedia.org/wiki/Mdadm</a><br />
+<a href="http://linux.die.net/man/8/mdadm">http://linux.die.net/man/8/mdadm</a></p>
+
+<p>以下就是安迪兒整個修復的過程</p>
+
+<p>用usb外接盒裝上硬碟，接上公司的nas<br />
+<img src="https://goo.gl/KRwMJv" width="400"></p>
+
+<p>執行以下步驟</p>
+
+<p>1.修復原raid1 HDD<br />
+mdadm -A -R /dev/xxx /dev/xxx</p>
+
+<p>2.fdisk -l xx 找一下相關磁碟資訊<br />
+可以看一下Blocks的大小，猜一下大的是存資的磁區<br />
+<img src="https://goo.gl/HgYp7X" width="400"><img src="https://goo.gl/x5HRGm " width="400"></p>
+
+<p>3.建新目錄<br />
+mkdir /mnt/old_hdd<br />
+<img src="https://goo.gl/9b3IwR" width="400"></p>
+
+<p>4.把找到的md2掛到剛建的目錄裡<br />
+mount -t ext4 /dev/md2 /mnt/old_hdd/<br />
+<img src="https://goo.gl/9b3IwR" width="400"><img src="https://goo.gl/AnRUcF" width="400"></p>
+
+<p>5.開始copy資料吧，此時nas裡面應該讀的到資料了<br />
+<img src="https://goo.gl/YzvS4H" width="400"><img src="https://goo.gl/s9wRxr" width="400"></p>
+
+<p>6.完成後<br />
+unmount資料匣<br />
+removed md virtual device</p>
+
+<p>全部用到的指令如下:</p>
+
+<pre><code>fdisk -l
+mdadm -A -R /dev/md2 /dev/sde3
+mkdir /mnt/old_hdd
+mount -t ext4 /dev/md2 /mnt/old_hdd/
+mount | grep ^/dev/md2
+umount /mnt/old_hdd
+mdadm -S /dev/md2
+</code></pre>
+
+<p>到這邊…有沒發現一件事<br />
+其實所謂的raid，就是用software raid的方式弄的<br />
+如果是硬體晶片的話可能就解不出來了<br />
+有好有壞啦~XD</p>
+
+<p>另外，新的nas超快，用usb3，或是直接網路傳檔<br />
+每秒都有100mb以上的速度，真是差太多了。</p>
+
+<p>以上~~收工嘍!</p>
+
+                        
+                    </section>
+
+                    <footer class="right-align">
+                        <p><small>Copyright &#169; by 安迪兒</small></p>
+                    </footer>
+
+                    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'bowwowtips';
+        var disqus_identifier = 'http:\/\/bowwow.tips\/post\/20160513\/';
+        var disqus_title = '拯救synology nas上raid1內接硬碟資料';
+        var disqus_url = 'http:\/\/bowwow.tips\/post\/20160513\/';
+        (function() {
+            
+            if (window.location.hostname === "localhost") {
+                return;
+            }
+
+            var dsq = document.createElement('script'); 
+            dsq.type = 'text/javascript'; 
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+            (document.getElementsByTagName('head')[0] || 
+                document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+                </article>
+            </div>
+        </div>
+    </div>
+
+    
+<script src="http://bowwow.tips/js/jquery-2.1.4.min.js"></script>
+
+
+<script src="http://bowwow.tips/js/materialize.min.js"></script>
+
+
+<script src="http://bowwow.tips/js/imagesloaded.pkgd.min.js"></script>
+
+
+<script src="http://bowwow.tips/js/masonry.pkgd.min.js"></script>
+
+
+    
+    <script src="http://bowwow.tips/js/highlight.pack.js"></script>
+
+
+
+<script src="http://bowwow.tips/js/lightbox.min.js"></script>
+
+
+<script src="http://bowwow.tips/js/jquery.infinitescroll.min.js"></script>
+
+
+<script src="http://bowwow.tips/js/main.js"></script>
+
+
+<script src="http://bowwow.tips/js/small.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
