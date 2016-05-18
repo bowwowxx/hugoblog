@@ -107,6 +107,27 @@ hugo文章存放的方式是以檔案為概念&lt;br /&gt;
     </item>
     
     <item>
+      <title>Qnap nas掛上遠端Synology磁碟資料</title>
+      <link>http://bowwow.tips/post/20160518/</link>
+      <pubDate>Wed, 18 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://bowwow.tips/post/20160518/</guid>
+      <description>&lt;p&gt;安迪兒新的qnap NAS剛整理完所有資料，
+剩下一些新的資料都放在原舊的Synology nas上&lt;/p&gt;
+
+&lt;p&gt;安迪兒想嘗試直接就掛上別台nas的samba磁區，然後再對拷檔案
+安迪兒發現，qnap的nas怎麼設定都沒辦法掛上遠端Synology的samba磁碟&lt;/p&gt;
+
+&lt;p&gt;查了一下，發現好像有人也有反應這件事~XD&lt;/p&gt;
+
+&lt;p&gt;所以安迪兒就直接用指令mount看看能不能捉的到自家用的nas
+以下是記錄過程&lt;/p&gt;
+
+&lt;p&gt;以上~~收工嘍!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>拯救synology nas上raid1內接硬碟資料</title>
       <link>http://bowwow.tips/post/20160513/</link>
       <pubDate>Fri, 13 May 2016 00:00:00 +0000</pubDate>
@@ -372,16 +393,6 @@ a diam ullamcorper aliquet at vel ante. Fusce ac lacinia tortor.&lt;/p&gt;
 「走~中午吃這個」就進去了&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/6eCLvM&#34; width=&#34;400&#34;&gt;&lt;img src=&#34;https://goo.gl/2ozVaI&#34; width=&#34;400&#34;&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>友站-阿舍隨手寫寫</title>
-      <link>http://bowwow.tips/post/20160002/</link>
-      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      
-      <guid>http://bowwow.tips/post/20160002/</guid>
-      <description>&lt;p&gt;redirect the content to 友站-阿舍隨手寫寫.&lt;/p&gt;
 </description>
     </item>
     
