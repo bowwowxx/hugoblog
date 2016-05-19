@@ -14,7 +14,7 @@
     <meta name="description" content="">
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-05-20 01:45:24.016784073 &#43;0800 CST">
+    <meta name="generation-date" content="2016-05-20 01:56:47.809379039 &#43;0800 CST">
     <title>拯救synology nas上raid1內接硬碟資料 &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="http://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="http://bowwow.tips/img/favicon.ico">
@@ -253,7 +253,7 @@
 <p>以下就是安迪兒整個修復的過程</p>
 
 <p>用usb外接盒裝上硬碟，接上公司的nas<br />
-<img src="https://goo.gl/KRwMJv" width="400"></p>
+<img src="https://goo.gl/KRwMJv" width="600"></p>
 
 <p>執行以下步驟</p>
 
@@ -262,21 +262,21 @@ mdadm -A -R /dev/xxx /dev/xxx</p>
 
 <p>2.fdisk -l xx 找一下相關磁碟資訊<br />
 可以看一下Blocks的大小，猜一下大的是存資的磁區<br />
-<img src="https://goo.gl/HgYp7X" width="400"><br />
-<img src="https://goo.gl/x5HRGm " width="400"></p>
+<img src="https://goo.gl/HgYp7X" width="600"><br />
+<img src="https://goo.gl/x5HRGm " width="600"></p>
 
 <p>3.建新目錄<br />
 mkdir /mnt/old_hdd<br />
-<img src="https://goo.gl/9b3IwR" width="400"></p>
+<img src="https://goo.gl/9b3IwR" width="600"></p>
 
 <p>4.把找到的md2掛到剛建的目錄裡<br />
 mount -t ext4 /dev/md2 /mnt/old_hdd/<br />
-<img src="https://goo.gl/9b3IwR" width="400"><br />
-<img src="https://goo.gl/AnRUcF" width="400"></p>
+<img src="https://goo.gl/9b3IwR" width="600"><br />
+<img src="https://goo.gl/AnRUcF" width="600"></p>
 
 <p>5.開始copy資料吧，此時nas裡面應該讀的到資料了<br />
-<img src="https://goo.gl/YzvS4H" width="400"><br />
-<img src="https://goo.gl/s9wRxr" width="400"></p>
+<img src="https://goo.gl/YzvS4H" width="600"><br />
+<img src="https://goo.gl/s9wRxr" width="600"></p>
 
 <p>6.完成後<br />
 unmount資料匣<br />
