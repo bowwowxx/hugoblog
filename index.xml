@@ -112,16 +112,52 @@ hugo文章存放的方式是以檔案為概念&lt;br /&gt;
       <pubDate>Wed, 18 May 2016 00:00:00 +0000</pubDate>
       
       <guid>http://bowwow.tips/post/20160518/</guid>
-      <description>&lt;p&gt;安迪兒新的qnap NAS剛整理完所有資料，
+      <description>&lt;p&gt;安迪兒新的qnap NAS剛整理完所有資料，&lt;br /&gt;
 剩下一些新的資料都放在原舊的Synology nas上&lt;/p&gt;
 
-&lt;p&gt;安迪兒想嘗試直接就掛上別台nas的samba磁區，然後再對拷檔案
-安迪兒發現，qnap的nas怎麼設定都沒辦法掛上遠端Synology的samba磁碟&lt;/p&gt;
+&lt;p&gt;安迪兒想掛上別台nas的samba磁區，然後再對拷檔案&lt;br /&gt;
+但…安迪兒發現，qnap的nas怎麼設定都沒辦法掛上Synology的samba磁碟&lt;br /&gt;
+～囧&lt;/p&gt;
 
-&lt;p&gt;查了一下，發現好像有人也有反應這件事~XD&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/E8n9kz&#34; width=&#34;400&#34;&gt;
+&lt;img src=&#34;https://goo.gl/mhh1rD&#34; width=&#34;400&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;所以安迪兒就直接用指令mount看看能不能捉的到自家用的nas
-以下是記錄過程&lt;/p&gt;
+&lt;p&gt;查了一下，發現好像有人有反應這件事~XD&lt;/p&gt;
+
+&lt;p&gt;安迪兒試了一下發現可以直接用指令mount上Synology的samba磁碟資料&lt;br /&gt;
+貼一下過程&lt;/p&gt;
+
+&lt;p&gt;首先SSH登入nas&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh admin@x.x.x.x
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;找個資料匣準備掛上別台nas的samba&lt;br /&gt;
+安迪兒這邊建了一個共用的資料匣叫tmp&lt;br /&gt;
+裡面打算掛Synology的照片和電影2個資料匣&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd /share/CACHEDEV1_DATA/tmp
+mkdir video photo
+mount.cifs //10.0.0.7/video -o user=xx password=xx
+mount.cifs //10.0.0.7/photo -o user=xx password=xx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/IK5ocL&#34; width=&#34;400&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;掛完後使用nas上File Station打開資料匣，開始狂copy資料到新nas上吧&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/W9AdwQ&#34; width=&#34;400&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;邊copy data邊看一下效能&lt;br /&gt;
+嗯&amp;hellip;網路每秒約100MB，碟碟IOPS 快300&lt;br /&gt;
+還ok啦&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/LgNJqj&#34; width=&#34;400&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/tHGykJ&#34; width=&#34;400&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;copy完資料後，新nas也差不多完整了&lt;br /&gt;
+可以開心的接電視直播電影了&lt;br /&gt;
+(有hdmi接電視的nas好讚呀~xd)&lt;/p&gt;
 
 &lt;p&gt;以上~~收工嘍!&lt;/p&gt;
 </description>
@@ -259,11 +295,43 @@ dd這個指令&lt;/p&gt;
     </item>
     
     <item>
+      <title>大心新泰式麵食～招牌酸辣海陸麵</title>
+      <link>http://bowwow.tips/food/20160507/</link>
+      <pubDate>Sat, 07 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://bowwow.tips/food/20160507/</guid>
+      <description>&lt;p&gt;地址:台北市信義區忠孝東路五段8號阪急百貨B2&lt;/p&gt;
+
+&lt;p&gt;安迪兒很常來吃這間，雖然是因為近&lt;br /&gt;
+但其實也是因為它很好吃&lt;br /&gt;
+大心是瓦城泰式料理的另一個分支&lt;br /&gt;
+開在阪急B2的美食街(威秀2樓也有開一間)&lt;br /&gt;
+總之也都是天天都在排隊~XD&lt;br /&gt;
+這次同事指名想試試，所以安迪兒又來吃了一下&lt;/p&gt;
+
+&lt;p&gt;安迪兒最常點的酸辣番茄豬肉麵NT180(較便宜)&lt;br /&gt;
+泰式的酸辣味超道地，撈一下料還算ok
+酸辣椰奶的湯頭和炸整片的金針菇
+好吃喔&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/ln8UJ3&#34; width=&#34;400&#34;&gt;
+&lt;img src=&#34;https://goo.gl/MsyKGg&#34; width=&#34;400&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;另外飯後會送一隻黑芝麻的霜淇淋&lt;br /&gt;
+這個安迪兒超愛吃的 ，濃濃的黑芝麻&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/Fa7t3e&#34; width=&#34;400&#34;&gt;&lt;br /&gt;
+外面很少見到整隻全黑的芝麻霜淇淋呢&lt;br /&gt;
+同事吃的還蠻開心的~~XD&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>大汐止商圈-印度炒飯和咖哩</title>
-      <link>http://bowwow.tips/food/201605030/</link>
+      <link>http://bowwow.tips/food/20160506/</link>
       <pubDate>Fri, 06 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://bowwow.tips/food/201605030/</guid>
+      <guid>http://bowwow.tips/food/20160506/</guid>
       <description>&lt;p&gt;大汐止商圈的小巷子&lt;/p&gt;
 
 &lt;p&gt;下班後同事來這晃晃&lt;br /&gt;
@@ -381,19 +449,6 @@ a diam ullamcorper aliquet at vel ante. Fusce ac lacinia tortor.&lt;/p&gt;
       
       <guid>http://bowwow.tips/gallery/20150729/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>貴族世家</title>
-      <link>http://bowwow.tips/food/20150429/</link>
-      <pubDate>Wed, 29 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>http://bowwow.tips/food/20150429/</guid>
-      <description>&lt;p&gt;5/1前 大家超奢華的&lt;br /&gt;
-「走~中午吃這個」就進去了&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/6eCLvM&#34; width=&#34;400&#34;&gt;&lt;img src=&#34;https://goo.gl/2ozVaI&#34; width=&#34;400&#34;&gt;&lt;/p&gt;
-</description>
     </item>
     
   </channel>

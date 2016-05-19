@@ -14,7 +14,7 @@
     <meta name="description" content="">
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-05-20 00:16:24.561554923 &#43;0800 CST">
+    <meta name="generation-date" content="2016-05-20 01:40:19.708554263 &#43;0800 CST">
     <title>Qnap nas掛上遠端Synology磁碟資料 &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="http://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="http://bowwow.tips/img/favicon.ico">
@@ -219,16 +219,52 @@
 
                     <section>
                         
-                            <p>安迪兒新的qnap NAS剛整理完所有資料，
+                            <p>安迪兒新的qnap NAS剛整理完所有資料，<br />
 剩下一些新的資料都放在原舊的Synology nas上</p>
 
-<p>安迪兒想嘗試直接就掛上別台nas的samba磁區，然後再對拷檔案
-安迪兒發現，qnap的nas怎麼設定都沒辦法掛上遠端Synology的samba磁碟</p>
+<p>安迪兒想掛上別台nas的samba磁區，然後再對拷檔案<br />
+但…安迪兒發現，qnap的nas怎麼設定都沒辦法掛上Synology的samba磁碟<br />
+～囧</p>
 
-<p>查了一下，發現好像有人也有反應這件事~XD</p>
+<p><img src="https://goo.gl/E8n9kz" width="400">
+<img src="https://goo.gl/mhh1rD" width="400"></p>
 
-<p>所以安迪兒就直接用指令mount看看能不能捉的到自家用的nas
-以下是記錄過程</p>
+<p>查了一下，發現好像有人有反應這件事~XD</p>
+
+<p>安迪兒試了一下發現可以直接用指令mount上Synology的samba磁碟資料<br />
+貼一下過程</p>
+
+<p>首先SSH登入nas</p>
+
+<pre><code>ssh admin@x.x.x.x
+</code></pre>
+
+<p>找個資料匣準備掛上別台nas的samba<br />
+安迪兒這邊建了一個共用的資料匣叫tmp<br />
+裡面打算掛Synology的照片和電影2個資料匣</p>
+
+<pre><code>cd /share/CACHEDEV1_DATA/tmp
+mkdir video photo
+mount.cifs //10.0.0.7/video -o user=xx password=xx
+mount.cifs //10.0.0.7/photo -o user=xx password=xx
+</code></pre>
+
+<p><img src="https://goo.gl/IK5ocL" width="400"></p>
+
+<p>掛完後使用nas上File Station打開資料匣，開始狂copy資料到新nas上吧</p>
+
+<p><img src="https://goo.gl/W9AdwQ" width="400"></p>
+
+<p>邊copy data邊看一下效能<br />
+嗯&hellip;網路每秒約100MB，碟碟IOPS 快300<br />
+還ok啦</p>
+
+<p><img src="https://goo.gl/LgNJqj" width="400"><br />
+<img src="https://goo.gl/tHGykJ" width="400"></p>
+
+<p>copy完資料後，新nas也差不多完整了<br />
+可以開心的接電視直播電影了<br />
+(有hdmi接電視的nas好讚呀~xd)</p>
 
 <p>以上~~收工嘍!</p>
 
