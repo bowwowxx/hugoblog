@@ -23,8 +23,8 @@
 但…安迪兒發現，qnap的nas怎麼設定都沒辦法掛上Synology的samba磁碟&lt;br /&gt;
 ～囧&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/E8n9kz&#34; width=&#34;600&#34;&gt;&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/mhh1rD&#34; width=&#34;600&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/E8n9kz&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/mhh1rD&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;查了一下，發現好像有人有反應這件事~XD&lt;/p&gt;
 
@@ -46,18 +46,18 @@ mount.cifs //10.0.0.7/video -o user=xx password=xx
 mount.cifs //10.0.0.7/photo -o user=xx password=xx
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/IK5ocL&#34; width=&#34;600&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/IK5ocL&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;掛完後使用nas上File Station打開資料匣，開始狂copy資料到新nas上吧&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/W9AdwQ&#34; width=&#34;600&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/W9AdwQ&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;邊copy data邊看一下效能&lt;br /&gt;
 嗯&amp;hellip;網路每秒約100MB，碟碟IOPS 快300&lt;br /&gt;
 還ok啦&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/LgNJqj&#34; width=&#34;600&#34;&gt;&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/tHGykJ&#34; width=&#34;600&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/LgNJqj&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/tHGykJ&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;copy完資料後，新nas也差不多完整了&lt;br /&gt;
 可以開心的接電視直播電影了&lt;br /&gt;
@@ -107,7 +107,7 @@ mount.cifs //10.0.0.7/photo -o user=xx password=xx
 &lt;p&gt;以下就是安迪兒整個修復的過程&lt;/p&gt;
 
 &lt;p&gt;用usb外接盒裝上硬碟，接上公司的nas&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/KRwMJv&#34; width=&#34;600&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://goo.gl/KRwMJv&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;執行以下步驟&lt;/p&gt;
 
@@ -116,21 +116,21 @@ mdadm -A -R /dev/xxx /dev/xxx&lt;/p&gt;
 
 &lt;p&gt;2.fdisk -l xx 找一下相關磁碟資訊&lt;br /&gt;
 可以看一下Blocks的大小，猜一下大的是存資的磁區&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/HgYp7X&#34; width=&#34;600&#34;&gt;&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/x5HRGm &#34; width=&#34;600&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://goo.gl/HgYp7X&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/x5HRGm &#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;3.建新目錄&lt;br /&gt;
 mkdir /mnt/old_hdd&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/9b3IwR&#34; width=&#34;600&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://goo.gl/9b3IwR&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;4.把找到的md2掛到剛建的目錄裡&lt;br /&gt;
 mount -t ext4 /dev/md2 /mnt/old_hdd/&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/9b3IwR&#34; width=&#34;600&#34;&gt;&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/AnRUcF&#34; width=&#34;600&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://goo.gl/9b3IwR&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/AnRUcF&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;5.開始copy資料吧，此時nas裡面應該讀的到資料了&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/YzvS4H&#34; width=&#34;600&#34;&gt;&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/s9wRxr&#34; width=&#34;600&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://goo.gl/YzvS4H&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/s9wRxr&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;6.完成後&lt;br /&gt;
 unmount資料匣&lt;br /&gt;

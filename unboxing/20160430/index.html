@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html 
+    lang="en-us"
+    class="no-js"
+>
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    
+    <meta name="generator" content="Hugo 0.15" />
+    <meta name="generation-date" content="2016-05-25 02:32:37.727305448 &#43;0800 CST">
+    <title>輕鬆在家歡唱ktv，擁有Ubuntu雙系統的QNAP TS-253A NAS &middot; 安迪兒隨手貼</title>
+    <link rel="shortcut icon" href="http://bowwow.tips/img/favicon.ico">
+    <link rel="icon" href="http://bowwow.tips/img/favicon.ico">
+    
+<link rel="stylesheet" href="http://bowwow.tips/css/materialize.min.css">
+
+
+<link rel="stylesheet" href="http://bowwow.tips/css/font-awesome.min.css">
+
+
+    
+    <link rel="stylesheet" href="http://bowwow.tips/css/styles/railscasts.css">
+
+
+
+<link rel="stylesheet" href="http://bowwow.tips/css/lightbox.css">
+
+
+<link rel="stylesheet" href="http://bowwow.tips/css/main.css">
+
+
+    <script src="http://bowwow.tips/js/modernizr-latest.js"></script>
+    <script src="http://bowwow.tips/js/lazysizes.min.js"></script>
+    <script src="http://bowwow.tips/js/ls.noscript.min.js"></script>
+
+    <script>
+        window.lazySizesConfig = window.lazySizesConfig || {};
+        lazySizesConfig.addClasses = true;
+        lazySizesConfig.loadMode = 2;
+    </script>
+
+    
+</head>
+
+
+
+<body class="page-colors minimum-viewport-height">
+    
+
+<nav class="main-menu menu-colors">
+    <ul class="menu menu-colors no-list-float">
+        <li><a href="http://bowwow.tips/"><i class="fa fa-home fa-2x"></i></a></li>
+        <li>
+            <a href="#!"><i class="fa fa-bars fa-2x"></i></a>
+
+            
+            <ul class="menu flexible-width menu-colors no-list-float">
+                
+                
+                    <li >
+                    
+                        <a href="/food/">
+                            
+                            <span>Food</span>
+                        </a>
+                    
+                    </li>
+                
+                    <li >
+                    
+                        <a href="/gallery/">
+                            
+                            <span>Gallery</span>
+                        </a>
+                    
+                    </li>
+                
+                    <li >
+                    
+                        <a href="/othergallery/">
+                            
+                            <span>Othergallery</span>
+                        </a>
+                    
+                    </li>
+                
+                    <li >
+                    
+                        <a href="/post/">
+                            
+                            <span>Post</span>
+                        </a>
+                    
+                    </li>
+                
+                    <li >
+                    
+                        <a href="/project/">
+                            
+                            <span>Project</span>
+                        </a>
+                    
+                    </li>
+                
+                    <li class="active">
+                    
+                        <a href="/unboxing/">
+                            
+                            <span>Unboxing</span>
+                        </a>
+                    
+                    </li>
+                
+            </ul>
+        </li>
+        <li><a href="#!" data-lightbox-id="searchbox"><i class="fa fa-search fa-2x"></i></a></li>
+        
+            <li class="blue-grey-text" style="border-top: 1px solid;"></li>
+            
+                <li>
+                    <a href="#!">
+                        <i class="fa fa-twitter fa-2x"></i>
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="#!">
+                        <i class="fa fa-linkedin fa-2x"></i>
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="#!">
+                        <i class="fa fa-google-plus fa-2x"></i>
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="#!">
+                        <i class="fa fa-github fa-2x"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="blue-grey-text" style="border-top: 1px solid;"></li>
+        <li>
+            <a href="" type="application/rss+xml" target="_blank">
+                <i class="fa fa-rss fa-2x"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<div id="searchbox" class="no-display">
+    <div class="valign-wrapper fill-container">
+        <div class="valign large-form horizontal-center-hack">
+            <form method="get" id="search" action="http://duckduckgo.com/">
+    <input type="hidden" name="sites"value="http://bowwow.tips/"/>
+    <input type="hidden" name="ka" value="h"/>
+    <input type="hidden" name="k7" value="#fafafa"/>
+    <input type="hidden" name="kj" value="#3f3f3f"/>
+    <input type="hidden" name="ky" value="#fafafa"/>
+    <input type="hidden" name="kx" value="b"/>
+    <input type="hidden" name="kt" value="Helvetica"/>
+    <input type="text" name="q" maxlength="255" placeholder="Search"/>
+    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
+</form>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+    <div class="main-content">
+        <div class="center-space">
+            <div class="article-colors">
+                
+                <article>
+                    <header>
+                        <h1 class="article-title">輕鬆在家歡唱ktv，擁有Ubuntu雙系統的QNAP TS-253A NAS</h1>
+                        <time class="date-color">Sat Apr 30, 2016</time>
+                        <span class="separator">|</span>
+                        
+<ul class="categories">
+    <li>
+        <i class="fa fa-book"></i>
+    </li>
+    
+        <li><a href="http://bowwow.tips/categories/unboxing">unboxing</a></li>
+    
+</ul>
+
+
+                        <span class="separator">|</span>
+                        
+<ul class="tags">
+    <li>
+        <i class="fa fa-tags"></i>
+    </li>
+    
+        <li><a href="http://bowwow.tips/tags/nas">NAS</a></li>
+    
+        <li><a href="http://bowwow.tips/tags/qnap">QNAP</a></li>
+    
+        <li><a href="http://bowwow.tips/tags/nas-ktv">NAS KTV</a></li>
+    
+</ul>
+
+
+                    </header>
+
+                    <hr>
+
+                    <section>
+                        
+                            <p>「什麼?NAS唱KTV?」</p>
+
+<p>「哇嗚!ubuntu雙系統」</p>
+
+<p>現在的NAS太強了，除了相片，電影，音樂<br />
+竟然連ktv都出現了
+而且還有ubuntu系統<br />
+不唱歌還可以拿來當小電腦用<br />
+這真的有夠誇張~XD</p>
+
+<p>安迪兒一直等一直等<br />
+終於等到這台nas上市<br />
+因為實在太酷炫了<br />
+所以拿來當第一篇開箱文</p>
+
+<p>「它和一般nas差別在那?」<br />
+嗯嗯，安迪兒看了一下<br />
+有喔~~他有2個麥克風的接口，一個音源輸出接音響
+還有2個hdmi接電視
+(果真是為ktv而生吶)</p>
+
+<p>看一下這台QNAP TS-253A規格<br />
+<a href="https://www.qnap.com/i/cht/product/model.php?II=211&amp;event=2">https://www.qnap.com/i/cht/product/model.php?II=211&amp;event=2</a></p>
+
+<p>處理器 14nm Intel® Celeron® N3150 四核心 1.6GHz, 最高2.08GHz<br />
+繪圖處理器   第8代Intel® HD Graphics<br />
+最大可擴充記憶體    8 GB<br />
+快閃記憶體   512MB<br />
+最大硬碟數量  2 顆<br />
+網路埠 2 x Gigabit RJ-45 Ethernet 網路埠<br />
+USB 埠   4 x USB 3.0 埠 (正面：1，背面：3) 支援印表機、隨身碟及 UPS 等。<br />
+視訊輸出    2 x HDMI，最大支援4K 2160P Ultra HD 輸出<br />
+音訊輸入    2 x 6.3mm 麥克風插孔 (僅支援動圈式麥克風)<br />
+音訊輸出    Line Out 插孔 (搭配擴大機或耳擴使用)<br />
+IR 接收器  有，支援 QNAP RM-IR002，RM-IR003與MCE相容<strong>遙控器</strong><br />
+<img src="https://goo.gl/p6pYya" width="100%"></p>
+
+<p>真的是很強…<br />
+它其實就是有ubuntu的小電腦<br />
+這效能跑windows或各種docker系統應該都堪用</p>
+
+<p>看一下開箱吧<br />
+NAS QNAP TS-253A<br />
+硬碟 4T x2 (做raid1)<br />
+RAM 8G x2 (直上16G)<br />
+<img src="https://goo.gl/Wv3us2" width="100%"></p>
+
+<p><strong>[關於記憶體]</strong><br />
+查了一下官方規格和其它記錄，最大支援是到8G<br />
+但也有類似機型國外有玩家有裝到16g有支援的樣子</p>
+
+<p>所以安迪兒就賭一下，直上16g試試</p>
+
+<p>(根據大家的結論<br />
+記憶體要挑一下，像是ddr3、低電壓、一面有8顆IC的RAM<br />
+成功機會比較大，安迪兒是選金士頓的)</p>
+
+<p>TS-253A的外型<br />
+金屬外殼<br />
+<img src="https://goo.gl/3wfHHK" width="100%"></p>
+
+<p>免拆螺絲就可以裝硬碟<br />
+<img src="https://goo.gl/Ma5445" width="100%"></p>
+
+<p>後方連接埠<br />
+<img src="https://goo.gl/n9xjvW" width="100%"></p>
+
+<p>裝記憶體<br />
+要拆機，機殼有點像pc的開法<br />
+3個螺絲拆開後，往後推(要點內力XD)<br />
+終於看到了，快速的換上吧</p>
+
+<p><img src="https://goo.gl/SliQo7" width="100%">
+<img src="https://goo.gl/X9vuU9" width="100%"></p>
+
+<p>再來裝上硬碟接上網路線，電源線<br />
+開機嘍!!<br />
+捉到16g無誤~~(開心吶)</p>
+
+<p><img src="https://goo.gl/o3L9mP" width="100%"></p>
+
+<p>為了nas上唱ktv!!!<br />
+以下是一連串nas的安裝設定<br />
+1.先用q finder掃一下區網的nas<br />
+點2下就可連線進nas<br />
+(也可以不用q finder
+知道nas的ip可以直接連線登入 <a href="http://xx.xx:8080)">http://xx.xx:8080)</a>
+<img src="https://goo.gl/i1bdLm" width="100%"></p>
+
+<p>2.因為是新的硬碟，所以設定一下磁區和raid1
+<img src="https://goo.gl/dteqAA" width="100%"></p>
+
+<p>安迪兒是用單一磁區<br />
+因為這台只有2顆，日後不會擴充掛別顆<br />
+也是為了完全使用空間，其它模式比較彈性，但會吃一點空間</p>
+
+<p>再來選2顆硬碟做raid1，照著畫面上的指示即可做完raid1<br />
+(raid1:日後其中一顆壞了，可以再買另一個新硬碟放入，會自已恢復)</p>
+
+<p>弄完後，測一下raid1後的傳檔速度<br />
+嗯每秒100多mb，還不賴吶
+(安迪兒舊synology ds213j只能到30mb)<br />
+<img src="https://goo.gl/POFxee" width="100%"></p>
+
+<p>3.再來是nas上一些軟體的安裝<br />
+首先nas要透過hdmi到電視上使用<br />
+需要裝上HD station<br />
+這樣nas就變成家庭娛樂中心了<br />
+<img src="https://goo.gl/KBY7yt" width="100%"></p>
+
+<p>裝HD station時會順便選要安裝的app<br />
+以ktv來說這些都把它裝上吧
+裝完後記得再裝上OceanKTV<br />
+<img src="https://goo.gl/u8Fu11" width="100%"></p>
+
+<p>安裝完成後，電視上看到的樣子大約像下面這樣<br />
+<img src="https://goo.gl/XOs3W8" width="100%"></p>
+
+<p>將將將!<br />
+要開唱了嗎?</p>
+
+<p><img src="https://goo.gl/kLr0MS" width="100%"></p>
+
+<p>呃~當然還沒，最重要的歌吶<del>歌吶</del>
+還沒放入<br />
+嗯嗯這邊有個暗黑技<br />
+就是可以去youtube上找ktv用的歌曲影片
+<img src="https://goo.gl/2diWcl" width="100%"></p>
+
+<p>搭配上nas的暗黑技工具happyget<br />
+首先nas先裝上happget<br />
+設定完後chrome再裝上happget外掛<br />
+<img src="https://goo.gl/KxhM7H" width="100%">
+<img src="https://goo.gl/fKzN45" width="100%">
+<img src="https://goo.gl/eFAI4x" width="100%">
+<img src="https://goo.gl/GBmjXU" width="100%">
+<img src="https://goo.gl/ONDz8m" width="100%"></p>
+
+<p>設定完後youtube就可以看到[取得影片]的選項了<br />
+<img src="https://goo.gl/C3xLmD" width="100%"></p>
+
+<p>(在chrome點下取得影片，nas就會自動去幫你捉下它了~xd )</p>
+
+<p><img src="https://goo.gl/ku6wQ9" width="100%"></p>
+
+<p>捉完後ktv影片會在nas happyget設定的目錄下
+<img src="https://goo.gl/h6YJxN" width="100%"></p>
+
+<p>這時要讓oceanktv認識歌曲，所以要改一下檔名</p>
+
+<p>這邊安迪兒有找到一個小工具
+可以幫忙分析歌區的左右聲道規格啥的<br />
+<a href="https://drive.google.com/open?id=0B_x3Lptzv5Ojbk1hYTJYcGJJY2c">https://drive.google.com/open?id=0B_x3Lptzv5Ojbk1hYTJYcGJJY2c</a></p>
+
+<p>所以其實只要稍為修一下捉下來的ktv檔名<br />
+<img src="https://goo.gl/3vg3IV" width="100%"></p>
+
+<p>然後再用這小工具去分析和轉換mp3檔名格式<br />
+<img src="https://goo.gl/WhP7kt" width="100%"></p>
+
+<p>安迪兒是使用上面說的第三種格式<br />
+<strong>(HD)林正-我不是他【CURRY自製KTV】_1080P.mp4</strong></p>
+
+<p>大約是把捉下來ktv的檔名弄成<br />
+(hd)歌手-歌名_1080P.mp4<br />
+然後用這工具點選資料匣做轉換<br />
+跑一次就會把所有資料匣的ktv歌曲都分析完
+<img src="https://goo.gl/64LMWZ" width="100%"></p>
+
+<p>最後就把轉好的歌和資料匣都copy到OceanKTV的目錄下<br />
+(以下是安迪兒剛轉好的樣子)<br />
+<img src="https://goo.gl/HlBrn4" width="100%">
+<img src="https://goo.gl/YsAbqi" width="100%"></p>
+
+<p>最後!!!!!<br />
+終於來到另人感動的時刻了<br />
+在電視上點擊KTV圖示，感動吶~~~
+<img src="https://goo.gl/N6ZZ3c" width="100%"><br />
+<img src="https://goo.gl/f9xGcu" width="100%"></p>
+
+<p>裡面的清單已經自動讀到剛轉完OceanKTV目錄下的ktv歌曲</p>
+
+<p><img src="https://goo.gl/CkCT4t" width="100%"></p>
+
+<p>設定一下語言、輸入、輸出的聲音設定
+（輸入麥克風、輸入喇叭）
+<img src="https://goo.gl/s6G79I" width="100%">
+<img src="https://goo.gl/B6IgnQ" width="100%"></p>
+
+<p>開歌嘍!!!
+<img src="https://goo.gl/MOybls" width="100%"></p>
+
+<p>先來首妖怪手錶吧~~XD<br />
+<img src="https://goo.gl/xwXr7Y" width="100%">
+<img src="https://goo.gl/v4DNWi" width="100%">
+<img src="https://goo.gl/crJjUM" width="100%"></p>
+
+<p>呼…終於呀，東西太多了~XD<br />
+以上~收工嘍!</p>
+
+                        
+                    </section>
+
+                    <footer class="right-align">
+                        <p><small>Copyright &#169; by 安迪兒</small></p>
+                    </footer>
+
+                    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'bowwowtips';
+        var disqus_identifier = 'http:\/\/bowwow.tips\/unboxing\/20160430\/';
+        var disqus_title = '輕鬆在家歡唱ktv，擁有Ubuntu雙系統的QNAP TS-253A NAS';
+        var disqus_url = 'http:\/\/bowwow.tips\/unboxing\/20160430\/';
+        (function() {
+            
+            if (window.location.hostname === "localhost") {
+                return;
+            }
+
+            var dsq = document.createElement('script'); 
+            dsq.type = 'text/javascript'; 
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+            (document.getElementsByTagName('head')[0] || 
+                document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+                </article>
+            </div>
+        </div>
+    </div>
+
+    
+<script src="http://bowwow.tips/js/jquery-2.1.4.min.js"></script>
+
+
+<script src="http://bowwow.tips/js/materialize.min.js"></script>
+
+
+<script src="http://bowwow.tips/js/imagesloaded.pkgd.min.js"></script>
+
+
+<script src="http://bowwow.tips/js/masonry.pkgd.min.js"></script>
+
+
+    
+    <script src="http://bowwow.tips/js/highlight.pack.js"></script>
+
+
+
+<script src="http://bowwow.tips/js/lightbox.min.js"></script>
+
+
+<script src="http://bowwow.tips/js/jquery.infinitescroll.min.js"></script>
+
+
+<script src="http://bowwow.tips/js/main.js"></script>
+
+
+<script src="http://bowwow.tips/js/small.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
