@@ -55,11 +55,14 @@
 &lt;li&gt;視訊輸出  2 x HDMI，最大支援4K 2160P Ultra HD 輸出&lt;br /&gt;&lt;/li&gt;
 &lt;li&gt;音訊輸入  2 x 6.3mm 麥克風插孔 (僅支援動圈式麥克風)&lt;br /&gt;&lt;/li&gt;
 &lt;li&gt;音訊輸出  Line Out 插孔 (搭配擴大機或耳擴使用)&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;IR 接收器    有，支援 QNAP RM-IR002，RM-IR003與&lt;strong&gt;MCE相容遙控器&lt;/strong&gt;&lt;br /&gt;
-***&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/p6pYya&#34; width=&#34;70%&#34;&gt;&lt;br /&gt;
-***&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;IR 接收器    有，支援 QNAP RM-IR002，RM-IR003與&lt;strong&gt;MCE相容遙控器&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/p6pYya&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;&lt;strong&gt;&amp;lt;開箱嘍&amp;gt;&lt;/strong&gt;&lt;br /&gt;
 - 硬碟 4T x2 (做Raid1)&lt;br /&gt;
@@ -125,21 +128,22 @@ NAS後方3個螺絲拆開後，面對NAS正面往後推(要點內力XD)&lt;br /&
 
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/dteqAA&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;安迪兒最後選第一項&lt;strong&gt;&amp;lt;單一磁區&amp;gt;&lt;/strong&gt;&lt;br /&gt;
-因為這台只有2顆硬碟，日後沒得擴充別顆&lt;br /&gt;
-也是為了完全使用上硬碟全部的空間&lt;br /&gt;
+&lt;p&gt;安迪兒選第一項&lt;strong&gt;&amp;lt;單一磁區&amp;gt;&lt;/strong&gt;&lt;br /&gt;
+因為這台只有2顆硬碟，日後沒得擴充&lt;br /&gt;
+也是為了完全使用全部的硬碟空間&lt;br /&gt;
 (其它模式比較彈性，但會吃一些容量)&lt;/p&gt;
 
-&lt;p&gt;點選2顆硬碟，做Raid1，照著畫面上的指示即可完成&lt;br /&gt;
-(其中一顆硬碟壞了，買新硬碟放入就會自已恢復了)&lt;/p&gt;
+&lt;p&gt;依畫面上的指示點選2顆硬碟，做Raid1，即可完成&lt;br /&gt;
+(Raid1:其中一顆硬碟壞了，買新硬碟放入就會自已恢復了)&lt;/p&gt;
 
 &lt;p&gt;磁碟建立完成後，順手測一下Raid1的傳檔速度&lt;br /&gt;
 每秒100多Mib，還不賴吶&lt;br /&gt;
-(安迪兒舊synology ds213j只能到30Mib)&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/POFxee&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+(安迪兒舊synology ds213j只能到30Mib)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/POFxee&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;看一下NAS系統規格&lt;br /&gt;
-RAM 16g無誤!(開心吶)&lt;br /&gt;
+RAM:16g 無誤!(開心吶)&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/o3L9mP&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
@@ -157,21 +161,23 @@ RAM 16g無誤!(開心吶)&lt;br /&gt;
 
 &lt;p&gt;&lt;strong&gt;為了唱KTV&lt;/strong&gt;&lt;br /&gt;
 畫面上的這些都把它裝上吧&lt;br /&gt;
-記得裝完後再裝上&lt;strong&gt;OceanKTV&lt;/strong&gt;&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/u8Fu11&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+記得裝完後再裝上&lt;strong&gt;OceanKTV&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/u8Fu11&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;完成後，電視上看到的樣子會像下面這樣&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/XOs3W8&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;**&amp;lt;將將將&amp;gt; 要開唱了嗎? **&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&amp;lt;將將將&amp;gt;要開唱了嗎?&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/kLr0MS&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;呃~還沒，最重要的歌曲還沒放入(受打擊中…)&lt;/p&gt;
+&lt;p&gt;呃~還沒，因為最重要的歌曲還沒放入(受打擊中…)&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;嗯嗯…安迪兒試了一下&lt;strong&gt;暗黑技&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;歌曲怎麼找?&lt;br /&gt;
+嗯…安迪兒試了一下&lt;strong&gt;暗黑技&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;到YouTube上找KTV用的歌曲影片&lt;br /&gt;&lt;/li&gt;
@@ -263,7 +269,7 @@ RAM 16g無誤!(開心吶)&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/crJjUM&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;呼…終於呀，以上是值得歡唱慶祝的第一篇開箱文~XD&lt;br /&gt;
-收工嘍!&lt;/p&gt;
+收工嘍~收工嘍!&lt;/p&gt;
 </description>
     </item>
     
