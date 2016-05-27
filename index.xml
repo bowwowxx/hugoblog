@@ -393,27 +393,26 @@ dd這個指令&lt;/p&gt;
       <guid>http://bowwow.tips/unboxing/20160430/</guid>
       <description>&lt;p&gt;&lt;strong&gt;「什麼?NAS唱KTV?」&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;「哇嗚!ubuntu雙系統&lt;/strong&gt;」&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;「哇嗚!Ubuntu雙系統&lt;/strong&gt;」&lt;/p&gt;
 
-&lt;p&gt;現在的NAS超強大，除了相片，電影，音樂和很多種服務之外&lt;br /&gt;
-前陣子發現，竟然連ktv都出現了&lt;br /&gt;
-而且還有ubuntu系統，也可以接電視&lt;br /&gt;
-可以跑&lt;strong&gt;docker、ubuntu、windows&lt;/strong&gt;&lt;br /&gt;
-根本就是當小電腦用&lt;br /&gt;
-超誇張的~XD&lt;/p&gt;
+&lt;p&gt;現在的NAS超強大，除了相片，電影，音樂和多種服務外&lt;br /&gt;
+前陣子發現，竟然連KTV都出現了&lt;br /&gt;
+再加上這台可以跑&lt;strong&gt;docker、ubuntu、windows&lt;/strong&gt;&lt;br /&gt;
+根本就是4核小電腦吶&lt;br /&gt;
+超誇張~XD&lt;/p&gt;
 
-&lt;p&gt;安迪兒一直在等，這台四核可以唱KTV的TS-253A NAS&lt;br /&gt;
-終於上市了&lt;/p&gt;
+&lt;p&gt;安迪兒一直在等，這台可以唱KTV的TS-253A NAS&lt;br /&gt;
+如今，終於上市了。&lt;/p&gt;
 
-&lt;p&gt;因為唱KTV實在太酷炫&lt;br /&gt;
+&lt;p&gt;因為唱KTV這功能實在&lt;strong&gt;太酷炫&lt;/strong&gt;&lt;br /&gt;
 所以拿來當&lt;strong&gt;第一篇開箱文&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;「它和一般nas差別在那?」&lt;/strong&gt;&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;「它和一般NAS差別在那?」&lt;/strong&gt;&lt;br /&gt;
 嗯嗯，安迪兒看了一下&lt;br /&gt;
 和其它NAS不一樣的地方&lt;br /&gt;
-有2個麥克風的接口，1個音源輸出接音響&lt;br /&gt;
+多了2個麥克風接口，1個音源輸出&lt;br /&gt;
 另外還有2個HDMI，一個接電視，一個接螢幕&lt;br /&gt;
-(果真是為KTV而生吶)&lt;/p&gt;
+(果真是為KTV而生吶!)&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -432,13 +431,13 @@ dd這個指令&lt;/p&gt;
 &lt;li&gt;音訊輸入  2 x 6.3mm 麥克風插孔 (僅支援動圈式麥克風)&lt;br /&gt;&lt;/li&gt;
 &lt;li&gt;音訊輸出  Line Out 插孔 (搭配擴大機或耳擴使用)&lt;br /&gt;&lt;/li&gt;
 &lt;li&gt;IR 接收器    有，支援 QNAP RM-IR002，RM-IR003與&lt;strong&gt;MCE相容遙控器&lt;/strong&gt;&lt;br /&gt;
-***
+***&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/p6pYya&#34; width=&#34;70%&#34;&gt;&lt;br /&gt;
-***&lt;/li&gt;
+***&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;&amp;lt;開箱嘍&amp;gt;&lt;/strong&gt;&lt;br /&gt;
-- 硬碟 4T x2 (做raid1)&lt;br /&gt;
+- 硬碟 4T x2 (做Raid1)&lt;br /&gt;
 - RAM 8G x2 (直上16G)
 - 喇叭＆麥克風&lt;/p&gt;
 
@@ -545,19 +544,22 @@ RAM 16g無誤!(開心吶)&lt;br /&gt;
 
 &lt;p&gt;呃~還沒，最重要的歌曲還沒放入(受打擊中…)&lt;/p&gt;
 
-&lt;p&gt;嗯嗯…安迪兒這邊試了一下&lt;strong&gt;暗黑技&lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;嗯嗯…安迪兒試了一下&lt;strong&gt;暗黑技&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;先去youtube上找ktv用的歌曲影片&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;到YouTube上找KTV用的歌曲影片&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/2diWcl&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;搭配上NAS的暗黑技工具&lt;strong&gt;happyget&lt;/strong&gt;&lt;br /&gt;
-首先NAS先裝上happyget&lt;br /&gt;
-設定完後Chrome再裝上happyget外掛&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;搭配上NAS的暗黑技工具&lt;strong&gt;happyget&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;首先NAS先裝上happyget&lt;br /&gt;
+設定完後Chrome再裝上happyget外掛&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/KxhM7H&#34; width=&#34;70%&#34;&gt;
 &lt;img src=&#34;https://goo.gl/fKzN45&#34; width=&#34;70%&#34;&gt;
@@ -565,58 +567,61 @@ RAM 16g無誤!(開心吶)&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/GBmjXU&#34; width=&#34;70%&#34;&gt;
 &lt;img src=&#34;https://goo.gl/ONDz8m&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;設定完後上youtube就可以看到[取得影片]的選項&lt;/strong&gt;&lt;br /&gt;
-(按下取得影片，NAS就會自動去幫你捉下它~XD)&lt;br /&gt;
-(找卡啦OK或KTV版本)&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/C3xLmD&#34; width=&#34;70%&#34;&gt;&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;設定完後上YouTube就可以看到[取得影片]的選項&lt;/strong&gt;&lt;br /&gt;
+(記得找KTV版本，按下取得影片，NAS就會自動去幫你捉下它)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/C3xLmD&#34; width=&#34;70%&#34;&gt;&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/ku6wQ9&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;捉完後KTV影片會在NAS happyget的設定目錄下&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/h6YJxN&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;為了讓OceanKTV認識歌曲，所以要編輯一下檔案名稱&lt;/strong&gt;&lt;br /&gt;
-安迪兒有找到一個小工具
-可以幫忙分析歌區的左右聲道規格之類的&lt;br /&gt;
-&lt;a href=&#34;https://drive.google.com/open?id=0B_x3Lptzv5Ojbk1hYTJYcGJJY2c&#34;&gt;https://drive.google.com/open?id=0B_x3Lptzv5Ojbk1hYTJYcGJJY2c&lt;/a&gt;&lt;br /&gt;
-硏究了一下&lt;br /&gt;
-其實只要修一下捉下來的KTV檔名&lt;br /&gt;
-然後再用這小工具&lt;br /&gt;
-去分析和轉換OceanKTV要的檔名格式就可以了&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;為了讓OceanKTV認識歌曲，所以要編輯一下歌曲檔名&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;安迪兒有找到一個小工具&lt;br /&gt;
+可以幫忙分析歌區的左右聲道規格之類的&lt;br /&gt;
+&lt;a href=&#34;https://drive.google.com/open?id=0B_x3Lptzv5Ojbk1hYTJYcGJJY2c&#34;&gt;https://drive.google.com/open?id=0B_x3Lptzv5Ojbk1hYTJYcGJJY2c&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;硏究了一下&lt;br /&gt;
+其實稍為調整一下捉下來的KTV檔名&lt;/p&gt;
+
+&lt;p&gt;再用這小工具&lt;br /&gt;
+去分析和轉換OceanKTV要的檔名格式就可以了&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/3vg3IV&#34; width=&#34;70%&#34;&gt;&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/WhP7kt&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;安迪兒是使用小工具上面說的第三種格式&lt;br /&gt;
+&lt;p&gt;安迪兒是用小工具上面提示，可轉換的第三種命名格式&lt;br /&gt;
 &lt;strong&gt;(HD)林正-我不是他【CURRY自製KTV】_1080P.mp4&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;把捉下來KTV的檔名弄成&lt;br /&gt;
+&lt;p&gt;編輯捉下來KTV檔名，改成小工具可轉換的檔名&lt;br /&gt;
 (hd)歌手-歌名_1080P.mp4&lt;/p&gt;
 
-&lt;p&gt;然後用這工具點選資料匣做轉換&lt;br /&gt;
-跑一次就會把所有資料匣的ktv歌曲都分析完並改好檔名&lt;br /&gt;
+&lt;p&gt;然後再點選&lt;strong&gt;&amp;lt;開始轉換&amp;gt;&lt;/strong&gt;&lt;br /&gt;
+就會把所有資料匣的KTV歌曲，分析好並改好檔名&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/64LMWZ&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;最後把轉好的KTV歌曲連資料匣一起copy到OceanKTV的目錄下&lt;br /&gt;
-就大工告成了!&lt;br /&gt;
+大工告成嘍!&lt;br /&gt;
 (以下是安迪兒剛轉好的樣子)&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/HlBrn4&#34; width=&#34;70%&#34;&gt;
 &lt;img src=&#34;https://goo.gl/YsAbqi&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&amp;lt;最後&amp;gt;&lt;/strong&gt;&lt;br /&gt;
-見證奇蹟的時刻到了&lt;br /&gt;
-在電視上點擊OceanKTV圖示&lt;br /&gt;
+&lt;strong&gt;見證奇蹟的時刻&lt;/strong&gt;&lt;br /&gt;
+用遙控器選電視上OceanKTV的圖示&lt;br /&gt;
 感動吶!&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/N6ZZ3c&#34; width=&#34;70%&#34;&gt;&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/f9xGcu&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;裡面的清單已經有列出，剛放入OceanKTV目錄的歌曲&lt;/p&gt;
+&lt;p&gt;看一下裡面的清單&lt;br /&gt;
+已經有列出，剛放入OceanKTV的歌曲&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/CkCT4t&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;在這邊設定一下語言、輸入、輸出的聲音設定&lt;br /&gt;
-（輸入麥克風、輸出喇叭）&lt;br /&gt;
+&lt;p&gt;再設定一下語言、輸入麥克風、輸出喇叭的聲音設定&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/s6G79I&#34; width=&#34;70%&#34;&gt;
 &lt;img src=&#34;https://goo.gl/B6IgnQ&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
@@ -632,8 +637,8 @@ RAM 16g無誤!(開心吶)&lt;br /&gt;
 &lt;p&gt;&lt;strong&gt;感覺還不賴XD&lt;/strong&gt;&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/crJjUM&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;呼…終於呀，以上是值得唱歌慶祝的第一篇開箱文~XD&lt;br /&gt;
-收工嘍!收工嘍!&lt;/p&gt;
+&lt;p&gt;呼…終於呀，以上是值得歡唱慶祝的第一篇開箱文~XD&lt;br /&gt;
+收工嘍!&lt;/p&gt;
 </description>
     </item>
     
