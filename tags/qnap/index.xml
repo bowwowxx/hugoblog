@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Qnap on 安迪兒隨手貼</title>
-    <link>http://bowwow.tips/tags/qnap/</link>
+    <link>http://localhost/tags/qnap/</link>
     <description>Recent content in Qnap on 安迪兒隨手貼</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;#169; by 安迪兒</copyright>
     <lastBuildDate>Sat, 30 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://bowwow.tips/tags/qnap/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost/tags/qnap/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>輕鬆在家歡唱ktv，擁有Ubuntu雙系統的QNAP TS-253A NAS</title>
-      <link>http://bowwow.tips/unboxing/20160430/</link>
+      <link>http://localhost/unboxing/20160430/</link>
       <pubDate>Sat, 30 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://bowwow.tips/unboxing/20160430/</guid>
+      <guid>http://localhost/unboxing/20160430/</guid>
       <description>&lt;p&gt;「什麼?NAS唱KTV?」&lt;/p&gt;
 
 &lt;p&gt;「哇嗚!ubuntu雙系統」&lt;/p&gt;
