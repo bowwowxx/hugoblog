@@ -107,6 +107,124 @@ hugo文章存放的方式是以檔案為概念&lt;br /&gt;
     </item>
     
     <item>
+      <title>關於MongoDB設定權限</title>
+      <link>http://bowwow.tips/post/20160531/</link>
+      <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://bowwow.tips/post/20160531/</guid>
+      <description>&lt;p&gt;大家在使用MongoDB，裝完預設其實是沒設定權限的&lt;br /&gt;
+因為MongoDB預設你不會對外開放&lt;br /&gt;
+一般是會鎖定只給api的機器讀取資料&lt;br /&gt;
+但…有資料庫就一定會有權限&lt;br /&gt;
+所以遇上要使用帳號密碼登入時要怎辦&lt;br /&gt;
+這邊安迪兒記錄一下使用的方式&lt;br /&gt;
+大至分為幾個步驟&lt;br /&gt;
+1、設定一個管權限的使用者&lt;br /&gt;
+2、設定要開放MongoDB的使用者
+3、關掉MongoDB，改換用權限啟動的參數，重新啟動MongoDB&lt;/p&gt;
+
+&lt;p&gt;1.首先登入MongoDB&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mongo  
+use admin ;
+db.createUser(
+{
+user: &amp;quot;xx&amp;quot;,
+pwd: &amp;quot;xx&amp;quot;,
+roles: [ { role: &amp;quot;userAdminAnyDatabase&amp;quot;, db: &amp;quot;metadata&amp;quot; } ]
+}
+);
+show users;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2.再來設定一下要開放帳號密碼的metadata db&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;use metadata;
+{
+user: &amp;quot;xx&amp;quot;,
+pwd: &amp;quot;xx&amp;quot;,
+roles: [ { role: &amp;quot;dbOwner&amp;quot;, db: &amp;quot;metadata&amp;quot; } ]
+};
+show users;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/H8RmtH&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;弄完了就下exit離開MongoDB的shell吧&lt;br /&gt;
+查一下mongo的process&lt;br /&gt;
+然後kill它&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ps aux | grep mongo
+sudo kill xxx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3.最後重啟一下MongoDB，帶上權限的參數，完成嘍 !&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mongod --auth
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;試一下帳號是否可登入&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mongo --port 27017 -u &amp;quot;xx&amp;quot; -p &amp;quot;xx&amp;quot; --authenticationDatabase &amp;quot;admin&amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/uPPmL9&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;另外記錄一下admin資料庫的其它特殊權限&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;readAnyDatabase &amp;gt; 讀取所有資料庫
+readWriteAnyDatabase &amp;gt; 讀寫所有資料庫
+userAdminAnyDatabase &amp;gt; 管理所有資料庫使用者
+dbAdminAnyDatabase &amp;gt; 所有資料庫的管理者
+root &amp;gt; 最高權限
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以上~~收工嘍!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL的備份與復原</title>
+      <link>http://bowwow.tips/post/20160530/</link>
+      <pubDate>Mon, 30 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://bowwow.tips/post/20160530/</guid>
+      <description>&lt;p&gt;安迪兒最較常用到PostgreSQL備資料倒資料&lt;br /&gt;
+記錄一下操作的方式&lt;/p&gt;
+
+&lt;p&gt;1、備份data&lt;br /&gt;
+PostgreSQL內建使用&lt;strong&gt;pg_dump&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pg_dump [資料庫名] -U [帳號] -f [備份檔案.sql]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;pg_dump meta_development -U posxxx -f postgres-db-20160530.sql
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/LEwRb1&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;2、還原
+PostgreSQL內建使用&lt;strong&gt;psql&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;psql -f [備份檔案名稱] [資料庫] [帳號]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;psql -f xx.sql test posxxx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/CL69Hh&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;看一下是不是有把資料回灌到test database了&lt;br /&gt;
+嗯~~資料已經進去原來的test嘍&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/ExCJDm&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;以上~~收工嘍!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Qnap nas掛上遠端Synology磁碟資料</title>
       <link>http://bowwow.tips/post/20160518/</link>
       <pubDate>Wed, 18 May 2016 00:00:00 +0000</pubDate>
@@ -664,29 +782,6 @@ RAM:16g 無誤!(開心吶)&lt;br /&gt;
       
       <guid>http://bowwow.tips/gallery/20150729/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>貴族世家</title>
-      <link>http://bowwow.tips/food/20150429/</link>
-      <pubDate>Wed, 29 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>http://bowwow.tips/food/20150429/</guid>
-      <description>&lt;p&gt;5/1前 大家超奢華的&lt;br /&gt;
-「走~中午吃這個」就進去了&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/6eCLvM&#34; width=&#34;400&#34;&gt;&lt;img src=&#34;https://goo.gl/2ozVaI&#34; width=&#34;400&#34;&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>友站-阿舍隨手寫寫</title>
-      <link>http://bowwow.tips/post/20160002/</link>
-      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      
-      <guid>http://bowwow.tips/post/20160002/</guid>
-      <description>&lt;p&gt;redirect the content to 友站-阿舍隨手寫寫.&lt;/p&gt;
-</description>
     </item>
     
   </channel>

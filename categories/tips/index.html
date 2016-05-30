@@ -16,7 +16,7 @@
       <link href="http://bowwow.tips/categories/tips/index.xml" rel="feed" type="application/rss+xml" title="安迪兒隨手貼" />
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-05-28 02:52:28.462447178 &#43;0800 CST">
+    <meta name="generation-date" content="2016-05-31 01:30:32.164435448 &#43;0800 CST">
     <title>Tips &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="http://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="http://bowwow.tips/img/favicon.ico">
@@ -199,6 +199,102 @@
     <section class="main-content">
         <div class="masonry-flex-container infinite-scroll">
             
+                
+                    <div class="flex-item">
+                        
+<div class="page-item-container">
+    
+    <div class="page-item-content">
+        <header>
+            
+                <time class="page-item-date">Tue May 31, 2016</time>
+            
+            <h4 class="page-item-title">關於MongoDB設定權限</h4>
+        </header>
+        <p class="page-item-summary">大家在使用MongoDB，裝完預設其實是沒設定權限的 因為MongoDB預設你不會對外開放 一般是會鎖定只給api的機器讀取資料 但…有資料庫就一定會有權限 所以遇上要使用帳號密碼登入時要怎辦 這邊安迪兒記錄一下使用的方式 大至分為幾個步驟 1、設定一個管權限的使用者 2、設定要開放MongoDB的使用者 3、關掉MongoDB，改換用權限啟動的參數，重新啟動MongoDB 1.首先登入MongoDB mongo use admin ; db.createUser( { user: &quot;xx&quot;, pwd: &quot;xx&quot;, roles: [ { role: &quot;userAdminAnyDatabase&quot;, db: &quot;metadata&quot; } ] } ); show users; 2.再來設定一下要開放帳號密碼的metadata db use metadata; { user: &quot;xx&quot;, pwd: &quot;xx&quot;, roles: [ { role: &quot;dbOwner&quot;, db: &quot;metadata&quot; } ] }; show users; 弄完了就下exit離開MongoDB的shell吧 查一下mongo的process 然後kill它 ps aux | grep mongo sudo kill xxx 3.最後重啟一下MongoDB，帶上權限的參數，完成嘍 ! mongod --auth 試一下帳號是否可登入 mongo --port 27017 -u &quot;xx&quot; -p &quot;xx&quot; --authenticationDatabase &quot;admin&quot; 另外記錄一下admin資料庫的其它特殊權限 readAnyDatabase &gt; 讀取所有資料庫 readWriteAnyDatabase &gt; 讀寫所有資料庫 userAdminAnyDatabase &gt; 管理所有資料庫使用者 dbAdminAnyDatabase &gt; 所有資料庫的管理者 root &gt; 最高權限 以上~~收工嘍!</p>
+        <a href="http://bowwow.tips/post/20160531/" class="page-item-btn ">
+            Read More
+        </a>
+        <footer>
+            
+<ul class="categories">
+    <li>
+        <i class="fa fa-book"></i>
+    </li>
+    
+        <li><a href="http://bowwow.tips/categories/tips">tips</a></li>
+    
+</ul>
+
+
+            <span class="separator">|</span>
+            
+<ul class="tags">
+    <li>
+        <i class="fa fa-tags"></i>
+    </li>
+    
+        <li><a href="http://bowwow.tips/tags/mongodb">MongoDB</a></li>
+    
+        <li><a href="http://bowwow.tips/tags/mongodb-createuser">mongodb createUser</a></li>
+    
+        <li><a href="http://bowwow.tips/tags/mongo-%E6%AC%8A%E9%99%90%E8%A8%AD%E5%AE%9A">mongo 權限設定</a></li>
+    
+</ul>
+
+
+        </footer>
+    </div>
+</div>
+
+                    </div>
+                
+                    <div class="flex-item">
+                        
+<div class="page-item-container">
+    
+    <div class="page-item-content">
+        <header>
+            
+                <time class="page-item-date">Mon May 30, 2016</time>
+            
+            <h4 class="page-item-title">PostgreSQL的備份與復原</h4>
+        </header>
+        <p class="page-item-summary">安迪兒最較常用到PostgreSQL備資料倒資料 記錄一下操作的方式 1、備份data PostgreSQL內建使用pg_dump pg_dump [資料庫名] -U [帳號] -f [備份檔案.sql] pg_dump meta_development -U posxxx -f postgres-db-20160530.sql 2、還原 PostgreSQL內建使用psql psql -f [備份檔案名稱] [資料庫] [帳號] psql -f xx.sql test posxxx 看一下是不是有把資料回灌到test database了 嗯~~資料已經進去原來的test嘍 以上~~收工嘍!</p>
+        <a href="http://bowwow.tips/post/20160530/" class="page-item-btn ">
+            Read More
+        </a>
+        <footer>
+            
+<ul class="categories">
+    <li>
+        <i class="fa fa-book"></i>
+    </li>
+    
+        <li><a href="http://bowwow.tips/categories/tips">tips</a></li>
+    
+</ul>
+
+
+            <span class="separator">|</span>
+            
+<ul class="tags">
+    <li>
+        <i class="fa fa-tags"></i>
+    </li>
+    
+        <li><a href="http://bowwow.tips/tags/postgresql">PostgreSQL</a></li>
+    
+        <li><a href="http://bowwow.tips/tags/psotgresql-dump">psotgresql dump</a></li>
+    
+</ul>
+
+
+        </footer>
+    </div>
+</div>
+
+                    </div>
                 
                     <div class="flex-item">
                         
