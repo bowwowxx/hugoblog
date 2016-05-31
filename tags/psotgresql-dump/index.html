@@ -16,7 +16,7 @@
       <link href="http://bowwow.tips/tags/psotgresql-dump/index.xml" rel="feed" type="application/rss+xml" title="安迪兒隨手貼" />
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-05-31 01:30:32.117754383 &#43;0800 CST">
+    <meta name="generation-date" content="2016-05-31 18:27:23.777932443 &#43;0800 CST">
     <title>Psotgresql Dump &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="http://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="http://bowwow.tips/img/favicon.ico">
@@ -211,7 +211,7 @@
             
             <h4 class="page-item-title">PostgreSQL的備份與復原</h4>
         </header>
-        <p class="page-item-summary">安迪兒最較常用到PostgreSQL備資料倒資料 記錄一下操作的方式 1、備份data PostgreSQL內建使用pg_dump pg_dump [資料庫名] -U [帳號] -f [備份檔案.sql] pg_dump meta_development -U posxxx -f postgres-db-20160530.sql 2、還原 PostgreSQL內建使用psql psql -f [備份檔案名稱] [資料庫] [帳號] psql -f xx.sql test posxxx 看一下是不是有把資料回灌到test database了 嗯~~資料已經進去原來的test嘍 以上~~收工嘍!</p>
+        <p class="page-item-summary">安迪兒最較常用到PostgreSQL備資料倒資料 記錄一下操作的方式 1、備份data PostgreSQL內建使用pg_dump pg_dump [資料庫名] -U [帳號] -f [備份檔案.sql] 另一種備份整個db的 pg_dump -h x.x.x.x -p 5432 -U admin -F c -b -v -f &quot;xx.dbf&quot; xxdatabase pg_dump meta_development -U posxxx -f postgres-db-20160530.sql 2、還原 PostgreSQL內建使用psql psql -f [備份檔案名稱] [資料庫] [帳號] 還原整個db的 pg_restore -h x.x.x.x -p 5432 -U admin -d xxdatabase -v &quot;xx.dbf&quot; psql -f xx.sql test posxxx 看一下是不是有把資料回灌到test database了 嗯~~資料已經進去原來的test嘍 其它:設定不輸入密碼 1. /etc/profile.local 加上 export PGPASSWORD=&quot;密碼&quot; 使用者的家目錄($HOME)下，新增一個.pgpass檔 hostname:port:database:username:password 差別是第2種可以指定特定的database不輸入密碼 以上~~收工嘍!</p>
         <a href="http://bowwow.tips/post/20160530/" class="page-item-btn ">
             Read More
         </a>

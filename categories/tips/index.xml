@@ -101,9 +101,12 @@ root &amp;gt; 最高權限
 PostgreSQL內建使用&lt;strong&gt;pg_dump&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;pg_dump [資料庫名] -U [帳號] -f [備份檔案.sql]
+
+另一種備份整個db的  
+ pg_dump -h x.x.x.x -p 5432 -U admin -F c -b -v -f &amp;quot;xx.dbf&amp;quot; xxdatabase
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code&gt;pg_dump meta_development -U posxxx -f postgres-db-20160530.sql
+&lt;pre&gt;&lt;code&gt;pg_dump meta_development -U posxxx -f postgres-db-20160530.sql  
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/LEwRb1&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
@@ -111,7 +114,10 @@ PostgreSQL內建使用&lt;strong&gt;pg_dump&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;2、還原
 PostgreSQL內建使用&lt;strong&gt;psql&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;psql -f [備份檔案名稱] [資料庫] [帳號]
+&lt;pre&gt;&lt;code&gt;psql -f [備份檔案名稱] [資料庫] [帳號]  
+
+還原整個db的   
+pg_restore -h x.x.x.x -p 5432 -U admin -d xxdatabase -v &amp;quot;xx.dbf&amp;quot;  
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;pre&gt;&lt;code&gt;psql -f xx.sql test posxxx
@@ -123,6 +129,21 @@ PostgreSQL內建使用&lt;strong&gt;psql&lt;/strong&gt;&lt;/p&gt;
 嗯~~資料已經進去原來的test嘍&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/ExCJDm&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;其它:設定不輸入密碼&lt;br /&gt;
+1.  /etc/profile.local 加上&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;export PGPASSWORD=&amp;quot;密碼&amp;quot;  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;使用者的家目錄($HOME)下，新增一個.pgpass檔&lt;br /&gt;
+&lt;code&gt;
+hostname:port:database:username:password   
+&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;差別是第2種可以指定特定的database不輸入密碼&lt;/p&gt;
 
 &lt;p&gt;以上~~收工嘍!&lt;/p&gt;
 </description>

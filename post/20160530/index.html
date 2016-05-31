@@ -14,7 +14,7 @@
     <meta name="description" content="">
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-05-31 01:30:32.250400728 &#43;0800 CST">
+    <meta name="generation-date" content="2016-05-31 18:27:23.906616783 &#43;0800 CST">
     <title>PostgreSQL的備份與復原 &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="http://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="http://bowwow.tips/img/favicon.ico">
@@ -228,9 +228,12 @@
 PostgreSQL內建使用<strong>pg_dump</strong></p>
 
 <pre><code>pg_dump [資料庫名] -U [帳號] -f [備份檔案.sql]
+
+另一種備份整個db的  
+ pg_dump -h x.x.x.x -p 5432 -U admin -F c -b -v -f &quot;xx.dbf&quot; xxdatabase
 </code></pre>
 
-<pre><code>pg_dump meta_development -U posxxx -f postgres-db-20160530.sql
+<pre><code>pg_dump meta_development -U posxxx -f postgres-db-20160530.sql  
 </code></pre>
 
 <p><img src="https://goo.gl/LEwRb1" width="70%"></p>
@@ -238,7 +241,10 @@ PostgreSQL內建使用<strong>pg_dump</strong></p>
 <p>2、還原
 PostgreSQL內建使用<strong>psql</strong></p>
 
-<pre><code>psql -f [備份檔案名稱] [資料庫] [帳號]
+<pre><code>psql -f [備份檔案名稱] [資料庫] [帳號]  
+
+還原整個db的   
+pg_restore -h x.x.x.x -p 5432 -U admin -d xxdatabase -v &quot;xx.dbf&quot;  
 </code></pre>
 
 <pre><code>psql -f xx.sql test posxxx
@@ -250,6 +256,21 @@ PostgreSQL內建使用<strong>psql</strong></p>
 嗯~~資料已經進去原來的test嘍</p>
 
 <p><img src="https://goo.gl/ExCJDm" width="70%"></p>
+
+<p>其它:設定不輸入密碼<br />
+1.  /etc/profile.local 加上</p>
+
+<pre><code>export PGPASSWORD=&quot;密碼&quot;  
+</code></pre>
+
+<ol>
+<li>使用者的家目錄($HOME)下，新增一個.pgpass檔<br />
+<code>
+hostname:port:database:username:password   
+</code><br /></li>
+</ol>
+
+<p>差別是第2種可以指定特定的database不輸入密碼</p>
 
 <p>以上~~收工嘍!</p>
 
