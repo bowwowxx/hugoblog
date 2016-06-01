@@ -16,7 +16,7 @@
       <link href="http://bowwow.tips/post/index.xml" rel="feed" type="application/rss+xml" title="安迪兒隨手貼" />
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-05-31 18:27:23.862700313 &#43;0800 CST">
+    <meta name="generation-date" content="2016-06-01 17:59:21.851742534 &#43;0800 CST">
     <title>Posts &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="http://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="http://bowwow.tips/img/favicon.ico">
@@ -235,6 +235,55 @@
     </li>
     
         <li><a href="http://bowwow.tips/tags/%E7%AC%AC%E4%B8%80%E7%AF%87">第一篇</a></li>
+    
+</ul>
+
+
+        </footer>
+    </div>
+</div>
+
+                    </div>
+                
+                    <div class="flex-item">
+                        
+<div class="page-item-container">
+    
+    <div class="page-item-content">
+        <header>
+            
+                <time class="page-item-date">Wed Jun 01, 2016</time>
+            
+            <h4 class="page-item-title">匯入匯出MongoDB資料成JSON CSV檔案</h4>
+        </header>
+        <p class="page-item-summary">前陣子安迪兒剛好碰到要匯出mongodb資料 需要轉csv給其它人員使用 查了一下，發現mongodb直接有支援資料匯出成json、csv格式 (超強XD) 兩者的區別： - JSON 是 mongoexport 默認的匯出格式，不需要指定 CSV 格式需要明確指定欄位屬性名 一般大多使用json，特殊需求像是需要用到excel之類的文件編輯的，會比較偏向使用csv格式。 參考以下官方文件 [mongoexport] https://docs.mongodb.com/master/reference/program/mongoexport [mongoimport] https://docs.mongodb.com/manual/reference/program/mongoimport/#use 安迪兒貼一下用的指令 匯出: mongodb collection指定欄位匯出資料轉csv mongoexport --host localhost --db xxdata --collection unknown_data --username xx --password xx --csv --out text.csv --fields _id,lang,pinyin,artists,phonetic,hash_code,created_at,title,vocal_track,filename,hash_method,words mongodb collection資料匯出轉json mongoexport --host localhost -d xxdata -c unknown_songs -u xxuser -p xxpassword -o output.json 匯入: 測試一下匯入 mongoimport --host localhost --db xxdata --collection test --username xx --password xx --type csv --headerline --file ./text.csv 以上~~收工嘍!</p>
+        <a href="http://bowwow.tips/post/20160601/" class="page-item-btn ">
+            Read More
+        </a>
+        <footer>
+            
+<ul class="categories">
+    <li>
+        <i class="fa fa-book"></i>
+    </li>
+    
+        <li><a href="http://bowwow.tips/categories/tips">tips</a></li>
+    
+</ul>
+
+
+            <span class="separator">|</span>
+            
+<ul class="tags">
+    <li>
+        <i class="fa fa-tags"></i>
+    </li>
+    
+        <li><a href="http://bowwow.tips/tags/mongodb">MongoDB</a></li>
+    
+        <li><a href="http://bowwow.tips/tags/mongodb-csv-json">mongodb csv json</a></li>
+    
+        <li><a href="http://bowwow.tips/tags/mongoexport-json-csv">mongoexport json csv</a></li>
     
 </ul>
 

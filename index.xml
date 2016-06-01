@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;#169; by 安迪兒</copyright>
+    <lastBuildDate>Tue, 31 May 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://bowwow.tips/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>2016 Computex直擊!(台北國際電腦展)</title>
+      <link>http://bowwow.tips/project/computex2016/</link>
+      <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://bowwow.tips/project/computex2016/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Video</title>
@@ -15,33 +25,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://bowwow.tips/othergallery/video/</guid>
-      <description>&lt;p&gt;Videos can be provided via:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;video_mp4 = &amp;quot;/vid/vid_480x320.mp4&amp;quot;
-video_webm = &amp;quot;/vid/vid_480x320.webm&amp;quot;
-video_ogv = &amp;quot;/vid/vid_480x320.ogv&amp;quot;
-video_3gp = &amp;quot;/vid/vid_352x288.3gp&amp;quot;
-video_fallback = &amp;quot;/img/car.jpg&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Each value is optional. If the fallback image is provided, it will be used
-as both the poster of the video and the fallback if the browser does not
-support HTML5 video.&lt;/p&gt;
-
-&lt;p&gt;You can use the partial for a video via:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;.Scratch.Set &amp;quot;class&amp;quot; &amp;quot;some extra CSS classes on video tag&amp;quot;
-{{ partial &amp;quot;extra/video.html&amp;quot; . }}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Video</title>
-      <link>http://bowwow.tips/project/video/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://bowwow.tips/project/video/</guid>
       <description>&lt;p&gt;Videos can be provided via:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;video_mp4 = &amp;quot;/vid/vid_480x320.mp4&amp;quot;
@@ -103,6 +86,65 @@ hugo文章存放的方式是以檔案為概念&lt;br /&gt;
 之後安迪兒會再補上自架blog的步驟&lt;/p&gt;
 
 &lt;p&gt;日後也請大家多多指教嘍~&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>匯入匯出MongoDB資料成JSON CSV檔案</title>
+      <link>http://bowwow.tips/post/20160601/</link>
+      <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://bowwow.tips/post/20160601/</guid>
+      <description>
+
+&lt;p&gt;前陣子安迪兒剛好碰到要匯出mongodb資料&lt;br /&gt;
+需要轉csv給其它人員使用&lt;br /&gt;
+查了一下，發現mongodb直接有支援資料匯出成json、csv格式&lt;br /&gt;
+(超強XD)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;兩者的區別：&lt;/strong&gt;&lt;br /&gt;
+- JSON 是 mongoexport 默認的匯出格式，不需要指定&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;CSV 格式需要明確指定欄位屬性名&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;一般大多使用json，特殊需求像是需要用到excel之類的文件編輯的，會比較偏向使用csv格式。&lt;br /&gt;
+參考以下官方文件&lt;/p&gt;
+
+&lt;p&gt;[mongoexport]&lt;br /&gt;
+&lt;a href=&#34;https://docs.mongodb.com/master/reference/program/mongoexport&#34;&gt;https://docs.mongodb.com/master/reference/program/mongoexport&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;[mongoimport]&lt;br /&gt;
+&lt;a href=&#34;https://docs.mongodb.com/manual/reference/program/mongoimport/#use&#34;&gt;https://docs.mongodb.com/manual/reference/program/mongoimport/#use&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;安迪兒貼一下用的指令&lt;/p&gt;
+
+&lt;h3 id=&#34;匯出:66a2e7b2879656754f6525910eaf4d0e&#34;&gt;匯出:&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;mongodb collection指定欄位匯出資料轉csv&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mongoexport --host localhost --db xxdata --collection unknown_data --username xx --password xx --csv --out text.csv --fields _id,lang,pinyin,artists,phonetic,hash_code,created_at,title,vocal_track,filename,hash_method,words
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;mongodb collection資料匯出轉json&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mongoexport --host localhost -d xxdata -c unknown_songs -u xxuser -p xxpassword -o output.json
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/FP6y0y&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;匯入:66a2e7b2879656754f6525910eaf4d0e&#34;&gt;匯入:&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;測試一下匯入&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mongoimport  --host localhost --db xxdata --collection test --username xx --password xx --type csv --headerline --file ./text.csv
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/54DixU&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;以上~~收工嘍!&lt;/p&gt;
 </description>
     </item>
     
@@ -793,15 +835,6 @@ RAM:16g 無誤!(開心吶)&lt;br /&gt;
       <pubDate>Tue, 30 Jun 2015 00:00:00 +0000</pubDate>
       
       <guid>http://bowwow.tips/gallery/20150630/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>超愛的冰滴咖啡</title>
-      <link>http://bowwow.tips/gallery/20150729/</link>
-      <pubDate>Fri, 12 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>http://bowwow.tips/gallery/20150729/</guid>
       <description></description>
     </item>
     
