@@ -43,7 +43,7 @@
 &lt;pre&gt;&lt;code&gt;cd /share/CACHEDEV1_DATA/tmp
 mkdir video photo
 mount.cifs //10.0.0.7/video -o user=xx password=xx
-mount.cifs //10.0.0.7/photo -o user=xx password=xx
+mount.cifs //10.0.0.7/photo -o user=xx password=xx  
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/IK5ocL&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;

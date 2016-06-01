@@ -17,14 +17,7 @@
       <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
       
       <guid>http://bowwow.tips/project/computex2016/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://bowwow.tips/project/computex2016/&#34;&gt;
-&lt;div class=&#34;project-container-image rounded-corners-top&#34;&gt;
-&lt;video preload=&#34;auto&#34; autoplay=&#34;&#34; loop=&#34;&#34; onloadstart=&#34;this.volume=0.1&#34; controls=&#34;&#34; class=&#34;rounded-corners-top fill-container-width&#34;&gt;
-&lt;source src=&#34;http://bowwow.tips/vid/computex2016.mp4&#34; type=&#34;video/mp4; codecs=&amp;quot;avc1.4D401E, mp4a.40.2&amp;quot;&#34;&gt;
-&lt;/video&gt;
-&lt;/div&gt;
-&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description></description>
     </item>
     
     <item>
@@ -153,6 +146,53 @@ hugo文章存放的方式是以檔案為概念&lt;br /&gt;
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/54DixU&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;以上~~收工嘍!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>無老鍋~美好的養生麻辣鍋</title>
+      <link>http://bowwow.tips/food/20160531/</link>
+      <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://bowwow.tips/food/20160531/</guid>
+      <description>&lt;p&gt;地址:台北市中正區新生南路一段124號&lt;/p&gt;
+
+&lt;p&gt;下班時安迪兒剛好和友人去光華拿東西&lt;br /&gt;
+查了一下附近有吃東西的地方&lt;br /&gt;
+發現有&lt;strong&gt;無老鍋&lt;/strong&gt;&lt;br /&gt;
+友人一聽就立馬帶著安迪兒來吃&lt;br /&gt;
+(友人在台中吃過，覺的超好吃)&lt;/p&gt;
+
+&lt;p&gt;在對面等紅燈時看了一下，看起來是間蠻精緻鍋物&lt;br /&gt;
+打著養生白鍋、養生麻辣鍋&lt;br /&gt;
+真的是讓人在馬路對面就想衝進去吃&lt;br /&gt;
+這邊離捷運站要走10多分鐘的路&lt;br /&gt;
+所以其實人比較沒那麼多&lt;br /&gt;
+進去後蠻舒適的，整排榻榻米坐椅，2人坐6人的坐位&lt;br /&gt;
+充滿了很香的味道，服務人員一直在彎腰鞠躬(辛苦了~XD)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/xYDrrc&#34; width=&#34;50%&#34;&gt;&lt;img src=&#34;https://goo.gl/UUAXCG&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;友人整個龍心大悅&lt;br /&gt;
+開心的狂翻菜單要大吃一頓&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/xj2fLi&#34; width=&#34;50%&#34;&gt;&lt;img src=&#34;https://goo.gl/w2ED7D&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;上菜嘍&lt;br /&gt;
+(我們點了2種口味的鍋，麵包豆腐白湯、養生麻辣鍋)&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/DizBNS&#34; width=&#34;50%&#34;&gt;&lt;img src=&#34;https://goo.gl/avcKlO&#34; width=&#34;50%&#34;&gt;
+&lt;img src=&#34;https://goo.gl/1ZhbCU&#34; width=&#34;50%&#34;&gt;&lt;img src=&#34;https://goo.gl/0QbU3M&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;湯頭超好喝!!點的老油條和肉也都超優的&lt;/p&gt;
+
+&lt;p&gt;最後湯裡面竟然有&lt;strong&gt;整隻的人蔘&lt;/strong&gt;&lt;br /&gt;
+(真是太過癮了)&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/zOAvx5&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;真是是濃濃人蔘味，超養生吶~~&lt;br /&gt;
+吃完我們都覺的這間好好吃&lt;br /&gt;
+真心推薦!!&lt;/p&gt;
+
+&lt;p&gt;(滿1千5還會加送一盤200多的肉喔~XD)&lt;/p&gt;
 </description>
     </item>
     
@@ -328,7 +368,7 @@ hostname:port:database:username:password
 &lt;pre&gt;&lt;code&gt;cd /share/CACHEDEV1_DATA/tmp
 mkdir video photo
 mount.cifs //10.0.0.7/video -o user=xx password=xx
-mount.cifs //10.0.0.7/photo -o user=xx password=xx
+mount.cifs //10.0.0.7/photo -o user=xx password=xx  
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/IK5ocL&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
@@ -445,7 +485,7 @@ mdadm -S /dev/md2
     </item>
     
     <item>
-      <title>MAC /dev/disk 與 /dev/rdisk 的差別 (解決 dd 過慢的問題)</title>
+      <title>MAC上 /dev/disk 與 /dev/rdisk 的差別 (解決 dd 過慢的問題)</title>
       <link>http://bowwow.tips/post/20160512/</link>
       <pubDate>Thu, 12 May 2016 00:00:00 +0000</pubDate>
       
@@ -835,15 +875,6 @@ RAM:16g 無誤!(開心吶)&lt;br /&gt;
 &lt;p&gt;呼…終於呀，以上是值得歡唱慶祝的第一篇開箱文~XD&lt;br /&gt;
 收工嘍~收工嘍!&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>棄業中</title>
-      <link>http://bowwow.tips/gallery/20150630/</link>
-      <pubDate>Tue, 30 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>http://bowwow.tips/gallery/20150630/</guid>
-      <description></description>
     </item>
     
   </channel>

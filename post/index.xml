@@ -284,7 +284,7 @@ hostname:port:database:username:password
 &lt;pre&gt;&lt;code&gt;cd /share/CACHEDEV1_DATA/tmp
 mkdir video photo
 mount.cifs //10.0.0.7/video -o user=xx password=xx
-mount.cifs //10.0.0.7/photo -o user=xx password=xx
+mount.cifs //10.0.0.7/photo -o user=xx password=xx  
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/IK5ocL&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
@@ -401,7 +401,7 @@ mdadm -S /dev/md2
     </item>
     
     <item>
-      <title>MAC /dev/disk 與 /dev/rdisk 的差別 (解決 dd 過慢的問題)</title>
+      <title>MAC上 /dev/disk 與 /dev/rdisk 的差別 (解決 dd 過慢的問題)</title>
       <link>http://bowwow.tips/post/20160512/</link>
       <pubDate>Thu, 12 May 2016 00:00:00 +0000</pubDate>
       
