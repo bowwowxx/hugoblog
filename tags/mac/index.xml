@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mac on 安迪兒隨手貼</title>
-    <link>http://bowwow.tips/tags/mac/</link>
+    <link>https://bowwow.tips/tags/mac/</link>
     <description>Recent content in Mac on 安迪兒隨手貼</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;#169; by 安迪兒</copyright>
     <lastBuildDate>Thu, 12 May 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://bowwow.tips/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://bowwow.tips/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>MAC上 /dev/disk 與 /dev/rdisk 的差別 (解決 dd 過慢的問題)</title>
-      <link>http://bowwow.tips/post/20160512/</link>
+      <link>https://bowwow.tips/post/20160512/</link>
       <pubDate>Thu, 12 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://bowwow.tips/post/20160512/</guid>
+      <guid>https://bowwow.tips/post/20160512/</guid>
       <description>&lt;p&gt;如果各位有在玩Raspberry pi或banana pi之類的東西&lt;br /&gt;
 應該常常會用到讀寫img吧&lt;br /&gt;
 一般要把映象檔整塊燒到sd卡裡面都用到&lt;br /&gt;
