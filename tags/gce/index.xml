@@ -81,7 +81,7 @@ ulimit -n 65536
 &lt;pre&gt;&lt;code&gt;sudo reboot  
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;再查一下Umlimit&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;看看有沒效，查一下Umlimit&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;pre&gt;&lt;code&gt;ulimit -a  
