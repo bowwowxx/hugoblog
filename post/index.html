@@ -18,7 +18,7 @@
       <link href="https://bowwow.tips/post/index.xml" rel="feed" type="application/rss+xml" title="安迪兒隨手貼" />
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-06-03 11:13:17.037374817 &#43;0800 CST">
+    <meta name="generation-date" content="2016-06-05 02:54:06.154041884 &#43;0800 CST">
     <title>Posts &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="https://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="https://bowwow.tips/img/favicon.ico">
@@ -236,6 +236,53 @@
     </li>
     
         <li><a href="https://bowwow.tips/tags/%E7%AC%AC%E4%B8%80%E7%AF%87">第一篇</a></li>
+    
+</ul>
+
+
+        </footer>
+    </div>
+</div>
+
+                    </div>
+                
+                    <div class="flex-item">
+                        
+<div class="page-item-container">
+    
+    <div class="page-item-content">
+        <header>
+            
+                <time class="page-item-date">Sat Jun 04, 2016</time>
+            
+            <h4 class="page-item-title">修改Ubuntu ulimit限制</h4>
+        </header>
+        <p class="page-item-summary">安迪兒最近在大量壓測時碰上了Too many open files in system 看了一下gce上機器的資源其實還好，應該可以再榨一點效能出來 想說檔案數再開大一點試試 記錄一下調整的方式 先登入一下看一下系統預設數量是多少 ulimit -n 嗯~1024，應該可以再開多一些 改一下數字 sudo ulimit -n 65535 呃~command not found sudo無法執行ulimit 原因是ulimit是bash内置命令 改一下su -，再輸入ulimit su - ulimit -n 65536 查一下改完後的數量，應該ok了 ulimit -n 以上是手動設定，重開機後會消失 安迪兒查了一下試著在進化一些 讓重開機後也會存在 方法如下 1. 修改/etc/security/limits.conf * soft nofile 65535 * hard nofile 65535 修改 /etc/pam.d/common-session 加上這行 session required pam_limits.so 編輯/etc/profile 加上ulimit -SHn 65535 收工了，重啟一下 sudo reboot 再查一下Umlimit ulimit -a 這樣就ok了 以上!收工嘍~收工嘍</p>
+        <a href="https://bowwow.tips/post/20160604/" class="page-item-btn ">
+            Read More
+        </a>
+        <footer>
+            
+<ul class="categories">
+    <li>
+        <i class="fa fa-book"></i>
+    </li>
+    
+        <li><a href="https://bowwow.tips/categories/tips">tips</a></li>
+    
+</ul>
+
+
+            <span class="separator">|</span>
+            
+<ul class="tags">
+    <li>
+        <i class="fa fa-tags"></i>
+    </li>
+    
+        <li><a href="https://bowwow.tips/tags/ubuntu">ubuntu</a></li>
+    
+        <li><a href="https://bowwow.tips/tags/gce">gce</a></li>
     
 </ul>
 

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gce on 安迪兒隨手貼</title>
+    <link>https://bowwow.tips/tags/gce/</link>
+    <description>Recent content in Gce on 安迪兒隨手貼</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;#169; by 安迪兒</copyright>
+    <lastBuildDate>Sat, 04 Jun 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://bowwow.tips/tags/gce/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>修改Ubuntu ulimit限制</title>
+      <link>https://bowwow.tips/post/20160604/</link>
+      <pubDate>Sat, 04 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://bowwow.tips/post/20160604/</guid>
+      <description>
+
+&lt;p&gt;安迪兒最近在大量壓測時碰上了Too many open files in system&lt;br /&gt;
+看了一下gce上機器的資源其實還好，應該可以再榨一點效能出來&lt;br /&gt;
+想說檔案數再開大一點試試&lt;br /&gt;
+記錄一下調整的方式&lt;br /&gt;
+先登入一下看一下系統預設數量是多少&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ulimit -n
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;嗯~1024，應該可以再開多一些&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/yEVVY6&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;改一下數字&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo ulimit -n 65535  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;呃-command-not-found:ab62b4b95e358894b30c65e15ab675f9&#34;&gt;呃~command not found&lt;/h4&gt;
+
+&lt;p&gt;sudo無法執行ulimit&lt;br /&gt;
+原因是ulimit是bash内置命令&lt;br /&gt;
+改一下su -，再輸入ulimit&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;su -  
+ulimit -n 65536  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;查一下改完後的數量，應該ok了&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ulimit -n
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/CPrByn&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;以上是手動設定，重開機後會消失&lt;/p&gt;
+
+&lt;p&gt;安迪兒查了一下試著在進化一些&lt;br /&gt;
+讓重開機後也會存在&lt;br /&gt;
+方法如下&lt;br /&gt;
+1. 修改/etc/security/limits.conf&lt;br /&gt;
+ &lt;img src=&#34;https://goo.gl/Tg5nxZ&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;* soft nofile 65535   
+* hard nofile 65535
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;修改 /etc/pam.d/common-session&lt;br /&gt;
+加上這行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;session required pam_limits.so  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/muLvxD&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;編輯/etc/profile&lt;br /&gt;
+加上ulimit -SHn 65535&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;收工了，重啟一下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo reboot  
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;再查一下Umlimit&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;ulimit -a  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/jNIRG5&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;這樣就ok了
+以上!收工嘍~收工嘍&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
