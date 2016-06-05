@@ -16,7 +16,7 @@
     
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-06-05 02:56:24.525707714 &#43;0800 CST">
+    <meta name="generation-date" content="2016-06-06 00:49:02.337357023 &#43;0800 CST">
     <title>修改Ubuntu ulimit限制 &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="https://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="https://bowwow.tips/img/favicon.ico">
@@ -224,11 +224,15 @@
                         
                             
 
-<p>安迪兒最近在大量壓測時碰上了Too many open files in system<br />
-看了一下gce上機器的資源其實還好，應該可以再榨一點效能出來<br />
-想說檔案數再開大一點試試<br />
-記錄一下調整的方式<br />
-先登入一下看一下系統預設數量是多少</p>
+<p>安迪兒最近在壓測時碰上了<br />
+Too many open files in system</p>
+
+<p>看了一下gce上機器的資源其實還好<br />
+應該可以再榨一點效能出來<br />
+想說檔案數再開大一點試試</p>
+
+<p>記錄一下調整的方式<br />
+先登入看一下系統預設數量是多少</p>
 
 <pre><code>ulimit -n
 </code></pre>
@@ -243,9 +247,11 @@
 
 <h4 id="呃-command-not-found:ab62b4b95e358894b30c65e15ab675f9">呃~command not found</h4>
 
+<p><img src="https://goo.gl/6yAXrv" width="70%"></p>
+
 <p>sudo無法執行ulimit<br />
 原因是ulimit是bash内置命令<br />
-改一下su -，再輸入ulimit</p>
+改一下用su -，再輸入ulimit</p>
 
 <pre><code>su -  
 ulimit -n 65536  
@@ -258,45 +264,49 @@ ulimit -n 65536
 
 <p><img src="https://goo.gl/CPrByn" width="70%"></p>
 
-<p>以上是手動設定，重開機後會消失</p>
+<p>以上手動設定，<strong>重開機後會消失~XD</strong></p>
 
-<p>安迪兒查了一下試著在進化一些<br />
-讓重開機後也會存在<br />
-方法如下<br />
-1. 修改/etc/security/limits.conf<br />
- <img src="https://goo.gl/Tg5nxZ" width="70%"></p>
+<h4 id="安迪兒查了一些開機自動設定的方式:ab62b4b95e358894b30c65e15ab675f9">安迪兒查了一些開機自動設定的方式</h4>
+
+<p>記錄一下最後試的設定</p>
+
+<h4 id="1-修改-etc-security-limits-conf:ab62b4b95e358894b30c65e15ab675f9">1. 修改/etc/security/limits.conf</h4>
+
+<p><img src="https://goo.gl/Tg5nxZ" width="70%"></p>
 
 <pre><code>* soft nofile 65535   
 * hard nofile 65535
 </code></pre>
 
-<ol>
-<li><p>修改 /etc/pam.d/common-session<br />
-加上這行</p>
+<h4 id="2-修改-etc-pam-d-common-session:ab62b4b95e358894b30c65e15ab675f9">2.修改 /etc/pam.d/common-session</h4>
+
+<p>加上這行</p>
 
 <pre><code>session required pam_limits.so  
 </code></pre>
 
-<p><img src="https://goo.gl/muLvxD" width="70%"></p></li>
+<p><img src="https://goo.gl/muLvxD" width="70%"></p>
 
-<li><p>編輯/etc/profile<br />
-加上ulimit -SHn 65535</p></li>
+<h4 id="3-編輯-etc-profile:ab62b4b95e358894b30c65e15ab675f9">3.編輯/etc/profile</h4>
 
-<li><p>收工了，重啟一下</p>
+<p>加上ulimit -SHn 65535</p>
+
+<h4 id="4-收工了-重啟一下:ab62b4b95e358894b30c65e15ab675f9">4.收工了，重啟一下</h4>
 
 <pre><code>sudo reboot  
-</code></pre></li>
+</code></pre>
 
-<li><p>看看有沒效，查一下Umlimit</p></li>
-</ol>
+<h4 id="5-看看有沒效:ab62b4b95e358894b30c65e15ab675f9">5.看看有沒效</h4>
+
+<p>查一下ulimit</p>
 
 <pre><code>ulimit -a  
 </code></pre>
 
 <p><img src="https://goo.gl/jNIRG5" width="70%"></p>
 
-<p>這樣就ok了
-以上!收工嘍~收工嘍</p>
+<p>看來這樣就ok了<br />
+以上!收工嘍~</p>
 
                         
                     </section>

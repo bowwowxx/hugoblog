@@ -168,8 +168,14 @@ Zenbo可是比展場的模特兒們還紅吶&lt;br /&gt;
 ~~XD&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/IHXXMP&#34; width=&#34;50%&#34;&gt;&lt;img src=&#34;https://goo.gl/9zEu2L&#34; width=&#34;50%&#34;&gt;&lt;img src=&#34;https://goo.gl/nbpLlZ&#34; width=&#34;50%&#34;&gt;&lt;img src=&#34;https://goo.gl/GVpqEE&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
 
+&lt;iframe width=&#34;420&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/rMcKexy2cO0&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;    
+
 &lt;p&gt;看完Zenbo，安迪兒跑去其它地方晃晃&lt;br /&gt;
 看到的一些有趣的東西&lt;/p&gt;
+
+&lt;p&gt;安迪兒蠻歡這個Vive音樂VR&lt;br /&gt;
+這個老外正在配各種有趣的音樂~XD&lt;br /&gt;
+&lt;iframe width=&#34;420&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/yy5fIYSkX8k&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
 
 &lt;p&gt;防水的手持裝置、透明螢幕的廣告箱子&lt;br /&gt;
 販賣機、高速照相的裝置&lt;br /&gt;
@@ -349,11 +355,15 @@ hugo文章存放的方式是以檔案為概念&lt;br /&gt;
       <guid>https://bowwow.tips/post/20160604/</guid>
       <description>
 
-&lt;p&gt;安迪兒最近在大量壓測時碰上了Too many open files in system&lt;br /&gt;
-看了一下gce上機器的資源其實還好，應該可以再榨一點效能出來&lt;br /&gt;
-想說檔案數再開大一點試試&lt;br /&gt;
-記錄一下調整的方式&lt;br /&gt;
-先登入一下看一下系統預設數量是多少&lt;/p&gt;
+&lt;p&gt;安迪兒最近在壓測時碰上了&lt;br /&gt;
+Too many open files in system&lt;/p&gt;
+
+&lt;p&gt;看了一下gce上機器的資源其實還好&lt;br /&gt;
+應該可以再榨一點效能出來&lt;br /&gt;
+想說檔案數再開大一點試試&lt;/p&gt;
+
+&lt;p&gt;記錄一下調整的方式&lt;br /&gt;
+先登入看一下系統預設數量是多少&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;ulimit -n
 &lt;/code&gt;&lt;/pre&gt;
@@ -368,9 +378,11 @@ hugo文章存放的方式是以檔案為概念&lt;br /&gt;
 
 &lt;h4 id=&#34;呃-command-not-found:ab62b4b95e358894b30c65e15ab675f9&#34;&gt;呃~command not found&lt;/h4&gt;
 
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/6yAXrv&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
 &lt;p&gt;sudo無法執行ulimit&lt;br /&gt;
 原因是ulimit是bash内置命令&lt;br /&gt;
-改一下su -，再輸入ulimit&lt;/p&gt;
+改一下用su -，再輸入ulimit&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;su -  
 ulimit -n 65536  
@@ -383,45 +395,49 @@ ulimit -n 65536
 
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/CPrByn&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;以上是手動設定，重開機後會消失&lt;/p&gt;
+&lt;p&gt;以上手動設定，&lt;strong&gt;重開機後會消失~XD&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;安迪兒查了一下試著在進化一些&lt;br /&gt;
-讓重開機後也會存在&lt;br /&gt;
-方法如下&lt;br /&gt;
-1. 修改/etc/security/limits.conf&lt;br /&gt;
- &lt;img src=&#34;https://goo.gl/Tg5nxZ&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;安迪兒查了一些開機自動設定的方式:ab62b4b95e358894b30c65e15ab675f9&#34;&gt;安迪兒查了一些開機自動設定的方式&lt;/h4&gt;
+
+&lt;p&gt;記錄一下最後試的設定&lt;/p&gt;
+
+&lt;h4 id=&#34;1-修改-etc-security-limits-conf:ab62b4b95e358894b30c65e15ab675f9&#34;&gt;1. 修改/etc/security/limits.conf&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/Tg5nxZ&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;* soft nofile 65535   
 * hard nofile 65535
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;修改 /etc/pam.d/common-session&lt;br /&gt;
-加上這行&lt;/p&gt;
+&lt;h4 id=&#34;2-修改-etc-pam-d-common-session:ab62b4b95e358894b30c65e15ab675f9&#34;&gt;2.修改 /etc/pam.d/common-session&lt;/h4&gt;
+
+&lt;p&gt;加上這行&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;session required pam_limits.so  
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/muLvxD&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/muLvxD&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;編輯/etc/profile&lt;br /&gt;
-加上ulimit -SHn 65535&lt;/p&gt;&lt;/li&gt;
+&lt;h4 id=&#34;3-編輯-etc-profile:ab62b4b95e358894b30c65e15ab675f9&#34;&gt;3.編輯/etc/profile&lt;/h4&gt;
 
-&lt;li&gt;&lt;p&gt;收工了，重啟一下&lt;/p&gt;
+&lt;p&gt;加上ulimit -SHn 65535&lt;/p&gt;
+
+&lt;h4 id=&#34;4-收工了-重啟一下:ab62b4b95e358894b30c65e15ab675f9&#34;&gt;4.收工了，重啟一下&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo reboot  
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;li&gt;&lt;p&gt;看看有沒效，查一下Umlimit&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h4 id=&#34;5-看看有沒效:ab62b4b95e358894b30c65e15ab675f9&#34;&gt;5.看看有沒效&lt;/h4&gt;
+
+&lt;p&gt;查一下ulimit&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;ulimit -a  
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/jNIRG5&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;這樣就ok了
-以上!收工嘍~收工嘍&lt;/p&gt;
+&lt;p&gt;看來這樣就ok了&lt;br /&gt;
+以上!收工嘍~&lt;/p&gt;
 </description>
     </item>
     
