@@ -496,6 +496,28 @@ ulimit -n 65536
 
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/54DixU&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
+&lt;h4 id=&#34;附上mongo-db-dump-restore資料庫:66a2e7b2879656754f6525910eaf4d0e&#34;&gt;附上mongo db dump &amp;amp; restore資料庫&lt;/h4&gt;
+
+&lt;p&gt;全部db dump&amp;amp;restore&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mongodump -h localhost -u xx -p xx -d metadata -o ./dump  
+
+mongorestore -h localhost -u xx -p xx -d metadata --directoryperdb ./dump  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;單一collection回復&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mongodump -h localhost -u xx -p xx -d metadata --collection unknown_songs  
+
+mongorestore -h localhost -u xx -p x -d metadata --collection test ./dump/metadata/unknown_songs.bson  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;一些參數&lt;/strong&gt;&lt;br /&gt;
+- -h：mongo位址&lt;br /&gt;
+- -d：db name&lt;br /&gt;
+- &amp;ndash;directoryperdb：dump的目錄&lt;br /&gt;
+- &amp;ndash;drop：restore時，先刪掉資料再恢復&lt;/p&gt;
+
 &lt;p&gt;以上~~收工嘍!&lt;/p&gt;
 </description>
     </item>

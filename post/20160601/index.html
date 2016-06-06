@@ -12,11 +12,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="">
     <meta name="description" content="mongo資料轉csv json">
-    <meta name="keywords" content="MongoDB,mongodb to csv,mongo to json,mongoexport json csv">
+    <meta name="keywords" content="MongoDB,mongodb to csv,mongo to json,mongoexport json csv,mongodump,mongorestore">
     
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-06-06 01:11:08.604821991 &#43;0800 CST">
+    <meta name="generation-date" content="2016-06-06 14:58:40.606063754 &#43;0800 CST">
     <title>匯入匯出MongoDB資料成JSON CSV檔案 &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="https://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="https://bowwow.tips/img/favicon.ico">
@@ -272,6 +272,28 @@
 </code></pre>
 
 <p><img src="https://goo.gl/54DixU" width="70%"></p>
+
+<h4 id="附上mongo-db-dump-restore資料庫:66a2e7b2879656754f6525910eaf4d0e">附上mongo db dump &amp; restore資料庫</h4>
+
+<p>全部db dump&amp;restore</p>
+
+<pre><code>mongodump -h localhost -u xx -p xx -d metadata -o ./dump  
+
+mongorestore -h localhost -u xx -p xx -d metadata --directoryperdb ./dump  
+</code></pre>
+
+<p>單一collection回復</p>
+
+<pre><code>mongodump -h localhost -u xx -p xx -d metadata --collection unknown_songs  
+
+mongorestore -h localhost -u xx -p x -d metadata --collection test ./dump/metadata/unknown_songs.bson  
+</code></pre>
+
+<p><strong>一些參數</strong><br />
+- -h：mongo位址<br />
+- -d：db name<br />
+- &ndash;directoryperdb：dump的目錄<br />
+- &ndash;drop：restore時，先刪掉資料再恢復</p>
 
 <p>以上~~收工嘍!</p>
 
