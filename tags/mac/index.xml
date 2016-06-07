@@ -7,8 +7,52 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;#169; by 安迪兒</copyright>
-    <lastBuildDate>Thu, 12 May 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jun 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://bowwow.tips/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>刪掉惱人的Mac .DS_Store文件</title>
+      <link>https://bowwow.tips/post/20160607/</link>
+      <pubDate>Tue, 07 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://bowwow.tips/post/20160607/</guid>
+      <description>
+
+&lt;p&gt;使用mac筆電的，應該都有個切身之痛&lt;br /&gt;
+就是只要用Finder進過的資料匣&lt;br /&gt;
+都會自動生出一個&lt;strong&gt;.DS_Store&lt;/strong&gt;檔&lt;/p&gt;
+
+&lt;p&gt;真的是超煩的&lt;br /&gt;
+不論是git上code、&lt;br /&gt;
+ftp傳輸、或是資料匣copy&lt;br /&gt;
+一不注意，裡面總是會有這個檔&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;.DS_Store&lt;/strong&gt;檔有點像是&lt;br /&gt;
+Windows上的&lt;strong&gt;desktop.ini&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;安迪兒這邊記錄一下停用這個惱人的檔案&lt;/p&gt;
+
+&lt;h4 id=&#34;1-搜尋-刪除mac裡所有的-ds-store-檔:e13df241726242df5ce2ca1a2e58590e&#34;&gt;1. 搜尋&amp;amp;刪除mac裡所有的&lt;strong&gt;.DS_Store&lt;/strong&gt;檔&lt;/h4&gt;
+
+&lt;p&gt;打開「Terminal終端機」&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo find . -name &amp;quot;.DS_Store&amp;quot; -depth -exec rm {} \;  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;2-禁止-ds-store生成:e13df241726242df5ce2ca1a2e58590e&#34;&gt;2. 禁止.DS_store生成&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;defaults write com.apple.desktopservices DSDontWriteNetworkStores true  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;3-恢復-ds-store生成:e13df241726242df5ce2ca1a2e58590e&#34;&gt;3. 恢復.DS_store生成&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;defaults delete com.apple.desktopservices DSDontWriteNetworkStores  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;開掉終端機，重開mac後就會生效了&lt;br /&gt;
+收工嘍~&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>MAC上 /dev/disk 與 /dev/rdisk 的差別 (解決 dd 過慢的問題)</title>

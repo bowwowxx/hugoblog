@@ -18,7 +18,7 @@
       <link href="https://bowwow.tips/post/index.xml" rel="feed" type="application/rss+xml" title="安迪兒隨手貼" />
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-06-06 14:58:40.573079363 &#43;0800 CST">
+    <meta name="generation-date" content="2016-06-07 23:20:47.583477164 &#43;0800 CST">
     <title>Posts &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="https://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="https://bowwow.tips/img/favicon.ico">
@@ -236,6 +236,51 @@
     </li>
     
         <li><a href="https://bowwow.tips/tags/%E7%AC%AC%E4%B8%80%E7%AF%87">第一篇</a></li>
+    
+</ul>
+
+
+        </footer>
+    </div>
+</div>
+
+                    </div>
+                
+                    <div class="flex-item">
+                        
+<div class="page-item-container">
+    
+    <div class="page-item-content">
+        <header>
+            
+                <time class="page-item-date">Tue Jun 07, 2016</time>
+            
+            <h4 class="page-item-title">刪掉惱人的Mac .DS_Store文件</h4>
+        </header>
+        <p class="page-item-summary">使用mac筆電的，應該都有個切身之痛 就是只要用Finder進過的資料匣 都會自動生出一個.DS_Store檔 真的是超煩的 不論是git上code、 ftp傳輸、或是資料匣copy 一不注意，裡面總是會有這個檔 .DS_Store檔有點像是 Windows上的desktop.ini 安迪兒這邊記錄一下停用這個惱人的檔案 1. 搜尋&amp;刪除mac裡所有的.DS_Store檔 打開「Terminal終端機」 sudo find . -name &quot;.DS_Store&quot; -depth -exec rm {} \; 2. 禁止.DS_store生成 defaults write com.apple.desktopservices DSDontWriteNetworkStores true 3. 恢復.DS_store生成 defaults delete com.apple.desktopservices DSDontWriteNetworkStores 開掉終端機，重開mac後就會生效了 收工嘍~</p>
+        <a href="https://bowwow.tips/post/20160607/" class="page-item-btn ">
+            Read More
+        </a>
+        <footer>
+            
+<ul class="categories">
+    <li>
+        <i class="fa fa-book"></i>
+    </li>
+    
+        <li><a href="https://bowwow.tips/categories/tips">tips</a></li>
+    
+</ul>
+
+
+            <span class="separator">|</span>
+            
+<ul class="tags">
+    <li>
+        <i class="fa fa-tags"></i>
+    </li>
+    
+        <li><a href="https://bowwow.tips/tags/mac">mac</a></li>
     
 </ul>
 
@@ -618,51 +663,6 @@
 
                     </div>
                 
-                    <div class="flex-item">
-                        
-<div class="page-item-container">
-    
-    <div class="page-item-content">
-        <header>
-            
-                <time class="page-item-date">Sat Jan 01, 2011</time>
-            
-            <h4 class="page-item-title">舊站-安迪兒隨手貼</h4>
-        </header>
-        <p class="page-item-summary">redirect the content to 點佈落-安迪兒隨手貼.</p>
-        <a href="https://bowwow.tips/post/20160001/" class="page-item-btn page-item-btn-red">
-            Redirect
-        </a>
-        <footer>
-            
-<ul class="categories">
-    <li>
-        <i class="fa fa-book"></i>
-    </li>
-    
-        <li><a href="https://bowwow.tips/categories/%E5%8F%8B%E7%AB%99">友站</a></li>
-    
-</ul>
-
-
-            <span class="separator">|</span>
-            
-<ul class="tags">
-    <li>
-        <i class="fa fa-tags"></i>
-    </li>
-    
-        <li><a href="https://bowwow.tips/tags/blog">blog</a></li>
-    
-</ul>
-
-
-        </footer>
-    </div>
-</div>
-
-                    </div>
-                
             
         </div>
         
@@ -680,8 +680,12 @@
                     <a href="https://bowwow.tips//post/">1</a>
                 </li>
             
-            <li class="disabled">
-                <a href="#!">
+                <li class="waves-effect">
+                    <a href="https://bowwow.tips//post/page/2/">2</a>
+                </li>
+            
+            <li class="waves-effect">
+                <a href="https://bowwow.tips//post/page/2/">
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>

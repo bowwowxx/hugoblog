@@ -5,21 +5,19 @@
 >
 
 
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="mac .DS_Store">
+    <meta name="keywords" content="mac .DS_Store">
     
-    
-      <link href="https://bowwow.tips/categories/food/index.xml" rel="alternate" type="application/rss+xml" title="安迪兒隨手貼" />
-      <link href="https://bowwow.tips/categories/food/index.xml" rel="feed" type="application/rss+xml" title="安迪兒隨手貼" />
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-06-07 23:20:47.494565289 &#43;0800 CST">
-    <title>Food &middot; 安迪兒隨手貼</title>
+    <meta name="generation-date" content="2016-06-07 23:20:47.618592409 &#43;0800 CST">
+    <title>刪掉惱人的Mac .DS_Store文件 &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="https://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="https://bowwow.tips/img/favicon.ico">
     
@@ -54,7 +52,7 @@
 </head>
 
 
-<body>
+<body class="page-colors minimum-viewport-height">
     
 
 <nav class="main-menu menu-colors">
@@ -94,7 +92,7 @@
                     
                     </li>
                 
-                    <li >
+                    <li class="active">
                     
                         <a href="/post/">
                             
@@ -154,7 +152,7 @@
         
         <li class="blue-grey-text" style="border-top: 1px solid;"></li>
         <li>
-            <a href="https://bowwow.tips/categories/food/index.xml" type="application/rss+xml" target="_blank">
+            <a href="" type="application/rss+xml" target="_blank">
                 <i class="fa fa-rss fa-2x"></i>
             </a>
         </li>
@@ -184,98 +182,117 @@
 
 
 
-    
-    
-        
-    
-
-    
-        
-            
-        
-    
-
-    
-
-    <section class="main-content">
-        <div class="masonry-flex-container infinite-scroll">
-            
+    <div class="main-content">
+        <div class="center-space">
+            <div class="article-colors">
                 
-                    <div class="flex-item">
+                <article>
+                    <header>
+                        <h1 class="article-title">刪掉惱人的Mac .DS_Store文件</h1>
+                        <time class="date-color">Tue Jun 07, 2016</time>
+                        <span class="separator">|</span>
                         
-<div class="page-item-container">
-    
-        <img src="/img/food.jpg" class="page-item-image"></img>
-    
-    <div class="page-item-content">
-        <header>
-            
-            <h4 class="page-item-title">Food</h4>
-        </header>
-        <p class="page-item-summary">Project content would go here. You can also redirect using the front matter redirect = &quot;url&quot;.</p>
-        <a href="https://bowwow.tips/othergallery/food/" class="page-item-btn ">
-            Read More
-        </a>
-        <footer>
-            
 <ul class="categories">
     <li>
         <i class="fa fa-book"></i>
     </li>
     
-        <li><a href="https://bowwow.tips/categories/food">food</a></li>
+        <li><a href="https://bowwow.tips/categories/tips">tips</a></li>
     
 </ul>
 
 
-            <span class="separator">|</span>
-            
+                        <span class="separator">|</span>
+                        
 <ul class="tags">
     <li>
         <i class="fa fa-tags"></i>
     </li>
     
-        <li><a href="https://bowwow.tips/tags/a-tag-with-spaces">a tag with spaces</a></li>
-    
-        <li><a href="https://bowwow.tips/tags/another-tag">another tag</a></li>
+        <li><a href="https://bowwow.tips/tags/mac">mac</a></li>
     
 </ul>
 
 
-        </footer>
-    </div>
-</div>
+                    </header>
 
-                    </div>
-                
+                    <hr>
+
+                    <section>
+                        
+                            
+
+<p>使用mac筆電的，應該都有個切身之痛<br />
+就是只要用Finder進過的資料匣<br />
+都會自動生出一個<strong>.DS_Store</strong>檔</p>
+
+<p>真的是超煩的<br />
+不論是git上code、<br />
+ftp傳輸、或是資料匣copy<br />
+一不注意，裡面總是會有這個檔</p>
+
+<p><strong>.DS_Store</strong>檔有點像是<br />
+Windows上的<strong>desktop.ini</strong></p>
+
+<p>安迪兒這邊記錄一下停用這個惱人的檔案</p>
+
+<h4 id="1-搜尋-刪除mac裡所有的-ds-store-檔:e13df241726242df5ce2ca1a2e58590e">1. 搜尋&amp;刪除mac裡所有的<strong>.DS_Store</strong>檔</h4>
+
+<p>打開「Terminal終端機」</p>
+
+<pre><code>sudo find . -name &quot;.DS_Store&quot; -depth -exec rm {} \;  
+</code></pre>
+
+<h4 id="2-禁止-ds-store生成:e13df241726242df5ce2ca1a2e58590e">2. 禁止.DS_store生成</h4>
+
+<pre><code>defaults write com.apple.desktopservices DSDontWriteNetworkStores true  
+</code></pre>
+
+<h4 id="3-恢復-ds-store生成:e13df241726242df5ce2ca1a2e58590e">3. 恢復.DS_store生成</h4>
+
+<pre><code>defaults delete com.apple.desktopservices DSDontWriteNetworkStores  
+</code></pre>
+
+<p>開掉終端機，重開mac後就會生效了<br />
+收工嘍~</p>
+
+                        
+                    </section>
+
+                    <footer class="right-align">
+                        <p><small>Copyright &#169; by 安迪兒</small></p>
+                    </footer>
+
+                    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'bowwowtips';
+        var disqus_identifier = 'https:\/\/bowwow.tips\/post\/20160607\/';
+        var disqus_title = '刪掉惱人的Mac .DS_Store文件';
+        var disqus_url = 'https:\/\/bowwow.tips\/post\/20160607\/';
+        (function() {
             
+            if (window.location.hostname === "localhost") {
+                return;
+            }
+
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+            (document.getElementsByTagName('head')[0] ||
+                document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+                </article>
+            </div>
         </div>
-        
-
-    <ul class="pagination">
-        
-            <li class="disabled">
-                <a href="#!">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-            </li>
-            
-            
-                <li class="active">
-                    <a href="https://bowwow.tips//categories/food/">1</a>
-                </li>
-            
-            <li class="disabled">
-                <a href="#!">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-        
-    </ul>
-
-
-
-    </section>
+    </div>
 
     
 <script src="https://bowwow.tips/js/jquery-2.1.4.min.js"></script>
