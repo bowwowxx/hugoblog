@@ -758,7 +758,9 @@ hostname:port:database:username:password
       <pubDate>Wed, 18 May 2016 00:00:00 +0000</pubDate>
       
       <guid>https://bowwow.tips/post/20160518/</guid>
-      <description>&lt;p&gt;安迪兒新的qnap NAS剛整理完所有資料，&lt;br /&gt;
+      <description>
+
+&lt;p&gt;安迪兒新的qnap NAS剛整理完所有資料，&lt;br /&gt;
 剩下一些新的資料都放在原舊的Synology nas上&lt;/p&gt;
 
 &lt;p&gt;安迪兒想掛上別台nas的samba磁區，然後再對拷檔案&lt;br /&gt;
@@ -801,9 +803,40 @@ mount.cifs //10.0.0.7/photo -o user=xx password=xx
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/LgNJqj&#34; width=&#34;70%&#34;&gt;&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/tHGykJ&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
+&lt;p&gt;copy完umount一下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;umount ./video ./photo  
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;copy完資料後，新nas也差不多完整了&lt;br /&gt;
 可以開心的接電視直播電影了&lt;br /&gt;
 (有hdmi接電視的nas好讚呀~xd)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;記錄一些mount方式&lt;/strong&gt;&lt;br /&gt;
+比較新的Smaba只能用cifs的mount方式&lt;/p&gt;
+
+&lt;h5 id=&#34;smbmount:0b0ccd4667093df9aa039d6b4f570d44&#34;&gt;[smbmount]&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;smbmount -o username=&amp;quot;xx&amp;quot;,password=&amp;quot;xx&amp;quot; //ip/share /mnt/smb
+
+smbumount /mnt/smb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;mount:0b0ccd4667093df9aa039d6b4f570d44&#34;&gt;[mount]&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;mount -t smbfs -o username=&amp;quot;xx&amp;quot;,password=&amp;quot;xx&amp;quot; //ip/share /mnt/smb  
+
+umount /mnt/smb  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;cifs:0b0ccd4667093df9aa039d6b4f570d44&#34;&gt;[cifs]&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;mount -t cifs -o username=&amp;quot;xx&amp;quot;,password=&amp;quot;xx&amp;quot; //ip/share /mnt/smb
+umount /mnt/smb
+
+mount.cifs -o username=&amp;quot;xx&amp;quot;,password=&amp;quot;xx&amp;quot; //ip/share /mnt/smb
+umount.cifs /mnt/smb
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;以上~~收工嘍!&lt;/p&gt;
 </description>

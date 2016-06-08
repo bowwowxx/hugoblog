@@ -16,7 +16,7 @@
     
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-06-07 23:20:47.626524495 &#43;0800 CST">
+    <meta name="generation-date" content="2016-06-08 14:32:44.076456564 &#43;0800 CST">
     <title>Qnap nas掛上遠端Synology磁碟資料 &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="https://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="https://bowwow.tips/img/favicon.ico">
@@ -220,7 +220,9 @@
 
                     <section>
                         
-                            <p>安迪兒新的qnap NAS剛整理完所有資料，<br />
+                            
+
+<p>安迪兒新的qnap NAS剛整理完所有資料，<br />
 剩下一些新的資料都放在原舊的Synology nas上</p>
 
 <p>安迪兒想掛上別台nas的samba磁區，然後再對拷檔案<br />
@@ -263,9 +265,40 @@ mount.cifs //10.0.0.7/photo -o user=xx password=xx
 <p><img src="https://goo.gl/LgNJqj" width="70%"><br />
 <img src="https://goo.gl/tHGykJ" width="70%"></p>
 
+<p>copy完umount一下</p>
+
+<pre><code>umount ./video ./photo  
+</code></pre>
+
 <p>copy完資料後，新nas也差不多完整了<br />
 可以開心的接電視直播電影了<br />
 (有hdmi接電視的nas好讚呀~xd)</p>
+
+<p><strong>記錄一些mount方式</strong><br />
+比較新的Smaba只能用cifs的mount方式</p>
+
+<h5 id="smbmount:0b0ccd4667093df9aa039d6b4f570d44">[smbmount]</h5>
+
+<pre><code>smbmount -o username=&quot;xx&quot;,password=&quot;xx&quot; //ip/share /mnt/smb
+
+smbumount /mnt/smb
+</code></pre>
+
+<h5 id="mount:0b0ccd4667093df9aa039d6b4f570d44">[mount]</h5>
+
+<pre><code>mount -t smbfs -o username=&quot;xx&quot;,password=&quot;xx&quot; //ip/share /mnt/smb  
+
+umount /mnt/smb  
+</code></pre>
+
+<h5 id="cifs:0b0ccd4667093df9aa039d6b4f570d44">[cifs]</h5>
+
+<pre><code>mount -t cifs -o username=&quot;xx&quot;,password=&quot;xx&quot; //ip/share /mnt/smb
+umount /mnt/smb
+
+mount.cifs -o username=&quot;xx&quot;,password=&quot;xx&quot; //ip/share /mnt/smb
+umount.cifs /mnt/smb
+</code></pre>
 
 <p>以上~~收工嘍!</p>
 
