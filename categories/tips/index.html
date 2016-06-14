@@ -18,7 +18,7 @@
       <link href="https://bowwow.tips/categories/tips/index.xml" rel="feed" type="application/rss+xml" title="安迪兒隨手貼" />
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-06-08 14:32:43.997390331 &#43;0800 CST">
+    <meta name="generation-date" content="2016-06-14 23:46:27.702036157 &#43;0800 CST">
     <title>Tips &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="https://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="https://bowwow.tips/img/favicon.ico">
@@ -200,6 +200,51 @@
     <section class="main-content">
         <div class="masonry-flex-container infinite-scroll">
             
+                
+                    <div class="flex-item">
+                        
+<div class="page-item-container">
+    
+    <div class="page-item-content">
+        <header>
+            
+                <time class="page-item-date">Mon Jun 13, 2016</time>
+            
+            <h4 class="page-item-title">免費開啟MAC正常讀寫入NTFS磁碟</h4>
+        </header>
+        <p class="page-item-summary">在mac上碰到了windows ntfs格式的磁碟其實是件有點小煩人的事 偏偏ntfs又是大宗，大部份拿隨身碟copy檔案都是ntfs格式 mac對於ntfs預設都是只能讀取不能寫入 (不知道用意是啥~XD) 想要寫入ntfs隨身碟，都要裝一些FUSE還是Paragon NTFS等軟體 除了要付費之外，寫入的速度也不快 之前安迪兒有看到文章說mac其實本身系統有內建NTFS的讀寫 試了一下，果然是真的XD~ &lt;記錄一下過程&gt; 1. 接上隨身碟，打開終端機 輸入mount，看一下隨身碟mount的路徑 下圖是/dev/disk3s1掛在/Volumes/16G 2. umount一下目前掛的路徑 sudo umount /Volumes/16G 3. 建立新的資料匣，等會用來掛隨身碟用 mkdir /tmp/usb16G 4. 重掛一次usb磁區到剛建的資料匣上 (就是這邊，重掛一次ntfs，並指定為rw可讀寫) sudo mount -o rw,auto,nobrowse -t ntfs /dev/disk3s1 ./usb16g/ 5. ok嘍，打開一下資料匣，copy檔案進去試試 open . 6. 最後如果不用時，記得umount一下 sudo umount /private/tmp/usb16G 以上~~收工嘍~XD</p>
+        <a href="https://bowwow.tips/post/20160608/" class="page-item-btn ">
+            Read More
+        </a>
+        <footer>
+            
+<ul class="categories">
+    <li>
+        <i class="fa fa-book"></i>
+    </li>
+    
+        <li><a href="https://bowwow.tips/categories/tips">tips</a></li>
+    
+</ul>
+
+
+            <span class="separator">|</span>
+            
+<ul class="tags">
+    <li>
+        <i class="fa fa-tags"></i>
+    </li>
+    
+        <li><a href="https://bowwow.tips/tags/mac">mac</a></li>
+    
+</ul>
+
+
+        </footer>
+    </div>
+</div>
+
+                    </div>
                 
                     <div class="flex-item">
                         

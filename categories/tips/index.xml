@@ -7,8 +7,77 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;#169; by 安迪兒</copyright>
-    <lastBuildDate>Tue, 07 Jun 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jun 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://bowwow.tips/categories/tips/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>免費開啟MAC正常讀寫入NTFS磁碟</title>
+      <link>https://bowwow.tips/post/20160608/</link>
+      <pubDate>Mon, 13 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://bowwow.tips/post/20160608/</guid>
+      <description>
+
+&lt;p&gt;在mac上碰到了windows ntfs格式的磁碟其實是件有點小煩人的事&lt;br /&gt;
+偏偏ntfs又是大宗，大部份拿隨身碟copy檔案都是ntfs格式&lt;/p&gt;
+
+&lt;p&gt;mac對於ntfs預設都是只能讀取不能寫入&lt;br /&gt;
+(不知道用意是啥~XD)&lt;/p&gt;
+
+&lt;p&gt;想要寫入ntfs隨身碟，都要裝一些FUSE還是Paragon NTFS等軟體&lt;br /&gt;
+除了要付費之外，寫入的速度也不快&lt;/p&gt;
+
+&lt;p&gt;之前安迪兒有看到文章說mac其實本身系統有內建NTFS的讀寫&lt;br /&gt;
+試了一下，果然是真的XD~&lt;/p&gt;
+
+&lt;h5 id=&#34;記錄一下過程:33be80d7f0ccaba19b9f4e51b3cc17e0&#34;&gt;&amp;lt;記錄一下過程&amp;gt;&lt;/h5&gt;
+
+&lt;h4 id=&#34;1-接上隨身碟-打開終端機:33be80d7f0ccaba19b9f4e51b3cc17e0&#34;&gt;1. 接上隨身碟，打開終端機&lt;/h4&gt;
+
+&lt;p&gt;輸入mount，看一下隨身碟mount的路徑&lt;br /&gt;
+下圖是&lt;strong&gt;/dev/disk3s1&lt;/strong&gt;掛在&lt;strong&gt;/Volumes/16G&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/5C0Uj3&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;2-umount一下目前掛的路徑:33be80d7f0ccaba19b9f4e51b3cc17e0&#34;&gt;2. umount一下目前掛的路徑&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo umount /Volumes/16G  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/QmOs4U&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;3-建立新的資料匣-等會用來掛隨身碟用:33be80d7f0ccaba19b9f4e51b3cc17e0&#34;&gt;3. 建立新的資料匣，等會用來掛隨身碟用&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir /tmp/usb16G  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/g76QvJ&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;4-重掛一次usb磁區到剛建的資料匣上:33be80d7f0ccaba19b9f4e51b3cc17e0&#34;&gt;4. 重掛一次usb磁區到剛建的資料匣上&lt;/h4&gt;
+
+&lt;p&gt;(就是這邊，重掛一次ntfs，並指定為rw可讀寫)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo mount -o rw,auto,nobrowse -t ntfs /dev/disk3s1 ./usb16g/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/wVjuyx&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;5-ok嘍-打開一下資料匣-copy檔案進去試試:33be80d7f0ccaba19b9f4e51b3cc17e0&#34;&gt;5. ok嘍，打開一下資料匣，copy檔案進去試試&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;open .
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/XYmkLp&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;6-最後如果不用時-記得umount一下:33be80d7f0ccaba19b9f4e51b3cc17e0&#34;&gt;6. 最後如果不用時，記得umount一下&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo umount /private/tmp/usb16G
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/5bzvr4&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;以上~~收工嘍~XD&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>刪掉惱人的Mac .DS_Store文件</title>

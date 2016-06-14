@@ -11,13 +11,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="">
-    <meta name="description" content="mongo資料轉csv json">
-    <meta name="keywords" content="MongoDB,mongodb to csv,mongo to json,mongoexport json csv,mongodump,mongorestore">
+    <meta name="description" content="mac寫ntfs,mac write usb ntfs">
+    <meta name="keywords" content="mac write usb ntfs,mac寫ntfs">
     
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-06-14 23:46:27.771249947 &#43;0800 CST">
-    <title>匯入匯出MongoDB資料成JSON CSV檔案 &middot; 安迪兒隨手貼</title>
+    <meta name="generation-date" content="2016-06-14 23:46:27.766287458 &#43;0800 CST">
+    <title>免費開啟MAC正常讀寫入NTFS磁碟 &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="https://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="https://bowwow.tips/img/favicon.ico">
     
@@ -188,8 +188,8 @@
                 
                 <article>
                     <header>
-                        <h1 class="article-title">匯入匯出MongoDB資料成JSON CSV檔案</h1>
-                        <time class="date-color">Wed Jun 01, 2016</time>
+                        <h1 class="article-title">免費開啟MAC正常讀寫入NTFS磁碟</h1>
+                        <time class="date-color">Mon Jun 13, 2016</time>
                         <span class="separator">|</span>
                         
 <ul class="categories">
@@ -209,11 +209,7 @@
         <i class="fa fa-tags"></i>
     </li>
     
-        <li><a href="https://bowwow.tips/tags/mongodb">MongoDB</a></li>
-    
-        <li><a href="https://bowwow.tips/tags/mongodb-csv-json">mongodb csv json</a></li>
-    
-        <li><a href="https://bowwow.tips/tags/mongoexport-json-csv">mongoexport json csv</a></li>
+        <li><a href="https://bowwow.tips/tags/mac">mac</a></li>
     
 </ul>
 
@@ -226,76 +222,64 @@
                         
                             
 
-<p>前陣子安迪兒剛好碰到要匯出mongodb資料<br />
-需要轉csv給其它人員使用<br />
-查了一下，發現mongodb直接有支援資料匯出成json、csv格式<br />
-(超強XD)</p>
+<p>在mac上碰到了windows ntfs格式的磁碟其實是件有點小煩人的事<br />
+偏偏ntfs又是大宗，大部份拿隨身碟copy檔案都是ntfs格式</p>
 
-<p><strong>兩者的區別：</strong><br />
-- JSON 是 mongoexport 默認的匯出格式，不需要指定</p>
+<p>mac對於ntfs預設都是只能讀取不能寫入<br />
+(不知道用意是啥~XD)</p>
 
-<ul>
-<li>CSV 格式需要明確指定欄位屬性名<br /></li>
-</ul>
+<p>想要寫入ntfs隨身碟，都要裝一些FUSE還是Paragon NTFS等軟體<br />
+除了要付費之外，寫入的速度也不快</p>
 
-<p>一般大多使用json，特殊需求像是需要用到excel之類的文件編輯的，會比較偏向使用csv格式。<br />
-參考以下官方文件</p>
+<p>之前安迪兒有看到文章說mac其實本身系統有內建NTFS的讀寫<br />
+試了一下，果然是真的XD~</p>
 
-<p>[mongoexport]<br />
-<a href="https://docs.mongodb.com/master/reference/program/mongoexport">https://docs.mongodb.com/master/reference/program/mongoexport</a></p>
+<h5 id="記錄一下過程:33be80d7f0ccaba19b9f4e51b3cc17e0">&lt;記錄一下過程&gt;</h5>
 
-<p>[mongoimport]<br />
-<a href="https://docs.mongodb.com/manual/reference/program/mongoimport/#use">https://docs.mongodb.com/manual/reference/program/mongoimport/#use</a></p>
+<h4 id="1-接上隨身碟-打開終端機:33be80d7f0ccaba19b9f4e51b3cc17e0">1. 接上隨身碟，打開終端機</h4>
 
-<p>安迪兒貼一下用的指令</p>
+<p>輸入mount，看一下隨身碟mount的路徑<br />
+下圖是<strong>/dev/disk3s1</strong>掛在<strong>/Volumes/16G</strong><br />
+<img src="https://goo.gl/5C0Uj3" width="70%"></p>
 
-<h3 id="匯出:66a2e7b2879656754f6525910eaf4d0e">匯出:</h3>
+<h4 id="2-umount一下目前掛的路徑:33be80d7f0ccaba19b9f4e51b3cc17e0">2. umount一下目前掛的路徑</h4>
 
-<p><strong>mongodb collection指定欄位匯出資料轉csv</strong></p>
-
-<pre><code>mongoexport --host localhost --db xxdata --collection unknown_data --username xx --password xx --csv --out text.csv --fields _id,lang,pinyin,artists,phonetic,hash_code,created_at,title,vocal_track,filename,hash_method,words
+<pre><code>sudo umount /Volumes/16G  
 </code></pre>
 
-<p><strong>mongodb collection資料匯出轉json</strong></p>
+<p><img src="https://goo.gl/QmOs4U" width="70%"></p>
 
-<pre><code>mongoexport --host localhost -d xxdata -c unknown_songs -u xxuser -p xxpassword -o output.json
+<h4 id="3-建立新的資料匣-等會用來掛隨身碟用:33be80d7f0ccaba19b9f4e51b3cc17e0">3. 建立新的資料匣，等會用來掛隨身碟用</h4>
 
+<pre><code>mkdir /tmp/usb16G  
 </code></pre>
 
-<p><img src="https://goo.gl/FP6y0y" width="70%"></p>
+<p><img src="https://goo.gl/g76QvJ" width="70%"></p>
 
-<h3 id="匯入:66a2e7b2879656754f6525910eaf4d0e">匯入:</h3>
+<h4 id="4-重掛一次usb磁區到剛建的資料匣上:33be80d7f0ccaba19b9f4e51b3cc17e0">4. 重掛一次usb磁區到剛建的資料匣上</h4>
 
-<p><strong>測試一下匯入</strong></p>
+<p>(就是這邊，重掛一次ntfs，並指定為rw可讀寫)</p>
 
-<pre><code>mongoimport  --host localhost --db xxdata --collection test --username xx --password xx --type csv --headerline --file ./text.csv
+<pre><code>sudo mount -o rw,auto,nobrowse -t ntfs /dev/disk3s1 ./usb16g/
 </code></pre>
 
-<p><img src="https://goo.gl/54DixU" width="70%"></p>
+<p><img src="https://goo.gl/wVjuyx" width="70%"></p>
 
-<h4 id="附上mongo-db-dump-restore資料庫:66a2e7b2879656754f6525910eaf4d0e">附上mongo db dump &amp; restore資料庫</h4>
+<h4 id="5-ok嘍-打開一下資料匣-copy檔案進去試試:33be80d7f0ccaba19b9f4e51b3cc17e0">5. ok嘍，打開一下資料匣，copy檔案進去試試</h4>
 
-<p>全部db dump&amp;restore</p>
-
-<pre><code>mongodump -h localhost -u xx -p xx -d metadata -o ./dump  
-
-mongorestore -h localhost -u xx -p xx -d metadata --directoryperdb ./dump  
+<pre><code>open .
 </code></pre>
 
-<p>單一collection回復</p>
+<p><img src="https://goo.gl/XYmkLp" width="70%"></p>
 
-<pre><code>mongodump -h localhost -u xx -p xx -d metadata --collection unknown_songs  
+<h4 id="6-最後如果不用時-記得umount一下:33be80d7f0ccaba19b9f4e51b3cc17e0">6. 最後如果不用時，記得umount一下</h4>
 
-mongorestore -h localhost -u xx -p x -d metadata --collection test ./dump/metadata/unknown_songs.bson  
+<pre><code>sudo umount /private/tmp/usb16G
 </code></pre>
 
-<p><strong>一些參數</strong><br />
-- -h：mongo位址<br />
-- -d：db name<br />
-- &ndash;directoryperdb：dump的目錄<br />
-- &ndash;drop：restore時，先刪掉資料再恢復</p>
+<p><img src="https://goo.gl/5bzvr4" width="70%"></p>
 
-<p>以上~~收工嘍!</p>
+<p>以上~~收工嘍~XD</p>
 
                         
                     </section>
@@ -308,9 +292,9 @@ mongorestore -h localhost -u xx -p x -d metadata --collection test ./dump/metada
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname = 'bowwowtips';
-        var disqus_identifier = 'https:\/\/bowwow.tips\/post\/20160601\/';
-        var disqus_title = '匯入匯出MongoDB資料成JSON CSV檔案';
-        var disqus_url = 'https:\/\/bowwow.tips\/post\/20160601\/';
+        var disqus_identifier = 'https:\/\/bowwow.tips\/post\/20160608\/';
+        var disqus_title = '免費開啟MAC正常讀寫入NTFS磁碟';
+        var disqus_url = 'https:\/\/bowwow.tips\/post\/20160608\/';
         (function() {
             
             if (window.location.hostname === "localhost") {
