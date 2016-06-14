@@ -357,6 +357,67 @@ hugo文章存放的方式是以檔案為概念&lt;br /&gt;
     </item>
     
     <item>
+      <title>微軟windows10更新擁抱linux系統-win10 ubuntu shell</title>
+      <link>https://bowwow.tips/post/20160610/</link>
+      <pubDate>Tue, 14 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://bowwow.tips/post/20160610/</guid>
+      <description>
+
+&lt;p&gt;微軟在今年3月Build 2016開發者大會，拋出了一個震撼彈&lt;br /&gt;
+就是windows10竟然可以使用ubuntu的bash shell&lt;br /&gt;
+而且不是虛擬機器，是原生的!&lt;br /&gt;
+(微軟馬上洗白變好人了~XD)&lt;/p&gt;
+
+&lt;p&gt;這實在太有話題了，微軟當時有說今年夏季會提供相關更新&lt;br /&gt;
+直到最近這陣子，安迪兒發現有新的win10 Preview版本&lt;br /&gt;
+Link:&lt;br /&gt;
+&lt;a href=&#34;https://blogs.windows.com/windowsexperience/2016/04/06/announcing-windows-10-insider-preview-build-14316/&#34;&gt;Windows 10 Insider Preview Build 14316&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://winaero.com/blog/download-windows-10-build-14316-iso-images/&#34;&gt;Download Windows 10 build 14316 ISO images&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;這太有趣了，安迪兒立馬試玩一下~XD&lt;/p&gt;
+
+&lt;h5 id=&#34;記錄一下win10開啟ubuntu-shell的方式:13a392450deda0ec647a369ec2ff4f95&#34;&gt;記錄一下win10開啟ubuntu shell的方式&lt;/h5&gt;
+
+&lt;h4 id=&#34;1-開啟開發人員功能模式:13a392450deda0ec647a369ec2ff4f95&#34;&gt;1. 開啟開發人員功能模式&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/2yLSWP&#34; width=&#34;70%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/GQcVyg&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;2-控制台-程式和功能-程式集-windows功能:13a392450deda0ec647a369ec2ff4f95&#34;&gt;2. 控制台-&amp;gt;程式和功能-&amp;gt;程式集-&amp;gt;windows功能&lt;/h4&gt;
+
+&lt;h4 id=&#34;勾選-windows-subsystem-for-linux:13a392450deda0ec647a369ec2ff4f95&#34;&gt;勾選[windows subsystem for linux]&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/s6skUd&#34; width=&#34;70%&#34;&gt;&lt;br /&gt;
+ &lt;img src=&#34;https://goo.gl/DhBw4g&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;3-執行bash-直接用尋找bash並執行它:13a392450deda0ec647a369ec2ff4f95&#34;&gt;3. 執行bash 直接用尋找bash並執行它&lt;/h4&gt;
+
+&lt;p&gt;(download&amp;amp;安裝 &lt;strong&gt;Bash on ubuntu on windows&lt;/strong&gt;)&lt;br /&gt;
+  &lt;img src=&#34;https://goo.gl/hCkJsE&#34; width=&#34;70%&#34;&gt;&lt;br /&gt;
+  &lt;img src=&#34;https://goo.gl/5bdD4k&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;4-搜尋-執行-裝好的bash-on-ubuntu-on-windows:13a392450deda0ec647a369ec2ff4f95&#34;&gt;4. 搜尋&amp;amp;執行 裝好的Bash on Ubuntu on Windows&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/5tVky4&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;噢:13a392450deda0ec647a369ec2ff4f95&#34;&gt;噢！！！！！&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/qjL2qO&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;太開心了吶-xd:13a392450deda0ec647a369ec2ff4f95&#34;&gt;太開心了吶~XD&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/s0heJC&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;原來在shell裡面windows的東西在這-很特別的感覺-xd:13a392450deda0ec647a369ec2ff4f95&#34;&gt;原來在shell裡面windows的東西在這，很特別的感覺~XD&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/tkpBwe&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;win10 build 14316真是太帥氣了吶~~&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>免費開啟MAC正常讀寫入NTFS磁碟</title>
       <link>https://bowwow.tips/post/20160608/</link>
       <pubDate>Mon, 13 Jun 2016 00:00:00 +0000</pubDate>
@@ -422,67 +483,6 @@ hugo文章存放的方式是以檔案為概念&lt;br /&gt;
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/5bzvr4&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;以上~~收工嘍~XD&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>微軟windows10更新擁抱linux系統-win10 ubuntu shell</title>
-      <link>https://bowwow.tips/post/20160610/</link>
-      <pubDate>Mon, 13 Jun 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://bowwow.tips/post/20160610/</guid>
-      <description>
-
-&lt;p&gt;微軟在今年3月Build 2016開發者大會，拋出了一個震撼彈&lt;br /&gt;
-就是windows10竟然可以使用ubuntu的bash shell&lt;br /&gt;
-而且不是虛擬機器，是原生的!&lt;br /&gt;
-(微軟馬上洗白變好人了~XD)&lt;/p&gt;
-
-&lt;p&gt;這實在太有話題了，微軟當時有說今年夏季會提供相關更新&lt;br /&gt;
-直到最近這陣子，安迪兒發現有新的win10 Preview版本&lt;br /&gt;
-Link:&lt;br /&gt;
-&lt;a href=&#34;https://blogs.windows.com/windowsexperience/2016/04/06/announcing-windows-10-insider-preview-build-14316/&#34;&gt;Windows 10 Insider Preview Build 14316&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;http://winaero.com/blog/download-windows-10-build-14316-iso-images/&#34;&gt;Download Windows 10 build 14316 ISO images&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;這太有趣了，安迪兒立馬試玩一下~XD&lt;/p&gt;
-
-&lt;h5 id=&#34;記錄一下win10開啟ubuntu-shell的方式:13a392450deda0ec647a369ec2ff4f95&#34;&gt;記錄一下win10開啟ubuntu shell的方式&lt;/h5&gt;
-
-&lt;h4 id=&#34;1-開啟開發人員功能模式:13a392450deda0ec647a369ec2ff4f95&#34;&gt;1. 開啟開發人員功能模式&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/2yLSWP&#34; width=&#34;70%&#34;&gt;&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/GQcVyg&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;2-控制台-程式和功能-程式集-windows功能:13a392450deda0ec647a369ec2ff4f95&#34;&gt;2. 控制台-&amp;gt;程式和功能-&amp;gt;程式集-&amp;gt;windows功能&lt;/h4&gt;
-
-&lt;h4 id=&#34;勾選-windows-subsystem-for-linux:13a392450deda0ec647a369ec2ff4f95&#34;&gt;勾選[windows subsystem for linux]&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/s6skUd&#34; width=&#34;70%&#34;&gt;&lt;br /&gt;
- &lt;img src=&#34;https://goo.gl/DhBw4g&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;3-執行bash-直接用尋找bash並執行它:13a392450deda0ec647a369ec2ff4f95&#34;&gt;3. 執行bash 直接用尋找bash並執行它&lt;/h4&gt;
-
-&lt;p&gt;(download&amp;amp;安裝 &lt;strong&gt;Bash on ubuntu on windows&lt;/strong&gt;)&lt;br /&gt;
-  &lt;img src=&#34;https://goo.gl/hCkJsE&#34; width=&#34;70%&#34;&gt;&lt;br /&gt;
-  &lt;img src=&#34;https://goo.gl/5bdD4k&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;4-搜尋-執行-裝好的bash-on-ubuntu-on-windows:13a392450deda0ec647a369ec2ff4f95&#34;&gt;4. 搜尋&amp;amp;執行 裝好的Bash on Ubuntu on Windows&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/5tVky4&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;噢:13a392450deda0ec647a369ec2ff4f95&#34;&gt;噢！！！！！&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/qjL2qO&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;太開心了吶-xd:13a392450deda0ec647a369ec2ff4f95&#34;&gt;太開心了吶~XD&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/s0heJC&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;原來在shell裡面windows的東西在這-很特別的感覺-xd:13a392450deda0ec647a369ec2ff4f95&#34;&gt;原來在shell裡面windows的東西在這，很特別的感覺~XD&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/tkpBwe&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;win10 build 14316真是太帥氣了吶~~&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
     
