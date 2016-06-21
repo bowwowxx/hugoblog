@@ -11,7 +11,7 @@
     <atom:link href="https://bowwow.tips/categories/nas/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>結合NAS把IPAD Air2當小電腦</title>
+      <title>在NAS上把IPAD Air2當小電腦</title>
       <link>https://bowwow.tips/project/IsAppleRemotWorkingForIpadAir/</link>
       <pubDate>Wed, 15 Jun 2016 00:00:00 +0000</pubDate>
       
@@ -23,30 +23,33 @@
 因此安迪兒想說試著用IPAD來打打文章&lt;br /&gt;
 玩玩windows10&lt;/p&gt;
 
-&lt;p&gt;試了一下，覺的還ok
-安迪兒就變成試著把IPAD當小電腦用了~XD&lt;/p&gt;
+&lt;p&gt;試玩一下覺的還不賴&lt;br /&gt;
+安迪兒就把IPAD當小電腦用了~XD&lt;/p&gt;
 
-&lt;p&gt;大至的步驟如下:&lt;/p&gt;
+&lt;p&gt;步驟如下:&lt;/p&gt;
 
 &lt;h3 id=&#34;首先在在nas上裝上虛擬機station:f99c3edb4c26f0f85930a0a4d9ea6bbc&#34;&gt;首先在在nas上裝上虛擬機station&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/kxiAbE&#34; width=&#34;50%&#34;&gt;   &lt;img src=&#34;https://goo.gl/n0Xrpt&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;設定網路卡&lt;/strong&gt;&lt;br /&gt;
-&lt;a href=&#34;https://goo.gl/07ZWOM&#34;&gt;https://goo.gl/07ZWOM&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;設定網路卡:f99c3edb4c26f0f85930a0a4d9ea6bbc&#34;&gt;設定網路卡&lt;/h5&gt;
 
-&lt;p&gt;&lt;strong&gt;建立機器&lt;/strong&gt;&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/snmRWz&#34; width=&#34;50%&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/07ZWOM &#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;建立機器:f99c3edb4c26f0f85930a0a4d9ea6bbc&#34;&gt;建立機器&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/snmRWz&#34; width=&#34;50%&#34;&gt;
 &lt;img src=&#34;https://goo.gl/lT73Bi&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;設定一下windows10:f99c3edb4c26f0f85930a0a4d9ea6bbc&#34;&gt;設定一下windows10&lt;/h4&gt;
+&lt;h5 id=&#34;設定windows10:f99c3edb4c26f0f85930a0a4d9ea6bbc&#34;&gt;設定windows10&lt;/h5&gt;
 
 &lt;p&gt;裝完後可以先使用安裝時設定的vnc網頁連線進去&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/NYQsvg&#34; width=&#34;50%&#34;&gt;&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/zaGvSD&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;設定遠端連線&lt;/strong&gt;&lt;br /&gt;
-安迪兒大約試了一下連線軟體
+&lt;h5 id=&#34;設定遠端連線:f99c3edb4c26f0f85930a0a4d9ea6bbc&#34;&gt;設定遠端連線&lt;/h5&gt;
+
+&lt;p&gt;安迪兒大約試了一下連線軟體
 splashtop、teamviewer、chrome remote desktop、微軟原生的Remote Desktop&lt;br /&gt;
 最後的習慣是&lt;br /&gt;
 在家時用splashtop(較方便)&lt;br /&gt;
@@ -59,7 +62,8 @@ splashtop、teamviewer、chrome remote desktop、微軟原生的Remote Desktop&l
 
 &lt;h4 id=&#34;讓ipad和藍芽鍵盤連線:f99c3edb4c26f0f85930a0a4d9ea6bbc&#34;&gt;讓IPAD和藍芽鍵盤連線&lt;/h4&gt;
 
-&lt;p&gt;順利的話，再加上遠端連線，應該就可以在上面打打字&lt;br /&gt;
+&lt;p&gt;順利的話，再加上遠端連線&lt;br /&gt;
+應該就可以在上面打打字&lt;br /&gt;
 看看word、網頁之類的&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/crKJRO&#34; width=&#34;50%&#34;&gt;&lt;img src=&#34;https://goo.gl/Ax9qMc&#34; width=&#34;50%&#34;&gt;&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/9C7LNo&#34; width=&#34;50%&#34;&gt;&lt;img src=&#34;https://goo.gl/v3LeLL&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
@@ -67,26 +71,28 @@ splashtop、teamviewer、chrome remote desktop、微軟原生的Remote Desktop&l
 &lt;h4 id=&#34;滑鼠呢:f99c3edb4c26f0f85930a0a4d9ea6bbc&#34;&gt;滑鼠呢?&lt;/h4&gt;
 
 &lt;p&gt;大家都知道的IPAD不支援滑鼠&lt;br /&gt;
-除非jb安裝別的藍芽套件&lt;br /&gt;
-所以好的遠端軟體就很重要了，用手指直接當滑鼠點&lt;/p&gt;
+除非JB安裝第三方相關藍芽套件&lt;/p&gt;
 
-&lt;p&gt;但如果在家的話，安迪兒是在NAS上外接USB滑鼠&lt;br /&gt;
-然後把USB設定給裡面的windows10虛擬機&lt;/p&gt;
+&lt;p&gt;這時好的遠端軟體就很重要了&lt;br /&gt;
+一般大多是用手指直接當滑鼠點&lt;/p&gt;
 
-&lt;p&gt;滑鼠移動時遠端桌面裡的指標也會跟著移動&lt;br /&gt;
-感覺有慢一些些不過還ok啦,有像在用滑鼠的fu&lt;br /&gt;
-有NAS掛windows還蠻方便的~XD&lt;br /&gt;
+&lt;p&gt;在自家的話，安迪兒是NAS上外接USB滑鼠&lt;br /&gt;
+然後把USB設定給裡面windows10&lt;/p&gt;
+
+&lt;p&gt;設定好後滑鼠移動，遠端桌面裡的指標也會跟著移動&lt;br /&gt;
+感覺有慢一些些，不過還ok啦有像在用滑鼠的fu&lt;br /&gt;
+用NAS上的虛擬機這類需求都超方便的~XD&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/THlDL2&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;之後win10就留在NAS上，在家或在外面&lt;br /&gt;
-IPAD隨時透過連線就可以馬上連回來使用了&lt;/p&gt;
+&lt;p&gt;因為在NAS上，其實win10其實也不用理會它&lt;br /&gt;
+不用關機，放都就可以了&lt;br /&gt;
+在家或在外面IPAD隨時透過連線&lt;br /&gt;
+就馬上連回來使用了&lt;/p&gt;
 
-&lt;p&gt;日後不用再帶筆電出門，還蠻方便的~&lt;br /&gt;
-(這讓安迪兒有想試試IPAD PRO的fu吶)&lt;/p&gt;
-
-&lt;p&gt;以上!收工嘍~&lt;/p&gt;
-
-&lt;p&gt;(本篇文章是在IPAD上完成的~XD)&lt;/p&gt;
+&lt;p&gt;不用再帶筆電出門，整個就還蠻方便的~&lt;br /&gt;
+(IPAD PRO應該更大更好用吧)&lt;br /&gt;
+(本篇文章是在IPAD上完成的~XD)&lt;br /&gt;
+以上!收工嘍~&lt;/p&gt;
 </description>
     </item>
     
