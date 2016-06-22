@@ -28,45 +28,48 @@
 
 &lt;p&gt;步驟如下:&lt;/p&gt;
 
-&lt;h3 id=&#34;首先在在nas上裝上虛擬機station:f99c3edb4c26f0f85930a0a4d9ea6bbc&#34;&gt;首先在在nas上裝上虛擬機station&lt;/h3&gt;
+&lt;h3 id=&#34;首先在nas上裝上虛擬機station:f99c3edb4c26f0f85930a0a4d9ea6bbc&#34;&gt;首先在nas上裝上虛擬機station&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/kxiAbE&#34; width=&#34;50%&#34;&gt;   &lt;img src=&#34;https://goo.gl/n0Xrpt&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/kxiAbE&#34; width=&#34;70%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/n0Xrpt&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;設定網路卡:f99c3edb4c26f0f85930a0a4d9ea6bbc&#34;&gt;設定網路卡&lt;/h5&gt;
+&lt;h5 id=&#34;設定一張新的網路卡:f99c3edb4c26f0f85930a0a4d9ea6bbc&#34;&gt;設定一張新的網路卡&lt;/h5&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/07ZWOM &#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/07ZWOM &#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
 &lt;h5 id=&#34;建立機器:f99c3edb4c26f0f85930a0a4d9ea6bbc&#34;&gt;建立機器&lt;/h5&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/snmRWz&#34; width=&#34;50%&#34;&gt;
-&lt;img src=&#34;https://goo.gl/lT73Bi&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/snmRWz&#34; width=&#34;70%&#34;&gt;
+&lt;img src=&#34;https://goo.gl/lT73Bi&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
 &lt;h5 id=&#34;設定windows10:f99c3edb4c26f0f85930a0a4d9ea6bbc&#34;&gt;設定windows10&lt;/h5&gt;
 
-&lt;p&gt;裝完後可以先使用安裝時設定的vnc網頁連線進去&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/NYQsvg&#34; width=&#34;50%&#34;&gt;&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/zaGvSD&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
+&lt;p&gt;安裝完成後，可以使用安裝時設定的vnc網頁連線進虛擬機&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/NYQsvg&#34; width=&#34;70%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/zaGvSD&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
 &lt;h5 id=&#34;設定遠端連線:f99c3edb4c26f0f85930a0a4d9ea6bbc&#34;&gt;設定遠端連線&lt;/h5&gt;
 
 &lt;p&gt;安迪兒大約試了一下連線軟體
-splashtop、teamviewer、chrome remote desktop、微軟原生的Remote Desktop&lt;br /&gt;
-最後的習慣是&lt;br /&gt;
-在家時用splashtop(較方便)&lt;br /&gt;
+splashtop、teamviewer、chrome remote desktop、微軟原生的Remote Desktop&lt;/p&gt;
+
+&lt;h5 id=&#34;最後選用:f99c3edb4c26f0f85930a0a4d9ea6bbc&#34;&gt;最後選用&lt;/h5&gt;
+
+&lt;p&gt;在家時用splashtop(較方便)&lt;br /&gt;
 出門在咖啡廰時用Chrome遠端連線(google帳號認證安全性較高)&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/ReLjzJ&#34; width=&#34;50%&#34;&gt;&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/OwXtmI&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://goo.gl/ReLjzJ&#34; width=&#34;70%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/OwXtmI&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;安迪兒這邊用chrome的遠端連線&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/BeYt28&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://goo.gl/BeYt28&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;讓ipad和藍芽鍵盤連線:f99c3edb4c26f0f85930a0a4d9ea6bbc&#34;&gt;讓IPAD和藍芽鍵盤連線&lt;/h4&gt;
 
 &lt;p&gt;順利的話，再加上遠端連線&lt;br /&gt;
 應該就可以在上面打打字&lt;br /&gt;
 看看word、網頁之類的&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/crKJRO&#34; width=&#34;50%&#34;&gt;&lt;img src=&#34;https://goo.gl/Ax9qMc&#34; width=&#34;50%&#34;&gt;&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/9C7LNo&#34; width=&#34;50%&#34;&gt;&lt;img src=&#34;https://goo.gl/v3LeLL&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://goo.gl/crKJRO&#34; width=&#34;70%&#34;&gt;&lt;img src=&#34;https://goo.gl/Ax9qMc&#34; width=&#34;70%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/9C7LNo&#34; width=&#34;70%&#34;&gt;&lt;img src=&#34;https://goo.gl/v3LeLL&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;滑鼠呢:f99c3edb4c26f0f85930a0a4d9ea6bbc&#34;&gt;滑鼠呢?&lt;/h4&gt;
 
@@ -82,7 +85,7 @@ splashtop、teamviewer、chrome remote desktop、微軟原生的Remote Desktop&l
 &lt;p&gt;設定好後滑鼠移動，遠端桌面裡的指標也會跟著移動&lt;br /&gt;
 感覺有慢一些些，不過還ok啦有像在用滑鼠的fu&lt;br /&gt;
 用NAS上的虛擬機這類需求都超方便的~XD&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/THlDL2&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://goo.gl/THlDL2&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;因為在NAS上，其實win10不用理會它&lt;br /&gt;
 不用特別關機，放著就可以了&lt;br /&gt;
