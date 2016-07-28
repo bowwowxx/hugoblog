@@ -11,13 +11,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="">
-    <meta name="description" content="copy nas raid1 data">
-    <meta name="keywords" content="nas raid1 data,nas raid 外接讀檔,讀取nas raid 資料">
+    <meta name="description" content="Elasticsearch,ubuntu 14">
+    <meta name="keywords" content="Install Elasticsearch Ubuntu 14,elastic search river,elastic postgresql">
     
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-07-28 18:26:09.12847766 &#43;0800 CST">
-    <title>拯救synology nas上raid1內接硬碟資料 &middot; 安迪兒隨手貼</title>
+    <meta name="generation-date" content="2016-07-28 18:26:09.134856107 &#43;0800 CST">
+    <title>How To Install Elasticsearch on Ubuntu 14.04 &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="https://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="https://bowwow.tips/img/favicon.ico">
     
@@ -188,8 +188,8 @@
                 
                 <article>
                     <header>
-                        <h1 class="article-title">拯救synology nas上raid1內接硬碟資料</h1>
-                        <time class="date-color">Fri May 13, 2016</time>
+                        <h1 class="article-title">How To Install Elasticsearch on Ubuntu 14.04</h1>
+                        <time class="date-color">Fri Jan 01, 2016</time>
                         <span class="separator">|</span>
                         
 <ul class="categories">
@@ -209,7 +209,7 @@
         <i class="fa fa-tags"></i>
     </li>
     
-        <li><a href="https://bowwow.tips/tags/nas">nas</a></li>
+        <li><a href="https://bowwow.tips/tags/elasticsearch">Elasticsearch</a></li>
     
 </ul>
 
@@ -220,90 +220,150 @@
 
                     <section>
                         
-                            <p>有用nas的，早晚會碰到nas壞了或是啥不可預測的神之力<br />
-總之nas裡的硬碟多多少少會有機會碰到要外接讀取資料的機會</p>
+                            
 
-<p>安迪兒也不例外<br />
-某天安迪兒nas容量不夠，要買新的硬碟<br />
-因為安迪兒nas(ds213j)很慢<br />
-只有usb2傳輸，1g的網路，傳輸上限也只能到每秒30多MB<br />
-總之…備資料要超久的</p>
+<p>最近測東西，都用整理好的docker Elasticsearch叢集<br />
+有點忘了之前Elasticsearch建置方式<br />
+補貼上去年建的Elasticsearch步驟當備忘用</p>
 
-<p>於是安迪兒把裡面的raid1拆一顆硬碟下來<br />
-拿到公司，想說外接公司nas把資料快速的備份出來<br />
-但…安迪兒天真的以為，raid1不就是2顆硬碟一模模一樣樣<br />
-隨便拿一顆接上硬碟外接盒，把裡面的檔案讀出來就好了。</p>
+<h4 id="1-install-java:37994dfe025e3825acda23c8cc02e738">1. Install Java</h4>
 
-<p>果然是事情沒想的那麼容易<br />
-硬碟外接後，不管接到電腦或nas都讀不到東西<br />
-最多只讀到加密的raid磁區</p>
+<p>官方是說<br />
+[Elasticsearch recommends Oracle JDK version 1.8.0_73]</p>
 
-<p>安迪兒整個傻眼，深吸了一口氣<br />
-想著，那天…安迪兒的機器壞了，找不到同型號的
-…就gg了嗎!!!<br />
-(這太蝦了吧!!)</p>
+<p>這邊可以使用OpenJDK 7或Oracle JDK 8</p>
 
-<p>於是安迪兒在茫茫google海裡，研究了一下<br />
-找到了可能的方案，利用linux software raid的方式<br />
-弄個raid來試試讀資料<br />
-參考資料如下:<br />
-<a href="http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-ig-s390-multi-zh_tw-4/s1-s390info-raid.html">http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-ig-s390-multi-zh_tw-4/s1-s390info-raid.html</a><br />
-<a href="https://en.wikipedia.org/wiki/Mdadm">https://en.wikipedia.org/wiki/Mdadm</a><br />
-<a href="http://linux.die.net/man/8/mdadm">http://linux.die.net/man/8/mdadm</a></p>
+<p>OpenJDK 7</p>
 
-<p>以下就是安迪兒整個修復的過程</p>
+<pre><code>sudo apt-get update  
+sudo apt-get install openjdk-7-jre  
+java -version  
 
-<p>用usb外接盒裝上硬碟，接上公司的nas<br />
-<img src="https://goo.gl/W7Bcnv" ></p>
-
-<p>執行以下步驟</p>
-
-<p>1.修復原raid1 HDD<br />
-mdadm -A -R /dev/xxx /dev/xxx<br />
-<img src="https://goo.gl/1jtKCN" width="70%"></p>
-
-<p>2.fdisk -l xx 找一下相關磁碟資訊<br />
-可以看一下Blocks的大小，猜一下大的是存資的磁區<br />
-<img src="https://goo.gl/fyjJnT" width="70%"><br />
-<img src="https://goo.gl/cnRqA5" width="70%"></p>
-
-<p>3.建新目錄<br />
-mkdir /mnt/old_hdd<br />
-<img src="https://goo.gl/6SzuD4" width="70%"></p>
-
-<p>4.把找到的md2掛到剛建的目錄裡<br />
-mount -t ext4 /dev/md2 /mnt/old_hdd/<br />
-<img src="https://goo.gl/Fi8mbK" width="70%"><br />
-<img src="https://goo.gl/jyifaF" width="70%"></p>
-
-<p>5.開始copy資料吧，此時nas裡面應該讀的到資料了<br />
-<img src="https://goo.gl/Fi8mbK" width="70%"><br />
-<img src="https://goo.gl/qpM7pj" width="70%"></p>
-
-<p>6.完成後<br />
-unmount資料匣<br />
-removed md virtual device</p>
-
-<p>全部用到的指令如下:</p>
-
-<pre><code>fdisk -l
-mdadm -A -R /dev/md2 /dev/sde3
-mkdir /mnt/old_hdd
-mount -t ext4 /dev/md2 /mnt/old_hdd/
-mount | grep ^/dev/md2
-umount /mnt/old_hdd
-mdadm -S /dev/md2
 </code></pre>
 
-<p>到這邊…有沒發現一件事<br />
-其實所謂的raid，就是用software raid的方式弄的<br />
-如果是硬體晶片的話可能就解不出來了<br />
-有好有壞啦~XD</p>
+<p>Oracle JDK 8</p>
 
-<p>另外，新的nas超快，用usb3，或是直接網路傳檔<br />
-每秒都有100mb以上的速度，真是差太多了。</p>
+<pre><code>sudo add-apt-repository -y ppa:webupd8team/java  
+sudo apt-get update    
+sudo apt-get -y install oracle-java8-installer   
+java -version  
+</code></pre>
 
-<p>以上~~收工嘍!</p>
+<p><img src="https://goo.gl/9wVhs1" width="50%">
+<img src="https://goo.gl/q0QMGs" width="50%"></p>
+
+<h4 id="2-installing-elasticsearch-1-7-2:37994dfe025e3825acda23c8cc02e738">2. Installing Elasticsearch 1.7.2</h4>
+
+<pre><code>sudo wget https://download.elastic.co/Elasticsearch/Elasticsearch/Elasticsearch-1.7.2.deb  
+sudo dpkg -i Elasticsearch-1.7.2.deb  
+</code></pre>
+
+<p><img src="https://goo.gl/eW9sxo" width="50%">
+<img src="https://goo.gl/iFfmPo" width="50%"></p>
+
+<h4 id="3-installing-plugin:37994dfe025e3825acda23c8cc02e738">3. Installing plugin</h4>
+
+<ul>
+<li>head<br />
+<code>
+sudo /usr/share/Elasticsearch/bin/plugin -install mobz/Elasticsearch-head  
+</code></li>
+<li>marvel<br />
+<code>
+sudo /usr/share/Elasticsearch/bin/plugin -install Elasticsearch/marvel/latest  
+</code><br /></li>
+<li>jdbc river<br />
+版本參考
+<a href="http://xbib.org/repository/org/xbib/Elasticsearch/plugin/Elasticsearch-river-jdbc/">http://xbib.org/repository/org/xbib/Elasticsearch/plugin/Elasticsearch-river-jdbc/</a><br />
+<code>
+plugin --install jdbc --url http://xbib.org/repository/org/xbib/Elasticsearch/plugin/Elasticsearch-river-jdbc/1.5.0.5/Elasticsearch-river-jdbc-1.5.0.5-plugin.zip  
+</code></li>
+<li>jdbc postgresql<br />
+版本參考列表<br />
+<a href="https://jdbc.postgresql.org/download.html">https://jdbc.postgresql.org/download.html</a><br />
+<a href="https://github.com/jprante/Elasticsearch-jdbc">https://github.com/jprante/Elasticsearch-jdbc</a><br /></li>
+</ul>
+
+<pre><code>wget https://jdbc.postgresql.org/download/postgresql-9.4-1204.jdbc4.jar
+wget https://jdbc.postgresql.org/download/postgresql-9.4-1204.jdbc42.jar
+/usr/share/Elasticsearch/plugins/jdbc  
+</code></pre>
+
+<p><img src="https://goo.gl/moyQVm" width="50%"></p>
+
+<h4 id="4-configuring-elasticsearch:37994dfe025e3825acda23c8cc02e738">4. Configuring Elasticsearch</h4>
+
+<p>一些Elasticsearch檔案路徑<br />
+- /usr/share/Elasticsearch<br />
+- /etc/Elasticsearch<br />
+- /etc/init.d/Elasticsearch</p>
+
+<pre><code>sudo update-rc.d Elasticsearch defaults  
+
+</code></pre>
+
+<p><img src="https://goo.gl/1xZljC" width="70%"></p>
+
+<p>設定Elasticsearch.yml檔</p>
+
+<pre><code>sudo nano /etc/Elasticsearch/Elasticsearch.yml  
+</code></pre>
+
+<p>參考內容:</p>
+
+<pre><code>marvel.agent.enabled: false
+cluster.name: bowwow
+node.name: pro-bowwow
+node.master: true
+node.data: true
+index.number_of_shards: 5
+bootstrap.mlockall: true
+index.cache.field.max_size: 50000
+index.cache.field.expire: 10m
+index.cache.field.type: soft
+threadpool.index.type: fixed
+threadpool.index.size: 100
+threadpool.index.queue_size: 500
+#discovery.zen.ping.multicast.enabled: false  
+#discovery.zen.ping.unicast.hosts: [&quot;pro-bowwow&quot;,&quot;node1&quot;,&quot;node2&quot;]
+
+th:
+data: /data/data
+logs: /data/log
+plugins: /data/plugins
+work: /data/work
+
+http.cors.allow-origin: &quot;/.*/&quot;
+http.cors.enabled: true
+</code></pre>
+
+<h4 id="5-設定完成:37994dfe025e3825acda23c8cc02e738">5. 設定完成</h4>
+
+<p>啟用服務嘍</p>
+
+<pre><code>sudo service Elasticsearch start  
+</code></pre>
+
+<p>測試一下</p>
+
+<pre><code>curl localhost:9200
+</code></pre>
+
+<p><img src="https://goo.gl/tod19x" width="70%"></p>
+
+<p>從db建一些測試資料進去<br />
+<img src="https://goo.gl/zOb2kc" width="50%">
+<img src="https://goo.gl/CeMO7g" width="50%"> Â</p>
+
+<p>測一下7萬筆資料內搜尋的效能</p>
+
+<pre><code>ab -n 1000 -c 10  &quot;http://demo/songs/data/_search?&amp;q=id:100&quot;
+</code></pre>
+
+<p>嗯~~測了一下，從數千筆資料搜尋和從7萬多筆資料搜尋，Requests per second數差不多<br />
+<img src="https://goo.gl/rgIRYy" width="70%"></p>
+
+<p><strong>收工嘍~收工嘍~</strong></p>
 
                         
                     </section>
@@ -316,9 +376,9 @@ mdadm -S /dev/md2
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname = 'bowwowtips';
-        var disqus_identifier = 'https:\/\/bowwow.tips\/post\/20160513\/';
-        var disqus_title = '拯救synology nas上raid1內接硬碟資料';
-        var disqus_url = 'https:\/\/bowwow.tips\/post\/20160513\/';
+        var disqus_identifier = 'https:\/\/bowwow.tips\/post\/20160101\/';
+        var disqus_title = 'How To Install Elasticsearch on Ubuntu 14.04';
+        var disqus_url = 'https:\/\/bowwow.tips\/post\/20160101\/';
         (function() {
             
             if (window.location.hostname === "localhost") {
