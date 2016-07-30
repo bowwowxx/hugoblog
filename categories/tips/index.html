@@ -18,7 +18,7 @@
       <link href="https://bowwow.tips/categories/tips/index.xml" rel="feed" type="application/rss+xml" title="安迪兒隨手貼" />
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-07-31 02:46:49.704931475 &#43;0800 CST">
+    <meta name="generation-date" content="2016-07-31 03:13:20.72894031 &#43;0800 CST">
     <title>Tips &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="https://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="https://bowwow.tips/img/favicon.ico">
@@ -212,7 +212,7 @@
             
             <h4 class="page-item-title">Docker 1.12的黑魔法</h4>
         </header>
-        <p class="page-item-summary">今年2016 Docker Conf 發表後，引起大家狂熱的討論，會場整個都高潮了~XD 引用一下相關的結論文章 DockerCon 2016會議：發布內容的總結及主要收穫 原文網址：https://kknews.cc/tech/mmx4yp.html Docker Swarm 已死！Docker Swarm 萬歲！ 原文網址：https://kknews.cc/tech/8e2egq.html ###官方無敵威的展示影片 看完影片後，安迪兒超期待7月新版的發表 迫不急待的試玩一下，也想把系統由舊的swarm更換成新的docker swarm 就這樣一路從Docker1.12 rc2 rc3 rc4都玩了一遍 (因為不少問題和bug，所以才會一直試到rc4 &hellip;orz) 終於今天Docker v1.12.0正式定版了 大大們開發的能量超強大，每一版都更新很表，也修了一大堆東西~XD https://github.com/docker/docker/releases 安迪兒也立馬全新安裝，順便記錄一下和分享試用Docker 1.12的心得 這次的docker其實增加很多的新功能(docker真的進化超快的~XD) Swarm 安迪兒其實是為了這個功能，才會一直的在try 因為舊版的Swarm其實有點麻煩 要建置Consul Key Store daemon 要建overlay的網路 還要再自已寫一堆腳本去監控和偵測狀態和處理的方式 而新版的docker 1.12超神奇，整個Swarm整合進去 也有了新的docker Swarm cluster使用和管理方式 大大的簡化了cluster的設置 Docker Service、Stack、Cloud 整合stack與service的管理，可以使用deploy把stack部署到cloud上 Health check https://github.com/docker/docker/pull/23218 可以自訂節點的健康 &ndash;health-cmd (health用的指令檔) &ndash;health-interval (health的秒數) 然後用一般的docker inspect就可以查詢check的結果 docker inspect --format='' xxname healthy Live restore https://github.com/docker/docker/pull/23213 啟動時增加這個參數，daemon掛了也不會影響到container &ndash;live-restore overlay2 https://github.com/docker/docker/pull/22126 裡面有benchmark的數據可以參考一下 其它還有很多細的東西、指令、參數之類 有興趣的，可以多查查官方的說明 看了這些，應該手癢了吧 [以下是實作時間嘍] 1.</p>
+        <p class="page-item-summary">今年2016 Docker Conf 發表後 引起大家狂熱的討論，會場整個都高潮了~XD []引用一下相關的結論文章] DockerCon 2016會議：發布內容的總結及主要收穫 原文網址：https://kknews.cc/tech/mmx4yp.html Docker Swarm 已死！Docker Swarm 萬歲！ 原文網址：https://kknews.cc/tech/8e2egq.html 官方無敵威的展示影片 看完影片後，安迪兒超期待7月新版的發表 迫不急待的試玩一下 想把系統由舊的swarm更換成新的docker swarm 就這樣一路從Docker1.12 rc2 rc3 rc4都玩了一遍 (因為不少問題和bug，所以才會一直試到rc4 &hellip;orz) 終於今天Docker v1.12.0正式定版 Docker大大們開發的能量超強大 每一版都更新很快，也修了一大堆東西~XD https://github.com/docker/docker/releases 既然Docker v1.12定版了 安迪兒也馬上全新安裝 順便記錄一下和分享試用Docker 1.12的心得 [這次的docker增加不少新功能] Swarm 安迪兒其實是為了這個功能 才會一直的在try 因為舊版的Swarm其實有點麻煩 要建置Consul Key Store daemon 要建overlay的網路 還要再自已寫一堆腳本去監控和偵測狀態和處理的方式 而新版的docker 1.12整合了Swarm 也有了新的swarm cluster使用和管理方式 大大的簡化了整個的流程 新的功能: Docker Service、Stack、Cloud 整合stack與service的管理，可以使用deploy把stack部署到cloud上 Health check https://github.com/docker/docker/pull/23218 可以自訂節點的健康 &ndash;health-cmd (health用的指令檔) &ndash;health-interval (health的秒數) 然後用一般的docker inspect就可以查詢check的結果 docker inspect --format='' xxname healthy Live restore https://github.com/docker/docker/pull/23213 啟動時增加這個參數，daemon掛了也不會影響到container &ndash;live-restore overlay2 https://github.com/docker/docker/pull/22126 裡面有benchmark的數據可以參考一下 其它還有很多細的東西、指令、參數之類 有興趣的，可以多查查官方的說明 看了這些，應該手癢了吧 [以下是實作時間嘍] 1.</p>
         <a href="https://bowwow.tips/post/20160730/" class="page-item-btn ">
             Read More
         </a>

@@ -16,7 +16,7 @@
     
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-07-31 02:46:49.761562686 &#43;0800 CST">
+    <meta name="generation-date" content="2016-07-31 03:13:20.792370303 &#43;0800 CST">
     <title>Docker 1.12的黑魔法 &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="https://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="https://bowwow.tips/img/favicon.ico">
@@ -222,41 +222,51 @@
                         
                             
 
-<p>今年2016 Docker Conf 發表後，引起大家狂熱的討論，會場整個都高潮了~XD<br />
-引用一下相關的結論文章<br />
+<p>今年2016 Docker Conf 發表後<br />
+引起大家狂熱的討論，會場整個都高潮了~XD</p>
+
+<p>[]引用一下相關的結論文章]<br />
 DockerCon 2016會議：發布內容的總結及主要收穫
 原文網址：<a href="https://kknews.cc/tech/mmx4yp.html">https://kknews.cc/tech/mmx4yp.html</a></p>
 
 <p>Docker Swarm 已死！Docker Swarm 萬歲！
 原文網址：<a href="https://kknews.cc/tech/8e2egq.html">https://kknews.cc/tech/8e2egq.html</a></p>
 
-<p>###官方無敵威的展示影片
-<iframe width="420" height="315" src="https://www.youtube.com/watch?v=F7hoq0KwHD4" frameborder="0" allowfullscreen></iframe></p>
+<h3 id="官方無敵威的展示影片:e75d3bee28da3e2ece5c132dc361a283">官方無敵威的展示影片</h3>
 
-<p>看完影片後，安迪兒超期待7月新版的發表
-迫不急待的試玩一下，也想把系統由舊的swarm更換成新的docker swarm<br />
+<p><a href="https://www.youtube.com/watch?v=F7hoq0KwHD4"><img src="https://img.youtube.com/vi/F7hoq0KwHD4/0.jpg" alt="Alt text" /></a></p>
+
+<p>看完影片後，安迪兒超期待7月新版的發表<br />
+迫不急待的試玩一下<br />
+想把系統由舊的swarm更換成新的docker swarm<br />
 就這樣一路從Docker1.12 rc2 rc3 rc4都玩了一遍<br />
 (因為不少問題和bug，所以才會一直試到rc4 &hellip;orz)</p>
 
-<p>終於今天Docker v1.12.0正式定版了<br />
-大大們開發的能量超強大，每一版都更新很表，也修了一大堆東西~XD<br />
+<p>終於今天Docker v1.12.0正式定版<br />
+Docker大大們開發的能量超強大<br />
+每一版都更新很快，也修了一大堆東西~XD<br />
 <a href="https://github.com/docker/docker/releases">https://github.com/docker/docker/releases</a></p>
 
-<p>安迪兒也立馬全新安裝，順便記錄一下和分享試用Docker 1.12的心得</p>
+<p>既然Docker v1.12定版了<br />
+安迪兒也馬上全新安裝<br />
+順便記錄一下和分享試用Docker 1.12的心得</p>
 
-<p>這次的docker其實增加很多的新功能(docker真的進化超快的~XD)</p>
+<h4 id="這次的docker增加不少新功能:e75d3bee28da3e2ece5c132dc361a283">[這次的docker增加不少新功能]</h4>
 
 <h3 id="swarm:e75d3bee28da3e2ece5c132dc361a283">Swarm</h3>
 
-<p>安迪兒其實是為了這個功能，才會一直的在try
+<p>安迪兒其實是為了這個功能<br />
+才會一直的在try
 因為舊版的Swarm其實有點麻煩<br />
-要建置Consul Key Store daemon
-要建overlay的網路
+要建置Consul Key Store daemon<br />
+要建overlay的網路<br />
 還要再自已寫一堆腳本去監控和偵測狀態和處理的方式</p>
 
-<p>而新版的docker 1.12超神奇，整個Swarm整合進去<br />
-也有了新的docker Swarm cluster使用和管理方式<br />
-大大的簡化了cluster的設置</p>
+<p>而新版的docker 1.12整合了Swarm<br />
+也有了新的swarm cluster使用和管理方式<br />
+大大的簡化了整個的流程</p>
+
+<h3 id="新的功能:e75d3bee28da3e2ece5c132dc361a283">新的功能:</h3>
 
 <h3 id="docker-service-stack-cloud:e75d3bee28da3e2ece5c132dc361a283">Docker Service、Stack、Cloud</h3>
 
@@ -303,8 +313,8 @@ DockerCon 2016會議：發布內容的總結及主要收穫
 <pre><code>sudo usermod -aG docker andy
 </code></pre>
 
-<p><img src="https://goo.gl/EMIf5a" width="50%">
-<img src="https://goo.gl/zogzGo" width="50%"></p>
+<p><img src="https://goo.gl/EMIf5a" width="70%"><br />
+<img src="https://goo.gl/zogzGo" width="70%"></p>
 
 <h4 id="2-玩玩container的叢集-建一個swarm來玩玩吧:e75d3bee28da3e2ece5c132dc361a283">2. 玩玩Container的叢集，建一個swarm來玩玩吧</h4>
 
@@ -313,7 +323,7 @@ DockerCon 2016會議：發布內容的總結及主要收穫
 <pre><code>docker swarm init --listen-addr docker112-swarm-admin:2377
 </code></pre>
 
-<p><img src="https://goo.gl/ymP7Z4" width="50%"></p>
+<p><img src="https://goo.gl/ymP7Z4" width="70%"></p>
 
 <p>再來在其它不同的node機器上輸入</p>
 
@@ -322,19 +332,19 @@ DockerCon 2016會議：發布內容的總結及主要收穫
  10.240.0.3:2377
 </code></pre>
 
-<p><img src="https://goo.gl/CjM4D4" width="50%">
+<p><img src="https://goo.gl/CjM4D4" width="70%"><br />
 都加入完了之後，在主節點，master那台<br />
 可以下</p>
 
 <pre><code>docker node ls
 </code></pre>
 
-<p><img src="https://goo.gl/hPGhT6" width="50%"></p>
+<p><img src="https://goo.gl/hPGhT6" width="70%"></p>
 
 <p>看看，超神奇的，就這樣一個跨機器的Container cluster就立完成了<br />
 這是不是docker的 <strong>黑魔法</strong> 吶~~~太可怕了，合併swarm後簡化許多繁雜的東西</p>
 
-<h4 id="3-建個自已用的network:e75d3bee28da3e2ece5c132dc361a283">3. 建個自已用的network</h4>
+<h4 id="3-新增自已用的network:e75d3bee28da3e2ece5c132dc361a283">3. 新增自已用的network</h4>
 
 <p>用docker network 建立一個自已的overlay來玩玩<br />
 建完並指定Container的overlay後，Container就能視為同網段，跨各種機器運行了</p>
@@ -342,9 +352,9 @@ DockerCon 2016會議：發布內容的總結及主要收穫
 <pre><code>docker network create --driver overlay bowwow-net  
 </code></pre>
 
-<p><img src="https://goo.gl/xY51ig" width="50%"></p>
+<p><img src="https://goo.gl/xY51ig" width="70%"></p>
 
-<h4 id="4-來見識一下讓大家瘋狂的神奇docker-service威力吧:e75d3bee28da3e2ece5c132dc361a283">4. 來見識一下讓大家瘋狂的神奇Docker Service威力吧</h4>
+<h4 id="4-來見識一下讓大家瘋狂的docker-service威力吧:e75d3bee28da3e2ece5c132dc361a283">4. 來見識一下讓大家瘋狂的Docker Service威力吧</h4>
 
 <p>建個postgresql database，直接replicas 2台<br />
 2台都是同樣的database</p>
@@ -355,26 +365,26 @@ DockerCon 2016會議：發布內容的總結及主要收穫
 <pre><code>docker service ls
 </code></pre>
 
-<p><img src="https://goo.gl/Vb5Xax" width="50%"></p>
+<p><img src="https://goo.gl/Vb5Xax" width="70%"></p>
 
 <p>可以看到postgresql啟動完成，2台分散在不同的機器上</p>
 
 <p>直接來玩一下，2台機器的postgresql同時都能連上<br />
-<img src="https://goo.gl/6W7Eox" width="50%"></p>
+<img src="https://goo.gl/6W7Eox" width="70%"></p>
 
 <p>隨便改一下其中一台，建一個新的table<br />
-<img src="https://goo.gl/6W7Eox" width="50%"></p>
+<img src="https://goo.gl/6W7Eox" width="70%"></p>
 
 <p>過一下另一台就跟都同步了<br />
-<img src="https://goo.gl/gWsS1S" width="50%"><br />
+<img src="https://goo.gl/gWsS1S" width="70%"><br />
 而且因為用了bowwow-net的關係<br />
 開三台機器，三台機器都能互相找的到<br />
 也就是說，連上3台機器的ip，都能接上這個postgresql db<br />
 但這個postgresql db是分散成2個Container在跑<br />
 <strong>docker都幫你做了ha、scale和cluster了</strong><br />
-<strong>只能說:超~~<del>神</del>~的吶</strong></p>
+<strong>只能說:超~<del>神</del>~的吶</strong></p>
 
-<p>玩一下隨興的新增和刪除Container節點</p>
+<p>隨興的新增和刪除Container節點</p>
 
 <pre><code>docker service ps postgresql
 docker service scale postgresql=3
@@ -382,9 +392,10 @@ docker service scale postgresql=1
 docker service update --replicas 2 postgresql
 </code></pre>
 
-<p>新版docker還可以rolling update服務
-&ndash;update-delay<br />
-他會慢慢的更版，不會一次都換掉<br />
+<p>新版docker有rolling update服務<br />
+&ndash;update-delay</p>
+
+<p>他會慢慢的更版，不會一次都換掉<br />
 ex:</p>
 
 <pre><code>docker service create \
@@ -395,14 +406,14 @@ ex:</p>
 </code></pre>
 
 <p>試一下Swarm Container Cluster移轉的功能<br />
-惡意關掉&amp;刪除其中一台的postgresql Container
-<img src="https://goo.gl/xVWrW9" width="50%">
-<img src="https://goo.gl/EiFWMM" width="50%"></p>
+惡意關掉刪除其中一台的postgresql Container<br />
+<img src="https://goo.gl/xVWrW9" width="70%"><br />
+<img src="https://goo.gl/EiFWMM" width="70%"></p>
 
 <p><strong>果然夠優~馬上又自動的在別台機器上重啟了一個相同的服務</strong></p>
 
-<p>一次開10個來玩玩吧
-<img src="https://goo.gl/fDCI28" width="50%"></p>
+<p>一次開10個來玩玩吧<br />
+<img src="https://goo.gl/fDCI28" width="70%"></p>
 
 <p>不想要服務了，刪除它</p>
 
@@ -410,7 +421,7 @@ ex:</p>
 docker service ls
 </code></pre>
 
-<p><img src="https://goo.gl/pYzbDR" width="50%"></p>
+<p><img src="https://goo.gl/pYzbDR" width="70%"></p>
 
 <p>新的Docker以上這些功能<br />
 跟本就是有k8s(Kubernetes)的影子<br />
@@ -424,7 +435,8 @@ docker service ls
 如果想用之前compose之類的一次啟動管理的方式呢??
 安迪兒找了找，發現docker有一個deploy的相關功能<br />
 看了他文字上有說，要用dab來部署<br />
-忍不住好奇試了一下，真的是可以用</p>
+忍不住好奇試了一下<br />
+真的是可以用</p>
 
 <p>首先先裝上最新版的docker-compose(1.8)<br />
 參考這頁<br />
@@ -434,7 +446,7 @@ docker service ls
 chmod +x /usr/local/bin/docker-compose  
 </code></pre>
 
-<p><img src="https://goo.gl/6dB7jy" width="50%"></p>
+<p><img src="https://goo.gl/6dB7jy" width="70%"></p>
 
 <p>編寫一下docker-compose file<br />
 啟動它，成功後，可以自行bundle成dab檔<br />
@@ -445,19 +457,19 @@ sudo docker-compose bundle -o elk.dab
 docker deploy elk
 </code></pre>
 
-<p><img src="https://goo.gl/Jfuq9q" width="50%"><br />
-<img src="https://goo.gl/FlZqKI" width="50%"><br />
-<img src="https://goo.gl/mqRVTu" width="50%"></p>
+<p><img src="https://goo.gl/Jfuq9q" width="70%"><br />
+<img src="https://goo.gl/FlZqKI" width="70%"><br />
+<img src="https://goo.gl/mqRVTu" width="70%"></p>
 
 <p>看一下結果吧<br />
-<img src="https://goo.gl/Cr71Mu" width="50%"><br />
-<img src="https://goo.gl/QERLf3" width="50%"></p>
+<img src="https://goo.gl/Cr71Mu" width="70%"><br />
+<img src="https://goo.gl/QERLf3" width="70%"></p>
 
-<p>呼<del>終於，東西實在太多了，安迪就也沒辦法一次說完試完<br />
+<p>呼&hellip;終於，東西實在太多了，安迪就也沒辦法一次說完試完<br />
 總之，這次的docker 1.12非常的強大<br />
 如果想要有較簡易的，除了k8s或mesos另外選擇的<br />
 也許考慮一下原生的docker看看嘍<br />
-應該不會失望的</del>~XD<br />
+應該不會失望的~~~XD<br />
 收工嘍~收工嘍!</p>
 
                         
