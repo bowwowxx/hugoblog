@@ -447,14 +447,14 @@ hugo文章存放的方式是以檔案為概念&lt;br /&gt;
 &lt;p&gt;今年2016 Docker Conf 發表後&lt;br /&gt;
 引起大家狂熱的討論，會場整個都高潮了~XD&lt;/p&gt;
 
-&lt;p&gt;[]引用一下相關的結論文章]&lt;br /&gt;
+&lt;p&gt;[引用一下相關的結論文章]&lt;br /&gt;
 DockerCon 2016會議：發布內容的總結及主要收穫
 原文網址：&lt;a href=&#34;https://kknews.cc/tech/mmx4yp.html&#34;&gt;https://kknews.cc/tech/mmx4yp.html&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Docker Swarm 已死！Docker Swarm 萬歲！
 原文網址：&lt;a href=&#34;https://kknews.cc/tech/8e2egq.html&#34;&gt;https://kknews.cc/tech/8e2egq.html&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;官方無敵威的展示影片:e75d3bee28da3e2ece5c132dc361a283&#34;&gt;官方無敵威的展示影片&lt;/h3&gt;
+&lt;h4 id=&#34;官方無敵威的展示影片:e75d3bee28da3e2ece5c132dc361a283&#34;&gt;官方無敵威的展示影片&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=F7hoq0KwHD4&#34;&gt;&lt;img src=&#34;https://img.youtube.com/vi/F7hoq0KwHD4/0.jpg&#34; alt=&#34;Alt text&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -475,7 +475,7 @@ Docker大大們開發的能量超強大&lt;br /&gt;
 
 &lt;h4 id=&#34;這次的docker增加不少新功能:e75d3bee28da3e2ece5c132dc361a283&#34;&gt;[這次的docker增加不少新功能]&lt;/h4&gt;
 
-&lt;h3 id=&#34;swarm:e75d3bee28da3e2ece5c132dc361a283&#34;&gt;Swarm&lt;/h3&gt;
+&lt;h4 id=&#34;swarm:e75d3bee28da3e2ece5c132dc361a283&#34;&gt;Swarm&lt;/h4&gt;
 
 &lt;p&gt;安迪兒其實是為了這個功能&lt;br /&gt;
 才會一直的在try
@@ -488,30 +488,30 @@ Docker大大們開發的能量超強大&lt;br /&gt;
 也有了新的swarm cluster使用和管理方式&lt;br /&gt;
 大大的簡化了整個的流程&lt;/p&gt;
 
-&lt;h3 id=&#34;新的功能:e75d3bee28da3e2ece5c132dc361a283&#34;&gt;新的功能:&lt;/h3&gt;
+&lt;h4 id=&#34;新的功能:e75d3bee28da3e2ece5c132dc361a283&#34;&gt;新的功能:&lt;/h4&gt;
 
-&lt;h3 id=&#34;docker-service-stack-cloud:e75d3bee28da3e2ece5c132dc361a283&#34;&gt;Docker Service、Stack、Cloud&lt;/h3&gt;
+&lt;h4 id=&#34;docker-service-stack-cloud:e75d3bee28da3e2ece5c132dc361a283&#34;&gt;Docker Service、Stack、Cloud&lt;/h4&gt;
 
 &lt;p&gt;整合stack與service的管理，可以使用deploy把stack部署到cloud上&lt;/p&gt;
 
-&lt;h3 id=&#34;health-check:e75d3bee28da3e2ece5c132dc361a283&#34;&gt;Health check&lt;/h3&gt;
+&lt;h4 id=&#34;health-check:e75d3bee28da3e2ece5c132dc361a283&#34;&gt;Health check&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/docker/docker/pull/23218&#34;&gt;https://github.com/docker/docker/pull/23218&lt;/a&gt;&lt;br /&gt;
-可以自訂節點的健康
-&amp;ndash;health-cmd (health用的指令檔)
-&amp;ndash;health-interval (health的秒數)
+可以自訂節點的健康&lt;br /&gt;
+&amp;ndash;health-cmd (health用的指令檔)&lt;br /&gt;
+&amp;ndash;health-interval (health的秒數)&lt;br /&gt;
 然後用一般的docker inspect就可以查詢check的結果&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;docker inspect --format=&#39;&#39; xxname healthy
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;live-restore:e75d3bee28da3e2ece5c132dc361a283&#34;&gt;Live restore&lt;/h3&gt;
+&lt;h4 id=&#34;live-restore:e75d3bee28da3e2ece5c132dc361a283&#34;&gt;Live restore&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/docker/docker/pull/23213&#34;&gt;https://github.com/docker/docker/pull/23213&lt;/a&gt;&lt;br /&gt;
 啟動時增加這個參數，daemon掛了也不會影響到container
 &amp;ndash;live-restore&lt;/p&gt;
 
-&lt;h3 id=&#34;overlay2:e75d3bee28da3e2ece5c132dc361a283&#34;&gt;overlay2&lt;/h3&gt;
+&lt;h4 id=&#34;overlay2:e75d3bee28da3e2ece5c132dc361a283&#34;&gt;overlay2&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/docker/docker/pull/22126&#34;&gt;https://github.com/docker/docker/pull/22126&lt;/a&gt;&lt;br /&gt;
 裡面有benchmark的數據可以參考一下&lt;/p&gt;
@@ -555,8 +555,7 @@ Docker大大們開發的能量超強大&lt;br /&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/CjM4D4&#34; width=&#34;70%&#34;&gt;&lt;br /&gt;
-都加入完了之後，在主節點，master那台&lt;br /&gt;
-可以下&lt;/p&gt;
+都加入完了之後，在主節點，master那台，查一下所有的node&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;docker node ls
 &lt;/code&gt;&lt;/pre&gt;
@@ -597,7 +596,7 @@ Docker大大們開發的能量超強大&lt;br /&gt;
 &lt;p&gt;隨便改一下其中一台，建一個新的table&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/6W7Eox&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;過一下另一台就跟都同步了&lt;br /&gt;
+&lt;p&gt;過一會另一台就跟都同步了&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/gWsS1S&#34; width=&#34;70%&#34;&gt;&lt;br /&gt;
 而且因為用了bowwow-net的關係&lt;br /&gt;
 開三台機器，三台機器都能互相找的到&lt;br /&gt;

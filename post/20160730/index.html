@@ -16,7 +16,7 @@
     
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-07-31 03:13:20.792370303 &#43;0800 CST">
+    <meta name="generation-date" content="2016-07-31 03:19:56.72031582 &#43;0800 CST">
     <title>Docker 1.12的黑魔法 &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="https://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="https://bowwow.tips/img/favicon.ico">
@@ -225,14 +225,14 @@
 <p>今年2016 Docker Conf 發表後<br />
 引起大家狂熱的討論，會場整個都高潮了~XD</p>
 
-<p>[]引用一下相關的結論文章]<br />
+<p>[引用一下相關的結論文章]<br />
 DockerCon 2016會議：發布內容的總結及主要收穫
 原文網址：<a href="https://kknews.cc/tech/mmx4yp.html">https://kknews.cc/tech/mmx4yp.html</a></p>
 
 <p>Docker Swarm 已死！Docker Swarm 萬歲！
 原文網址：<a href="https://kknews.cc/tech/8e2egq.html">https://kknews.cc/tech/8e2egq.html</a></p>
 
-<h3 id="官方無敵威的展示影片:e75d3bee28da3e2ece5c132dc361a283">官方無敵威的展示影片</h3>
+<h4 id="官方無敵威的展示影片:e75d3bee28da3e2ece5c132dc361a283">官方無敵威的展示影片</h4>
 
 <p><a href="https://www.youtube.com/watch?v=F7hoq0KwHD4"><img src="https://img.youtube.com/vi/F7hoq0KwHD4/0.jpg" alt="Alt text" /></a></p>
 
@@ -253,7 +253,7 @@ Docker大大們開發的能量超強大<br />
 
 <h4 id="這次的docker增加不少新功能:e75d3bee28da3e2ece5c132dc361a283">[這次的docker增加不少新功能]</h4>
 
-<h3 id="swarm:e75d3bee28da3e2ece5c132dc361a283">Swarm</h3>
+<h4 id="swarm:e75d3bee28da3e2ece5c132dc361a283">Swarm</h4>
 
 <p>安迪兒其實是為了這個功能<br />
 才會一直的在try
@@ -266,30 +266,30 @@ Docker大大們開發的能量超強大<br />
 也有了新的swarm cluster使用和管理方式<br />
 大大的簡化了整個的流程</p>
 
-<h3 id="新的功能:e75d3bee28da3e2ece5c132dc361a283">新的功能:</h3>
+<h4 id="新的功能:e75d3bee28da3e2ece5c132dc361a283">新的功能:</h4>
 
-<h3 id="docker-service-stack-cloud:e75d3bee28da3e2ece5c132dc361a283">Docker Service、Stack、Cloud</h3>
+<h4 id="docker-service-stack-cloud:e75d3bee28da3e2ece5c132dc361a283">Docker Service、Stack、Cloud</h4>
 
 <p>整合stack與service的管理，可以使用deploy把stack部署到cloud上</p>
 
-<h3 id="health-check:e75d3bee28da3e2ece5c132dc361a283">Health check</h3>
+<h4 id="health-check:e75d3bee28da3e2ece5c132dc361a283">Health check</h4>
 
 <p><a href="https://github.com/docker/docker/pull/23218">https://github.com/docker/docker/pull/23218</a><br />
-可以自訂節點的健康
-&ndash;health-cmd (health用的指令檔)
-&ndash;health-interval (health的秒數)
+可以自訂節點的健康<br />
+&ndash;health-cmd (health用的指令檔)<br />
+&ndash;health-interval (health的秒數)<br />
 然後用一般的docker inspect就可以查詢check的結果</p>
 
 <pre><code>docker inspect --format='' xxname healthy
 </code></pre>
 
-<h3 id="live-restore:e75d3bee28da3e2ece5c132dc361a283">Live restore</h3>
+<h4 id="live-restore:e75d3bee28da3e2ece5c132dc361a283">Live restore</h4>
 
 <p><a href="https://github.com/docker/docker/pull/23213">https://github.com/docker/docker/pull/23213</a><br />
 啟動時增加這個參數，daemon掛了也不會影響到container
 &ndash;live-restore</p>
 
-<h3 id="overlay2:e75d3bee28da3e2ece5c132dc361a283">overlay2</h3>
+<h4 id="overlay2:e75d3bee28da3e2ece5c132dc361a283">overlay2</h4>
 
 <p><a href="https://github.com/docker/docker/pull/22126">https://github.com/docker/docker/pull/22126</a><br />
 裡面有benchmark的數據可以參考一下</p>
@@ -333,8 +333,7 @@ Docker大大們開發的能量超強大<br />
 </code></pre>
 
 <p><img src="https://goo.gl/CjM4D4" width="70%"><br />
-都加入完了之後，在主節點，master那台<br />
-可以下</p>
+都加入完了之後，在主節點，master那台，查一下所有的node</p>
 
 <pre><code>docker node ls
 </code></pre>
@@ -375,7 +374,7 @@ Docker大大們開發的能量超強大<br />
 <p>隨便改一下其中一台，建一個新的table<br />
 <img src="https://goo.gl/6W7Eox" width="70%"></p>
 
-<p>過一下另一台就跟都同步了<br />
+<p>過一會另一台就跟都同步了<br />
 <img src="https://goo.gl/gWsS1S" width="70%"><br />
 而且因為用了bowwow-net的關係<br />
 開三台機器，三台機器都能互相找的到<br />
