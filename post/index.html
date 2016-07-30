@@ -18,7 +18,7 @@
       <link href="https://bowwow.tips/post/index.xml" rel="feed" type="application/rss+xml" title="安迪兒隨手貼" />
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-07-28 18:26:09.091733327 &#43;0800 CST">
+    <meta name="generation-date" content="2016-07-31 02:46:03.284947257 &#43;0800 CST">
     <title>Posts &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="https://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="https://bowwow.tips/img/favicon.ico">
@@ -236,6 +236,51 @@
     </li>
     
         <li><a href="https://bowwow.tips/tags/%E7%AC%AC%E4%B8%80%E7%AF%87">第一篇</a></li>
+    
+</ul>
+
+
+        </footer>
+    </div>
+</div>
+
+                    </div>
+                
+                    <div class="flex-item">
+                        
+<div class="page-item-container">
+    
+    <div class="page-item-content">
+        <header>
+            
+                <time class="page-item-date">Tue Jun 14, 2016</time>
+            
+            <h4 class="page-item-title">Docker 1.12的黑魔法</h4>
+        </header>
+        <p class="page-item-summary">今年2016 Docker Conf 發表後，引起大家狂熱的討論，會場整個都高潮了~XD 引用一下相關的結論文章 DockerCon 2016會議：發布內容的總結及主要收穫 原文網址：https://kknews.cc/tech/mmx4yp.html Docker Swarm 已死！Docker Swarm 萬歲！ 原文網址：https://kknews.cc/tech/8e2egq.html ###官方無敵威的展示影片 看完影片後，安迪兒超期待7月新版的發表 迫不急待的試玩一下，也想把系統由舊的swarm更換成新的docker swarm 就這樣一路從Docker1.12 rc2 rc3 rc4都玩了一遍 (因為不少問題和bug，所以才會一直試到rc4 &hellip;orz) 終於今天Docker v1.12.0正式定版了 大大們開發的能量超強大，每一版都更新很表，也修了一大堆東西~XD https://github.com/docker/docker/releases 安迪兒也立馬全新安裝，順便記錄一下和分享試用Docker 1.12的心得 這次的docker其實增加很多的新功能(docker真的進化超快的~XD) Swarm 安迪兒其實是為了這個功能，才會一直的在try 因為舊版的Swarm其實有點麻煩 要建置Consul Key Store daemon 要建overlay的網路 還要再自已寫一堆腳本去監控和偵測狀態和處理的方式 而新版的docker 1.12超神奇，整個Swarm整合進去 也有了新的docker Swarm cluster使用和管理方式 大大的簡化了cluster的設置 Docker Service、Stack、Cloud 整合stack與service的管理，可以使用deploy把stack部署到cloud上 Health check https://github.com/docker/docker/pull/23218 可以自訂節點的健康 &ndash;health-cmd (health用的指令檔) &ndash;health-interval (health的秒數) 然後用一般的docker inspect就可以查詢check的結果 docker inspect --format='' xxname healthy Live restore https://github.com/docker/docker/pull/23213 啟動時增加這個參數，daemon掛了也不會影響到container &ndash;live-restore overlay2 https://github.com/docker/docker/pull/22126 裡面有benchmark的數據可以參考一下 其它還有很多細的東西、指令、參數之類 有興趣的，可以多查查官方的說明 看了這些，應該手癢了吧 [以下是實作時間嘍] 1.</p>
+        <a href="https://bowwow.tips/post/20160730/" class="page-item-btn ">
+            Read More
+        </a>
+        <footer>
+            
+<ul class="categories">
+    <li>
+        <i class="fa fa-book"></i>
+    </li>
+    
+        <li><a href="https://bowwow.tips/categories/tips">tips</a></li>
+    
+</ul>
+
+
+            <span class="separator">|</span>
+            
+<ul class="tags">
+    <li>
+        <i class="fa fa-tags"></i>
+    </li>
+    
+        <li><a href="https://bowwow.tips/tags/docker">docker</a></li>
     
 </ul>
 
@@ -586,51 +631,6 @@
         </header>
         <p class="page-item-summary">安迪兒新的qnap NAS剛整理完所有資料， 剩下一些新的資料都放在原舊的Synology nas上 安迪兒想掛上別台nas的samba磁區，然後再對拷檔案 但…安迪兒發現，qnap的nas怎麼設定都沒辦法掛上Synology的samba磁碟 ～囧 查了一下，發現好像有人有反應這件事~XD 安迪兒試了一下發現可以直接用指令mount上Synology的samba磁碟資料 貼一下過程 首先SSH登入nas ssh admin@x.x.x.x 找個資料匣準備掛上別台nas的samba 安迪兒這邊建了一個共用的資料匣叫tmp 裡面打算掛Synology的照片和電影2個資料匣 cd /share/CACHEDEV1_DATA/tmp mkdir video photo mount.cifs //10.0.0.7/video -o user=xx password=xx mount.cifs //10.0.0.7/photo -o user=xx password=xx 掛完後使用nas上File Station打開資料匣，開始狂copy資料到新nas上吧 邊copy data邊看一下效能 嗯&hellip;網路每秒約100MB，碟碟IOPS 快300 還ok啦 copy完umount一下 umount ./video ./photo copy完資料後，新nas也差不多完整了 可以開心的接電視直播電影了 (有hdmi接電視的nas好讚呀~xd) 記錄一些mount方式 比較新的Smaba只能用cifs的mount方式 [smbmount] smbmount -o username=&quot;xx&quot;,password=&quot;xx&quot; //ip/share /mnt/smb smbumount /mnt/smb [mount] mount -t smbfs -o username=&quot;xx&quot;,password=&quot;xx&quot; //ip/share /mnt/smb umount /mnt/smb [cifs] mount -t cifs -o username=&quot;xx&quot;,password=&quot;xx&quot; //ip/share /mnt/smb umount /mnt/smb mount.cifs -o username=&quot;xx&quot;,password=&quot;xx&quot; //ip/share /mnt/smb umount.cifs /mnt/smb 以上~~收工嘍!</p>
         <a href="https://bowwow.tips/post/20160518/" class="page-item-btn ">
-            Read More
-        </a>
-        <footer>
-            
-<ul class="categories">
-    <li>
-        <i class="fa fa-book"></i>
-    </li>
-    
-        <li><a href="https://bowwow.tips/categories/tips">tips</a></li>
-    
-</ul>
-
-
-            <span class="separator">|</span>
-            
-<ul class="tags">
-    <li>
-        <i class="fa fa-tags"></i>
-    </li>
-    
-        <li><a href="https://bowwow.tips/tags/nas">nas</a></li>
-    
-</ul>
-
-
-        </footer>
-    </div>
-</div>
-
-                    </div>
-                
-                    <div class="flex-item">
-                        
-<div class="page-item-container">
-    
-    <div class="page-item-content">
-        <header>
-            
-                <time class="page-item-date">Fri May 13, 2016</time>
-            
-            <h4 class="page-item-title">拯救synology nas上raid1內接硬碟資料</h4>
-        </header>
-        <p class="page-item-summary">有用nas的，早晚會碰到nas壞了或是啥不可預測的神之力 總之nas裡的硬碟多多少少會有機會碰到要外接讀取資料的機會 安迪兒也不例外 某天安迪兒nas容量不夠，要買新的硬碟 因為安迪兒nas(ds213j)很慢 只有usb2傳輸，1g的網路，傳輸上限也只能到每秒30多MB 總之…備資料要超久的 於是安迪兒把裡面的raid1拆一顆硬碟下來 拿到公司，想說外接公司nas把資料快速的備份出來 但…安迪兒天真的以為，raid1不就是2顆硬碟一模模一樣樣 隨便拿一顆接上硬碟外接盒，把裡面的檔案讀出來就好了。 果然是事情沒想的那麼容易 硬碟外接後，不管接到電腦或nas都讀不到東西 最多只讀到加密的raid磁區 安迪兒整個傻眼，深吸了一口氣 想著，那天…安迪兒的機器壞了，找不到同型號的 …就gg了嗎!!! (這太蝦了吧!!) 於是安迪兒在茫茫google海裡，研究了一下 找到了可能的方案，利用linux software raid的方式 弄個raid來試試讀資料 參考資料如下: http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-ig-s390-multi-zh_tw-4/s1-s390info-raid.html https://en.wikipedia.org/wiki/Mdadm http://linux.die.net/man/8/mdadm 以下就是安迪兒整個修復的過程 用usb外接盒裝上硬碟，接上公司的nas 執行以下步驟 1.修復原raid1 HDD mdadm -A -R /dev/xxx /dev/xxx 2.fdisk -l xx 找一下相關磁碟資訊 可以看一下Blocks的大小，猜一下大的是存資的磁區 3.建新目錄 mkdir /mnt/old_hdd 4.把找到的md2掛到剛建的目錄裡 mount -t ext4 /dev/md2 /mnt/old_hdd/ 5.開始copy資料吧，此時nas裡面應該讀的到資料了 6.完成後 unmount資料匣 removed md virtual device 全部用到的指令如下: fdisk -l mdadm -A -R /dev/md2 /dev/sde3 mkdir /mnt/old_hdd mount -t ext4 /dev/md2 /mnt/old_hdd/ mount | grep ^/dev/md2 umount /mnt/old_hdd mdadm -S /dev/md2 到這邊…有沒發現一件事 其實所謂的raid，就是用software raid的方式弄的 如果是硬體晶片的話可能就解不出來了 有好有壞啦~XD 另外，新的nas超快，用usb3，或是直接網路傳檔 每秒都有100mb以上的速度，真是差太多了。 以上~~收工嘍!</p>
-        <a href="https://bowwow.tips/post/20160513/" class="page-item-btn ">
             Read More
         </a>
         <footer>
