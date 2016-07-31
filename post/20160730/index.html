@@ -16,7 +16,7 @@
     
     
     <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-07-31 03:19:56.72031582 &#43;0800 CST">
+    <meta name="generation-date" content="2016-08-01 00:16:08.269203699 &#43;0800 CST">
     <title>Docker 1.12的黑魔法 &middot; 安迪兒隨手貼</title>
     <link rel="shortcut icon" href="https://bowwow.tips/img/favicon.ico">
     <link rel="icon" href="https://bowwow.tips/img/favicon.ico">
@@ -223,22 +223,21 @@
                             
 
 <p>今年2016 Docker Conf 發表後<br />
-引起大家狂熱的討論，會場整個都高潮了~XD</p>
+引起大家狂熱的討論，整個會場都高潮了~XD</p>
 
 <p>[引用一下相關的結論文章]<br />
-DockerCon 2016會議：發布內容的總結及主要收穫
+<strong>DockerCon 2016會議：發布內容的總結及主要收穫</strong>
 原文網址：<a href="https://kknews.cc/tech/mmx4yp.html">https://kknews.cc/tech/mmx4yp.html</a></p>
 
-<p>Docker Swarm 已死！Docker Swarm 萬歲！
+<p><strong>Docker Swarm 已死！Docker Swarm 萬歲！</strong>
 原文網址：<a href="https://kknews.cc/tech/8e2egq.html">https://kknews.cc/tech/8e2egq.html</a></p>
 
 <h4 id="官方無敵威的展示影片:e75d3bee28da3e2ece5c132dc361a283">官方無敵威的展示影片</h4>
 
-<p><a href="https://www.youtube.com/watch?v=F7hoq0KwHD4"><img src="https://img.youtube.com/vi/F7hoq0KwHD4/0.jpg" alt="Alt text" /></a></p>
-
-<p>看完影片後，安迪兒超期待7月新版的發表<br />
-迫不急待的試玩一下<br />
-想把系統由舊的swarm更換成新的docker swarm<br />
+<p><a href="https://www.youtube.com/watch?v=F7hoq0KwHD4"><img src="https://img.youtube.com/vi/F7hoq0KwHD4/0.jpg" alt="Alt text" /></a><br />
+看完影片後，安迪兒超期待新版Docker1.12的發表<br />
+等到了rc2，就迫不急待的試玩一下<br />
+因為安迪兒想把舊式的swarm換成新的docker swarm<br />
 就這樣一路從Docker1.12 rc2 rc3 rc4都玩了一遍<br />
 (因為不少問題和bug，所以才會一直試到rc4 &hellip;orz)</p>
 
@@ -298,7 +297,7 @@ Docker大大們開發的能量超強大<br />
 有興趣的，可以多查查官方的說明<br />
 看了這些，應該手癢了吧</p>
 
-<p>[以下是實作時間嘍]</p>
+<p>[實作時間到嘍!]</p>
 
 <h4 id="1-安裝新版docker-for-1-12:e75d3bee28da3e2ece5c132dc361a283">1. 安裝新版docker for 1.12</h4>
 
@@ -325,7 +324,7 @@ Docker大大們開發的能量超強大<br />
 
 <p><img src="https://goo.gl/ymP7Z4" width="70%"></p>
 
-<p>再來在其它不同的node機器上輸入</p>
+<p>再來，在其它台node機器上輸入</p>
 
 <pre><code>docker swarm join \
  --token SWMTKN-1-55xrvnhhax0eqc0hi4iu6aihh8msqvlfjdgqetaqvlf8qm4n0z-7ekdghz9an5d4jpx4ibdaigtx \
@@ -333,7 +332,7 @@ Docker大大們開發的能量超強大<br />
 </code></pre>
 
 <p><img src="https://goo.gl/CjM4D4" width="70%"><br />
-都加入完了之後，在主節點，master那台，查一下所有的node</p>
+都加入叢集後，可以在主節點master那台，查一下所有的node</p>
 
 <pre><code>docker node ls
 </code></pre>
@@ -381,9 +380,9 @@ Docker大大們開發的能量超強大<br />
 也就是說，連上3台機器的ip，都能接上這個postgresql db<br />
 但這個postgresql db是分散成2個Container在跑<br />
 <strong>docker都幫你做了ha、scale和cluster了</strong><br />
-<strong>只能說:超~<del>神</del>~的吶</strong></p>
+<strong>只能說:超~<del>神</del>~的!!!</strong></p>
 
-<p>隨興的新增和刪除Container節點</p>
+<h5 id="隨興的新增和刪除container節點:e75d3bee28da3e2ece5c132dc361a283">隨興的新增和刪除Container節點</h5>
 
 <pre><code>docker service ps postgresql
 docker service scale postgresql=3
@@ -391,8 +390,9 @@ docker service scale postgresql=1
 docker service update --replicas 2 postgresql
 </code></pre>
 
-<p>新版docker有rolling update服務<br />
-&ndash;update-delay</p>
+<h5 id="新版docker有rolling-update服務:e75d3bee28da3e2ece5c132dc361a283">新版docker有rolling update服務</h5>
+
+<p><strong>&ndash;update-delay</strong></p>
 
 <p>他會慢慢的更版，不會一次都換掉<br />
 ex:</p>
@@ -404,8 +404,9 @@ ex:</p>
   redis:3.0.6
 </code></pre>
 
-<p>試一下Swarm Container Cluster移轉的功能<br />
-惡意關掉刪除其中一台的postgresql Container<br />
+<h5 id="試一下swarm-container-cluster移轉的功能:e75d3bee28da3e2ece5c132dc361a283">試一下Swarm Container Cluster移轉的功能</h5>
+
+<p>惡意關掉刪除其中一台的postgresql Container<br />
 <img src="https://goo.gl/xVWrW9" width="70%"><br />
 <img src="https://goo.gl/EiFWMM" width="70%"></p>
 
@@ -425,11 +426,11 @@ docker service ls
 <p>新的Docker以上這些功能<br />
 跟本就是有k8s(Kubernetes)的影子<br />
 連相關指令名稱都有點相近<br />
-難怪大家整個看到傻眼，進化後太強大了。</p>
+難怪大家整個看到傻眼，進化後的Docker太強大了。</p>
 
 <h4 id="5-部署docker-stack:e75d3bee28da3e2ece5c132dc361a283">5. 部署Docker Stack</h4>
 
-<p>大至上看起來<br />
+<p>大致上看起來<br />
 新的docker swarm像是用service就可以處理&amp;管理相關的container服務<br />
 如果想用之前compose之類的一次啟動管理的方式呢??
 安迪兒找了找，發現docker有一個deploy的相關功能<br />
@@ -437,7 +438,7 @@ docker service ls
 忍不住好奇試了一下<br />
 真的是可以用</p>
 
-<p>首先先裝上最新版的docker-compose(1.8)<br />
+<p>首先，先裝上最新版的docker-compose(1.8)<br />
 參考這頁<br />
 <a href="https://github.com/docker/compose/releases">https://github.com/docker/compose/releases</a></p>
 
@@ -448,8 +449,8 @@ chmod +x /usr/local/bin/docker-compose
 <p><img src="https://goo.gl/6dB7jy" width="70%"></p>
 
 <p>編寫一下docker-compose file<br />
-啟動它，成功後，可以自行bundle成dab檔<br />
-轉成用docker deploy去部署它</p>
+啟動它，成功後，可以再自行下指令bundle成dab檔<br />
+再使用docker deploy去部署</p>
 
 <pre><code>sudo docker-compose up -d
 sudo docker-compose bundle -o elk.dab
