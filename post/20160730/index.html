@@ -1,226 +1,148 @@
 <!DOCTYPE html>
-<html 
-    lang="en-us"
-    class="no-js"
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="安迪兒隨手貼">
+<meta name="description" content="Docker 1.12的黑魔法">
+
+<base href="https://bowwow.tips/">
+<title>
+
+
+     安迪兒隨手貼 - Docker 1.12的黑魔法 
+
+</title>
+<link rel="canonical" href="https://bowwow.tips/post/20160730/">
+
+
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+
+
+<link rel="stylesheet" href="https://bowwow.tips/css/reset.css">
+<link rel="stylesheet" href="https://bowwow.tips/css/main.css">
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://bowwow.tips/img/logo.png"
+
 >
 
 
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="">
-    <meta name="description" content="docker 1.12 docker swarm docker scale docker compose docker overlayer docker Service、Stack、Cloud">
-    <meta name="keywords" content="docker 1.12,docker swarm,docker scale,docker compose,docker overlayer,docker Service Stack Cloud">
-    
-    
-    <meta name="generator" content="Hugo 0.15" />
-    <meta name="generation-date" content="2016-08-01 00:16:08.269203699 &#43;0800 CST">
-    <title>Docker 1.12的黑魔法 &middot; 安迪兒隨手貼</title>
-    <link rel="shortcut icon" href="https://bowwow.tips/img/favicon.ico">
-    <link rel="icon" href="https://bowwow.tips/img/favicon.ico">
-    
-<link rel="stylesheet" href="https://bowwow.tips/css/materialize.min.css">
-
-
-<link rel="stylesheet" href="https://bowwow.tips/css/font-awesome.min.css">
-
-
-    
-    <link rel="stylesheet" href="https://bowwow.tips/css/styles/railscasts.css">
-
-
-
-<link rel="stylesheet" href="https://bowwow.tips/css/lightbox.css">
-
-
-<link rel="stylesheet" href="https://bowwow.tips/css/main.css">
-
-
-    <script src="https://bowwow.tips/js/modernizr-latest.js"></script>
-    <script src="https://bowwow.tips/js/lazysizes.min.js"></script>
-    <script src="https://bowwow.tips/js/ls.noscript.min.js"></script>
-
-    <script>
-        window.lazySizesConfig = window.lazySizesConfig || {};
-        lazySizesConfig.addClasses = true;
-        lazySizesConfig.loadMode = 2;
-    </script>
-
-    
 </head>
 
 
-<body class="page-colors minimum-viewport-height">
-    
-
-<nav class="main-menu menu-colors">
-    <ul class="menu menu-colors no-list-float">
-        <li><a href="https://bowwow.tips/"><i class="fa fa-home fa-2x"></i></a></li>
-        <li>
-            <a href="#!"><i class="fa fa-bars fa-2x"></i></a>
-
-            
-            <ul class="menu flexible-width menu-colors no-list-float">
-                
-                
-                    <li >
-                    
-                        <a href="/food/">
-                            
-                            <span>Food</span>
-                        </a>
-                    
-                    </li>
-                
-                    <li >
-                    
-                        <a href="/gallery/">
-                            
-                            <span>Gallery</span>
-                        </a>
-                    
-                    </li>
-                
-                    <li >
-                    
-                        <a href="/othergallery/">
-                            
-                            <span>Othergallery</span>
-                        </a>
-                    
-                    </li>
-                
-                    <li class="active">
-                    
-                        <a href="/post/">
-                            
-                            <span>Post</span>
-                        </a>
-                    
-                    </li>
-                
-                    <li >
-                    
-                        <a href="/project/">
-                            
-                            <span>Project</span>
-                        </a>
-                    
-                    </li>
-                
-                    <li >
-                    
-                        <a href="/unboxing/">
-                            
-                            <span>Unboxing</span>
-                        </a>
-                    
-                    </li>
-                
-            </ul>
-        </li>
-        <li><a href="#!" data-lightbox-id="searchbox"><i class="fa fa-search fa-2x"></i></a></li>
-        
-            <li class="blue-grey-text" style="border-top: 1px solid;"></li>
-            
-                <li>
-                    <a href="#!">
-                        <i class="fa fa-twitter fa-2x"></i>
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="#!">
-                        <i class="fa fa-linkedin fa-2x"></i>
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="#!">
-                        <i class="fa fa-google-plus fa-2x"></i>
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="#!">
-                        <i class="fa fa-github fa-2x"></i>
-                    </a>
-                </li>
-            
-        
-        <li class="blue-grey-text" style="border-top: 1px solid;"></li>
-        <li>
-            <a href="" type="application/rss+xml" target="_blank">
-                <i class="fa fa-rss fa-2x"></i>
-            </a>
-        </li>
-    </ul>
-</nav>
-
-<div id="searchbox" class="no-display">
-    <div class="valign-wrapper fill-container">
-        <div class="valign large-form horizontal-center-hack">
-            <form method="get" id="search" action="http://duckduckgo.com/">
-    <input type="hidden" name="sites"value="https://bowwow.tips/"/>
-    <input type="hidden" name="ka" value="h"/>
-    <input type="hidden" name="k7" value="#fafafa"/>
-    <input type="hidden" name="kj" value="#3f3f3f"/>
-    <input type="hidden" name="ky" value="#fafafa"/>
-    <input type="hidden" name="kx" value="b"/>
-    <input type="hidden" name="kt" value="Helvetica"/>
-    <input type="text" name="q" maxlength="255" placeholder="Search"/>
-    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
-</form>
+<body lang="en">
 
 
+<section class="header">
+
+    <div class="container">
+        <a href="https://bowwow.tips/"><img class="logo" src="https://bowwow.tips/img/logo.png" alt="安迪兒隨手貼 Logo"/></a>
+        <div class="content">
+            <a href="https://bowwow.tips/"><div class="name"><h1>安迪兒隨手貼</h1></div></a>
+            <nav>
+                <ul>
+                    <a href="https://bowwow.tips/post/"><li>Post</li></a>
+                    
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                            <a href="projects"><li>projects</li></a>
+                            
+                        
+                    
+                    
+                        
+                            <a href="https://bowwow.tips/about/"><li>About</li></a>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </ul>
+            </nav>
         </div>
     </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="https://github.com/bowwowxx" target="_blank">
+                <i class="icon ion-social-github"></i>
+            </a>
+        
+
+        
+            <a href="#" target="_blank">
+                <i class="icon ion-social-twitter"></i>
+            </a>
+        
+
+        
+            <a href="#" target="_blank">
+                <i class="icon ion-social-linkedin"></i>
+            </a>
+        
+
+        
+            <a href="mailto:jummykimo@gmail.com">
+                <i class="icon ion-ios-email larger"></i>
+            </a>
+        
+
+        
+            <a href="https://bowwow.tips/index.xml">
+                <i class="icon ion-social-rss larger"></i>
+            </a>
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Docker 1.12的黑魔法
+
 </div>
 
-
-
-
-    <div class="main-content">
-        <div class="center-space">
-            <div class="article-colors">
+                </div>
+                <div class="meta">
+                    <div class="date" title="Sat Jul 30 2016 00:00:00 UTC">Jul 30, 2016</div>
+                    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                </div>
+            </div>
+            <div class="markdown">
                 
-                <article>
-                    <header>
-                        <h1 class="article-title">Docker 1.12的黑魔法</h1>
-                        <time class="date-color">Sat Jul 30, 2016</time>
-                        <span class="separator">|</span>
-                        
-<ul class="categories">
-    <li>
-        <i class="fa fa-book"></i>
-    </li>
-    
-        <li><a href="https://bowwow.tips/categories/tips">tips</a></li>
-    
-</ul>
-
-
-                        <span class="separator">|</span>
-                        
-<ul class="tags">
-    <li>
-        <i class="fa fa-tags"></i>
-    </li>
-    
-        <li><a href="https://bowwow.tips/tags/docker">docker</a></li>
-    
-</ul>
-
-
-                    </header>
-
-                    <hr>
-
-                    <section>
-                        
-                            
 
 <p>今年2016 Docker Conf 發表後<br />
 引起大家狂熱的討論，整個會場都高潮了~XD</p>
@@ -232,7 +154,7 @@
 <p><strong>Docker Swarm 已死！Docker Swarm 萬歲！</strong>
 原文網址：<a href="https://kknews.cc/tech/8e2egq.html">https://kknews.cc/tech/8e2egq.html</a></p>
 
-<h4 id="官方無敵威的展示影片:e75d3bee28da3e2ece5c132dc361a283">官方無敵威的展示影片</h4>
+<h4 id="官方無敵威的展示影片">官方無敵威的展示影片</h4>
 
 <p><a href="https://www.youtube.com/watch?v=F7hoq0KwHD4"><img src="https://img.youtube.com/vi/F7hoq0KwHD4/0.jpg" alt="Alt text" /></a><br />
 看完影片後，安迪兒超期待新版Docker1.12的發表<br />
@@ -250,9 +172,9 @@ Docker大大們開發的能量超強大<br />
 安迪兒也馬上全新安裝<br />
 順便記錄一下和分享試用Docker 1.12的心得</p>
 
-<h4 id="這次的docker增加不少新功能:e75d3bee28da3e2ece5c132dc361a283">[這次的docker增加不少新功能]</h4>
+<h4 id="這次的docker增加不少新功能">[這次的docker增加不少新功能]</h4>
 
-<h4 id="swarm:e75d3bee28da3e2ece5c132dc361a283">Swarm</h4>
+<h4 id="swarm">Swarm</h4>
 
 <p>安迪兒其實是為了這個功能<br />
 才會一直的在try
@@ -265,13 +187,13 @@ Docker大大們開發的能量超強大<br />
 也有了新的swarm cluster使用和管理方式<br />
 大大的簡化了整個的流程</p>
 
-<h4 id="新的功能:e75d3bee28da3e2ece5c132dc361a283">新的功能:</h4>
+<h4 id="新的功能">新的功能:</h4>
 
-<h4 id="docker-service-stack-cloud:e75d3bee28da3e2ece5c132dc361a283">Docker Service、Stack、Cloud</h4>
+<h4 id="docker-service-stack-cloud">Docker Service、Stack、Cloud</h4>
 
 <p>整合stack與service的管理，可以使用deploy把stack部署到cloud上</p>
 
-<h4 id="health-check:e75d3bee28da3e2ece5c132dc361a283">Health check</h4>
+<h4 id="health-check">Health check</h4>
 
 <p><a href="https://github.com/docker/docker/pull/23218">https://github.com/docker/docker/pull/23218</a><br />
 可以自訂節點的健康<br />
@@ -282,13 +204,13 @@ Docker大大們開發的能量超強大<br />
 <pre><code>docker inspect --format='' xxname healthy
 </code></pre>
 
-<h4 id="live-restore:e75d3bee28da3e2ece5c132dc361a283">Live restore</h4>
+<h4 id="live-restore">Live restore</h4>
 
 <p><a href="https://github.com/docker/docker/pull/23213">https://github.com/docker/docker/pull/23213</a><br />
 啟動時增加這個參數，daemon掛了也不會影響到container
 &ndash;live-restore</p>
 
-<h4 id="overlay2:e75d3bee28da3e2ece5c132dc361a283">overlay2</h4>
+<h4 id="overlay2">overlay2</h4>
 
 <p><a href="https://github.com/docker/docker/pull/22126">https://github.com/docker/docker/pull/22126</a><br />
 裡面有benchmark的數據可以參考一下</p>
@@ -299,7 +221,7 @@ Docker大大們開發的能量超強大<br />
 
 <p>[實作時間到嘍!]</p>
 
-<h4 id="1-安裝新版docker-for-1-12:e75d3bee28da3e2ece5c132dc361a283">1. 安裝新版docker for 1.12</h4>
+<h4 id="1-安裝新版docker-for-1-12">1. 安裝新版docker for 1.12</h4>
 
 <p>參考這頁的說明<br />
 <a href="https://github.com/docker/docker/releases">https://github.com/docker/docker/releases</a></p>
@@ -312,17 +234,17 @@ Docker大大們開發的能量超強大<br />
 <pre><code>sudo usermod -aG docker andy
 </code></pre>
 
-<p><img src="https://goo.gl/EMIf5a" width="70%"><br />
-<img src="https://goo.gl/zogzGo" width="70%"></p>
+<p><img src="https://goo.gl/EMIf5a" width="100%"><br />
+<img src="https://goo.gl/zogzGo" width="100%"></p>
 
-<h4 id="2-玩玩container的叢集-建一個swarm來玩玩吧:e75d3bee28da3e2ece5c132dc361a283">2. 玩玩Container的叢集，建一個swarm來玩玩吧</h4>
+<h4 id="2-玩玩container的叢集-建一個swarm來玩玩吧">2. 玩玩Container的叢集，建一個swarm來玩玩吧</h4>
 
 <p>首先在master機器上，建立管理的節點</p>
 
 <pre><code>docker swarm init --listen-addr docker112-swarm-admin:2377
 </code></pre>
 
-<p><img src="https://goo.gl/ymP7Z4" width="70%"></p>
+<p><img src="https://goo.gl/ymP7Z4" width="100%"></p>
 
 <p>再來，在其它台node機器上輸入</p>
 
@@ -331,18 +253,18 @@ Docker大大們開發的能量超強大<br />
  10.240.0.3:2377
 </code></pre>
 
-<p><img src="https://goo.gl/CjM4D4" width="70%"><br />
+<p><img src="https://goo.gl/CjM4D4" width="100%"><br />
 都加入叢集後，可以在主節點master那台，查一下所有的node</p>
 
 <pre><code>docker node ls
 </code></pre>
 
-<p><img src="https://goo.gl/hPGhT6" width="70%"></p>
+<p><img src="https://goo.gl/hPGhT6" width="100%"></p>
 
 <p>看看，超神奇的，就這樣一個跨機器的Container cluster就立完成了<br />
 這是不是docker的 <strong>黑魔法</strong> 吶~~~太可怕了，合併swarm後簡化許多繁雜的東西</p>
 
-<h4 id="3-新增自已用的network:e75d3bee28da3e2ece5c132dc361a283">3. 新增自已用的network</h4>
+<h4 id="3-新增自已用的network">3. 新增自已用的network</h4>
 
 <p>用docker network 建立一個自已的overlay來玩玩<br />
 建完並指定Container的overlay後，Container就能視為同網段，跨各種機器運行了</p>
@@ -350,9 +272,9 @@ Docker大大們開發的能量超強大<br />
 <pre><code>docker network create --driver overlay bowwow-net  
 </code></pre>
 
-<p><img src="https://goo.gl/xY51ig" width="70%"></p>
+<p><img src="https://goo.gl/xY51ig" width="100%"></p>
 
-<h4 id="4-來見識一下讓大家瘋狂的docker-service威力吧:e75d3bee28da3e2ece5c132dc361a283">4. 來見識一下讓大家瘋狂的Docker Service威力吧</h4>
+<h4 id="4-來見識一下讓大家瘋狂的docker-service威力吧">4. 來見識一下讓大家瘋狂的Docker Service威力吧</h4>
 
 <p>建個postgresql database，直接replicas 2台<br />
 2台都是同樣的database</p>
@@ -363,18 +285,18 @@ Docker大大們開發的能量超強大<br />
 <pre><code>docker service ls
 </code></pre>
 
-<p><img src="https://goo.gl/Vb5Xax" width="70%"></p>
+<p><img src="https://goo.gl/Vb5Xax" width="100%"></p>
 
 <p>可以看到postgresql啟動完成，2台分散在不同的機器上</p>
 
 <p>直接來玩一下，2台機器的postgresql同時都能連上<br />
-<img src="https://goo.gl/6W7Eox" width="70%"></p>
+<img src="https://goo.gl/6W7Eox" width="100%"></p>
 
 <p>隨便改一下其中一台，建一個新的table<br />
-<img src="https://goo.gl/6W7Eox" width="70%"></p>
+<img src="https://goo.gl/6W7Eox" width="100%"></p>
 
 <p>過一會另一台就跟都同步了<br />
-<img src="https://goo.gl/gWsS1S" width="70%"><br />
+<img src="https://goo.gl/gWsS1S" width="100%"><br />
 而且因為用了bowwow-net的關係<br />
 開三台機器，三台機器都能互相找的到<br />
 也就是說，連上3台機器的ip，都能接上這個postgresql db<br />
@@ -382,7 +304,7 @@ Docker大大們開發的能量超強大<br />
 <strong>docker都幫你做了ha、scale和cluster了</strong><br />
 <strong>只能說:超~<del>神</del>~的!!!</strong></p>
 
-<h5 id="隨興的新增和刪除container節點:e75d3bee28da3e2ece5c132dc361a283">隨興的新增和刪除Container節點</h5>
+<h5 id="隨興的新增和刪除container節點">隨興的新增和刪除Container節點</h5>
 
 <pre><code>docker service ps postgresql
 docker service scale postgresql=3
@@ -390,7 +312,7 @@ docker service scale postgresql=1
 docker service update --replicas 2 postgresql
 </code></pre>
 
-<h5 id="新版docker有rolling-update服務:e75d3bee28da3e2ece5c132dc361a283">新版docker有rolling update服務</h5>
+<h5 id="新版docker有rolling-update服務">新版docker有rolling update服務</h5>
 
 <p><strong>&ndash;update-delay</strong></p>
 
@@ -404,16 +326,16 @@ ex:</p>
   redis:3.0.6
 </code></pre>
 
-<h5 id="試一下swarm-container-cluster移轉的功能:e75d3bee28da3e2ece5c132dc361a283">試一下Swarm Container Cluster移轉的功能</h5>
+<h5 id="試一下swarm-container-cluster移轉的功能">試一下Swarm Container Cluster移轉的功能</h5>
 
 <p>惡意關掉刪除其中一台的postgresql Container<br />
-<img src="https://goo.gl/xVWrW9" width="70%"><br />
-<img src="https://goo.gl/EiFWMM" width="70%"></p>
+<img src="https://goo.gl/xVWrW9" width="100%"><br />
+<img src="https://goo.gl/EiFWMM" width="100%"></p>
 
 <p><strong>果然夠優~馬上又自動的在別台機器上重啟了一個相同的服務</strong></p>
 
 <p>一次開10個來玩玩吧<br />
-<img src="https://goo.gl/fDCI28" width="70%"></p>
+<img src="https://goo.gl/fDCI28" width="100%"></p>
 
 <p>不想要服務了，刪除它</p>
 
@@ -421,14 +343,14 @@ ex:</p>
 docker service ls
 </code></pre>
 
-<p><img src="https://goo.gl/pYzbDR" width="70%"></p>
+<p><img src="https://goo.gl/pYzbDR" width="100%"></p>
 
 <p>新的Docker以上這些功能<br />
 跟本就是有k8s(Kubernetes)的影子<br />
 連相關指令名稱都有點相近<br />
 難怪大家整個看到傻眼，進化後的Docker太強大了。</p>
 
-<h4 id="5-部署docker-stack:e75d3bee28da3e2ece5c132dc361a283">5. 部署Docker Stack</h4>
+<h4 id="5-部署docker-stack">5. 部署Docker Stack</h4>
 
 <p>大致上看起來<br />
 新的docker swarm像是用service就可以處理&amp;管理相關的container服務<br />
@@ -446,7 +368,7 @@ docker service ls
 chmod +x /usr/local/bin/docker-compose  
 </code></pre>
 
-<p><img src="https://goo.gl/6dB7jy" width="70%"></p>
+<p><img src="https://goo.gl/6dB7jy" width="100%"></p>
 
 <p>編寫一下docker-compose file<br />
 啟動它，成功後，可以再自行下指令bundle成dab檔<br />
@@ -457,13 +379,13 @@ sudo docker-compose bundle -o elk.dab
 docker deploy elk
 </code></pre>
 
-<p><img src="https://goo.gl/Jfuq9q" width="70%"><br />
-<img src="https://goo.gl/FlZqKI" width="70%"><br />
-<img src="https://goo.gl/mqRVTu" width="70%"></p>
+<p><img src="https://goo.gl/Jfuq9q" width="100%"><br />
+<img src="https://goo.gl/FlZqKI" width="100%"><br />
+<img src="https://goo.gl/mqRVTu" width="100%"></p>
 
 <p>看一下結果吧<br />
-<img src="https://goo.gl/Cr71Mu" width="70%"><br />
-<img src="https://goo.gl/QERLf3" width="70%"></p>
+<img src="https://goo.gl/Cr71Mu" width="100%"><br />
+<img src="https://goo.gl/QERLf3" width="100%"></p>
 
 <p>呼&hellip;終於，東西實在太多了，安迪就也沒辦法一次說完試完<br />
 總之，這次的docker 1.12非常的強大<br />
@@ -472,90 +394,55 @@ docker deploy elk
 應該不會失望的~~~XD<br />
 收工嘍~收工嘍!</p>
 
-                        
-                    </section>
+                <br>
+                <p><a href="post">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'bowwowtips';
+    var disqus_identifier = 'https:\/\/bowwow.tips\/post\/20160730\/';
+    var disqus_title = 'Docker 1.12的黑魔法';
+    var disqus_url = 'https:\/\/bowwow.tips\/post\/20160730\/';
 
-                    <footer class="right-align">
-                        <p><small>Copyright &#169; by 安迪兒</small></p>
-                    </footer>
-
-                    
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        var disqus_shortname = 'bowwowtips';
-        var disqus_identifier = 'https:\/\/bowwow.tips\/post\/20160730\/';
-        var disqus_title = 'Docker 1.12的黑魔法';
-        var disqus_url = 'https:\/\/bowwow.tips\/post\/20160730\/';
-        (function() {
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            <br>
+            <div class="ga">
             
-            if (window.location.hostname === "localhost") {
-                return;
-            }
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+ga('create', 'UA-78436139-1', 'auto');
+ga('send', 'pageview');
+</script>
 
-            (document.getElementsByTagName('head')[0] ||
-                document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-                </article>
             </div>
         </div>
     </div>
-
-    
-<script src="https://bowwow.tips/js/jquery-2.1.4.min.js"></script>
+</section>
 
 
-<script src="https://bowwow.tips/js/materialize.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
 
 
-<script src="https://bowwow.tips/js/imagesloaded.pkgd.min.js"></script>
-
-
-<script src="https://bowwow.tips/js/masonry.pkgd.min.js"></script>
-
-
-    
-    <script src="https://bowwow.tips/js/highlight.pack.js"></script>
-
-
-
-<script src="https://bowwow.tips/js/lightbox.min.js"></script>
-
-
-<script src="https://bowwow.tips/js/jquery.infinitescroll.min.js"></script>
-
-
-<script src="https://bowwow.tips/js/main.js"></script>
-
-
-<script src="https://bowwow.tips/js/small.js"></script>
-
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-78436139-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
 
 </body>
-
 </html>
-
-
-
-
 

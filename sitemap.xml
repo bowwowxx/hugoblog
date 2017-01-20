@@ -2,33 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://bowwow.tips/</loc>
-    <lastmod>2016-06-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bowwow.tips/project/IsAppleRemotWorkingForIpadAir/</loc>
-    <lastmod>2016-06-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bowwow.tips/project/computex2016/</loc>
-    <lastmod>2016-05-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bowwow.tips/othergallery/video/</loc>
-  </url>
-  
-  <url>
-    <loc>https://bowwow.tips/post/20160511/</loc>
-    <lastmod>2099-01-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://bowwow.tips/post/20160730/</loc>
     <lastmod>2016-07-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bowwow.tips/projects/IsAppleRemotWorkingForIpadAir/</loc>
+    <lastmod>2016-06-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -57,7 +37,7 @@
   </url>
   
   <url>
-    <loc>https://bowwow.tips/food/20160531/</loc>
+    <loc>https://bowwow.tips/projects/computex2016/</loc>
     <lastmod>2016-05-31T00:00:00+00:00</lastmod>
   </url>
   
@@ -87,27 +67,7 @@
   </url>
   
   <url>
-    <loc>https://bowwow.tips/food/20160507/</loc>
-    <lastmod>2016-05-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bowwow.tips/food/20160506/</loc>
-    <lastmod>2016-05-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bowwow.tips/food/20160503/</loc>
-    <lastmod>2016-05-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bowwow.tips/food/20160502/</loc>
-    <lastmod>2016-05-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bowwow.tips/unboxing/20160430/</loc>
+    <loc>https://bowwow.tips/projects/20160430/</loc>
     <lastmod>2016-04-30T00:00:00+00:00</lastmod>
   </url>
   
@@ -117,60 +77,30 @@
   </url>
   
   <url>
-    <loc>https://bowwow.tips/gallery/20150630/</loc>
-    <lastmod>2015-06-30T00:00:00+00:00</lastmod>
+    <loc>https://bowwow.tips/about/</loc>
+    <lastmod>2015-08-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bowwow.tips/gallery/20150729/</loc>
-    <lastmod>2015-06-12T00:00:00+00:00</lastmod>
+    <loc>https://bowwow.tips/home/</loc>
   </url>
   
   <url>
-    <loc>https://bowwow.tips/food/20150429/</loc>
-    <lastmod>2015-04-29T00:00:00+00:00</lastmod>
+    <loc>https://bowwow.tips/post/</loc>
+    <lastmod>2016-07-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bowwow.tips/post/20160002/</loc>
-    <lastmod>2011-01-01T00:00:00+00:00</lastmod>
+    <loc>https://bowwow.tips/projects/</loc>
+    <lastmod>2016-06-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bowwow.tips/post/20160001/</loc>
-    <lastmod>2011-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bowwow.tips/gallery/2010090401/</loc>
-    <lastmod>2010-09-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bowwow.tips/gallery/2010090402/</loc>
-    <lastmod>2010-09-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bowwow.tips/gallery/20100816/</loc>
-    <lastmod>2010-08-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bowwow.tips/gallery/20100904020/</loc>
-    <lastmod>2009-01-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bowwow.tips/othergallery/food/</loc>
-  </url>
-  
-  <url>
-    <loc>https://bowwow.tips/othergallery/jars/</loc>
-  </url>
-  
-  <url>
-    <loc>https://bowwow.tips/othergallery/phone/</loc>
+    <loc>https://bowwow.tips/</loc>
+    <lastmod>2016-07-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>
