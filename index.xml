@@ -6,8 +6,151 @@
     <description>Recent content on 安迪兒隨手貼</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 30 Jul 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Jan 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://bowwow.tips/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>MAC上安裝TensorFlow</title>
+      <link>https://bowwow.tips/post/20170121/</link>
+      <pubDate>Sat, 21 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://bowwow.tips/post/20170121/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;安迪兒之前是在nas上試玩docker的TensorFlow&lt;br /&gt;
+最近剛好做個小東西，趁機會記錄一下安裝TensorFlow在mac筆電的步驟&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;相關文章&#34;&gt;[相關文章]&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;為何Google要推開源機器學習系統TensorFlow？&lt;/strong&gt;&lt;br /&gt;
+原文網址：&lt;a href=&#34;https://www.bnext.com.tw/article/37925/BN-2015-11-10-184646-40&#34;&gt;https://www.bnext.com.tw/article/37925/BN-2015-11-10-184646-40&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;TensorFlow官方安裝文件&lt;/strong&gt;&lt;br /&gt;
+原文網址：&lt;a href=&#34;https://www.tensorflow.org/get_started/os_setup&#34;&gt;https://www.tensorflow.org/get_started/os_setup&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;安裝方式&#34;&gt;安裝方式&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Pip install:&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Install TensorFlow on your machine, possibly upgrading previously installed Python packages. May impact existing Python programs on your machine.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Virtualenv install:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Install TensorFlow in its own directory, not impacting any existing Python programs on your machine.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Anaconda install:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Install TensorFlow in its own environment for those running the Anaconda Python distribution. Does not impact existing Python programs on your machine.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Docker install:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Run TensorFlow in a Docker container isolated from all other programs on your machine.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Installing from sources:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Install TensorFlow by building a pip wheel that you then install using pip.&lt;/p&gt;
+
+&lt;h4 id=&#34;安裝pip&#34;&gt;安裝pip&lt;/h4&gt;
+
+&lt;p&gt;如果沒pip的話可以先安裝一下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#Mac OS X  
+$ sudo easy_install pip  
+$ sudo easy_install --upgrade six  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/nw3aZk&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;安裝tensorflow&#34;&gt;安裝TensorFlow&lt;/h4&gt;
+
+&lt;p&gt;安迪兒的Mac筆電沒有顯卡，只能裝CPU版的&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;CPU版:
+ pip install tensorflow  
+
+GPU版:
+pip install tensorflow-gpu
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;然後踩了一下雷&#34;&gt;然後踩了一下雷&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/4KtN2N&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+查了一下發現mac好像都會有這問題&lt;br /&gt;
+(其實官方文件下面一些有提到不能安裝時的方式)&lt;/p&gt;
+
+&lt;p&gt;安迪兒挑了mac內建的python2.7來用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Mac OS X, CPU only, Python 2.7:  
+$ export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-0.12.1-py2-none-any.whl
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;更新一下tensorflow&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Python 2
+$ sudo pip install --upgrade $TF_BINARY_URL
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;再次踩雷&#34;&gt;再次踩雷&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/zzRMHy&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+還是error&lt;br /&gt;
+安迪兒看了一下文件，覺的可能是和python的版本有關&lt;br /&gt;
+就手動升了一下mac的python到2.7.13&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install python  
+brew info python  
+brew linkapps python
+source ~/.bash_profile
+python -v
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/JxlDbs&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/znqmvV&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/jekSNW&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;重來一次&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-0.12.1-py2-none-any.whl  
+sudo pip install --upgrade $TF_BINARY_URL  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;安裝成功了&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/lB22vX&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;來測試一下tensorflow能不能用吧&#34;&gt;來測試一下tensorflow能不能用吧&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;$ python
+&amp;gt;&amp;gt;&amp;gt; import tensorflow as tf
+&amp;gt;&amp;gt;&amp;gt; hello = tf.constant(&#39;Hello, TensorFlow!&#39;)
+&amp;gt;&amp;gt;&amp;gt; sess = tf.Session()
+&amp;gt;&amp;gt;&amp;gt; print(sess.run(hello))
+Hello, TensorFlow!
+&amp;gt;&amp;gt;&amp;gt; a = tf.constant(10)
+&amp;gt;&amp;gt;&amp;gt; b = tf.constant(32)
+&amp;gt;&amp;gt;&amp;gt; print(sess.run(a + b))
+42
+&amp;gt;&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;成功嘍&#34;&gt;成功嘍&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/KpS4Yr&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;以上是安迪兒整個在mac安裝tensorflow的過程-收工嘍&#34;&gt;以上是安迪兒整個在mac安裝tensorflow的過程，收工嘍!&lt;/h4&gt;
+</description>
+    </item>
     
     <item>
       <title>Docker 1.12的黑魔法</title>
@@ -1598,159 +1741,6 @@ RAM:16g 無誤!(開心吶)&lt;br /&gt;
 
 &lt;p&gt;呼…終於呀，以上是值得歡唱慶祝的第一篇開箱文~XD&lt;br /&gt;
 收工嘍~收工嘍!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>How To Install Elasticsearch on Ubuntu 14.04</title>
-      <link>https://bowwow.tips/post/20160101/</link>
-      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://bowwow.tips/post/20160101/</guid>
-      <description>
-
-&lt;p&gt;最近測東西，都用整理好的docker Elasticsearch叢集&lt;br /&gt;
-有點忘了之前Elasticsearch建置方式&lt;br /&gt;
-補貼上去年建的Elasticsearch步驟當備忘用&lt;/p&gt;
-
-&lt;h4 id=&#34;1-install-java&#34;&gt;1. Install Java&lt;/h4&gt;
-
-&lt;p&gt;官方是說&lt;br /&gt;
-[Elasticsearch recommends Oracle JDK version 1.8.0_73]&lt;/p&gt;
-
-&lt;p&gt;這邊可以使用OpenJDK 7或Oracle JDK 8&lt;/p&gt;
-
-&lt;p&gt;OpenJDK 7&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get update  
-sudo apt-get install openjdk-7-jre  
-java -version  
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Oracle JDK 8&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo add-apt-repository -y ppa:webupd8team/java  
-sudo apt-get update    
-sudo apt-get -y install oracle-java8-installer   
-java -version  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/9wVhs1&#34; width=&#34;100%&#34;&gt;
-&lt;img src=&#34;https://goo.gl/q0QMGs&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;2-installing-elasticsearch-1-7-2&#34;&gt;2. Installing Elasticsearch 1.7.2&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo wget https://download.elastic.co/Elasticsearch/Elasticsearch/Elasticsearch-1.7.2.deb  
-sudo dpkg -i Elasticsearch-1.7.2.deb  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/eW9sxo&#34; width=&#34;100%&#34;&gt;
-&lt;img src=&#34;https://goo.gl/iFfmPo&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;3-installing-plugin&#34;&gt;3. Installing plugin&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;head&lt;br /&gt;
-&lt;code&gt;
-sudo /usr/share/Elasticsearch/bin/plugin -install mobz/Elasticsearch-head  
-&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;marvel&lt;br /&gt;
-&lt;code&gt;
-sudo /usr/share/Elasticsearch/bin/plugin -install Elasticsearch/marvel/latest  
-&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;jdbc river&lt;br /&gt;
-版本參考
-&lt;a href=&#34;http://xbib.org/repository/org/xbib/Elasticsearch/plugin/Elasticsearch-river-jdbc/&#34;&gt;http://xbib.org/repository/org/xbib/Elasticsearch/plugin/Elasticsearch-river-jdbc/&lt;/a&gt;&lt;br /&gt;
-&lt;code&gt;
-plugin --install jdbc --url http://xbib.org/repository/org/xbib/Elasticsearch/plugin/Elasticsearch-river-jdbc/1.5.0.5/Elasticsearch-river-jdbc-1.5.0.5-plugin.zip  
-&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;jdbc postgresql&lt;br /&gt;
-版本參考列表&lt;br /&gt;
-&lt;a href=&#34;https://jdbc.postgresql.org/download.html&#34;&gt;https://jdbc.postgresql.org/download.html&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;https://github.com/jprante/Elasticsearch-jdbc&#34;&gt;https://github.com/jprante/Elasticsearch-jdbc&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;wget https://jdbc.postgresql.org/download/postgresql-9.4-1204.jdbc4.jar
-wget https://jdbc.postgresql.org/download/postgresql-9.4-1204.jdbc42.jar
-/usr/share/Elasticsearch/plugins/jdbc  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/moyQVm&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;4-configuring-elasticsearch&#34;&gt;4. Configuring Elasticsearch&lt;/h4&gt;
-
-&lt;p&gt;一些Elasticsearch檔案路徑&lt;br /&gt;
-- /usr/share/Elasticsearch&lt;br /&gt;
-- /etc/Elasticsearch&lt;br /&gt;
-- /etc/init.d/Elasticsearch&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo update-rc.d Elasticsearch defaults  
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/1xZljC&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;設定Elasticsearch.yml檔&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo nano /etc/Elasticsearch/Elasticsearch.yml  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;參考內容:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;marvel.agent.enabled: false
-cluster.name: bowwow
-node.name: pro-bowwow
-node.master: true
-node.data: true
-index.number_of_shards: 5
-bootstrap.mlockall: true
-index.cache.field.max_size: 50000
-index.cache.field.expire: 10m
-index.cache.field.type: soft
-threadpool.index.type: fixed
-threadpool.index.size: 100
-threadpool.index.queue_size: 500
-#discovery.zen.ping.multicast.enabled: false  
-#discovery.zen.ping.unicast.hosts: [&amp;quot;pro-bowwow&amp;quot;,&amp;quot;node1&amp;quot;,&amp;quot;node2&amp;quot;]
-
-th:
-data: /data/data
-logs: /data/log
-plugins: /data/plugins
-work: /data/work
-
-http.cors.allow-origin: &amp;quot;/.*/&amp;quot;
-http.cors.enabled: true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;5-設定完成&#34;&gt;5. 設定完成&lt;/h4&gt;
-
-&lt;p&gt;啟用服務嘍&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo service Elasticsearch start  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;測試一下&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;curl localhost:9200
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/tod19x&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;從db建一些測試資料進去&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/zOb2kc&#34; width=&#34;100%&#34;&gt;
-&lt;img src=&#34;https://goo.gl/CeMO7g&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;測一下7萬筆資料內搜尋的效能&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ab -n 1000 -c 10  &amp;quot;http://demo/songs/data/_search?&amp;amp;q=id:100&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;嗯~~測了一下，從數千筆資料搜尋和從7萬多筆資料搜尋，Requests per second數差不多&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/rgIRYy&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;收工嘍~收工嘍~&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
     
