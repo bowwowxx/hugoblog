@@ -21,12 +21,12 @@
 和大家分享的議程是關於nas上用TensorFlow做圖形辨識&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;透過大竹的講解，也讓安迪兒開始接觸TensorFlow&lt;br /&gt;
-&lt;del&gt;謎之音：感謝大竹帶安迪兒去講者晚宴大吃大喝的~ＸＤ&lt;/del&gt;&lt;/p&gt;
+&lt;strong&gt;謎之音：&lt;/strong&gt; &lt;del&gt;感謝大竹帶安迪兒去講者晚宴大吃大喝的~ＸＤ&lt;/del&gt;&lt;/p&gt;
 
 &lt;p&gt;安迪兒那時就一直想試試用TensorFlow分析文字語意之類&lt;br /&gt;
 直到最近安迪兒看到很熱門的AlphaGo就是棋靈王裡的sai~ＸＤ&lt;br /&gt;
 就好玩也試著弄了聊天機器人(為了讓首領同事開心)&lt;br /&gt;
-記錄一下跑bot過程&lt;/p&gt;
+以下記錄一下建這隻bot過程&lt;/p&gt;
 
 &lt;h2 id=&#34;相關文章&#34;&gt;[相關文章]&lt;/h2&gt;
 
@@ -41,7 +41,7 @@
 原文網址：&lt;a href=&#34;http://qiita.com/San_/items/128bf1b5a898ad5c18f1&#34;&gt;http://qiita.com/San_/items/128bf1b5a898ad5c18f1&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&#34;關於sequence-to-sequence-models&#34;&gt;關於Sequence-to-Sequence Models&lt;/h4&gt;
+&lt;h3 id=&#34;關於sequence-to-sequence-models&#34;&gt;關於Sequence-to-Sequence Models&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Sequence to Sequence 模型是近幾年來熱門的一個基於RNN的模型&lt;br /&gt;
@@ -50,15 +50,15 @@
 有興趣可以參考上方相關文章裡面的連結&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&#34;事前準備&#34;&gt;事前準備&lt;/h4&gt;
+&lt;h3 id=&#34;事前準備&#34;&gt;事前準備&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;TensorFlow安裝 &lt;a href=&#34;https://bowwow.tips/post/20170121&#34;&gt;MAC上安裝TENSORFLOW&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;TensorFlow安裝:&lt;a href=&#34;https://bowwow.tips/post/20170121&#34;&gt;MAC上安裝TENSORFLOW&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;slack機器人key申請 &lt;a href=&#34;#&#34;&gt;改天補上XD&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;slack機器人key申請:&lt;a href=&#34;#&#34;&gt;改天補上XD&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;開始製作對話機器人&#34;&gt;開始製作對話機器人&lt;/h4&gt;
+&lt;h3 id=&#34;開始製作對話機器人&#34;&gt;開始製作對話機器人&lt;/h3&gt;
 
 &lt;p&gt;安迪兒參考了日本的San關於他的會話AI製作文章&lt;br /&gt;
 &lt;strong&gt;(附在上方相關文章裡)&lt;/strong&gt;&lt;/p&gt;
@@ -67,7 +67,7 @@
 但怎麼收集中文的對話資料是有點麻煩的&lt;br /&gt;
 資料餵不對，答非所問就算了，機器人會練歪喔&lt;/p&gt;
 
-&lt;h4 id=&#34;資料怎麼來&#34;&gt;資料怎麼來?&lt;/h4&gt;
+&lt;h3 id=&#34;資料怎麼來&#34;&gt;資料怎麼來?&lt;/h3&gt;
 
 &lt;p&gt;安迪兒搜了一下 電影、字幕、小說等&lt;br /&gt;
 最找到了這個&lt;br /&gt;
@@ -77,7 +77,7 @@ chinese conversation corpus
 可以用作聊天机器人的训练语料
 &lt;a href=&#34;https://github.com/rustch3n/dgk_lost_conv&#34;&gt;https://github.com/rustch3n/dgk_lost_conv&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;整理資料&#34;&gt;整理資料&lt;/h4&gt;
+&lt;h3 id=&#34;整理資料&#34;&gt;整理資料&lt;/h3&gt;
 
 &lt;p&gt;參考San文章的內容
 &amp;gt;&lt;a href=&#34;http://qiita.com/San_/items/128bf1b5a898ad5c18f1&#34;&gt;http://qiita.com/San_/items/128bf1b5a898ad5c18f1&lt;/a&gt;&lt;br /&gt;
@@ -90,7 +90,7 @@ chinese conversation corpus
 - 建decode encode對話表&lt;br /&gt;
 - 然後把以上的檔，文字內容轉向量化，讓TensorFlow跑訓練&lt;/p&gt;
 
-&lt;h4 id=&#34;開始訓練機器人了&#34;&gt;開始訓練機器人了&lt;/h4&gt;
+&lt;h3 id=&#34;開始訓練機器人了&#34;&gt;開始訓練機器人了&lt;/h3&gt;
 
 &lt;p&gt;執行 python 3.translate.py&lt;/p&gt;
 
@@ -199,18 +199,20 @@ with tf.Session(config=config) as sess:
 &lt;img src=&#34;https://goo.gl/QwpzFx&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/4ZxsbO&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;會跑很久&#34;&gt;會跑很久&lt;/h4&gt;
+&lt;h3 id=&#34;會跑很久&#34;&gt;會跑很久&lt;/h3&gt;
 
 &lt;p&gt;安迪兒用Mac只有用CPU在跑&lt;br /&gt;
 跑了1星期不關機，每天都100%(有點可怕XD)&lt;br /&gt;
 也才跑了30多萬筆&lt;br /&gt;
-沒顯卡跑超慘的&lt;br /&gt;
-跑不完可以停下，下次會在接著跑&lt;br /&gt;
+沒顯卡跑超慘的&lt;/p&gt;
+
+&lt;p&gt;如果跑不完可以停下，下次會在接著跑&lt;br /&gt;
 程式跑一陣子會定期存檔&lt;br /&gt;
+如下圖&lt;br /&gt;
 checkpoint裡面會有記錄跑到那&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/H1rP1A&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;執行bot&#34;&gt;執行bot&lt;/h4&gt;
+&lt;h3 id=&#34;執行bot&#34;&gt;執行bot&lt;/h3&gt;
 
 &lt;p&gt;執行安迪兒的 4.bot01.py&lt;/p&gt;
 
@@ -321,7 +323,7 @@ else :
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/xTVGQG&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;以上安迪兒跑不完，所以只跑了數天就停了&lt;br /&gt;
-用只train一點點的模型去跑，結果出現一堆在未知列表裡的字&lt;strong&gt;UNK&lt;/strong&gt;&lt;br /&gt;
+只用train了一點點的模型去跑，結果出現一堆在未知列表裡的字(&amp;ndash;UNK&amp;ndash;)&lt;br /&gt;
 人生吶~需要更好的顯卡~XD&lt;/strong&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -330,7 +332,7 @@ else :
 &lt;a href=&#34;https://github.com/bowwowxx/tensorbot.git&#34;&gt;https://github.com/bowwowxx/tensorbot.git&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&#34;來看一下成果&#34;&gt;來看一下成果&lt;/h4&gt;
+&lt;h3 id=&#34;來看一下成果&#34;&gt;來看一下成果&lt;/h3&gt;
 
 &lt;p&gt;登入slack 和BOT聊一下天&lt;br /&gt;
 雖然對話還是怪怪的，不過還算蠻有趣的&lt;br /&gt;
@@ -342,7 +344,7 @@ else :
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/fyM8aU&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/e1NyYF&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;以上是安迪兒試玩tensorflow的記錄-收工嘍&#34;&gt;以上是安迪兒試玩tensorflow的記錄，收工嘍!&lt;/h4&gt;
+&lt;h3 id=&#34;以上是安迪兒試玩tensorflow的記錄-收工嘍&#34;&gt;以上是安迪兒試玩tensorflow的記錄，收工嘍!&lt;/h3&gt;
 </description>
     </item>
     

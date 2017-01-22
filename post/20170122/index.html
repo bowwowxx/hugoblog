@@ -148,12 +148,12 @@
 和大家分享的議程是關於nas上用TensorFlow做圖形辨識</strong></p>
 
 <p>透過大竹的講解，也讓安迪兒開始接觸TensorFlow<br />
-<del>謎之音：感謝大竹帶安迪兒去講者晚宴大吃大喝的~ＸＤ</del></p>
+<strong>謎之音：</strong> <del>感謝大竹帶安迪兒去講者晚宴大吃大喝的~ＸＤ</del></p>
 
 <p>安迪兒那時就一直想試試用TensorFlow分析文字語意之類<br />
 直到最近安迪兒看到很熱門的AlphaGo就是棋靈王裡的sai~ＸＤ<br />
 就好玩也試著弄了聊天機器人(為了讓首領同事開心)<br />
-記錄一下跑bot過程</p>
+以下記錄一下建這隻bot過程</p>
 
 <h2 id="相關文章">[相關文章]</h2>
 
@@ -168,7 +168,7 @@
 原文網址：<a href="http://qiita.com/San_/items/128bf1b5a898ad5c18f1">http://qiita.com/San_/items/128bf1b5a898ad5c18f1</a></p>
 </blockquote>
 
-<h4 id="關於sequence-to-sequence-models">關於Sequence-to-Sequence Models</h4>
+<h3 id="關於sequence-to-sequence-models">關於Sequence-to-Sequence Models</h3>
 
 <blockquote>
 <p>Sequence to Sequence 模型是近幾年來熱門的一個基於RNN的模型<br />
@@ -177,15 +177,15 @@
 有興趣可以參考上方相關文章裡面的連結</p>
 </blockquote>
 
-<h4 id="事前準備">事前準備</h4>
+<h3 id="事前準備">事前準備</h3>
 
 <ul>
-<li><p>TensorFlow安裝 <a href="https://bowwow.tips/post/20170121">MAC上安裝TENSORFLOW</a></p></li>
+<li><p>TensorFlow安裝:<a href="https://bowwow.tips/post/20170121">MAC上安裝TENSORFLOW</a></p></li>
 
-<li><p>slack機器人key申請 <a href="#">改天補上XD</a></p></li>
+<li><p>slack機器人key申請:<a href="#">改天補上XD</a></p></li>
 </ul>
 
-<h4 id="開始製作對話機器人">開始製作對話機器人</h4>
+<h3 id="開始製作對話機器人">開始製作對話機器人</h3>
 
 <p>安迪兒參考了日本的San關於他的會話AI製作文章<br />
 <strong>(附在上方相關文章裡)</strong></p>
@@ -194,7 +194,7 @@
 但怎麼收集中文的對話資料是有點麻煩的<br />
 資料餵不對，答非所問就算了，機器人會練歪喔</p>
 
-<h4 id="資料怎麼來">資料怎麼來?</h4>
+<h3 id="資料怎麼來">資料怎麼來?</h3>
 
 <p>安迪兒搜了一下 電影、字幕、小說等<br />
 最找到了這個<br />
@@ -204,7 +204,7 @@ chinese conversation corpus
 可以用作聊天机器人的训练语料
 <a href="https://github.com/rustch3n/dgk_lost_conv">https://github.com/rustch3n/dgk_lost_conv</a></p>
 
-<h4 id="整理資料">整理資料</h4>
+<h3 id="整理資料">整理資料</h3>
 
 <p>參考San文章的內容
 &gt;<a href="http://qiita.com/San_/items/128bf1b5a898ad5c18f1">http://qiita.com/San_/items/128bf1b5a898ad5c18f1</a><br />
@@ -217,7 +217,7 @@ chinese conversation corpus
 - 建decode encode對話表<br />
 - 然後把以上的檔，文字內容轉向量化，讓TensorFlow跑訓練</p>
 
-<h4 id="開始訓練機器人了">開始訓練機器人了</h4>
+<h3 id="開始訓練機器人了">開始訓練機器人了</h3>
 
 <p>執行 python 3.translate.py</p>
 
@@ -326,18 +326,20 @@ with tf.Session(config=config) as sess:
 <img src="https://goo.gl/QwpzFx" width="100%"><br />
 <img src="https://goo.gl/4ZxsbO" width="100%"></p>
 
-<h4 id="會跑很久">會跑很久</h4>
+<h3 id="會跑很久">會跑很久</h3>
 
 <p>安迪兒用Mac只有用CPU在跑<br />
 跑了1星期不關機，每天都100%(有點可怕XD)<br />
 也才跑了30多萬筆<br />
-沒顯卡跑超慘的<br />
-跑不完可以停下，下次會在接著跑<br />
+沒顯卡跑超慘的</p>
+
+<p>如果跑不完可以停下，下次會在接著跑<br />
 程式跑一陣子會定期存檔<br />
+如下圖<br />
 checkpoint裡面會有記錄跑到那<br />
 <img src="https://goo.gl/H1rP1A" width="100%"></p>
 
-<h4 id="執行bot">執行bot</h4>
+<h3 id="執行bot">執行bot</h3>
 
 <p>執行安迪兒的 4.bot01.py</p>
 
@@ -448,7 +450,7 @@ else :
 <p><img src="https://goo.gl/xTVGQG" width="100%"></p>
 
 <p><strong>以上安迪兒跑不完，所以只跑了數天就停了<br />
-用只train一點點的模型去跑，結果出現一堆在未知列表裡的字<strong>UNK</strong><br />
+只用train了一點點的模型去跑，結果出現一堆在未知列表裡的字(&ndash;UNK&ndash;)<br />
 人生吶~需要更好的顯卡~XD</strong></p>
 
 <blockquote>
@@ -457,7 +459,7 @@ else :
 <a href="https://github.com/bowwowxx/tensorbot.git">https://github.com/bowwowxx/tensorbot.git</a></p>
 </blockquote>
 
-<h4 id="來看一下成果">來看一下成果</h4>
+<h3 id="來看一下成果">來看一下成果</h3>
 
 <p>登入slack 和BOT聊一下天<br />
 雖然對話還是怪怪的，不過還算蠻有趣的<br />
@@ -469,7 +471,7 @@ else :
 <p><img src="https://goo.gl/fyM8aU" width="100%"><br />
 <img src="https://goo.gl/e1NyYF" width="100%"></p>
 
-<h4 id="以上是安迪兒試玩tensorflow的記錄-收工嘍">以上是安迪兒試玩tensorflow的記錄，收工嘍!</h4>
+<h3 id="以上是安迪兒試玩tensorflow的記錄-收工嘍">以上是安迪兒試玩tensorflow的記錄，收工嘍!</h3>
 
                 <br>
                 <p><a href="post">Back to posts</a></p>
