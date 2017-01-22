@@ -6,8 +6,488 @@
     <description>Recent content on 安迪兒隨手貼</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 30 Jul 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Jan 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://bowwow.tips/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>打造TensorFlow深度學習Slack聊天機器人</title>
+      <link>https://bowwow.tips/post/20170122/</link>
+      <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://bowwow.tips/post/20170122/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;去年友人大竹講師在COSCUP 2016
+和大家分享的議程是關於nas上用TensorFlow做圖形辨識&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;透過大竹的講解，也讓安迪兒開始接觸TensorFlow&lt;br /&gt;
+&lt;del&gt;謎之音：感謝大竹帶安迪兒去講者晚宴大吃大喝的~ＸＤ&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;安迪兒那時就一直想試試用TensorFlow分析文字語意之類&lt;br /&gt;
+直到最近安迪兒看到很熱門的AlphaGo就是棋靈王裡的sai~ＸＤ&lt;br /&gt;
+就好玩也試著弄了聊天機器人(為了讓首領同事開心)&lt;br /&gt;
+記錄一下跑bot過程&lt;/p&gt;
+
+&lt;h2 id=&#34;相關文章&#34;&gt;[相關文章]&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;大竹的COSCUP 2016 - NAS也會揀土豆&lt;/strong&gt;&lt;br /&gt;
+原文網址：&lt;a href=&#34;http://kaichu.io/2016/08/22/retrain-inception-model-for-nas/&#34;&gt;http://kaichu.io/2016/08/22/retrain-inception-model-for-nas/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;TensorFlow Sequence-to-Sequence Models&lt;/strong&gt;&lt;br /&gt;
+原文網址：&lt;a href=&#34;https://www.tensorflow.org/tutorials/seq2seq/&#34;&gt;https://www.tensorflow.org/tutorials/seq2seq/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;TensorFlowのSeq2Seqモデルでチャットボットっぽいものを作ってみた&lt;/strong&gt;&lt;br /&gt;
+原文網址：&lt;a href=&#34;http://qiita.com/San_/items/128bf1b5a898ad5c18f1&#34;&gt;http://qiita.com/San_/items/128bf1b5a898ad5c18f1&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;關於sequence-to-sequence-models&#34;&gt;關於Sequence-to-Sequence Models&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Sequence to Sequence 模型是近幾年來熱門的一個基於RNN的模型&lt;br /&gt;
+廣範的用在機器翻譯、自動問答系統等領域&lt;br /&gt;
+並有不錯的成效果&lt;br /&gt;
+有興趣可以參考上方相關文章裡面的連結&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;事前準備&#34;&gt;事前準備&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;TensorFlow安裝 &lt;a href=&#34;https://bowwow.tips/post/20170121&#34;&gt;MAC上安裝TENSORFLOW&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;slack機器人key申請 &lt;a href=&#34;#&#34;&gt;改天補上XD&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;開始製作對話機器人&#34;&gt;開始製作對話機器人&lt;/h4&gt;
+
+&lt;p&gt;安迪兒參考了日本的San關於他的會話AI製作文章&lt;br /&gt;
+&lt;strong&gt;(附在上方相關文章裡)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;TensorFlow最重要的就是符合相關目的資料來源&lt;br /&gt;
+但怎麼收集中文的對話資料是有點麻煩的&lt;br /&gt;
+資料餵不對，答非所問就算了，機器人會練歪喔&lt;/p&gt;
+
+&lt;h4 id=&#34;資料怎麼來&#34;&gt;資料怎麼來?&lt;/h4&gt;
+
+&lt;p&gt;安迪兒搜了一下 電影、字幕、小說等&lt;br /&gt;
+最找到了這個&lt;br /&gt;
+(流淚感謝好心大大的開源分享)&lt;br /&gt;
+&amp;gt;dgk_lost_conv
+chinese conversation corpus
+可以用作聊天机器人的训练语料
+&lt;a href=&#34;https://github.com/rustch3n/dgk_lost_conv&#34;&gt;https://github.com/rustch3n/dgk_lost_conv&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;整理資料&#34;&gt;整理資料&lt;/h4&gt;
+
+&lt;p&gt;參考San文章的內容
+&amp;gt;&lt;a href=&#34;http://qiita.com/San_/items/128bf1b5a898ad5c18f1&#34;&gt;http://qiita.com/San_/items/128bf1b5a898ad5c18f1&lt;/a&gt;&lt;br /&gt;
+&amp;gt;&lt;a href=&#34;https://github.com/sanshirookazaki/chat&#34;&gt;https://github.com/sanshirookazaki/chat&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;找到資料後要整理一下訓練的資料&lt;/strong&gt;&lt;br /&gt;
+- 先utf8、繁簡轉換原始dkg_lost_conv&lt;br /&gt;
+- 切分問、答2個詞檔
+- 切分問、答2個測試檔用來跑評估模型用&lt;br /&gt;
+- 建decode encode對話表&lt;br /&gt;
+- 然後把以上的檔，文字內容轉向量化，讓TensorFlow跑訓練&lt;/p&gt;
+
+&lt;h4 id=&#34;開始訓練機器人了&#34;&gt;開始訓練機器人了&lt;/h4&gt;
+
+&lt;p&gt;執行 python 3.translate.py&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import tensorflow as tf
+from tensorflow.models.rnn.translate import seq2seq_model
+import os
+import numpy as np
+import math
+
+PAD_ID = 0
+GO_ID = 1
+EOS_ID = 2
+UNK_ID = 3
+
+train_encode_vec = &#39;train_encode.vec&#39;
+train_decode_vec = &#39;train_decode.vec&#39;
+test_encode_vec = &#39;test_encode.vec&#39;
+test_decode_vec = &#39;test_decode.vec&#39;
+
+vocabulary_encode_size = 5000
+vocabulary_decode_size = 5000
+buckets = [(5, 10), (10, 15), (20, 25), (40, 50)]
+layer_size = 256
+num_layers = 3
+batch_size =  64
+
+def read_data(source_path, target_path, max_size=None):
+	data_set = [[] for _ in buckets]
+	with tf.gfile.GFile(source_path, mode=&amp;quot;r&amp;quot;) as source_file:
+		with tf.gfile.GFile(target_path, mode=&amp;quot;r&amp;quot;) as target_file:
+			source, target = source_file.readline(), target_file.readline()
+			counter = 0
+			while source and target and (not max_size or counter &amp;lt; max_size):
+				counter += 1
+				source_ids = [int(x) for x in source.split()]
+				target_ids = [int(x) for x in target.split()]
+				target_ids.append(EOS_ID)
+				for bucket_id, (source_size, target_size) in enumerate(buckets):
+					if len(source_ids) &amp;lt; source_size and len(target_ids) &amp;lt; target_size:
+						data_set[bucket_id].append([source_ids, target_ids])
+						break
+				source, target = source_file.readline(), target_file.readline()
+	return data_set
+
+model = seq2seq_model.Seq2SeqModel(source_vocab_size=vocabulary_encode_size, target_vocab_size=vocabulary_decode_size,
+                                   buckets=buckets, size=layer_size, num_layers=num_layers, max_gradient_norm= 5.0,
+                                   batch_size=batch_size, learning_rate=0.5, learning_rate_decay_factor=0.97, forward_only=False)
+
+config = tf.ConfigProto()
+config.gpu_options.allocator_type = &#39;BFC&#39;
+
+with tf.Session(config=config) as sess:
+
+	ckpt = tf.train.get_checkpoint_state(&#39;.&#39;)
+	if ckpt != None:
+		print(ckpt.model_checkpoint_path)
+		model.saver.restore(sess, ckpt.model_checkpoint_path)
+	else:
+		sess.run(tf.global_variables_initializer())
+
+	train_set = read_data(train_encode_vec, train_decode_vec)
+	test_set = read_data(test_encode_vec, test_decode_vec)
+
+	train_bucket_sizes = [len(train_set[b]) for b in range(len(buckets))]
+	train_total_size = float(sum(train_bucket_sizes))
+	train_buckets_scale = [sum(train_bucket_sizes[:i + 1]) / train_total_size for i in range(len(train_bucket_sizes))]
+
+	loss = 0.0
+	total_step = 0
+	previous_losses = []
+
+	while True:
+		random_number_01 = np.random.random_sample()
+		bucket_id = min([i for i in range(len(train_buckets_scale)) if train_buckets_scale[i] &amp;gt; random_number_01])
+
+		encoder_inputs, decoder_inputs, target_weights = model.get_batch(train_set, bucket_id)
+		_, step_loss, _ = model.step(sess, encoder_inputs, decoder_inputs, target_weights, bucket_id, False)
+
+		loss += step_loss / 500
+		total_step += 1
+
+		print(total_step)
+		if total_step % 5000 == 0:
+			print(model.global_step.eval(), model.learning_rate.eval(), loss)
+
+
+			if len(previous_losses) &amp;gt; 2 and loss &amp;gt; max(previous_losses[-3:]):
+				sess.run(model.learning_rate_decay_op)
+			previous_losses.append(loss)
+
+			checkpoint_path = &amp;quot;seq2seq.ckpt&amp;quot;
+			model.saver.save(sess, checkpoint_path, global_step=model.global_step)
+			loss = 0.0
+
+			for bucket_id in range(len(buckets)):
+				if len(test_set[bucket_id]) == 0:
+					continue
+				encoder_inputs, decoder_inputs, target_weights = model.get_batch(test_set, bucket_id)
+				_, eval_loss, _ = model.step(sess, encoder_inputs, decoder_inputs, target_weights, bucket_id, True)
+				eval_ppx = math.exp(eval_loss) if eval_loss &amp;lt; 300 else float(&#39;inf&#39;)
+				print(bucket_id, eval_ppx)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/h2hCCB&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/QwpzFx&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/4ZxsbO&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;會跑很久&#34;&gt;會跑很久&lt;/h4&gt;
+
+&lt;p&gt;安迪兒用Mac只有用CPU在跑&lt;br /&gt;
+跑了1星期不關機，每天都100%(有點可怕XD)&lt;br /&gt;
+也才跑了30多萬筆&lt;br /&gt;
+沒顯卡跑超慘的&lt;br /&gt;
+跑不完可以停下，下次會在接著跑&lt;br /&gt;
+程式跑一陣子會定期存檔&lt;br /&gt;
+checkpoint裡面會有記錄跑到那&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/H1rP1A&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;執行bot&#34;&gt;執行bot&lt;/h4&gt;
+
+&lt;p&gt;執行安迪兒的 4.bot01.py&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;export BOT_ID=&amp;quot;slack bot的id&amp;quot;
+export SLACK_TOKEN=&amp;quot;slack bot的api key&amp;quot;
+python 4.bot01.py &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;程式如下:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# -*- coding: utf-8 -*-
+import tensorflow as tf
+from tensorflow.models.rnn.translate import seq2seq_model
+import os
+import numpy as np
+import time
+from slackclient import SlackClient
+
+BOT_ID = os.environ[&amp;quot;BOT_ID&amp;quot;]
+AT_BOT = &amp;quot;&amp;lt;@&amp;quot; + BOT_ID + &amp;quot;&amp;gt;&amp;quot;
+EXAMPLE_COMMAND = &amp;quot;orange&amp;quot;
+slack_token = os.environ[&amp;quot;SLACK_TOKEN&amp;quot;]
+slack_client = SlackClient(slack_token)
+
+PAD_ID = 0
+GO_ID = 1
+EOS_ID = 2
+UNK_ID = 3
+
+train_encode_vocabulary = &#39;train_encode_vocabulary&#39;
+train_decode_vocabulary = &#39;train_decode_vocabulary&#39;
+
+def handle_command(command, channel):
+    response = str(command)
+    if command.startswith(EXAMPLE_COMMAND):
+       response = &amp;quot;Sure...write some more code then I can do that!&amp;quot;
+    slack_client.api_call(&amp;quot;chat.postMessage&amp;quot;, channel = channel, text = response, as_user = True)
+
+def parse_slack_output(slack_rtm_output):
+    output_list = slack_rtm_output
+    if output_list and len(output_list) &amp;gt; 0:
+        for output in output_list:
+            if output and &#39;text&#39; in output and AT_BOT in output[&#39;text&#39;]:
+               return output[&#39;text&#39;].split(AT_BOT)[1].strip().lower(),output[&#39;channel&#39;]
+    return None, None
+
+def read_vocabulary(input_file):
+    tmp_vocab = []
+    with open(input_file, &amp;quot;r&amp;quot;) as f:
+         tmp_vocab.extend(f.readlines())
+    tmp_vocab = [line.strip() for line in tmp_vocab]
+    vocab = dict([(x, y) for (y, x) in enumerate(tmp_vocab)])
+    return vocab, tmp_vocab
+
+vocab_en, _, = read_vocabulary(train_encode_vocabulary)
+_, vocab_de, = read_vocabulary(train_decode_vocabulary)
+
+vocabulary_encode_size = 5000
+vocabulary_decode_size = 5000
+
+buckets = [(5, 10), (10, 15), (20, 25), (40, 50)]
+layer_size = 256
+num_layers = 3
+batch_size = 1
+
+model = seq2seq_model.Seq2SeqModel(source_vocab_size = vocabulary_encode_size, target_vocab_size = vocabulary_decode_size,
+    buckets = buckets, size = layer_size, num_layers = num_layers, max_gradient_norm = 5.0,
+    batch_size = batch_size, learning_rate = 0.5, learning_rate_decay_factor = 0.99, forward_only = True)
+model.batch_size = 1
+READ_WEBSOCKET_DELAY = 1
+
+with tf.Session() as sess:
+    ckpt = tf.train.get_checkpoint_state(&#39;.&#39;)
+if ckpt != None:
+    print(ckpt.model_checkpoint_path)
+    model.saver.restore(sess, ckpt.model_checkpoint_path)
+else :
+    print(&amp;quot;none ckpt modle&amp;quot;)
+
+if slack_client.rtm_connect():
+    print(&amp;quot;StarterBot connected and running!&amp;quot;)
+    while True:
+        command, channel = parse_slack_output(slack_client.rtm_read())
+        if command and channel:
+            print type(command)
+            input_string = command.encode(&amp;quot;utf8&amp;quot;)
+            input_string_vec = []
+            for words in input_string.strip():
+                 input_string_vec.append(vocab_en.get(words, UNK_ID))
+            bucket_id = min([b for b in range(len(buckets)) if buckets[b][0] &amp;gt; len(input_string_vec)])
+            encoder_inputs, decoder_inputs, target_weights = model.get_batch({bucket_id: [(input_string_vec, [])]}, bucket_id)
+            _, _, output_logits = model.step(sess, encoder_inputs, decoder_inputs, target_weights, bucket_id, True)
+            outputs = [int(np.argmax(logit, axis = 1)) for logit in output_logits]
+            if EOS_ID in outputs:
+                outputs = outputs[: outputs.index(EOS_ID)]
+
+            response = &amp;quot;&amp;quot;.join([tf.compat.as_str(vocab_de[output]) for output in outputs])
+            print(&amp;quot;response:&amp;quot; + response)
+            # handle_command(response, channel) unicode(unicodestring,&amp;quot;utf-8&amp;quot;) response.encode(&amp;quot;utf8&amp;quot;)
+            slack_client.api_call(&amp;quot;chat.postMessage&amp;quot;, channel = channel, text = unicode(response,&amp;quot;utf-8&amp;quot;), as_user = True)
+        time.sleep(READ_WEBSOCKET_DELAY)
+
+else :
+     print(&amp;quot;Connection failed. Invalid Slack token or bot ID?&amp;quot;)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/xTVGQG&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;以上安迪兒跑不完，所以只跑了數天就停了&lt;br /&gt;
+用只train一點點的模型去跑，結果出現一堆在未知列表裡的字&lt;strong&gt;UNK&lt;/strong&gt;&lt;br /&gt;
+人生吶~需要更好的顯卡~XD&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;附上安迪兒的程式碼和沒訓練完的檔案
+想訓練的人可以接著跑，或是直接執行來玩玩&lt;br /&gt;
+&lt;a href=&#34;https://github.com/bowwowxx/tensorbot.git&#34;&gt;https://github.com/bowwowxx/tensorbot.git&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;來看一下成果&#34;&gt;來看一下成果&lt;/h4&gt;
+
+&lt;p&gt;登入slack 和BOT聊一下天&lt;br /&gt;
+雖然對話還是怪怪的，不過還算蠻有趣的&lt;br /&gt;
+感覺問一下，奇怪的問題小三啥的比較會回&lt;br /&gt;
+正常的問題不太知道，或是沒在清單列表裡&lt;br /&gt;
+可能和都是電影八卦對白有點關係~XD&lt;br /&gt;
+真是太好笑了…&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/fyM8aU&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/e1NyYF&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;以上是安迪兒試玩tensorflow的記錄-收工嘍&#34;&gt;以上是安迪兒試玩tensorflow的記錄，收工嘍!&lt;/h4&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MAC上安裝TensorFlow</title>
+      <link>https://bowwow.tips/post/20170121/</link>
+      <pubDate>Sat, 21 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://bowwow.tips/post/20170121/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;安迪兒之前是在nas上試玩docker的TensorFlow&lt;br /&gt;
+最近剛好做個小東西，趁機會記錄一下安裝TensorFlow在mac筆電的步驟&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;相關文章&#34;&gt;[相關文章]&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;為何Google要推開源機器學習系統TensorFlow？&lt;/strong&gt;&lt;br /&gt;
+原文網址：&lt;a href=&#34;https://www.bnext.com.tw/article/37925/BN-2015-11-10-184646-40&#34;&gt;https://www.bnext.com.tw/article/37925/BN-2015-11-10-184646-40&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;TensorFlow官方安裝文件&lt;/strong&gt;&lt;br /&gt;
+原文網址：&lt;a href=&#34;https://www.tensorflow.org/get_started/os_setup&#34;&gt;https://www.tensorflow.org/get_started/os_setup&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;安裝方式&#34;&gt;安裝方式&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Pip install:&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Install TensorFlow on your machine, possibly upgrading previously installed Python packages. May impact existing Python programs on your machine.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Virtualenv install:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Install TensorFlow in its own directory, not impacting any existing Python programs on your machine.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Anaconda install:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Install TensorFlow in its own environment for those running the Anaconda Python distribution. Does not impact existing Python programs on your machine.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Docker install:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Run TensorFlow in a Docker container isolated from all other programs on your machine.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Installing from sources:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Install TensorFlow by building a pip wheel that you then install using pip.&lt;/p&gt;
+
+&lt;h4 id=&#34;安裝pip&#34;&gt;安裝pip&lt;/h4&gt;
+
+&lt;p&gt;如果沒pip的話可以先安裝一下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#Mac OS X  
+$ sudo easy_install pip  
+$ sudo easy_install --upgrade six  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/nw3aZk&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;安裝tensorflow&#34;&gt;安裝TensorFlow&lt;/h4&gt;
+
+&lt;p&gt;安迪兒的Mac筆電沒有顯卡，只能裝CPU版的&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;CPU版:
+ pip install tensorflow  
+
+GPU版:
+pip install tensorflow-gpu
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;然後踩了一下雷&#34;&gt;然後踩了一下雷&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/4KtN2N&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+查了一下發現mac好像都會有這問題&lt;br /&gt;
+(其實官方文件下面一些有提到不能安裝時的方式)&lt;/p&gt;
+
+&lt;p&gt;安迪兒挑了mac內建的python2.7來用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Mac OS X, CPU only, Python 2.7:  
+$ export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-0.12.1-py2-none-any.whl
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;更新一下tensorflow&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Python 2
+$ sudo pip install --upgrade $TF_BINARY_URL
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;再次踩雷&#34;&gt;再次踩雷&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/zzRMHy&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+還是error&lt;br /&gt;
+安迪兒看了一下文件，覺的可能是和python的版本有關&lt;br /&gt;
+就手動升了一下mac的python到2.7.13&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install python  
+brew info python  
+brew linkapps python
+source ~/.bash_profile
+python -v
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/JxlDbs&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/znqmvV&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/jekSNW&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;重來一次&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-0.12.1-py2-none-any.whl  
+sudo pip install --upgrade $TF_BINARY_URL  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;安裝成功了&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/lB22vX&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;來測試一下tensorflow能不能用吧&#34;&gt;來測試一下tensorflow能不能用吧&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;$ python
+&amp;gt;&amp;gt;&amp;gt; import tensorflow as tf
+&amp;gt;&amp;gt;&amp;gt; hello = tf.constant(&#39;Hello, TensorFlow!&#39;)
+&amp;gt;&amp;gt;&amp;gt; sess = tf.Session()
+&amp;gt;&amp;gt;&amp;gt; print(sess.run(hello))
+Hello, TensorFlow!
+&amp;gt;&amp;gt;&amp;gt; a = tf.constant(10)
+&amp;gt;&amp;gt;&amp;gt; b = tf.constant(32)
+&amp;gt;&amp;gt;&amp;gt; print(sess.run(a + b))
+42
+&amp;gt;&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;成功嘍&#34;&gt;成功嘍&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/KpS4Yr&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;以上是安迪兒整個在mac安裝tensorflow的過程-收工嘍&#34;&gt;以上是安迪兒整個在mac安裝tensorflow的過程，收工嘍!&lt;/h4&gt;
+</description>
+    </item>
     
     <item>
       <title>Docker 1.12的黑魔法</title>
@@ -1334,423 +1814,6 @@ dd if=/dev/disk2 | gzip &amp;gt; /xxx/path/disk2.img.gz
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;試試嘍~~&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[開箱]輕鬆在家歡唱ktv，擁有Ubuntu雙系統的QNAP TS-253A NAS</title>
-      <link>https://bowwow.tips/projects/20160430/</link>
-      <pubDate>Sat, 30 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://bowwow.tips/projects/20160430/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;「什麼?NAS唱KTV?」&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;「哇嗚!Ubuntu雙系統&lt;/strong&gt;」&lt;/p&gt;
-
-&lt;p&gt;現在的NAS超強大，除了相片，電影，音樂和多種服務外&lt;br /&gt;
-前陣子發現，竟然連KTV都出現了&lt;br /&gt;
-再加上這台可以跑&lt;strong&gt;docker、ubuntu、windows&lt;/strong&gt;&lt;br /&gt;
-根本就是4核小電腦吶&lt;br /&gt;
-超誇張~XD&lt;/p&gt;
-
-&lt;p&gt;安迪兒一直在等，這台可以唱KTV的TS-253A NAS&lt;br /&gt;
-如今，終於上市了。&lt;/p&gt;
-
-&lt;p&gt;因為唱KTV這功能實在&lt;strong&gt;太酷炫&lt;/strong&gt;&lt;br /&gt;
-所以拿來當&lt;strong&gt;第一篇開箱文&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;「它和一般NAS差別在那?」&lt;/strong&gt;&lt;br /&gt;
-嗯嗯，安迪兒看了一下&lt;br /&gt;
-和其它NAS不一樣的地方&lt;br /&gt;
-多了2個麥克風接口，1個音源輸出&lt;br /&gt;
-另外還有2個HDMI，一個接電視，一個接螢幕&lt;br /&gt;
-(果真是為KTV而生吶!)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;QNAP NAS TS-253A官網規格:&lt;br /&gt;
-&lt;a href=&#34;https://www.qnap.com/i/cht/product/model.php?II=211&amp;amp;event=2&#34;&gt;https://www.qnap.com/i/cht/product/model.php?II=211&amp;amp;event=2&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;處理器   14nm Intel® Celeron® N3150 四核心 1.6GHz, 最高2.08GHz&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;繪圖處理器 第8代Intel® HD Graphics&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;最大可擴充記憶體  8 GB&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;快閃記憶體 512MB&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;最大硬碟數量    2 顆&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;網路埠   2 x Gigabit RJ-45 Ethernet 網路埠&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;USB 埠 4 x USB 3.0 埠 (正面：1，背面：3) 支援印表機、隨身碟及 UPS 等。&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;視訊輸出  2 x HDMI，最大支援4K 2160P Ultra HD 輸出&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;音訊輸入  2 x 6.3mm 麥克風插孔 (僅支援動圈式麥克風)&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;音訊輸出  Line Out 插孔 (搭配擴大機或耳擴使用)&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;IR 接收器    有，支援 QNAP RM-IR002，RM-IR003與&lt;strong&gt;MCE相容遙控器&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/p6pYya&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;&amp;lt;開箱嘍&amp;gt;&lt;/strong&gt;&lt;br /&gt;
-- 硬碟 4T x2 (做Raid1)&lt;br /&gt;
-- RAM 8G x2 (直上16G)
-- 喇叭＆麥克風&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/Wv3us2&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[關於記憶體]&lt;/strong&gt;&lt;br /&gt;
-TS-253A官方規格和其它pchome記錄，RAM最大支援到8G&lt;br /&gt;
-但安迪兒有看到國外玩家類似cpu的機型有捉到2隻8g的RAM&lt;/p&gt;
-
-&lt;p&gt;所以…安迪兒就賭一下，直上16g試試&lt;/p&gt;
-
-&lt;p&gt;這邊說一下，根據大家的結論&lt;br /&gt;
-記憶體要挑ddr3、3.5v低電壓、一面有8顆IC的RAM&lt;br /&gt;
-成功機會比較大，安迪兒最後挑了金士頓雙通道8g2隻&lt;/p&gt;
-
-&lt;p&gt;&amp;lt;繼續看一下TS-253A的外型&amp;gt;&lt;br /&gt;
-- &lt;strong&gt;金屬外殼&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/3wfHHK&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;免拆螺絲就可以拔硬碟&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/Ma5445&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;後方連接埠&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/n9xjvW&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;拆機裝記憶體&lt;/strong&gt;&lt;br /&gt;
-要拆機，機殼有點像pc，ㄇ字的開法&lt;br /&gt;
-NAS後方3個螺絲拆開後，面對NAS正面往後推(要點內力XD)&lt;br /&gt;
-打開後就可以換上記憶體了&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/SliQo7&#34; width=&#34;100%&#34;&gt;
-&lt;img src=&#34;https://goo.gl/X9vuU9&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;再來就是裝上硬碟、接上網路線，電源線&lt;br /&gt;
-收工~開機!!&lt;/p&gt;
-
-&lt;p&gt;再來是一連串新NAS的安裝設定&lt;br /&gt;
-有NAS的人應該很熟悉&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;先用&lt;a href=&#34;https://www.qnap.com/i/cht/utility/&#34;&gt;QFinder之類的&lt;/a&gt;掃一下區網的nas&lt;br /&gt;
-點2下連上NAS，照畫面指示做初始化設定動作&lt;br /&gt;
-(如果知道NAS的IP，可以不用QFinder，直接連線登入 &lt;a href=&#34;http://xx.xx:8080&#34;&gt;http://xx.xx:8080&lt;/a&gt;)&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/i1bdLm&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;因為是新的硬碟，設定一下磁區和Raid1(1:1鏡象備援)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/dteqAA&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;安迪兒選第一項&lt;strong&gt;&amp;lt;單一磁區&amp;gt;&lt;/strong&gt;&lt;br /&gt;
-因為這台只有2顆硬碟，日後沒得擴充&lt;br /&gt;
-也是為了完全使用全部的硬碟空間&lt;br /&gt;
-(其它模式比較彈性，但會吃一些容量)&lt;/p&gt;
-
-&lt;p&gt;依畫面上的指示點選2顆硬碟，做Raid1，即可完成&lt;br /&gt;
-(Raid1:其中一顆硬碟壞了，買新硬碟放入就會自已恢復了)&lt;/p&gt;
-
-&lt;p&gt;磁碟建立完成後，順手測一下Raid1的傳檔速度&lt;br /&gt;
-每秒100多Mib，還不賴吶&lt;br /&gt;
-(安迪兒舊synology ds213j只能到30Mib)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/POFxee&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;看一下NAS系統規格&lt;br /&gt;
-RAM:16g 無誤!(開心吶)&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/o3L9mP&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;磁碟完成後，接著就是NAS上，一些軟體的安裝&lt;br /&gt;
-首先NAS要透過HDMI接電視使用&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;這功能需要裝上&lt;strong&gt;HD station&lt;/strong&gt;&lt;br /&gt;
-這樣NAS才能變成家庭娛樂中心&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/KBY7yt&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;裝&lt;strong&gt;HD station&lt;/strong&gt;時&lt;br /&gt;
-會順便選電視上可用到要安裝的app&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;為了唱KTV&lt;/strong&gt;&lt;br /&gt;
-畫面上的這些都把它裝上吧&lt;br /&gt;
-記得裝完後再裝上&lt;strong&gt;OceanKTV&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/u8Fu11&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;完成後，電視上看到的樣子會像下面這樣&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/XOs3W8&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&amp;lt;將將將&amp;gt;要開唱了嗎?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/kLr0MS&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;呃~還沒，因為最重要的歌曲還沒放入(受打擊中…)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;歌曲怎麼找?&lt;br /&gt;
-嗯…安迪兒試了一下&lt;strong&gt;暗黑技&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;到YouTube上找KTV用的歌曲影片&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/2diWcl&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;搭配上NAS的暗黑技工具&lt;strong&gt;happyget&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;首先NAS先裝上happyget&lt;br /&gt;
-設定完後打開Chrome再裝上happyget的外掛&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/KxhM7H&#34; width=&#34;100%&#34;&gt;
-&lt;img src=&#34;https://goo.gl/fKzN45&#34; width=&#34;100%&#34;&gt;
-&lt;img src=&#34;https://goo.gl/eFAI4x&#34; width=&#34;100%&#34;&gt;
-&lt;img src=&#34;https://goo.gl/GBmjXU&#34; width=&#34;100%&#34;&gt;
-&lt;img src=&#34;https://goo.gl/ONDz8m&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;設定完後上YouTube就可以看到[取得影片]的選項&lt;/strong&gt;&lt;br /&gt;
-(記得找KTV版本，按下取得影片，NAS就會自動去幫你捉下它)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/C3xLmD&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/ku6wQ9&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;捉完後KTV影片會在NAS happyget的設定目錄下&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/h6YJxN&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;為了讓OceanKTV認識歌曲，所以要編輯一下歌曲檔名&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;安迪兒有找到一個小工具&lt;br /&gt;
-可以幫忙分析歌區的左右聲道規格之類的&lt;br /&gt;
-&lt;a href=&#34;https://goo.gl/kwlzAf&#34;&gt;https://goo.gl/kwlzAf&lt;/a&gt;&lt;br /&gt;
-(裡面有mac版和windows版)&lt;/p&gt;
-
-&lt;p&gt;硏究了一下&lt;br /&gt;
-其實稍為調整一下捉下來的KTV檔名&lt;/p&gt;
-
-&lt;p&gt;再用這小工具&lt;br /&gt;
-去分析和轉換OceanKTV要的檔名格式就可以了&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/3vg3IV&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/WhP7kt&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;安迪兒是用小工具上面提示，可轉換的第三種命名格式&lt;br /&gt;
-&lt;strong&gt;(HD)林正-我不是他【CURRY自製KTV】_1080P.mp4&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;安迪兒編輯捉下來KTV檔名，改成小工具可轉換的檔名&lt;br /&gt;
-(hd)歌手-歌名_1080P.mp4&lt;/p&gt;
-
-&lt;p&gt;然後再點選&lt;strong&gt;&amp;lt;開始轉換&amp;gt;&lt;/strong&gt;&lt;br /&gt;
-小工具就會把所有資料匣的KTV歌曲，分析好並改好檔名&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/64LMWZ&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;最後把轉好的KTV歌曲連資料匣一起copy到OceanKTV的目錄下&lt;br /&gt;
-大工告成嘍!&lt;br /&gt;
-(以下是安迪兒剛轉好的樣子)&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/HlBrn4&#34; width=&#34;100%&#34;&gt;
-&lt;img src=&#34;https://goo.gl/YsAbqi&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&amp;lt;最後&amp;gt;&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;見證奇蹟的時刻&lt;/strong&gt;&lt;br /&gt;
-用遙控器選電視上OceanKTV的圖示&lt;br /&gt;
-感動吶!&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/N6ZZ3c&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/f9xGcu&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;看一下裡面的清單&lt;br /&gt;
-已經有列出，剛放入OceanKTV的歌曲&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/CkCT4t&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;再設定一下語言、輸入麥克風、輸出喇叭的聲音設定&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/s6G79I&#34; width=&#34;100%&#34;&gt;
-&lt;img src=&#34;https://goo.gl/B6IgnQ&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&amp;lt;開唱嘍!!!&amp;gt;&lt;/strong&gt;&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/MOybls&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;先來首&lt;strong&gt;妖怪手錶&lt;/strong&gt;~~XD&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/xwXr7Y&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;再來個小幸運&lt;/strong&gt;&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/v4DNWi&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;感覺還不賴XD&lt;/strong&gt;&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/crJjUM&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;呼…終於呀，以上是值得歡唱慶祝的第一篇開箱文~XD&lt;br /&gt;
-收工嘍~收工嘍!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>How To Install Elasticsearch on Ubuntu 14.04</title>
-      <link>https://bowwow.tips/post/20160101/</link>
-      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://bowwow.tips/post/20160101/</guid>
-      <description>
-
-&lt;p&gt;最近測東西，都用整理好的docker Elasticsearch叢集&lt;br /&gt;
-有點忘了之前Elasticsearch建置方式&lt;br /&gt;
-補貼上去年建的Elasticsearch步驟當備忘用&lt;/p&gt;
-
-&lt;h4 id=&#34;1-install-java&#34;&gt;1. Install Java&lt;/h4&gt;
-
-&lt;p&gt;官方是說&lt;br /&gt;
-[Elasticsearch recommends Oracle JDK version 1.8.0_73]&lt;/p&gt;
-
-&lt;p&gt;這邊可以使用OpenJDK 7或Oracle JDK 8&lt;/p&gt;
-
-&lt;p&gt;OpenJDK 7&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get update  
-sudo apt-get install openjdk-7-jre  
-java -version  
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Oracle JDK 8&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo add-apt-repository -y ppa:webupd8team/java  
-sudo apt-get update    
-sudo apt-get -y install oracle-java8-installer   
-java -version  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/9wVhs1&#34; width=&#34;100%&#34;&gt;
-&lt;img src=&#34;https://goo.gl/q0QMGs&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;2-installing-elasticsearch-1-7-2&#34;&gt;2. Installing Elasticsearch 1.7.2&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo wget https://download.elastic.co/Elasticsearch/Elasticsearch/Elasticsearch-1.7.2.deb  
-sudo dpkg -i Elasticsearch-1.7.2.deb  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/eW9sxo&#34; width=&#34;100%&#34;&gt;
-&lt;img src=&#34;https://goo.gl/iFfmPo&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;3-installing-plugin&#34;&gt;3. Installing plugin&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;head&lt;br /&gt;
-&lt;code&gt;
-sudo /usr/share/Elasticsearch/bin/plugin -install mobz/Elasticsearch-head  
-&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;marvel&lt;br /&gt;
-&lt;code&gt;
-sudo /usr/share/Elasticsearch/bin/plugin -install Elasticsearch/marvel/latest  
-&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;jdbc river&lt;br /&gt;
-版本參考
-&lt;a href=&#34;http://xbib.org/repository/org/xbib/Elasticsearch/plugin/Elasticsearch-river-jdbc/&#34;&gt;http://xbib.org/repository/org/xbib/Elasticsearch/plugin/Elasticsearch-river-jdbc/&lt;/a&gt;&lt;br /&gt;
-&lt;code&gt;
-plugin --install jdbc --url http://xbib.org/repository/org/xbib/Elasticsearch/plugin/Elasticsearch-river-jdbc/1.5.0.5/Elasticsearch-river-jdbc-1.5.0.5-plugin.zip  
-&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;jdbc postgresql&lt;br /&gt;
-版本參考列表&lt;br /&gt;
-&lt;a href=&#34;https://jdbc.postgresql.org/download.html&#34;&gt;https://jdbc.postgresql.org/download.html&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;https://github.com/jprante/Elasticsearch-jdbc&#34;&gt;https://github.com/jprante/Elasticsearch-jdbc&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;wget https://jdbc.postgresql.org/download/postgresql-9.4-1204.jdbc4.jar
-wget https://jdbc.postgresql.org/download/postgresql-9.4-1204.jdbc42.jar
-/usr/share/Elasticsearch/plugins/jdbc  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/moyQVm&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;4-configuring-elasticsearch&#34;&gt;4. Configuring Elasticsearch&lt;/h4&gt;
-
-&lt;p&gt;一些Elasticsearch檔案路徑&lt;br /&gt;
-- /usr/share/Elasticsearch&lt;br /&gt;
-- /etc/Elasticsearch&lt;br /&gt;
-- /etc/init.d/Elasticsearch&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo update-rc.d Elasticsearch defaults  
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/1xZljC&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;設定Elasticsearch.yml檔&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo nano /etc/Elasticsearch/Elasticsearch.yml  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;參考內容:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;marvel.agent.enabled: false
-cluster.name: bowwow
-node.name: pro-bowwow
-node.master: true
-node.data: true
-index.number_of_shards: 5
-bootstrap.mlockall: true
-index.cache.field.max_size: 50000
-index.cache.field.expire: 10m
-index.cache.field.type: soft
-threadpool.index.type: fixed
-threadpool.index.size: 100
-threadpool.index.queue_size: 500
-#discovery.zen.ping.multicast.enabled: false  
-#discovery.zen.ping.unicast.hosts: [&amp;quot;pro-bowwow&amp;quot;,&amp;quot;node1&amp;quot;,&amp;quot;node2&amp;quot;]
-
-th:
-data: /data/data
-logs: /data/log
-plugins: /data/plugins
-work: /data/work
-
-http.cors.allow-origin: &amp;quot;/.*/&amp;quot;
-http.cors.enabled: true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;5-設定完成&#34;&gt;5. 設定完成&lt;/h4&gt;
-
-&lt;p&gt;啟用服務嘍&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo service Elasticsearch start  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;測試一下&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;curl localhost:9200
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/tod19x&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;從db建一些測試資料進去&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/zOb2kc&#34; width=&#34;100%&#34;&gt;
-&lt;img src=&#34;https://goo.gl/CeMO7g&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;測一下7萬筆資料內搜尋的效能&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ab -n 1000 -c 10  &amp;quot;http://demo/songs/data/_search?&amp;amp;q=id:100&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;嗯~~測了一下，從數千筆資料搜尋和從7萬多筆資料搜尋，Requests per second數差不多&lt;br /&gt;
-&lt;img src=&#34;https://goo.gl/rgIRYy&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;收工嘍~收工嘍~&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
     
