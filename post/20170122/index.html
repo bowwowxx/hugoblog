@@ -168,7 +168,7 @@
 原文網址：<a href="http://qiita.com/San_/items/128bf1b5a898ad5c18f1">http://qiita.com/San_/items/128bf1b5a898ad5c18f1</a></p>
 </blockquote>
 
-<h3 id="關於sequence-to-sequence-models">關於Sequence-to-Sequence Models</h3>
+<h3 id="關於sequence-to-sequence-models"><strong>關於Sequence-to-Sequence Models</strong></h3>
 
 <blockquote>
 <p>Sequence to Sequence 模型是近幾年來熱門的一個基於RNN的模型<br />
@@ -177,47 +177,46 @@
 有興趣可以參考上方相關文章裡面的連結</p>
 </blockquote>
 
-<h3 id="事前準備">事前準備</h3>
+<h3 id="事前準備"><strong>事前準備</strong></h3>
 
 <ul>
-<li><p>TensorFlow安裝:<a href="https://bowwow.tips/post/20170121">MAC上安裝TENSORFLOW</a></p></li>
-
-<li><p>slack機器人key申請:<a href="#">改天補上XD</a></p></li>
+<li>TensorFlow安裝:<a href="https://bowwow.tips/post/20170121">MAC上安裝TENSORFLOW</a><br /></li>
+<li>slack機器人key申請:<a href="#">改天補上XD</a><br /></li>
 </ul>
 
-<h3 id="開始製作對話機器人">開始製作對話機器人</h3>
+<h3 id="開始製作對話機器人"><strong>開始製作對話機器人</strong></h3>
 
 <p>安迪兒參考了日本的San關於他的會話AI製作文章<br />
-<strong>(附在上方相關文章裡)</strong></p>
+(附在上方相關文章裡)</p>
 
 <p>TensorFlow最重要的就是符合相關目的資料來源<br />
 但怎麼收集中文的對話資料是有點麻煩的<br />
 資料餵不對，答非所問就算了，機器人會練歪喔</p>
 
-<h3 id="資料怎麼來">資料怎麼來?</h3>
+<h3 id="資料怎麼來"><strong>資料怎麼來?</strong></h3>
 
 <p>安迪兒搜了一下 電影、字幕、小說等<br />
 最找到了這個<br />
 (流淚感謝好心大大的開源分享)<br />
-&gt;dgk_lost_conv
+&gt; dgk_lost_conv
 chinese conversation corpus
 可以用作聊天机器人的训练语料
 <a href="https://github.com/rustch3n/dgk_lost_conv">https://github.com/rustch3n/dgk_lost_conv</a></p>
 
-<h3 id="整理資料">整理資料</h3>
+<h3 id="整理資料"><strong>整理資料</strong></h3>
 
-<p>參考San文章的內容
-&gt;<a href="http://qiita.com/San_/items/128bf1b5a898ad5c18f1">http://qiita.com/San_/items/128bf1b5a898ad5c18f1</a><br />
-&gt;<a href="https://github.com/sanshirookazaki/chat">https://github.com/sanshirookazaki/chat</a></p>
+<p>參考San文章的內容<br />
+&gt; <a href="http://qiita.com/San_/items/128bf1b5a898ad5c18f1">http://qiita.com/San_/items/128bf1b5a898ad5c18f1</a><br />
+&gt; <a href="https://github.com/sanshirookazaki/chat">https://github.com/sanshirookazaki/chat</a></p>
 
 <p><strong>找到資料後要整理一下訓練的資料</strong><br />
-- 先utf8、繁簡轉換原始dkg_lost_conv<br />
-- 切分問、答2個詞檔
-- 切分問、答2個測試檔用來跑評估模型用<br />
-- 建decode encode對話表<br />
-- 然後把以上的檔，文字內容轉向量化，讓TensorFlow跑訓練</p>
+ - 先utf8、繁簡轉換原始dkg_lost_conv<br />
+ - 切分問、答2個詞檔<br />
+ - 切分問、答2個測試檔用來跑評估模型用<br />
+ - 建decode encode對話表<br />
+ - 然後把以上的檔，文字內容轉向量化，讓TensorFlow跑訓練</p>
 
-<h3 id="開始訓練機器人了">開始訓練機器人了</h3>
+<h3 id="開始訓練機器人了"><strong>開始訓練機器人了</strong></h3>
 
 <p>執行 python 3.translate.py</p>
 
@@ -326,7 +325,7 @@ with tf.Session(config=config) as sess:
 <img src="https://goo.gl/QwpzFx" width="100%"><br />
 <img src="https://goo.gl/4ZxsbO" width="100%"></p>
 
-<h3 id="會跑很久">會跑很久</h3>
+<h3 id="會跑很久"><strong>會跑很久</strong></h3>
 
 <p>安迪兒用Mac只有用CPU在跑<br />
 跑了1星期不關機，每天都100%(有點可怕XD)<br />
@@ -334,12 +333,12 @@ with tf.Session(config=config) as sess:
 沒顯卡跑超慘的</p>
 
 <p>如果跑不完可以停下，下次會在接著跑<br />
-程式跑一陣子會定期存檔<br />
-如下圖<br />
-checkpoint裡面會有記錄跑到那<br />
+程式跑一陣子會定期存檔</p>
+
+<p>checkpoint裡面會有記錄跑到那<br />
 <img src="https://goo.gl/H1rP1A" width="100%"></p>
 
-<h3 id="執行bot">執行bot</h3>
+<h3 id="執行bot"><strong>執行bot</strong></h3>
 
 <p>執行安迪兒的 4.bot01.py</p>
 
@@ -348,7 +347,7 @@ export SLACK_TOKEN=&quot;slack bot的api key&quot;
 python 4.bot01.py &amp;
 </code></pre>
 
-<p>程式如下:</p>
+<p>程式碼:</p>
 
 <pre><code># -*- coding: utf-8 -*-
 import tensorflow as tf
@@ -459,7 +458,7 @@ else :
 <a href="https://github.com/bowwowxx/tensorbot.git">https://github.com/bowwowxx/tensorbot.git</a></p>
 </blockquote>
 
-<h3 id="來看一下成果">來看一下成果</h3>
+<h3 id="來看一下成果"><strong>來看一下成果</strong></h3>
 
 <p>登入slack 和BOT聊一下天<br />
 雖然對話還是怪怪的，不過還算蠻有趣的<br />

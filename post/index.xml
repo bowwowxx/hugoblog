@@ -41,7 +41,7 @@
 原文網址：&lt;a href=&#34;http://qiita.com/San_/items/128bf1b5a898ad5c18f1&#34;&gt;http://qiita.com/San_/items/128bf1b5a898ad5c18f1&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;關於sequence-to-sequence-models&#34;&gt;關於Sequence-to-Sequence Models&lt;/h3&gt;
+&lt;h3 id=&#34;關於sequence-to-sequence-models&#34;&gt;&lt;strong&gt;關於Sequence-to-Sequence Models&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Sequence to Sequence 模型是近幾年來熱門的一個基於RNN的模型&lt;br /&gt;
@@ -50,47 +50,46 @@
 有興趣可以參考上方相關文章裡面的連結&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;事前準備&#34;&gt;事前準備&lt;/h3&gt;
+&lt;h3 id=&#34;事前準備&#34;&gt;&lt;strong&gt;事前準備&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;TensorFlow安裝:&lt;a href=&#34;https://bowwow.tips/post/20170121&#34;&gt;MAC上安裝TENSORFLOW&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;slack機器人key申請:&lt;a href=&#34;#&#34;&gt;改天補上XD&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;TensorFlow安裝:&lt;a href=&#34;https://bowwow.tips/post/20170121&#34;&gt;MAC上安裝TENSORFLOW&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;slack機器人key申請:&lt;a href=&#34;#&#34;&gt;改天補上XD&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;開始製作對話機器人&#34;&gt;開始製作對話機器人&lt;/h3&gt;
+&lt;h3 id=&#34;開始製作對話機器人&#34;&gt;&lt;strong&gt;開始製作對話機器人&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;p&gt;安迪兒參考了日本的San關於他的會話AI製作文章&lt;br /&gt;
-&lt;strong&gt;(附在上方相關文章裡)&lt;/strong&gt;&lt;/p&gt;
+(附在上方相關文章裡)&lt;/p&gt;
 
 &lt;p&gt;TensorFlow最重要的就是符合相關目的資料來源&lt;br /&gt;
 但怎麼收集中文的對話資料是有點麻煩的&lt;br /&gt;
 資料餵不對，答非所問就算了，機器人會練歪喔&lt;/p&gt;
 
-&lt;h3 id=&#34;資料怎麼來&#34;&gt;資料怎麼來?&lt;/h3&gt;
+&lt;h3 id=&#34;資料怎麼來&#34;&gt;&lt;strong&gt;資料怎麼來?&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;p&gt;安迪兒搜了一下 電影、字幕、小說等&lt;br /&gt;
 最找到了這個&lt;br /&gt;
 (流淚感謝好心大大的開源分享)&lt;br /&gt;
-&amp;gt;dgk_lost_conv
+&amp;gt; dgk_lost_conv
 chinese conversation corpus
 可以用作聊天机器人的训练语料
 &lt;a href=&#34;https://github.com/rustch3n/dgk_lost_conv&#34;&gt;https://github.com/rustch3n/dgk_lost_conv&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;整理資料&#34;&gt;整理資料&lt;/h3&gt;
+&lt;h3 id=&#34;整理資料&#34;&gt;&lt;strong&gt;整理資料&lt;/strong&gt;&lt;/h3&gt;
 
-&lt;p&gt;參考San文章的內容
-&amp;gt;&lt;a href=&#34;http://qiita.com/San_/items/128bf1b5a898ad5c18f1&#34;&gt;http://qiita.com/San_/items/128bf1b5a898ad5c18f1&lt;/a&gt;&lt;br /&gt;
-&amp;gt;&lt;a href=&#34;https://github.com/sanshirookazaki/chat&#34;&gt;https://github.com/sanshirookazaki/chat&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;參考San文章的內容&lt;br /&gt;
+&amp;gt; &lt;a href=&#34;http://qiita.com/San_/items/128bf1b5a898ad5c18f1&#34;&gt;http://qiita.com/San_/items/128bf1b5a898ad5c18f1&lt;/a&gt;&lt;br /&gt;
+&amp;gt; &lt;a href=&#34;https://github.com/sanshirookazaki/chat&#34;&gt;https://github.com/sanshirookazaki/chat&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;找到資料後要整理一下訓練的資料&lt;/strong&gt;&lt;br /&gt;
-- 先utf8、繁簡轉換原始dkg_lost_conv&lt;br /&gt;
-- 切分問、答2個詞檔
-- 切分問、答2個測試檔用來跑評估模型用&lt;br /&gt;
-- 建decode encode對話表&lt;br /&gt;
-- 然後把以上的檔，文字內容轉向量化，讓TensorFlow跑訓練&lt;/p&gt;
+ - 先utf8、繁簡轉換原始dkg_lost_conv&lt;br /&gt;
+ - 切分問、答2個詞檔&lt;br /&gt;
+ - 切分問、答2個測試檔用來跑評估模型用&lt;br /&gt;
+ - 建decode encode對話表&lt;br /&gt;
+ - 然後把以上的檔，文字內容轉向量化，讓TensorFlow跑訓練&lt;/p&gt;
 
-&lt;h3 id=&#34;開始訓練機器人了&#34;&gt;開始訓練機器人了&lt;/h3&gt;
+&lt;h3 id=&#34;開始訓練機器人了&#34;&gt;&lt;strong&gt;開始訓練機器人了&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;p&gt;執行 python 3.translate.py&lt;/p&gt;
 
@@ -199,7 +198,7 @@ with tf.Session(config=config) as sess:
 &lt;img src=&#34;https://goo.gl/QwpzFx&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/4ZxsbO&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;會跑很久&#34;&gt;會跑很久&lt;/h3&gt;
+&lt;h3 id=&#34;會跑很久&#34;&gt;&lt;strong&gt;會跑很久&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;p&gt;安迪兒用Mac只有用CPU在跑&lt;br /&gt;
 跑了1星期不關機，每天都100%(有點可怕XD)&lt;br /&gt;
@@ -207,12 +206,12 @@ with tf.Session(config=config) as sess:
 沒顯卡跑超慘的&lt;/p&gt;
 
 &lt;p&gt;如果跑不完可以停下，下次會在接著跑&lt;br /&gt;
-程式跑一陣子會定期存檔&lt;br /&gt;
-如下圖&lt;br /&gt;
-checkpoint裡面會有記錄跑到那&lt;br /&gt;
+程式跑一陣子會定期存檔&lt;/p&gt;
+
+&lt;p&gt;checkpoint裡面會有記錄跑到那&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/H1rP1A&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;執行bot&#34;&gt;執行bot&lt;/h3&gt;
+&lt;h3 id=&#34;執行bot&#34;&gt;&lt;strong&gt;執行bot&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;p&gt;執行安迪兒的 4.bot01.py&lt;/p&gt;
 
@@ -221,7 +220,7 @@ export SLACK_TOKEN=&amp;quot;slack bot的api key&amp;quot;
 python 4.bot01.py &amp;amp;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;程式如下:&lt;/p&gt;
+&lt;p&gt;程式碼:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;# -*- coding: utf-8 -*-
 import tensorflow as tf
@@ -332,7 +331,7 @@ else :
 &lt;a href=&#34;https://github.com/bowwowxx/tensorbot.git&#34;&gt;https://github.com/bowwowxx/tensorbot.git&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;來看一下成果&#34;&gt;來看一下成果&lt;/h3&gt;
+&lt;h3 id=&#34;來看一下成果&#34;&gt;&lt;strong&gt;來看一下成果&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;p&gt;登入slack 和BOT聊一下天&lt;br /&gt;
 雖然對話還是怪怪的，不過還算蠻有趣的&lt;br /&gt;
