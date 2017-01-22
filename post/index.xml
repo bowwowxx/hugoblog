@@ -6,6 +6,7 @@
     <description>Recent content in Post on 安迪兒隨手貼</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
+<<<<<<< HEAD
     <lastBuildDate>Sun, 22 Jan 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://bowwow.tips/post/index.xml" rel="self" type="application/rss+xml" />
     
@@ -347,6 +348,12 @@ else :
     </item>
     
     <item>
+=======
+    <lastBuildDate>Sat, 21 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://bowwow.tips/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+>>>>>>> c518c3ce7988775938944dc751aaa1ac5c70c094
       <title>MAC上安裝TensorFlow</title>
       <link>https://bowwow.tips/post/20170121/</link>
       <pubDate>Sat, 21 Jan 2017 00:00:00 +0000</pubDate>

@@ -2,11 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+<<<<<<< HEAD
     <loc>https://bowwow.tips/post/20170122/</loc>
     <lastmod>2017-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+=======
+>>>>>>> c518c3ce7988775938944dc751aaa1ac5c70c094
     <loc>https://bowwow.tips/post/20170121/</loc>
     <lastmod>2017-01-21T00:00:00+00:00</lastmod>
   </url>
@@ -97,7 +100,11 @@
   
   <url>
     <loc>https://bowwow.tips/post/</loc>
+<<<<<<< HEAD
     <lastmod>2017-01-22T00:00:00+00:00</lastmod>
+=======
+    <lastmod>2017-01-21T00:00:00+00:00</lastmod>
+>>>>>>> c518c3ce7988775938944dc751aaa1ac5c70c094
     <priority>0</priority>
   </url>
   
@@ -109,7 +116,11 @@
   
   <url>
     <loc>https://bowwow.tips/</loc>
+<<<<<<< HEAD
     <lastmod>2017-01-22T00:00:00+00:00</lastmod>
+=======
+    <lastmod>2017-01-21T00:00:00+00:00</lastmod>
+>>>>>>> c518c3ce7988775938944dc751aaa1ac5c70c094
     <priority>0</priority>
   </url>
   
