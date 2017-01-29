@@ -9,13 +9,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="安迪兒隨手貼">
-<meta name="description" content="[開箱]Akitio Node之老舊MacbookPro外接顯卡大作戰(EGPU)">
+<meta name="description" content="[開箱]Akitio Node之搶救老舊MacbookPro外接顯卡大作戰(EGPU)">
 
 <base href="https://bowwow.tips/">
 <title>
 
 
-     安迪兒隨手貼 - [開箱]Akitio Node之老舊MacbookPro外接顯卡大作戰(EGPU) 
+     安迪兒隨手貼 - [開箱]Akitio Node之搶救老舊MacbookPro外接顯卡大作戰(EGPU) 
 
 </title>
 <link rel="canonical" href="https://bowwow.tips/projects/20170128/">
@@ -131,7 +131,7 @@
                 <div class="title-container">
                     <div class="page-heading">
 
-    [開箱]Akitio Node之老舊MacbookPro外接顯卡大作戰(EGPU)
+    [開箱]Akitio Node之搶救老舊MacbookPro外接顯卡大作戰(EGPU)
 
 </div>
 
@@ -209,7 +209,8 @@
 <ul>
 <li>顯卡的跑分資料:<br />
 <a href="http://www.videocardbenchmark.net/gpu_list.php">http://www.videocardbenchmark.net/gpu_list.php</a><br /></li>
-<li>mac上ATIKIO Node盒子的顯卡支援程度:   <a href="https://en.wikipedia.org/wiki/CUDA">https://en.wikipedia.org/wiki/CUDA</a><br /></li>
+<li>mac上ATIKIO Node盒子的顯卡支援程度:<br />
+<a href="https://en.wikipedia.org/wiki/CUDA">https://en.wikipedia.org/wiki/CUDA</a><br /></li>
 <li>mac升級至最新的Sierra 10.12.3(相容較多的顯示卡)<br /></li>
 </ul>
 
@@ -250,8 +251,10 @@
 <h2 id="2-解鎖thunderbolt-3外接顯卡">2. 解鎖Thunderbolt 3外接顯卡</h2>
 
 <p>mac上其實有限制非特定的Thunderbolt硬體不給用<br />
-先接上盒子接上轉接線，看一下硬體明細
-Thunderbolt那邊外接盒如果有Unsupported字眼的<br />
+接上ATIKIO Node，看一下硬體明細<br />
+Thunderbolt那邊, 如果有Unsupported字眼的<br />
+表示mac不支援此硬體，要解開tb3<br />
+原理大約是在外接kext裡加入相關驅動資料<br />
 可以參考
 &gt; <a href="https://github.com/KhaosT/tb3-enabler">https://github.com/KhaosT/tb3-enabler</a></p>
 
@@ -349,7 +352,7 @@ sudo ./automate-eGPU.sh
 <script type="text/javascript">
     var disqus_shortname = 'bowwowtips';
     var disqus_identifier = 'https:\/\/bowwow.tips\/projects\/20170128\/';
-    var disqus_title = '[開箱]Akitio Node之老舊MacbookPro外接顯卡大作戰(EGPU)';
+    var disqus_title = '[開箱]Akitio Node之搶救老舊MacbookPro外接顯卡大作戰(EGPU)';
     var disqus_url = 'https:\/\/bowwow.tips\/projects\/20170128\/';
 
     (function() {

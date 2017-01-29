@@ -10,7 +10,7 @@
     <atom:link href="https://bowwow.tips/projects/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>[開箱]Akitio Node之老舊MacbookPro外接顯卡大作戰(EGPU)</title>
+      <title>[開箱]Akitio Node之搶救老舊MacbookPro外接顯卡大作戰(EGPU)</title>
       <link>https://bowwow.tips/projects/20170128/</link>
       <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
       
@@ -82,7 +82,8 @@
 &lt;ul&gt;
 &lt;li&gt;顯卡的跑分資料:&lt;br /&gt;
 &lt;a href=&#34;http://www.videocardbenchmark.net/gpu_list.php&#34;&gt;http://www.videocardbenchmark.net/gpu_list.php&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;mac上ATIKIO Node盒子的顯卡支援程度:   &lt;a href=&#34;https://en.wikipedia.org/wiki/CUDA&#34;&gt;https://en.wikipedia.org/wiki/CUDA&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;mac上ATIKIO Node盒子的顯卡支援程度:&lt;br /&gt;
+&lt;a href=&#34;https://en.wikipedia.org/wiki/CUDA&#34;&gt;https://en.wikipedia.org/wiki/CUDA&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;li&gt;mac升級至最新的Sierra 10.12.3(相容較多的顯示卡)&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -123,8 +124,10 @@
 &lt;h2 id=&#34;2-解鎖thunderbolt-3外接顯卡&#34;&gt;2. 解鎖Thunderbolt 3外接顯卡&lt;/h2&gt;
 
 &lt;p&gt;mac上其實有限制非特定的Thunderbolt硬體不給用&lt;br /&gt;
-先接上盒子接上轉接線，看一下硬體明細
-Thunderbolt那邊外接盒如果有Unsupported字眼的&lt;br /&gt;
+接上ATIKIO Node，看一下硬體明細&lt;br /&gt;
+Thunderbolt那邊, 如果有Unsupported字眼的&lt;br /&gt;
+表示mac不支援此硬體，要解開tb3&lt;br /&gt;
+原理大約是在外接kext裡加入相關驅動資料&lt;br /&gt;
 可以參考
 &amp;gt; &lt;a href=&#34;https://github.com/KhaosT/tb3-enabler&#34;&gt;https://github.com/KhaosT/tb3-enabler&lt;/a&gt;&lt;/p&gt;
 
