@@ -6,8 +6,218 @@
     <description>Recent content on 安迪兒隨手貼</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 22 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Jan 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://bowwow.tips/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>(開篇)Akitio Node之老舊MacbookPro外接顯卡大作戰(EGPU)</title>
+      <link>https://bowwow.tips/projects/20170128/</link>
+      <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://bowwow.tips/projects/20170128/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;安迪兒手上的MacBook Pro是13吋2012年版本的老舊筆電了&lt;br /&gt;
+趁過新年整理一下，再次強化它，提升他的效能。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;先上結論&#34;&gt;先上結論&lt;/h4&gt;
+
+&lt;p&gt;安迪兒手上這台2012年版13吋Macbook Pro升級後配備如下:&lt;br /&gt;
+1. 雙SSD做raid 0(拆掉光碟機)
+2. 16G RAM
+3. 外接nvida顯卡
+4. 新的筆電電池&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/qysSjM&#34; width=&#34;100%&#34;&gt;
+&lt;img src=&#34;https://goo.gl/M7oWfn&#34; width=&#34;100%&#34;&gt;
+&lt;img src=&#34;https://goo.gl/w4e1jJ&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;早期Macbook Pro還不錯，耐用且可以自己隨意的更換零件&lt;/strong&gt;&lt;br /&gt;
+第1、2、4項安迪兒之前就換了&lt;br /&gt;
+但顯卡和cpu這塊一直沒辦法有很好的方式做升級&lt;/p&gt;
+
+&lt;h4 id=&#34;mac的痛一直是顯卡不夠力&#34;&gt;&lt;strong&gt;mac的痛一直是顯卡不夠力&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;謎之音：&lt;/strong&gt; &lt;del&gt;我也想用mac打電動呀~ＸＤ&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;關於顯示卡，國外的網友有一些修改方式&lt;br /&gt;
+例如:&lt;br /&gt;
+* 犧牲無線網卡，拆機拉線出來接轉接卡再接顯卡&lt;br /&gt;
+* 找個pcie外接盒，剪線改電源，再接顯卡&lt;/p&gt;
+
+&lt;p&gt;直到最近，EGPU、電競的流行，專門的顯卡外接盒出現在市場上&lt;br /&gt;
+安迪兒發現最近有一款ATIKIO Node剛推出上市&lt;br /&gt;
+蠻符合安迪兒的需求，Power 400W、Thunderbolt 3&lt;br /&gt;
+差不多市面上的高級顯卡都能跑&lt;br /&gt;
+&lt;strong&gt;重點是不用改硬體線路!!!&lt;/strong&gt;&lt;br /&gt;
+於是…&lt;br /&gt;
+一個箱子就出現在辦公室，不小心踢到&lt;br /&gt;
+首先來開箱一下&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/ZJWdU7&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/x2lViC&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/AHiaAS&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/G0HAj1&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/oFkAkh&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;安迪兒分析後&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;優點:&lt;/strong&gt;&lt;br /&gt;
+1. 有送一條1千多的Thunderbolt 3 的線
+2. 有風扇散熱
+3. 有把手方便整盒提起來&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;缺點:&lt;/strong&gt;&lt;br /&gt;
+1. 比想像中大
+2. 有點重
+3. 有風扇免不了有聲音
+4. Thunderbolt3的線&amp;hellip;只有2016後新的mac才能用&lt;br /&gt;
+(加買一條3轉2的線要2千元…太坑了)&lt;/p&gt;
+
+&lt;p&gt;以上開箱完畢!&lt;br /&gt;
+再來正式說明一下&lt;/p&gt;
+
+&lt;h2 id=&#34;如何修改mac外接顯卡&#34;&gt;如何修改MAC外接顯卡&lt;/h2&gt;
+
+&lt;h4 id=&#34;開始前-很重要&#34;&gt;開始前…很重要!!!!&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;顯卡的跑分資料:&lt;br /&gt;
+&lt;a href=&#34;http://www.videocardbenchmark.net/gpu_list.php&#34;&gt;http://www.videocardbenchmark.net/gpu_list.php&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;mac上ATIKIO Node盒子的顯卡支援程度:&lt;br /&gt;
+&lt;a href=&#34;https://en.wikipedia.org/wiki/CUDA&#34;&gt;https://en.wikipedia.org/wiki/CUDA&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;mac升級至最新的Sierra 10.12.3
+(相容較多的顯示卡)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;安迪兒在顯卡這邊踩到雷，用了GTX1060&lt;br /&gt;
+但在mac上做了很多的修改和測試&lt;br /&gt;
+頂多只能捉到卡，但沒辦法驅動&lt;br /&gt;
+後來查了很多資料看了人家的討論才知道&lt;br /&gt;
+在mac上外接顯卡NVIDA只支援到Maxwell和之前的架構&lt;br /&gt;
+新的Pascal系列，目前不支援(可以參考上面的連結列表)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;以上在windows10有支援不用擔心&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;mac可用bootcamp方式安裝win10&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;1-關掉mac-system-integrity-protection&#34;&gt;1. 關掉MAC System Integrity Protection&lt;/h4&gt;
+
+&lt;p&gt;MAC有SIP的機制，防止我們去對系統做深層的修改。&lt;br /&gt;
+所以要先把 SIP 關掉。&lt;br /&gt;
+步驟如下&lt;br /&gt;
+重開機
+按住command+R 進回復模式
+打開終端機&lt;br /&gt;
+輸入&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;csrutil disable&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/nZKjeF&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/PBKZo7&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果指令不能用的話&lt;br /&gt;
+可能和安迪兒一樣磁區有點不同&lt;br /&gt;
+這時可以做一隻mac的安裝碟&lt;br /&gt;
+用安裝碟開機進終端機執行指令就可以了&lt;/p&gt;
+
+&lt;p&gt;安裝碟的製做方式&lt;br /&gt;
+參考安迪兒以前寫的文章&lt;br /&gt;
+&lt;a href=&#34;https://dotblogs.com.tw/bowwowxx/2015/10/03/153487&#34;&gt;自製Mac OS X El Capitan 10.11 USB安裝碟&amp;amp;修復RAID功能&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;2-解鎖thunderbolt-3外接顯卡&#34;&gt;2. 解鎖Thunderbolt 3外接顯卡&lt;/h4&gt;
+
+&lt;p&gt;mac上其實有限制非特定的Thunderbolt硬體不給用&lt;br /&gt;
+先接上盒子接上轉接線，看一下硬體明細
+Thunderbolt那邊外接盒如果有Unsupported字眼的&lt;br /&gt;
+可以參考
+&amp;gt; &lt;a href=&#34;https://github.com/KhaosT/tb3-enabler&#34;&gt;https://github.com/KhaosT/tb3-enabler&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/UIYbqg&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/sn48ks&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;捉下tb3-enabler，然後執行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;chmod +x tb3-enabler.py
+sudo tb3-enabler.py apply
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/kSGd0i&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;看一下狀態&lt;br /&gt;
+&lt;code&gt;tb3-enabler.py status&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/TZ4iDD&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;最後restart筆電&lt;/p&gt;
+
+&lt;h4 id=&#34;3-寫入mac相關硬體資訊-安裝相關的driver&#34;&gt;3. 寫入mac相關硬體資訊&amp;amp;安裝相關的driver&lt;/h4&gt;
+
+&lt;p&gt;可以參考&lt;br /&gt;
+&amp;gt; &lt;a href=&#34;https://github.com/goalque/automate-eGPU&#34;&gt;https://github.com/goalque/automate-eGPU&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;捉下來後&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;chmod +x automate-eGPU.sh
+sudo ./automate-eGPU.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;像安迪兒是nvida&lt;br /&gt;
+其實也可以自己去安裝相關的mac driver&lt;br /&gt;
+或是automate-eGPU安裝過程問詢問你&lt;br /&gt;
+(都選y)&lt;br /&gt;
+裝完後，再按更新就可以了&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;nvidia在mac上的driver是web driver&lt;br /&gt;
+&lt;a href=&#34;http://www.nvidia.com/download/driverResults.aspx/114669/en-us&#34;&gt;QUADRO &amp;amp; GEFORCE MACOS DRIVER RELEASE 367.15.10.35&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;順便裝一下cuda&lt;br /&gt;
+&lt;a href=&#34;http://www.nvidia.com.tw/object/mac-driver-archive-tw.html&#34;&gt;CUDA&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/YaVZt4&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/db166q&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/ZwAVrY&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;這張是mac有捉到顯卡但沒driver的&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/W7j8Ot&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;有支援的話會像這樣子&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/zM76M8&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/6dhQBc&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;4-以上都完成的話就可以關機-接好外接螢幕-重開機嘍&#34;&gt;4. 以上都完成的話就可以關機，接好外接螢幕，重開機嘍&lt;/h4&gt;
+
+&lt;p&gt;順利有支援的話，畫面就會出現了&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/OfEbVO&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;5-蓋上筆電單獨用外接顯卡的螢幕也ok&#34;&gt;5. 蓋上筆電單獨用外接顯卡的螢幕也ok&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/4Uif9L&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;6-看一下相關的資訊&#34;&gt;6. 看一下相關的資訊&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/p33ZoD&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/m0NWmr&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/pvL1OR&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;7-跑一下分吧&#34;&gt;7. 跑一下分吧&lt;/h4&gt;
+
+&lt;p&gt;真的有差~XD
+&lt;img src=&#34;https://goo.gl/5wICW7&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/l21nzm&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/S4VtvA&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;8-玩一下cs-有點順xd&#34;&gt;8. 玩一下cs，有點順XD&lt;/h4&gt;
+
+&lt;p&gt;老舊mbp再戰2年吧~xd&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/wkWH38&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/AJlUj1&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/ejrlGD&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;以上是安迪兒macbook-pro外接顯卡的記錄-收工嘍&#34;&gt;以上是安迪兒macbook pro外接顯卡的記錄，收工嘍!&lt;/h3&gt;
+</description>
+    </item>
     
     <item>
       <title>打造TensorFlow深度學習Slack聊天機器人</title>
@@ -222,82 +432,82 @@ python 4.bot01.py &amp;amp;
 
 &lt;p&gt;程式碼:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;# -*- coding: utf-8 -*-
+&lt;p&gt;```#-&lt;em&gt;- coding: utf-8 -&lt;/em&gt;-
 import tensorflow as tf
 from tensorflow.models.rnn.translate import seq2seq_model
 import os
 import numpy as np
 import time
-from slackclient import SlackClient
+from slackclient import SlackClient&lt;/p&gt;
 
-BOT_ID = os.environ[&amp;quot;BOT_ID&amp;quot;]
-AT_BOT = &amp;quot;&amp;lt;@&amp;quot; + BOT_ID + &amp;quot;&amp;gt;&amp;quot;
-EXAMPLE_COMMAND = &amp;quot;orange&amp;quot;
-slack_token = os.environ[&amp;quot;SLACK_TOKEN&amp;quot;]
-slack_client = SlackClient(slack_token)
+&lt;p&gt;BOT_ID = os.environ[&amp;ldquo;BOT_ID&amp;rdquo;]
+AT_BOT = &amp;ldquo;&amp;lt;@&amp;rdquo; + BOT_ID + &amp;ldquo;&amp;gt;&amp;rdquo;
+EXAMPLE_COMMAND = &amp;ldquo;orange&amp;rdquo;
+slack_token = os.environ[&amp;ldquo;SLACK_TOKEN&amp;rdquo;]
+slack_client = SlackClient(slack_token)&lt;/p&gt;
 
-PAD_ID = 0
+&lt;p&gt;PAD_ID = 0
 GO_ID = 1
 EOS_ID = 2
-UNK_ID = 3
+UNK_ID = 3&lt;/p&gt;
 
-train_encode_vocabulary = &#39;train_encode_vocabulary&#39;
-train_decode_vocabulary = &#39;train_decode_vocabulary&#39;
+&lt;p&gt;train_encode_vocabulary = &amp;lsquo;train_encode_vocabulary&amp;rsquo;
+train_decode_vocabulary = &amp;lsquo;train_decode_vocabulary&amp;rsquo;&lt;/p&gt;
 
-def handle_command(command, channel):
+&lt;p&gt;def handle_command(command, channel):
     response = str(command)
     if command.startswith(EXAMPLE_COMMAND):
-       response = &amp;quot;Sure...write some more code then I can do that!&amp;quot;
-    slack_client.api_call(&amp;quot;chat.postMessage&amp;quot;, channel = channel, text = response, as_user = True)
+       response = &amp;ldquo;Sure&amp;hellip;write some more code then I can do that!&amp;rdquo;
+    slack_client.api_call(&amp;ldquo;chat.postMessage&amp;rdquo;, channel = channel, text = response, as_user = True)&lt;/p&gt;
 
-def parse_slack_output(slack_rtm_output):
+&lt;p&gt;def parse_slack_output(slack_rtm_output):
     output_list = slack_rtm_output
     if output_list and len(output_list) &amp;gt; 0:
         for output in output_list:
-            if output and &#39;text&#39; in output and AT_BOT in output[&#39;text&#39;]:
-               return output[&#39;text&#39;].split(AT_BOT)[1].strip().lower(),output[&#39;channel&#39;]
-    return None, None
+            if output and &amp;lsquo;text&amp;rsquo; in output and AT_BOT in output[&amp;lsquo;text&amp;rsquo;]:
+               return output[&amp;lsquo;text&amp;rsquo;].split(AT_BOT)[1].strip().lower(),output[&amp;lsquo;channel&amp;rsquo;]
+    return None, None&lt;/p&gt;
 
-def read_vocabulary(input_file):
+&lt;p&gt;def read_vocabulary(input_file):
     tmp_vocab = []
-    with open(input_file, &amp;quot;r&amp;quot;) as f:
+    with open(input_file, &amp;ldquo;r&amp;rdquo;) as f:
          tmp_vocab.extend(f.readlines())
     tmp_vocab = [line.strip() for line in tmp_vocab]
     vocab = dict([(x, y) for (y, x) in enumerate(tmp_vocab)])
-    return vocab, tmp_vocab
+    return vocab, tmp_vocab&lt;/p&gt;
 
-vocab_en, _, = read_vocabulary(train_encode_vocabulary)
-_, vocab_de, = read_vocabulary(train_decode_vocabulary)
+&lt;p&gt;vocab_en, _, = read_vocabulary(train_encode_vocabulary)
+_, vocab_de, = read_vocabulary(train_decode_vocabulary)&lt;/p&gt;
 
-vocabulary_encode_size = 5000
-vocabulary_decode_size = 5000
+&lt;p&gt;vocabulary_encode_size = 5000
+vocabulary_decode_size = 5000&lt;/p&gt;
 
-buckets = [(5, 10), (10, 15), (20, 25), (40, 50)]
+&lt;p&gt;buckets = [(5, 10), (10, 15), (20, 25), (40, 50)]
 layer_size = 256
 num_layers = 3
-batch_size = 1
+batch_size = 1&lt;/p&gt;
 
-model = seq2seq_model.Seq2SeqModel(source_vocab_size = vocabulary_encode_size, target_vocab_size = vocabulary_decode_size,
+&lt;p&gt;model = seq2seq_model.Seq2SeqModel(source_vocab_size = vocabulary_encode_size, target_vocab_size = vocabulary_decode_size,
     buckets = buckets, size = layer_size, num_layers = num_layers, max_gradient_norm = 5.0,
     batch_size = batch_size, learning_rate = 0.5, learning_rate_decay_factor = 0.99, forward_only = True)
 model.batch_size = 1
-READ_WEBSOCKET_DELAY = 1
+READ_WEBSOCKET_DELAY = 1&lt;/p&gt;
 
-with tf.Session() as sess:
-    ckpt = tf.train.get_checkpoint_state(&#39;.&#39;)
+&lt;p&gt;with tf.Session() as sess:
+    ckpt = tf.train.get_checkpoint_state(&amp;lsquo;.&amp;rsquo;)
 if ckpt != None:
     print(ckpt.model_checkpoint_path)
     model.saver.restore(sess, ckpt.model_checkpoint_path)
 else :
-    print(&amp;quot;none ckpt modle&amp;quot;)
+    print(&amp;ldquo;none ckpt modle&amp;rdquo;)&lt;/p&gt;
 
-if slack_client.rtm_connect():
-    print(&amp;quot;StarterBot connected and running!&amp;quot;)
+&lt;p&gt;if slack_client.rtm_connect():
+    print(&amp;ldquo;StarterBot connected and running!&amp;rdquo;)
     while True:
         command, channel = parse_slack_output(slack_client.rtm_read())
         if command and channel:
             print type(command)
-            input_string = command.encode(&amp;quot;utf8&amp;quot;)
+            input_string = command.encode(&amp;ldquo;utf8&amp;rdquo;)
             input_string_vec = []
             for words in input_string.strip():
                  input_string_vec.append(vocab_en.get(words, UNK_ID))
@@ -306,20 +516,20 @@ if slack_client.rtm_connect():
             _, _, output_logits = model.step(sess, encoder_inputs, decoder_inputs, target_weights, bucket_id, True)
             outputs = [int(np.argmax(logit, axis = 1)) for logit in output_logits]
             if EOS_ID in outputs:
-                outputs = outputs[: outputs.index(EOS_ID)]
+                outputs = outputs[: outputs.index(EOS_ID)]&lt;/p&gt;
 
-            response = &amp;quot;&amp;quot;.join([tf.compat.as_str(vocab_de[output]) for output in outputs])
-            print(&amp;quot;response:&amp;quot; + response)
-            # handle_command(response, channel) unicode(unicodestring,&amp;quot;utf-8&amp;quot;) response.encode(&amp;quot;utf8&amp;quot;)
-            slack_client.api_call(&amp;quot;chat.postMessage&amp;quot;, channel = channel, text = unicode(response,&amp;quot;utf-8&amp;quot;), as_user = True)
-        time.sleep(READ_WEBSOCKET_DELAY)
-
-else :
-     print(&amp;quot;Connection failed. Invalid Slack token or bot ID?&amp;quot;)
-
+&lt;pre&gt;&lt;code&gt;        response = &amp;quot;&amp;quot;.join([tf.compat.as_str(vocab_de[output]) for output in outputs])
+        print(&amp;quot;response:&amp;quot; + response)
+        # handle_command(response, channel) unicode(unicodestring,&amp;quot;utf-8&amp;quot;) response.encode(&amp;quot;utf8&amp;quot;)
+        slack_client.api_call(&amp;quot;chat.postMessage&amp;quot;, channel = channel, text = unicode(response,&amp;quot;utf-8&amp;quot;), as_user = True)
+    time.sleep(READ_WEBSOCKET_DELAY)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://goo.gl/xTVGQG&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+&lt;p&gt;else :
+     print(&amp;ldquo;Connection failed. Invalid Slack token or bot ID?&amp;rdquo;)&lt;/p&gt;
+
+&lt;p&gt;```
+&lt;img src=&#34;https://goo.gl/xTVGQG&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;以上安迪兒跑不完，所以只跑了數天就停了&lt;br /&gt;
 只用train了一點點的模型去跑，結果出現一堆在未知列表裡的字(&amp;ndash;UNK&amp;ndash;)&lt;br /&gt;
@@ -1776,45 +1986,6 @@ mdadm -S /dev/md2
 每秒都有100mb以上的速度，真是差太多了。&lt;/p&gt;
 
 &lt;p&gt;以上~~收工嘍!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>MAC上 /dev/disk 與 /dev/rdisk 的差別 (解決 dd 過慢的問題)</title>
-      <link>https://bowwow.tips/post/20160512/</link>
-      <pubDate>Thu, 12 May 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://bowwow.tips/post/20160512/</guid>
-      <description>&lt;p&gt;如果各位有在玩Raspberry pi或banana pi之類的東西&lt;br /&gt;
-應該常常會用到讀寫img吧&lt;br /&gt;
-一般要把映象檔整塊燒到sd卡裡面都用到&lt;br /&gt;
-dd這個指令&lt;/p&gt;
-
-&lt;p&gt;備份:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;dd if=/dev/disk2 of=/xxx/path/disk2.img
-dd if=/dev/disk2 | gzip &amp;gt; /xxx/path/disk2.img.gz  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;還原:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo dd bs=4M if=2014-01-07-wheezy-raspbian.img of=/dev/disk2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;大多數都是dd if=xxx of=/dev/disk
-不過安迪兒有看到老外有用of=/dev/rdisk&lt;/p&gt;
-
-&lt;p&gt;安迪兒好奇查了一下&lt;br /&gt;
-原來rdisk是raw模式存取，接近kernel原生檔案系統效能&lt;br /&gt;
-所以用這個寫sd卡會比通用的/dev/disk快很多&lt;br /&gt;
-安迪兒試了之後覺的速度優很多&lt;/p&gt;
-
-&lt;p&gt;指令如下&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;dd if=xx.img of=/dev/rdisk  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;試試嘍~~&lt;/p&gt;
 </description>
     </item>
     

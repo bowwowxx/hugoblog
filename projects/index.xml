@@ -6,8 +6,218 @@
     <description>Recent content in Projects on 安迪兒隨手貼</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 15 Jun 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Jan 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://bowwow.tips/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>(開篇)Akitio Node之老舊MacbookPro外接顯卡大作戰(EGPU)</title>
+      <link>https://bowwow.tips/projects/20170128/</link>
+      <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://bowwow.tips/projects/20170128/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;安迪兒手上的MacBook Pro是13吋2012年版本的老舊筆電了&lt;br /&gt;
+趁過新年整理一下，再次強化它，提升他的效能。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;先上結論&#34;&gt;先上結論&lt;/h4&gt;
+
+&lt;p&gt;安迪兒手上這台2012年版13吋Macbook Pro升級後配備如下:&lt;br /&gt;
+1. 雙SSD做raid 0(拆掉光碟機)
+2. 16G RAM
+3. 外接nvida顯卡
+4. 新的筆電電池&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/qysSjM&#34; width=&#34;100%&#34;&gt;
+&lt;img src=&#34;https://goo.gl/M7oWfn&#34; width=&#34;100%&#34;&gt;
+&lt;img src=&#34;https://goo.gl/w4e1jJ&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;早期Macbook Pro還不錯，耐用且可以自己隨意的更換零件&lt;/strong&gt;&lt;br /&gt;
+第1、2、4項安迪兒之前就換了&lt;br /&gt;
+但顯卡和cpu這塊一直沒辦法有很好的方式做升級&lt;/p&gt;
+
+&lt;h4 id=&#34;mac的痛一直是顯卡不夠力&#34;&gt;&lt;strong&gt;mac的痛一直是顯卡不夠力&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;謎之音：&lt;/strong&gt; &lt;del&gt;我也想用mac打電動呀~ＸＤ&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;關於顯示卡，國外的網友有一些修改方式&lt;br /&gt;
+例如:&lt;br /&gt;
+* 犧牲無線網卡，拆機拉線出來接轉接卡再接顯卡&lt;br /&gt;
+* 找個pcie外接盒，剪線改電源，再接顯卡&lt;/p&gt;
+
+&lt;p&gt;直到最近，EGPU、電競的流行，專門的顯卡外接盒出現在市場上&lt;br /&gt;
+安迪兒發現最近有一款ATIKIO Node剛推出上市&lt;br /&gt;
+蠻符合安迪兒的需求，Power 400W、Thunderbolt 3&lt;br /&gt;
+差不多市面上的高級顯卡都能跑&lt;br /&gt;
+&lt;strong&gt;重點是不用改硬體線路!!!&lt;/strong&gt;&lt;br /&gt;
+於是…&lt;br /&gt;
+一個箱子就出現在辦公室，不小心踢到&lt;br /&gt;
+首先來開箱一下&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/ZJWdU7&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/x2lViC&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/AHiaAS&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/G0HAj1&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/oFkAkh&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;安迪兒分析後&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;優點:&lt;/strong&gt;&lt;br /&gt;
+1. 有送一條1千多的Thunderbolt 3 的線
+2. 有風扇散熱
+3. 有把手方便整盒提起來&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;缺點:&lt;/strong&gt;&lt;br /&gt;
+1. 比想像中大
+2. 有點重
+3. 有風扇免不了有聲音
+4. Thunderbolt3的線&amp;hellip;只有2016後新的mac才能用&lt;br /&gt;
+(加買一條3轉2的線要2千元…太坑了)&lt;/p&gt;
+
+&lt;p&gt;以上開箱完畢!&lt;br /&gt;
+再來正式說明一下&lt;/p&gt;
+
+&lt;h2 id=&#34;如何修改mac外接顯卡&#34;&gt;如何修改MAC外接顯卡&lt;/h2&gt;
+
+&lt;h4 id=&#34;開始前-很重要&#34;&gt;開始前…很重要!!!!&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;顯卡的跑分資料:&lt;br /&gt;
+&lt;a href=&#34;http://www.videocardbenchmark.net/gpu_list.php&#34;&gt;http://www.videocardbenchmark.net/gpu_list.php&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;mac上ATIKIO Node盒子的顯卡支援程度:&lt;br /&gt;
+&lt;a href=&#34;https://en.wikipedia.org/wiki/CUDA&#34;&gt;https://en.wikipedia.org/wiki/CUDA&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;mac升級至最新的Sierra 10.12.3
+(相容較多的顯示卡)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;安迪兒在顯卡這邊踩到雷，用了GTX1060&lt;br /&gt;
+但在mac上做了很多的修改和測試&lt;br /&gt;
+頂多只能捉到卡，但沒辦法驅動&lt;br /&gt;
+後來查了很多資料看了人家的討論才知道&lt;br /&gt;
+在mac上外接顯卡NVIDA只支援到Maxwell和之前的架構&lt;br /&gt;
+新的Pascal系列，目前不支援(可以參考上面的連結列表)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;以上在windows10有支援不用擔心&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;mac可用bootcamp方式安裝win10&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;1-關掉mac-system-integrity-protection&#34;&gt;1. 關掉MAC System Integrity Protection&lt;/h4&gt;
+
+&lt;p&gt;MAC有SIP的機制，防止我們去對系統做深層的修改。&lt;br /&gt;
+所以要先把 SIP 關掉。&lt;br /&gt;
+步驟如下&lt;br /&gt;
+重開機
+按住command+R 進回復模式
+打開終端機&lt;br /&gt;
+輸入&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;csrutil disable&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/nZKjeF&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/PBKZo7&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果指令不能用的話&lt;br /&gt;
+可能和安迪兒一樣磁區有點不同&lt;br /&gt;
+這時可以做一隻mac的安裝碟&lt;br /&gt;
+用安裝碟開機進終端機執行指令就可以了&lt;/p&gt;
+
+&lt;p&gt;安裝碟的製做方式&lt;br /&gt;
+參考安迪兒以前寫的文章&lt;br /&gt;
+&lt;a href=&#34;https://dotblogs.com.tw/bowwowxx/2015/10/03/153487&#34;&gt;自製Mac OS X El Capitan 10.11 USB安裝碟&amp;amp;修復RAID功能&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;2-解鎖thunderbolt-3外接顯卡&#34;&gt;2. 解鎖Thunderbolt 3外接顯卡&lt;/h4&gt;
+
+&lt;p&gt;mac上其實有限制非特定的Thunderbolt硬體不給用&lt;br /&gt;
+先接上盒子接上轉接線，看一下硬體明細
+Thunderbolt那邊外接盒如果有Unsupported字眼的&lt;br /&gt;
+可以參考
+&amp;gt; &lt;a href=&#34;https://github.com/KhaosT/tb3-enabler&#34;&gt;https://github.com/KhaosT/tb3-enabler&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/UIYbqg&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/sn48ks&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;捉下tb3-enabler，然後執行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;chmod +x tb3-enabler.py
+sudo tb3-enabler.py apply
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/kSGd0i&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;看一下狀態&lt;br /&gt;
+&lt;code&gt;tb3-enabler.py status&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/TZ4iDD&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;最後restart筆電&lt;/p&gt;
+
+&lt;h4 id=&#34;3-寫入mac相關硬體資訊-安裝相關的driver&#34;&gt;3. 寫入mac相關硬體資訊&amp;amp;安裝相關的driver&lt;/h4&gt;
+
+&lt;p&gt;可以參考&lt;br /&gt;
+&amp;gt; &lt;a href=&#34;https://github.com/goalque/automate-eGPU&#34;&gt;https://github.com/goalque/automate-eGPU&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;捉下來後&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;chmod +x automate-eGPU.sh
+sudo ./automate-eGPU.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;像安迪兒是nvida&lt;br /&gt;
+其實也可以自己去安裝相關的mac driver&lt;br /&gt;
+或是automate-eGPU安裝過程問詢問你&lt;br /&gt;
+(都選y)&lt;br /&gt;
+裝完後，再按更新就可以了&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;nvidia在mac上的driver是web driver&lt;br /&gt;
+&lt;a href=&#34;http://www.nvidia.com/download/driverResults.aspx/114669/en-us&#34;&gt;QUADRO &amp;amp; GEFORCE MACOS DRIVER RELEASE 367.15.10.35&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;順便裝一下cuda&lt;br /&gt;
+&lt;a href=&#34;http://www.nvidia.com.tw/object/mac-driver-archive-tw.html&#34;&gt;CUDA&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/YaVZt4&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/db166q&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/ZwAVrY&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;這張是mac有捉到顯卡但沒driver的&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/W7j8Ot&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;有支援的話會像這樣子&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/zM76M8&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/6dhQBc&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;4-以上都完成的話就可以關機-接好外接螢幕-重開機嘍&#34;&gt;4. 以上都完成的話就可以關機，接好外接螢幕，重開機嘍&lt;/h4&gt;
+
+&lt;p&gt;順利有支援的話，畫面就會出現了&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/OfEbVO&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;5-蓋上筆電單獨用外接顯卡的螢幕也ok&#34;&gt;5. 蓋上筆電單獨用外接顯卡的螢幕也ok&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/4Uif9L&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;6-看一下相關的資訊&#34;&gt;6. 看一下相關的資訊&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/p33ZoD&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/m0NWmr&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/pvL1OR&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;7-跑一下分吧&#34;&gt;7. 跑一下分吧&lt;/h4&gt;
+
+&lt;p&gt;真的有差~XD
+&lt;img src=&#34;https://goo.gl/5wICW7&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/l21nzm&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/S4VtvA&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;8-玩一下cs-有點順xd&#34;&gt;8. 玩一下cs，有點順XD&lt;/h4&gt;
+
+&lt;p&gt;老舊mbp再戰2年吧~xd&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/wkWH38&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/AJlUj1&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://goo.gl/ejrlGD&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;以上是安迪兒macbook-pro外接顯卡的記錄-收工嘍&#34;&gt;以上是安迪兒macbook pro外接顯卡的記錄，收工嘍!&lt;/h3&gt;
+</description>
+    </item>
     
     <item>
       <title>在NAS上把IPAD Air2當小電腦</title>

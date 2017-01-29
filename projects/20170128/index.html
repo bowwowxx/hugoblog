@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="安迪兒隨手貼">
+<meta name="description" content="(開篇)Akitio Node之老舊MacbookPro外接顯卡大作戰(EGPU)">
+
+<base href="https://bowwow.tips/">
+<title>
+
+
+     安迪兒隨手貼 - (開篇)Akitio Node之老舊MacbookPro外接顯卡大作戰(EGPU) 
+
+</title>
+<link rel="canonical" href="https://bowwow.tips/projects/20170128/">
+
+
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+
+
+<link rel="stylesheet" href="https://bowwow.tips/css/reset.css">
+<link rel="stylesheet" href="https://bowwow.tips/css/main.css">
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://bowwow.tips/img/logo.png"
+
+>
+
+
+
+</head>
+
+
+<body lang="en">
+
+
+<section class="header">
+
+    <div class="container">
+        <a href="https://bowwow.tips/"><img class="logo" src="https://bowwow.tips/img/logo.png" alt="安迪兒隨手貼 Logo"/></a>
+        <div class="content">
+            <a href="https://bowwow.tips/"><div class="name"><h1>安迪兒隨手貼</h1></div></a>
+            <nav>
+                <ul>
+                    <a href="https://bowwow.tips/post/"><li>Post</li></a>
+                    
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                            <a href="projects"><li>projects</li></a>
+                            
+                        
+                    
+                    
+                        
+                            <a href="https://bowwow.tips/about/"><li>About</li></a>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="https://github.com/bowwowxx" target="_blank">
+                <i class="icon ion-social-github"></i>
+            </a>
+        
+
+        
+            <a href="#" target="_blank">
+                <i class="icon ion-social-twitter"></i>
+            </a>
+        
+
+        
+            <a href="#" target="_blank">
+                <i class="icon ion-social-linkedin"></i>
+            </a>
+        
+
+        
+            <a href="mailto:jummykimo@gmail.com">
+                <i class="icon ion-ios-email larger"></i>
+            </a>
+        
+
+        
+            <a href="https://bowwow.tips/index.xml">
+                <i class="icon ion-social-rss larger"></i>
+            </a>
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    (開篇)Akitio Node之老舊MacbookPro外接顯卡大作戰(EGPU)
+
+</div>
+
+                </div>
+                <div class="meta">
+                    <div class="date" title="Sat Jan 28 2017 00:00:00 UTC">Jan 28, 2017</div>
+                    <div class="reading-time"><div class="middot"></div>1 minute read</div>
+                </div>
+            </div>
+            <div class="markdown">
+                
+
+<p><strong>安迪兒手上的MacBook Pro是13吋2012年版本的老舊筆電了<br />
+趁過新年整理一下，再次強化它，提升他的效能。</strong></p>
+
+<h4 id="先上結論">先上結論</h4>
+
+<p>安迪兒手上這台2012年版13吋Macbook Pro升級後配備如下:<br />
+1. 雙SSD做raid 0(拆掉光碟機)
+2. 16G RAM
+3. 外接nvida顯卡
+4. 新的筆電電池</p>
+
+<p><img src="https://goo.gl/qysSjM" width="100%">
+<img src="https://goo.gl/M7oWfn" width="100%">
+<img src="https://goo.gl/w4e1jJ" width="100%"></p>
+
+<p><strong>早期Macbook Pro還不錯，耐用且可以自己隨意的更換零件</strong><br />
+第1、2、4項安迪兒之前就換了<br />
+但顯卡和cpu這塊一直沒辦法有很好的方式做升級</p>
+
+<h4 id="mac的痛一直是顯卡不夠力"><strong>mac的痛一直是顯卡不夠力</strong></h4>
+
+<p><strong>謎之音：</strong> <del>我也想用mac打電動呀~ＸＤ</del></p>
+
+<p>關於顯示卡，國外的網友有一些修改方式<br />
+例如:<br />
+* 犧牲無線網卡，拆機拉線出來接轉接卡再接顯卡<br />
+* 找個pcie外接盒，剪線改電源，再接顯卡</p>
+
+<p>直到最近，EGPU、電競的流行，專門的顯卡外接盒出現在市場上<br />
+安迪兒發現最近有一款ATIKIO Node剛推出上市<br />
+蠻符合安迪兒的需求，Power 400W、Thunderbolt 3<br />
+差不多市面上的高級顯卡都能跑<br />
+<strong>重點是不用改硬體線路!!!</strong><br />
+於是…<br />
+一個箱子就出現在辦公室，不小心踢到<br />
+首先來開箱一下<br />
+<img src="https://goo.gl/ZJWdU7" alt="" />
+<img src="https://goo.gl/x2lViC" alt="" />
+<img src="https://goo.gl/AHiaAS" alt="" />
+<img src="https://goo.gl/G0HAj1" alt="" />
+<img src="https://goo.gl/oFkAkh" alt="" /></p>
+
+<p><strong>安迪兒分析後</strong><br />
+<strong>優點:</strong><br />
+1. 有送一條1千多的Thunderbolt 3 的線
+2. 有風扇散熱
+3. 有把手方便整盒提起來</p>
+
+<p><strong>缺點:</strong><br />
+1. 比想像中大
+2. 有點重
+3. 有風扇免不了有聲音
+4. Thunderbolt3的線&hellip;只有2016後新的mac才能用<br />
+(加買一條3轉2的線要2千元…太坑了)</p>
+
+<p>以上開箱完畢!<br />
+再來正式說明一下</p>
+
+<h2 id="如何修改mac外接顯卡">如何修改MAC外接顯卡</h2>
+
+<h4 id="開始前-很重要">開始前…很重要!!!!</h4>
+
+<ul>
+<li><p>顯卡的跑分資料:<br />
+<a href="http://www.videocardbenchmark.net/gpu_list.php">http://www.videocardbenchmark.net/gpu_list.php</a></p></li>
+
+<li><p>mac上ATIKIO Node盒子的顯卡支援程度:<br />
+<a href="https://en.wikipedia.org/wiki/CUDA">https://en.wikipedia.org/wiki/CUDA</a></p></li>
+
+<li><p>mac升級至最新的Sierra 10.12.3
+(相容較多的顯示卡)</p></li>
+</ul>
+
+<p>安迪兒在顯卡這邊踩到雷，用了GTX1060<br />
+但在mac上做了很多的修改和測試<br />
+頂多只能捉到卡，但沒辦法驅動<br />
+後來查了很多資料看了人家的討論才知道<br />
+在mac上外接顯卡NVIDA只支援到Maxwell和之前的架構<br />
+新的Pascal系列，目前不支援(可以參考上面的連結列表)</p>
+
+<p><strong>以上在windows10有支援不用擔心</strong><br />
+<strong>mac可用bootcamp方式安裝win10</strong></p>
+
+<h4 id="1-關掉mac-system-integrity-protection">1. 關掉MAC System Integrity Protection</h4>
+
+<p>MAC有SIP的機制，防止我們去對系統做深層的修改。<br />
+所以要先把 SIP 關掉。<br />
+步驟如下<br />
+重開機
+按住command+R 進回復模式
+打開終端機<br />
+輸入</p>
+
+<p><code>csrutil disable</code></p>
+
+<p><img src="https://goo.gl/nZKjeF" alt="" /><br />
+<img src="https://goo.gl/PBKZo7" alt="" /></p>
+
+<p>如果指令不能用的話<br />
+可能和安迪兒一樣磁區有點不同<br />
+這時可以做一隻mac的安裝碟<br />
+用安裝碟開機進終端機執行指令就可以了</p>
+
+<p>安裝碟的製做方式<br />
+參考安迪兒以前寫的文章<br />
+<a href="https://dotblogs.com.tw/bowwowxx/2015/10/03/153487">自製Mac OS X El Capitan 10.11 USB安裝碟&amp;修復RAID功能</a></p>
+
+<h4 id="2-解鎖thunderbolt-3外接顯卡">2. 解鎖Thunderbolt 3外接顯卡</h4>
+
+<p>mac上其實有限制非特定的Thunderbolt硬體不給用<br />
+先接上盒子接上轉接線，看一下硬體明細
+Thunderbolt那邊外接盒如果有Unsupported字眼的<br />
+可以參考
+&gt; <a href="https://github.com/KhaosT/tb3-enabler">https://github.com/KhaosT/tb3-enabler</a></p>
+
+<p><img src="https://goo.gl/UIYbqg" alt="" />
+<img src="https://goo.gl/sn48ks" alt="" /></p>
+
+<p>捉下tb3-enabler，然後執行</p>
+
+<pre><code>chmod +x tb3-enabler.py
+sudo tb3-enabler.py apply
+</code></pre>
+
+<p><img src="https://goo.gl/kSGd0i" alt="" /></p>
+
+<p>看一下狀態<br />
+<code>tb3-enabler.py status</code></p>
+
+<p><img src="https://goo.gl/TZ4iDD" alt="" /></p>
+
+<p>最後restart筆電</p>
+
+<h4 id="3-寫入mac相關硬體資訊-安裝相關的driver">3. 寫入mac相關硬體資訊&amp;安裝相關的driver</h4>
+
+<p>可以參考<br />
+&gt; <a href="https://github.com/goalque/automate-eGPU">https://github.com/goalque/automate-eGPU</a></p>
+
+<p>捉下來後</p>
+
+<pre><code>chmod +x automate-eGPU.sh
+sudo ./automate-eGPU.sh
+</code></pre>
+
+<p>像安迪兒是nvida<br />
+其實也可以自己去安裝相關的mac driver<br />
+或是automate-eGPU安裝過程問詢問你<br />
+(都選y)<br />
+裝完後，再按更新就可以了</p>
+
+<ul>
+<li><p>nvidia在mac上的driver是web driver<br />
+<a href="http://www.nvidia.com/download/driverResults.aspx/114669/en-us">QUADRO &amp; GEFORCE MACOS DRIVER RELEASE 367.15.10.35</a></p></li>
+
+<li><p>順便裝一下cuda<br />
+<a href="http://www.nvidia.com.tw/object/mac-driver-archive-tw.html">CUDA</a></p></li>
+</ul>
+
+<p><img src="https://goo.gl/YaVZt4" alt="" />
+<img src="https://goo.gl/db166q" alt="" />
+<img src="https://goo.gl/ZwAVrY" alt="" /></p>
+
+<p><strong>這張是mac有捉到顯卡但沒driver的</strong><br />
+<img src="https://goo.gl/W7j8Ot" alt="" /></p>
+
+<p><strong>有支援的話會像這樣子</strong><br />
+<img src="https://goo.gl/zM76M8" alt="" /><br />
+<img src="https://goo.gl/6dhQBc" alt="" /></p>
+
+<h4 id="4-以上都完成的話就可以關機-接好外接螢幕-重開機嘍">4. 以上都完成的話就可以關機，接好外接螢幕，重開機嘍</h4>
+
+<p>順利有支援的話，畫面就會出現了<br />
+<img src="https://goo.gl/OfEbVO" alt="" /></p>
+
+<h4 id="5-蓋上筆電單獨用外接顯卡的螢幕也ok">5. 蓋上筆電單獨用外接顯卡的螢幕也ok</h4>
+
+<p><img src="https://goo.gl/4Uif9L" alt="" /></p>
+
+<h4 id="6-看一下相關的資訊">6. 看一下相關的資訊</h4>
+
+<p><img src="https://goo.gl/p33ZoD" alt="" />
+<img src="https://goo.gl/m0NWmr" alt="" />
+<img src="https://goo.gl/pvL1OR" alt="" /></p>
+
+<h4 id="7-跑一下分吧">7. 跑一下分吧</h4>
+
+<p>真的有差~XD
+<img src="https://goo.gl/5wICW7" alt="" />
+<img src="https://goo.gl/l21nzm" alt="" />
+<img src="https://goo.gl/S4VtvA" alt="" /></p>
+
+<h4 id="8-玩一下cs-有點順xd">8. 玩一下cs，有點順XD</h4>
+
+<p>老舊mbp再戰2年吧~xd<br />
+<img src="https://goo.gl/wkWH38" alt="" />
+<img src="https://goo.gl/AJlUj1" alt="" />
+<img src="https://goo.gl/ejrlGD" alt="" /></p>
+
+<h3 id="以上是安迪兒macbook-pro外接顯卡的記錄-收工嘍">以上是安迪兒macbook pro外接顯卡的記錄，收工嘍!</h3>
+
+                <br>
+                <p><a href="projects">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'bowwowtips';
+    var disqus_identifier = 'https:\/\/bowwow.tips\/projects\/20170128\/';
+    var disqus_title = '(開篇)Akitio Node之老舊MacbookPro外接顯卡大作戰(EGPU)';
+    var disqus_url = 'https:\/\/bowwow.tips\/projects\/20170128\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            <br>
+            <div class="ga">
+            
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-78436139-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+</body>
+</html>
+

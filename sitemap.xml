@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://bowwow.tips/projects/20170128/</loc>
+    <lastmod>2017-01-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bowwow.tips/post/20170122/</loc>
     <lastmod>2017-01-22T00:00:00+00:00</lastmod>
   </url>
@@ -103,13 +108,13 @@
   
   <url>
     <loc>https://bowwow.tips/projects/</loc>
-    <lastmod>2016-06-15T00:00:00+00:00</lastmod>
+    <lastmod>2017-01-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bowwow.tips/</loc>
-    <lastmod>2017-01-22T00:00:00+00:00</lastmod>
+    <lastmod>2017-01-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
