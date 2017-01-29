@@ -222,82 +222,81 @@ python 4.bot01.py &amp;amp;
 
 &lt;p&gt;程式碼:&lt;/p&gt;
 
-&lt;p&gt;```#-&lt;em&gt;- coding: utf-8 -&lt;/em&gt;-
-import tensorflow as tf
+&lt;pre&gt;&lt;code&gt;import tensorflow as tf
 from tensorflow.models.rnn.translate import seq2seq_model
 import os
 import numpy as np
 import time
-from slackclient import SlackClient&lt;/p&gt;
+from slackclient import SlackClient
 
-&lt;p&gt;BOT_ID = os.environ[&amp;ldquo;BOT_ID&amp;rdquo;]
-AT_BOT = &amp;ldquo;&amp;lt;@&amp;rdquo; + BOT_ID + &amp;ldquo;&amp;gt;&amp;rdquo;
-EXAMPLE_COMMAND = &amp;ldquo;orange&amp;rdquo;
-slack_token = os.environ[&amp;ldquo;SLACK_TOKEN&amp;rdquo;]
-slack_client = SlackClient(slack_token)&lt;/p&gt;
+BOT_ID = os.environ[&amp;quot;BOT_ID&amp;quot;]
+AT_BOT = &amp;quot;&amp;lt;@&amp;quot; + BOT_ID + &amp;quot;&amp;gt;&amp;quot;
+EXAMPLE_COMMAND = &amp;quot;orange&amp;quot;
+slack_token = os.environ[&amp;quot;SLACK_TOKEN&amp;quot;]
+slack_client = SlackClient(slack_token)
 
-&lt;p&gt;PAD_ID = 0
+PAD_ID = 0
 GO_ID = 1
 EOS_ID = 2
-UNK_ID = 3&lt;/p&gt;
+UNK_ID = 3
 
-&lt;p&gt;train_encode_vocabulary = &amp;lsquo;train_encode_vocabulary&amp;rsquo;
-train_decode_vocabulary = &amp;lsquo;train_decode_vocabulary&amp;rsquo;&lt;/p&gt;
+train_encode_vocabulary = &#39;train_encode_vocabulary&#39;
+train_decode_vocabulary = &#39;train_decode_vocabulary&#39;
 
-&lt;p&gt;def handle_command(command, channel):
+def handle_command(command, channel):
     response = str(command)
     if command.startswith(EXAMPLE_COMMAND):
-       response = &amp;ldquo;Sure&amp;hellip;write some more code then I can do that!&amp;rdquo;
-    slack_client.api_call(&amp;ldquo;chat.postMessage&amp;rdquo;, channel = channel, text = response, as_user = True)&lt;/p&gt;
+       response = &amp;quot;Sure...write some more code then I can do that!&amp;quot;
+    slack_client.api_call(&amp;quot;chat.postMessage&amp;quot;, channel = channel, text = response, as_user = True)
 
-&lt;p&gt;def parse_slack_output(slack_rtm_output):
+def parse_slack_output(slack_rtm_output):
     output_list = slack_rtm_output
     if output_list and len(output_list) &amp;gt; 0:
         for output in output_list:
-            if output and &amp;lsquo;text&amp;rsquo; in output and AT_BOT in output[&amp;lsquo;text&amp;rsquo;]:
-               return output[&amp;lsquo;text&amp;rsquo;].split(AT_BOT)[1].strip().lower(),output[&amp;lsquo;channel&amp;rsquo;]
-    return None, None&lt;/p&gt;
+            if output and &#39;text&#39; in output and AT_BOT in output[&#39;text&#39;]:
+               return output[&#39;text&#39;].split(AT_BOT)[1].strip().lower(),output[&#39;channel&#39;]
+    return None, None
 
-&lt;p&gt;def read_vocabulary(input_file):
+def read_vocabulary(input_file):
     tmp_vocab = []
-    with open(input_file, &amp;ldquo;r&amp;rdquo;) as f:
+    with open(input_file, &amp;quot;r&amp;quot;) as f:
          tmp_vocab.extend(f.readlines())
     tmp_vocab = [line.strip() for line in tmp_vocab]
     vocab = dict([(x, y) for (y, x) in enumerate(tmp_vocab)])
-    return vocab, tmp_vocab&lt;/p&gt;
+    return vocab, tmp_vocab
 
-&lt;p&gt;vocab_en, _, = read_vocabulary(train_encode_vocabulary)
-_, vocab_de, = read_vocabulary(train_decode_vocabulary)&lt;/p&gt;
+vocab_en, _, = read_vocabulary(train_encode_vocabulary)
+_, vocab_de, = read_vocabulary(train_decode_vocabulary)
 
-&lt;p&gt;vocabulary_encode_size = 5000
-vocabulary_decode_size = 5000&lt;/p&gt;
+vocabulary_encode_size = 5000
+vocabulary_decode_size = 5000
 
-&lt;p&gt;buckets = [(5, 10), (10, 15), (20, 25), (40, 50)]
+buckets = [(5, 10), (10, 15), (20, 25), (40, 50)]
 layer_size = 256
 num_layers = 3
-batch_size = 1&lt;/p&gt;
+batch_size = 1
 
-&lt;p&gt;model = seq2seq_model.Seq2SeqModel(source_vocab_size = vocabulary_encode_size, target_vocab_size = vocabulary_decode_size,
+model = seq2seq_model.Seq2SeqModel(source_vocab_size = vocabulary_encode_size, target_vocab_size = vocabulary_decode_size,
     buckets = buckets, size = layer_size, num_layers = num_layers, max_gradient_norm = 5.0,
     batch_size = batch_size, learning_rate = 0.5, learning_rate_decay_factor = 0.99, forward_only = True)
 model.batch_size = 1
-READ_WEBSOCKET_DELAY = 1&lt;/p&gt;
+READ_WEBSOCKET_DELAY = 1
 
-&lt;p&gt;with tf.Session() as sess:
-    ckpt = tf.train.get_checkpoint_state(&amp;lsquo;.&amp;rsquo;)
+with tf.Session() as sess:
+    ckpt = tf.train.get_checkpoint_state(&#39;.&#39;)
 if ckpt != None:
     print(ckpt.model_checkpoint_path)
     model.saver.restore(sess, ckpt.model_checkpoint_path)
 else :
-    print(&amp;ldquo;none ckpt modle&amp;rdquo;)&lt;/p&gt;
+    print(&amp;quot;none ckpt modle&amp;quot;)
 
-&lt;p&gt;if slack_client.rtm_connect():
-    print(&amp;ldquo;StarterBot connected and running!&amp;rdquo;)
+if slack_client.rtm_connect():
+    print(&amp;quot;StarterBot connected and running!&amp;quot;)
     while True:
         command, channel = parse_slack_output(slack_client.rtm_read())
         if command and channel:
             print type(command)
-            input_string = command.encode(&amp;ldquo;utf8&amp;rdquo;)
+            input_string = command.encode(&amp;quot;utf8&amp;quot;)
             input_string_vec = []
             for words in input_string.strip():
                  input_string_vec.append(vocab_en.get(words, UNK_ID))
@@ -306,20 +305,20 @@ else :
             _, _, output_logits = model.step(sess, encoder_inputs, decoder_inputs, target_weights, bucket_id, True)
             outputs = [int(np.argmax(logit, axis = 1)) for logit in output_logits]
             if EOS_ID in outputs:
-                outputs = outputs[: outputs.index(EOS_ID)]&lt;/p&gt;
+                outputs = outputs[: outputs.index(EOS_ID)]
 
-&lt;pre&gt;&lt;code&gt;        response = &amp;quot;&amp;quot;.join([tf.compat.as_str(vocab_de[output]) for output in outputs])
-        print(&amp;quot;response:&amp;quot; + response)
-        # handle_command(response, channel) unicode(unicodestring,&amp;quot;utf-8&amp;quot;) response.encode(&amp;quot;utf8&amp;quot;)
-        slack_client.api_call(&amp;quot;chat.postMessage&amp;quot;, channel = channel, text = unicode(response,&amp;quot;utf-8&amp;quot;), as_user = True)
-    time.sleep(READ_WEBSOCKET_DELAY)
+            response = &amp;quot;&amp;quot;.join([tf.compat.as_str(vocab_de[output]) for output in outputs])
+            print(&amp;quot;response:&amp;quot; + response)
+            # handle_command(response, channel) unicode(unicodestring,&amp;quot;utf-8&amp;quot;) response.encode(&amp;quot;utf8&amp;quot;)
+            slack_client.api_call(&amp;quot;chat.postMessage&amp;quot;, channel = channel, text = unicode(response,&amp;quot;utf-8&amp;quot;), as_user = True)
+        time.sleep(READ_WEBSOCKET_DELAY)
+
+else :
+     print(&amp;quot;Connection failed. Invalid Slack token or bot ID?&amp;quot;)
+
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;else :
-     print(&amp;ldquo;Connection failed. Invalid Slack token or bot ID?&amp;rdquo;)&lt;/p&gt;
-
-&lt;p&gt;```
-&lt;img src=&#34;https://goo.gl/xTVGQG&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/xTVGQG&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;以上安迪兒跑不完，所以只跑了數天就停了&lt;br /&gt;
 只用train了一點點的模型去跑，結果出現一堆在未知列表裡的字(&amp;ndash;UNK&amp;ndash;)&lt;br /&gt;

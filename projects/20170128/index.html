@@ -150,9 +150,9 @@
 <h2 id="先上結論">先上結論</h2>
 
 <p>安迪兒手上這台2012年版13吋Macbook Pro升級後配備如下:<br />
-1. 雙SSD做raid 0(拆掉光碟機)
-2. 16G RAM
-3. 外接nvida顯卡
+1. 雙SSD做raid 0(拆掉光碟機)<br />
+2. 16G RAM<br />
+3. 外接nvida顯卡<br />
 4. 新的筆電電池</p>
 
 <p><img src="https://goo.gl/qysSjM" width="100%">
@@ -167,18 +167,19 @@
 
 <p><strong>謎之音：</strong> <del>我也想用mac打電動呀~ＸＤ</del></p>
 
-<p>關於顯示卡，國外的網友有一些修改方式<br />
+<p>關於外接顯卡，網路上有一些修改方式<br />
 例如:<br />
 * 犧牲無線網卡，拆機拉線出來接轉接卡再接顯卡<br />
 * 找個pcie外接盒，剪線改電源，再接顯卡</p>
 
-<p>直到最近，EGPU、電競的流行，專門的顯卡外接盒出現在市場上<br />
+<p>但最近，EGPU、電競的流行，專門的顯卡外接盒出現在市場上<br />
 安迪兒發現最近有一款ATIKIO Node剛推出上市<br />
-蠻符合安迪兒的需求，Power 400W、Thunderbolt 3<br />
+蠻符合安迪兒的需求，內建Power 400W、Thunderbolt 3<br />
 差不多市面上的高級顯卡都能跑<br />
-<strong>重點是不用改硬體線路!!!</strong><br />
-於是…<br />
-一個箱子就出現在辦公室，不小心踢到<br />
+<strong>重點是不用改硬體線路!!!</strong></p>
+
+<p>於是…<br />
+一個箱子就出現在辦公室，不小心踢到XD<br />
 首先來開箱一下<br />
 <img src="https://goo.gl/ZJWdU7" alt="" />
 <img src="https://goo.gl/x2lViC" alt="" />
@@ -186,7 +187,7 @@
 <img src="https://goo.gl/G0HAj1" alt="" />
 <img src="https://goo.gl/oFkAkh" alt="" /></p>
 
-<p><strong>安迪兒分析後</strong><br />
+<p><strong>使用ATIKIO Node後的感想</strong><br />
 <strong>優點:</strong><br />
 1. 有送一條1千多的Thunderbolt 3 的線
 2. 有風扇散熱
@@ -207,11 +208,13 @@
 <h2 id="開始前-很重要">開始前…很重要!!!!</h2>
 
 <ul>
-<li>顯卡的跑分資料:<br />
-<a href="http://www.videocardbenchmark.net/gpu_list.php">http://www.videocardbenchmark.net/gpu_list.php</a><br /></li>
-<li>mac上ATIKIO Node盒子的顯卡支援程度:<br />
-<a href="https://en.wikipedia.org/wiki/CUDA">https://en.wikipedia.org/wiki/CUDA</a><br /></li>
-<li>mac升級至最新的Sierra 10.12.3(相容較多的顯示卡)<br /></li>
+<li><p>顯卡的跑分資料:<br />
+<a href="http://www.videocardbenchmark.net/gpu_list.php">http://www.videocardbenchmark.net/gpu_list.php</a></p></li>
+
+<li><p>mac上ATIKIO Node盒子的顯卡支援程度:<br />
+<a href="https://en.wikipedia.org/wiki/CUDA">https://en.wikipedia.org/wiki/CUDA</a></p></li>
+
+<li><p>mac升級至最新的Sierra 10.12.3(相容較多的顯示卡)</p></li>
 </ul>
 
 <p>安迪兒在顯卡這邊踩到雷，用了GTX1060<br />
@@ -287,23 +290,28 @@ sudo tb3-enabler.py apply
 sudo ./automate-eGPU.sh
 </code></pre>
 
-<p>像安迪兒是nvida<br />
-其實也可以自己去安裝相關的mac driver<br />
-或是automate-eGPU安裝過程問詢問你<br />
-(都選y)<br />
+<p>其實也可以自己去安裝相關的mac driver<br />
+或是automate-eGPU安裝過程會詢問(都選y)<br />
 裝完後，再按更新就可以了</p>
 
 <ul>
-<li><p>nvidia在mac上的driver是web driver<br />
-<a href="http://www.nvidia.com/download/driverResults.aspx/114669/en-us">QUADRO &amp; GEFORCE MACOS DRIVER RELEASE 367.15.10.35</a></p></li>
-
-<li><p>順便裝一下cuda<br />
-<a href="http://www.nvidia.com.tw/object/mac-driver-archive-tw.html">CUDA</a></p></li>
+<li>nvidia在mac上的driver是web driver</li>
 </ul>
 
+<p><a href="http://www.nvidia.com/download/driverResults.aspx/114669/en-us">QUADRO &amp; GEFORCE MACOS DRIVER RELEASE 367.15.10.35</a></p>
+
+<ul>
+<li>順便裝一下cuda</li>
+</ul>
+
+<p><a href="http://www.nvidia.com.tw/object/mac-driver-archive-tw.html">CUDA</a></p>
+
 <p><img src="https://goo.gl/YaVZt4" alt="" />
-<img src="https://goo.gl/db166q" alt="" />
-<img src="https://goo.gl/ZwAVrY" alt="" /></p>
+<img src="https://goo.gl/db166q" alt="" /></p>
+
+<p><strong>裝完後系統編好設定裡會有相關選項</strong></p>
+
+<p><img src="https://goo.gl/ZwAVrY" alt="" /></p>
 
 <p><strong>這張是mac有捉到顯卡但沒driver的</strong><br />
 <img src="https://goo.gl/W7j8Ot" alt="" /></p>
@@ -323,25 +331,36 @@ sudo ./automate-eGPU.sh
 
 <h2 id="6-看一下相關的資訊">6. 看一下相關的資訊</h2>
 
-<p><img src="https://goo.gl/p33ZoD" alt="" />
-<img src="https://goo.gl/m0NWmr" alt="" />
+<p>在外接螢幕上可以看見是張外接顯卡<br />
+<img src="https://goo.gl/m0NWmr" alt="" /></p>
+
+<p>好像沒用到外接顯卡的效能<br />
+<img src="https://goo.gl/p33ZoD" alt="" /></p>
+
+<p>測試一下，跑一下4k影片看看<br />
+嗯嗯，有用上了，應該有效<br />
 <img src="https://goo.gl/pvL1OR" alt="" /></p>
 
 <h2 id="7-跑一下分吧">7. 跑一下分吧</h2>
 
-<p>真的有差~XD
-<img src="https://goo.gl/5wICW7" alt="" />
+<p>安迪兒用了<a href="http://www.luxrender.net/wiki/LuxMark#Binaries">LuxMark</a>來測試一下<br />
+真的有差~XD</p>
+
+<p><img src="https://goo.gl/5wICW7" alt="" />
 <img src="https://goo.gl/l21nzm" alt="" />
 <img src="https://goo.gl/S4VtvA" alt="" /></p>
 
 <h2 id="8-玩一下cs-有點順xd">8. 玩一下cs，有點順XD</h2>
 
-<p>2012老舊mbp再戰3年吧~xd<br />
-<img src="https://goo.gl/wkWH38" alt="" />
+<p><img src="https://goo.gl/wkWH38" alt="" />
 <img src="https://goo.gl/AJlUj1" alt="" />
 <img src="https://goo.gl/ejrlGD" alt="" /></p>
 
-<h2 id="以上是安迪兒macbook-pro外接顯卡的記錄-收工嘍">以上是安迪兒macbook pro外接顯卡的記錄，收工嘍!</h2>
+<h2 id="2012老舊mbp再戰3年吧">2012老舊mbp再戰3年吧!!!</h2>
+
+<h2 id="以上是安迪兒macbook-pro外接顯卡的記錄">以上是安迪兒macbook pro外接顯卡的記錄</h2>
+
+<h2 id="收工嘍">收工嘍!</h2>
 
                 <br>
                 <p><a href="projects">Back to posts</a></p>
