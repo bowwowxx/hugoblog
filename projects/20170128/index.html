@@ -9,13 +9,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="安迪兒隨手貼">
-<meta name="description" content="(開篇)Akitio Node之老舊MacbookPro外接顯卡大作戰(EGPU)">
+<meta name="description" content="[開箱]Akitio Node之老舊MacbookPro外接顯卡大作戰(EGPU)">
 
 <base href="https://bowwow.tips/">
 <title>
 
 
-     安迪兒隨手貼 - (開篇)Akitio Node之老舊MacbookPro外接顯卡大作戰(EGPU) 
+     安迪兒隨手貼 - [開箱]Akitio Node之老舊MacbookPro外接顯卡大作戰(EGPU) 
 
 </title>
 <link rel="canonical" href="https://bowwow.tips/projects/20170128/">
@@ -131,7 +131,7 @@
                 <div class="title-container">
                     <div class="page-heading">
 
-    (開篇)Akitio Node之老舊MacbookPro外接顯卡大作戰(EGPU)
+    [開箱]Akitio Node之老舊MacbookPro外接顯卡大作戰(EGPU)
 
 </div>
 
@@ -147,7 +147,7 @@
 <p><strong>安迪兒手上的MacBook Pro是13吋2012年版本的老舊筆電了<br />
 趁過新年整理一下，再次強化它，提升他的效能。</strong></p>
 
-<h4 id="先上結論">先上結論</h4>
+<h2 id="先上結論">先上結論</h2>
 
 <p>安迪兒手上這台2012年版13吋Macbook Pro升級後配備如下:<br />
 1. 雙SSD做raid 0(拆掉光碟機)
@@ -163,7 +163,7 @@
 第1、2、4項安迪兒之前就換了<br />
 但顯卡和cpu這塊一直沒辦法有很好的方式做升級</p>
 
-<h4 id="mac的痛一直是顯卡不夠力"><strong>mac的痛一直是顯卡不夠力</strong></h4>
+<h2 id="mac的痛一直是顯卡不夠力"><strong>mac的痛一直是顯卡不夠力</strong></h2>
 
 <p><strong>謎之音：</strong> <del>我也想用mac打電動呀~ＸＤ</del></p>
 
@@ -204,17 +204,13 @@
 
 <h2 id="如何修改mac外接顯卡">如何修改MAC外接顯卡</h2>
 
-<h4 id="開始前-很重要">開始前…很重要!!!!</h4>
+<h2 id="開始前-很重要">開始前…很重要!!!!</h2>
 
 <ul>
-<li><p>顯卡的跑分資料:<br />
-<a href="http://www.videocardbenchmark.net/gpu_list.php">http://www.videocardbenchmark.net/gpu_list.php</a></p></li>
-
-<li><p>mac上ATIKIO Node盒子的顯卡支援程度:<br />
-<a href="https://en.wikipedia.org/wiki/CUDA">https://en.wikipedia.org/wiki/CUDA</a></p></li>
-
-<li><p>mac升級至最新的Sierra 10.12.3
-(相容較多的顯示卡)</p></li>
+<li>顯卡的跑分資料:<br />
+<a href="http://www.videocardbenchmark.net/gpu_list.php">http://www.videocardbenchmark.net/gpu_list.php</a><br /></li>
+<li>mac上ATIKIO Node盒子的顯卡支援程度:   <a href="https://en.wikipedia.org/wiki/CUDA">https://en.wikipedia.org/wiki/CUDA</a><br /></li>
+<li>mac升級至最新的Sierra 10.12.3(相容較多的顯示卡)<br /></li>
 </ul>
 
 <p>安迪兒在顯卡這邊踩到雷，用了GTX1060<br />
@@ -227,7 +223,7 @@
 <p><strong>以上在windows10有支援不用擔心</strong><br />
 <strong>mac可用bootcamp方式安裝win10</strong></p>
 
-<h4 id="1-關掉mac-system-integrity-protection">1. 關掉MAC System Integrity Protection</h4>
+<h2 id="1-關掉mac-system-integrity-protection">1. 關掉MAC System Integrity Protection</h2>
 
 <p>MAC有SIP的機制，防止我們去對系統做深層的修改。<br />
 所以要先把 SIP 關掉。<br />
@@ -251,7 +247,7 @@
 參考安迪兒以前寫的文章<br />
 <a href="https://dotblogs.com.tw/bowwowxx/2015/10/03/153487">自製Mac OS X El Capitan 10.11 USB安裝碟&amp;修復RAID功能</a></p>
 
-<h4 id="2-解鎖thunderbolt-3外接顯卡">2. 解鎖Thunderbolt 3外接顯卡</h4>
+<h2 id="2-解鎖thunderbolt-3外接顯卡">2. 解鎖Thunderbolt 3外接顯卡</h2>
 
 <p>mac上其實有限制非特定的Thunderbolt硬體不給用<br />
 先接上盒子接上轉接線，看一下硬體明細
@@ -277,7 +273,7 @@ sudo tb3-enabler.py apply
 
 <p>最後restart筆電</p>
 
-<h4 id="3-寫入mac相關硬體資訊-安裝相關的driver">3. 寫入mac相關硬體資訊&amp;安裝相關的driver</h4>
+<h2 id="3-寫入mac相關硬體資訊-安裝相關的driver">3. 寫入mac相關硬體資訊&amp;安裝相關的driver</h2>
 
 <p>可以參考<br />
 &gt; <a href="https://github.com/goalque/automate-eGPU">https://github.com/goalque/automate-eGPU</a></p>
@@ -313,36 +309,36 @@ sudo ./automate-eGPU.sh
 <img src="https://goo.gl/zM76M8" alt="" /><br />
 <img src="https://goo.gl/6dhQBc" alt="" /></p>
 
-<h4 id="4-以上都完成的話就可以關機-接好外接螢幕-重開機嘍">4. 以上都完成的話就可以關機，接好外接螢幕，重開機嘍</h4>
+<h2 id="4-以上都完成的話就可以關機-接好外接螢幕-重開機">4. 以上都完成的話就可以關機，接好外接螢幕，重開機</h2>
 
-<p>順利有支援的話，畫面就會出現了<br />
+<p>順利的話，外接螢幕的畫面就會出現了<br />
 <img src="https://goo.gl/OfEbVO" alt="" /></p>
 
-<h4 id="5-蓋上筆電單獨用外接顯卡的螢幕也ok">5. 蓋上筆電單獨用外接顯卡的螢幕也ok</h4>
+<h2 id="5-蓋上筆電單獨用外接顯卡的螢幕也ok">5. 蓋上筆電單獨用外接顯卡的螢幕也ok</h2>
 
 <p><img src="https://goo.gl/4Uif9L" alt="" /></p>
 
-<h4 id="6-看一下相關的資訊">6. 看一下相關的資訊</h4>
+<h2 id="6-看一下相關的資訊">6. 看一下相關的資訊</h2>
 
 <p><img src="https://goo.gl/p33ZoD" alt="" />
 <img src="https://goo.gl/m0NWmr" alt="" />
 <img src="https://goo.gl/pvL1OR" alt="" /></p>
 
-<h4 id="7-跑一下分吧">7. 跑一下分吧</h4>
+<h2 id="7-跑一下分吧">7. 跑一下分吧</h2>
 
 <p>真的有差~XD
 <img src="https://goo.gl/5wICW7" alt="" />
 <img src="https://goo.gl/l21nzm" alt="" />
 <img src="https://goo.gl/S4VtvA" alt="" /></p>
 
-<h4 id="8-玩一下cs-有點順xd">8. 玩一下cs，有點順XD</h4>
+<h2 id="8-玩一下cs-有點順xd">8. 玩一下cs，有點順XD</h2>
 
-<p>老舊mbp再戰2年吧~xd<br />
+<p>2012老舊mbp再戰3年吧~xd<br />
 <img src="https://goo.gl/wkWH38" alt="" />
 <img src="https://goo.gl/AJlUj1" alt="" />
 <img src="https://goo.gl/ejrlGD" alt="" /></p>
 
-<h3 id="以上是安迪兒macbook-pro外接顯卡的記錄-收工嘍">以上是安迪兒macbook pro外接顯卡的記錄，收工嘍!</h3>
+<h2 id="以上是安迪兒macbook-pro外接顯卡的記錄-收工嘍">以上是安迪兒macbook pro外接顯卡的記錄，收工嘍!</h2>
 
                 <br>
                 <p><a href="projects">Back to posts</a></p>
@@ -353,7 +349,7 @@ sudo ./automate-eGPU.sh
 <script type="text/javascript">
     var disqus_shortname = 'bowwowtips';
     var disqus_identifier = 'https:\/\/bowwow.tips\/projects\/20170128\/';
-    var disqus_title = '(開篇)Akitio Node之老舊MacbookPro外接顯卡大作戰(EGPU)';
+    var disqus_title = '[開箱]Akitio Node之老舊MacbookPro外接顯卡大作戰(EGPU)';
     var disqus_url = 'https:\/\/bowwow.tips\/projects\/20170128\/';
 
     (function() {
