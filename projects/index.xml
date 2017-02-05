@@ -145,11 +145,8 @@
 
 &lt;p&gt;安迪兒Nintendo Classic Mini driver一直裝不起來&lt;br /&gt;
 直接去hakchi的driver資料匣裡直接安裝也是失敗&lt;br /&gt;
-後來查了一下&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;http://www.amobbs.com/forum.php?mod=viewthread&amp;amp;tid=5598249&#34;&gt;http://www.amobbs.com/forum.php?mod=viewthread&amp;amp;tid=5598249&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+後來查了一下&lt;br /&gt;
+&lt;a href=&#34;http://www.amobbs.com/forum.php?mod=viewthread&amp;amp;tid=5598249&#34;&gt;http://www.amobbs.com/forum.php?mod=viewthread&amp;amp;tid=5598249&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;找到windowos可以先用zadig裝上這類的USB驅動&lt;br /&gt;
 &lt;a href=&#34;http://zadig.akeo.ie/&#34;&gt;http://zadig.akeo.ie/&lt;/a&gt;&lt;/p&gt;
@@ -170,8 +167,8 @@
 
 &lt;p&gt;&lt;strong&gt;Zading可以用了!&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;捉到&lt;strong&gt;Unknown Device#1&lt;/strong&gt;&lt;br /&gt;
-然後USB ID是&lt;strong&gt;1F3A EFE8&lt;/strong&gt;&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;Unknown Device#1&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;USB ID:1F3A EFE8&lt;/strong&gt;&lt;br /&gt;
 (對照一下id，是這個id就對了)&lt;/p&gt;
 
 &lt;p&gt;按下[install driver]&lt;/p&gt;
@@ -206,24 +203,23 @@
 &lt;h2 id=&#34;hackchi2的設定&#34;&gt;hackchi2的設定&lt;/h2&gt;
 
 &lt;p&gt;看一下其它的設定，大約是像github上有提到的&lt;br /&gt;
-* Allows to change any game settings including command line arguments
-* Fills all game data automatically using included database
-* Automatically checks for supported games
-* Allows to automatically search for box art using Google Images
-* Game Genie support
-* Can automatically patch problem games, patches for some popular games included in the package
-* Allows to upload hundreds of games at once
-* Allows to exit to menu using button combination instead if reset button
-* Allows to enable autofire
-* Allows to simulate start button on second controller for Famicom Mini
-* Allows to disable epilepsy protection
-* Allows to disable menu music
+* Allows to change any game settings including command line arguments&lt;br /&gt;
+* Fills all game data automatically using included database&lt;br /&gt;
+* Automatically checks for supported games&lt;br /&gt;
+* Allows to automatically search for box art using Google Images&lt;br /&gt;
+* Game Genie support&lt;br /&gt;
+* Can automatically patch problem games, patches for some popular games included in the package&lt;br /&gt;
+* Allows to upload hundreds of games at once&lt;br /&gt;
+* Allows to exit to menu using button combination instead if reset button&lt;br /&gt;
+* Allows to enable autofire&lt;br /&gt;
+* Allows to simulate start button on second controller for Famicom Mini&lt;br /&gt;
+* Allows to disable epilepsy protection&lt;br /&gt;
+* Allows to disable menu music&lt;br /&gt;
 &lt;img src=&#34;https://goo.gl/hlSSDI&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;測試hackchi2&#34;&gt;測試hackchi2&lt;/h2&gt;
 
-&lt;p&gt;單純測試!&lt;br /&gt;
-好孩子實驗完，馬上還原!!&lt;/p&gt;
+&lt;p&gt;單純測試!&lt;/p&gt;
 
 &lt;p&gt;按下&lt;strong&gt;[add more games]&lt;/strong&gt;&lt;br /&gt;
 加入要測試的Rom&lt;/p&gt;
@@ -263,7 +259,7 @@
 
 &lt;h2 id=&#34;收工了&#34;&gt;收工了!&lt;/h2&gt;
 
-&lt;p&gt;放在書桌旁，以後睡前可以玩一下懷舊小遊戲~XD&lt;/p&gt;
+&lt;p&gt;放在書桌旁，還不賴，以後睡前可以玩一下懷舊小遊戲~XD&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://goo.gl/Jl3mCf&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
